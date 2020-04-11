@@ -1,0 +1,9 @@
+C:\Users\Сергей\source\repos\GraphXDesign\GraphXDesign\bin\Debug\GraphXDesign.exe.config
+C:\Users\Сергей\source\repos\GraphXDesign\GraphXDesign\bin\Debug\GraphXDesign.exe
+C:\Users\Сергей\source\repos\GraphXDesign\GraphXDesign\bin\Debug\GraphXDesign.pdb
+C:\Users\Сергей\source\repos\GraphXDesign\GraphXDesign\obj\Debug\GraphXDesign.csprojAssemblyReference.cache
+C:\Users\Сергей\source\repos\GraphXDesign\GraphXDesign\obj\Debug\GraphXDesign.Form.resources
+C:\Users\Сергей\source\repos\GraphXDesign\GraphXDesign\obj\Debug\GraphXDesign.Properties.Resources.resources
+C:\Users\Сергей\source\repos\GraphXDesign\GraphXDesign\obj\Debug\GraphXDesign.csproj.GenerateResource.cache
+C:\Users\Сергей\source\repos\GraphXDesign\GraphXDesign\obj\Debug\GraphXDesign.exe
+C:\Users\Сергей\source\repos\GraphXDesign\GraphXDesign\obj\Debug\GraphXDesign.pdb
