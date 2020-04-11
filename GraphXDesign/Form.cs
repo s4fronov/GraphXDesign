@@ -16,5 +16,10 @@ namespace GraphXDesign
         {
             InitializeComponent();
         }
+
+        private void mainBox_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
