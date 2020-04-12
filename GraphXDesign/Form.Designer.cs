@@ -30,102 +30,78 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.panelInfo = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.FlowLayoutPanel();
             this.imageLogo = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.mainMenu = new System.Windows.Forms.GroupBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.groupBoxMenu = new System.Windows.Forms.GroupBox();
+            this.panelFigure = new System.Windows.Forms.Panel();
+            this.buttonNAngular = new System.Windows.Forms.Button();
+            this.buttonTriangleRectangular = new System.Windows.Forms.Button();
+            this.buttonTriangleIsosceles = new System.Windows.Forms.Button();
             this.buttonSquare = new System.Windows.Forms.Button();
             this.buttonCircle = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.brushMenu = new System.Windows.Forms.Panel();
-            this.buttonBrush2 = new System.Windows.Forms.Button();
-            this.buttonBrush1 = new System.Windows.Forms.Button();
+            this.buttonFigure = new System.Windows.Forms.Button();
+            this.panelLine = new System.Windows.Forms.Panel();
+            this.buttonLineSquare = new System.Windows.Forms.Button();
+            this.buttonLineDot = new System.Windows.Forms.Button();
+            this.buttonLine = new System.Windows.Forms.Button();
+            this.panelBrush = new System.Windows.Forms.Panel();
+            this.buttonBrushSquare = new System.Windows.Forms.Button();
+            this.buttonBrushDot = new System.Windows.Forms.Button();
             this.buttonBrush = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelProgram = new System.Windows.Forms.Panel();
             this.imageExit = new System.Windows.Forms.PictureBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
-            this.pictureBox16 = new System.Windows.Forms.PictureBox();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelSettings = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxScale = new System.Windows.Forms.TextBox();
+            this.textBoxSize = new System.Windows.Forms.TextBox();
+            this.palette2 = new System.Windows.Forms.PictureBox();
+            this.palette1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxSheet = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPipette = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPalette = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).BeginInit();
-            this.mainMenu.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.brushMenu.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.groupBoxMenu.SuspendLayout();
+            this.panelFigure.SuspendLayout();
+            this.panelLine.SuspendLayout();
+            this.panelBrush.SuspendLayout();
+            this.panelProgram.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageExit)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.palette2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.palette1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPipette)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPalette)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.mainMenu);
+            this.panel1.Controls.Add(this.panelInfo);
+            this.panel1.Controls.Add(this.groupBoxMenu);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(150, 480);
             this.panel1.TabIndex = 0;
             // 
-            // panel5
+            // panelInfo
             // 
-            this.panel5.Controls.Add(this.panelLogo);
-            this.panel5.Controls.Add(this.label1);
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(150, 63);
-            this.panel5.TabIndex = 2;
+            this.panelInfo.Controls.Add(this.panelLogo);
+            this.panelInfo.Controls.Add(this.label1);
+            this.panelInfo.Controls.Add(this.label2);
+            this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelInfo.Location = new System.Drawing.Point(0, 0);
+            this.panelInfo.Name = "panelInfo";
+            this.panelInfo.Size = new System.Drawing.Size(150, 63);
+            this.panelInfo.TabIndex = 2;
             // 
             // panelLogo
             // 
@@ -167,81 +143,89 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Designer";
             // 
-            // mainMenu
+            // groupBoxMenu
             // 
-            this.mainMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.mainMenu.Controls.Add(this.panel4);
-            this.mainMenu.Controls.Add(this.button5);
-            this.mainMenu.Controls.Add(this.panel3);
-            this.mainMenu.Controls.Add(this.button1);
-            this.mainMenu.Controls.Add(this.brushMenu);
-            this.mainMenu.Controls.Add(this.buttonBrush);
-            this.mainMenu.Location = new System.Drawing.Point(-1, 52);
-            this.mainMenu.Margin = new System.Windows.Forms.Padding(0);
-            this.mainMenu.Name = "mainMenu";
-            this.mainMenu.Padding = new System.Windows.Forms.Padding(0);
-            this.mainMenu.Size = new System.Drawing.Size(152, 440);
-            this.mainMenu.TabIndex = 3;
-            this.mainMenu.TabStop = false;
+            this.groupBoxMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBoxMenu.Controls.Add(this.panelFigure);
+            this.groupBoxMenu.Controls.Add(this.buttonFigure);
+            this.groupBoxMenu.Controls.Add(this.panelLine);
+            this.groupBoxMenu.Controls.Add(this.buttonLine);
+            this.groupBoxMenu.Controls.Add(this.panelBrush);
+            this.groupBoxMenu.Controls.Add(this.buttonBrush);
+            this.groupBoxMenu.Location = new System.Drawing.Point(-1, 52);
+            this.groupBoxMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.groupBoxMenu.Name = "groupBoxMenu";
+            this.groupBoxMenu.Padding = new System.Windows.Forms.Padding(0);
+            this.groupBoxMenu.Size = new System.Drawing.Size(152, 440);
+            this.groupBoxMenu.TabIndex = 3;
+            this.groupBoxMenu.TabStop = false;
+            this.groupBoxMenu.Enter += new System.EventHandler(this.groupBoxMenu_Enter);
             // 
-            // panel4
+            // panelFigure
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.panel4.Controls.Add(this.button10);
-            this.panel4.Controls.Add(this.button9);
-            this.panel4.Controls.Add(this.button6);
-            this.panel4.Controls.Add(this.buttonSquare);
-            this.panel4.Controls.Add(this.buttonCircle);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 231);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(152, 130);
-            this.panel4.TabIndex = 5;
+            this.panelFigure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panelFigure.Controls.Add(this.buttonNAngular);
+            this.panelFigure.Controls.Add(this.buttonTriangleRectangular);
+            this.panelFigure.Controls.Add(this.buttonTriangleIsosceles);
+            this.panelFigure.Controls.Add(this.buttonSquare);
+            this.panelFigure.Controls.Add(this.buttonCircle);
+            this.panelFigure.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelFigure.Location = new System.Drawing.Point(0, 231);
+            this.panelFigure.Name = "panelFigure";
+            this.panelFigure.Size = new System.Drawing.Size(152, 130);
+            this.panelFigure.TabIndex = 5;
+            this.panelFigure.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFigure_Paint);
             // 
-            // button10
+            // buttonNAngular
             // 
-            this.button10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.button10.Location = new System.Drawing.Point(0, 100);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(152, 25);
-            this.button10.TabIndex = 6;
-            this.button10.Text = "N-угольник";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.UseVisualStyleBackColor = true;
+            this.buttonNAngular.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonNAngular.FlatAppearance.BorderSize = 0;
+            this.buttonNAngular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNAngular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNAngular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonNAngular.Location = new System.Drawing.Point(0, 100);
+            this.buttonNAngular.Name = "buttonNAngular";
+            this.buttonNAngular.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.buttonNAngular.Size = new System.Drawing.Size(152, 25);
+            this.buttonNAngular.TabIndex = 6;
+            this.buttonNAngular.Text = "N-угольник";
+            this.buttonNAngular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNAngular.UseVisualStyleBackColor = true;
+            this.buttonNAngular.Click += new System.EventHandler(this.buttonNAngular_Click);
             // 
-            // button9
+            // buttonTriangleRectangular
             // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.button9.Location = new System.Drawing.Point(0, 75);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(152, 25);
-            this.button9.TabIndex = 5;
-            this.button9.Text = "Треугольник (прямоугольный)";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = true;
+            this.buttonTriangleRectangular.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTriangleRectangular.FlatAppearance.BorderSize = 0;
+            this.buttonTriangleRectangular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTriangleRectangular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonTriangleRectangular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonTriangleRectangular.Location = new System.Drawing.Point(0, 75);
+            this.buttonTriangleRectangular.Name = "buttonTriangleRectangular";
+            this.buttonTriangleRectangular.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.buttonTriangleRectangular.Size = new System.Drawing.Size(152, 25);
+            this.buttonTriangleRectangular.TabIndex = 5;
+            this.buttonTriangleRectangular.Text = "Треугольник (прямоугольный)";
+            this.buttonTriangleRectangular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTriangleRectangular.UseVisualStyleBackColor = true;
+            this.buttonTriangleRectangular.Click += new System.EventHandler(this.buttonTriangleRectangular_Click);
             // 
-            // button6
+            // buttonTriangleIsosceles
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.button6.Location = new System.Drawing.Point(0, 50);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(152, 25);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Треугольник (равнобедренный)";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonTriangleIsosceles.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTriangleIsosceles.FlatAppearance.BorderSize = 0;
+            this.buttonTriangleIsosceles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTriangleIsosceles.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonTriangleIsosceles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonTriangleIsosceles.Location = new System.Drawing.Point(0, 50);
+            this.buttonTriangleIsosceles.Name = "buttonTriangleIsosceles";
+            this.buttonTriangleIsosceles.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.buttonTriangleIsosceles.Size = new System.Drawing.Size(152, 25);
+            this.buttonTriangleIsosceles.TabIndex = 4;
+            this.buttonTriangleIsosceles.Text = "Треугольник (равнобедренный)";
+            this.buttonTriangleIsosceles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTriangleIsosceles.UseVisualStyleBackColor = true;
+            this.buttonTriangleIsosceles.Click += new System.EventHandler(this.buttonTriangleIsosceles_Click);
             // 
             // buttonSquare
             // 
@@ -252,11 +236,13 @@
             this.buttonSquare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonSquare.Location = new System.Drawing.Point(0, 25);
             this.buttonSquare.Name = "buttonSquare";
+            this.buttonSquare.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.buttonSquare.Size = new System.Drawing.Size(152, 25);
             this.buttonSquare.TabIndex = 3;
             this.buttonSquare.Text = "Прямоугольник";
             this.buttonSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSquare.UseVisualStyleBackColor = true;
+            this.buttonSquare.Click += new System.EventHandler(this.buttonSquare_Click);
             // 
             // buttonCircle
             // 
@@ -267,125 +253,139 @@
             this.buttonCircle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonCircle.Location = new System.Drawing.Point(0, 0);
             this.buttonCircle.Name = "buttonCircle";
+            this.buttonCircle.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.buttonCircle.Size = new System.Drawing.Size(152, 25);
             this.buttonCircle.TabIndex = 2;
             this.buttonCircle.Text = "Овал";
             this.buttonCircle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCircle.UseVisualStyleBackColor = true;
+            this.buttonCircle.Click += new System.EventHandler(this.buttonCircle_Click);
             // 
-            // button5
+            // buttonFigure
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
-            this.button5.Location = new System.Drawing.Point(0, 195);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(152, 36);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Фигура";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonFigure.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonFigure.FlatAppearance.BorderSize = 0;
+            this.buttonFigure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFigure.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFigure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
+            this.buttonFigure.Location = new System.Drawing.Point(0, 195);
+            this.buttonFigure.Name = "buttonFigure";
+            this.buttonFigure.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonFigure.Size = new System.Drawing.Size(152, 36);
+            this.buttonFigure.TabIndex = 4;
+            this.buttonFigure.Text = "Фигура";
+            this.buttonFigure.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFigure.UseVisualStyleBackColor = true;
+            this.buttonFigure.Click += new System.EventHandler(this.buttonFigure_Click);
             // 
-            // panel3
+            // panelLine
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 140);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(152, 55);
-            this.panel3.TabIndex = 3;
+            this.panelLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panelLine.Controls.Add(this.buttonLineSquare);
+            this.panelLine.Controls.Add(this.buttonLineDot);
+            this.panelLine.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLine.Location = new System.Drawing.Point(0, 140);
+            this.panelLine.Name = "panelLine";
+            this.panelLine.Size = new System.Drawing.Size(152, 55);
+            this.panelLine.TabIndex = 3;
+            this.panelLine.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLine_Paint);
             // 
-            // button3
+            // buttonLineSquare
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.button3.Location = new System.Drawing.Point(0, 25);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(152, 25);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Грубая";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonLineSquare.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonLineSquare.FlatAppearance.BorderSize = 0;
+            this.buttonLineSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLineSquare.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLineSquare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonLineSquare.Location = new System.Drawing.Point(0, 25);
+            this.buttonLineSquare.Name = "buttonLineSquare";
+            this.buttonLineSquare.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.buttonLineSquare.Size = new System.Drawing.Size(152, 25);
+            this.buttonLineSquare.TabIndex = 3;
+            this.buttonLineSquare.Text = "Грубая";
+            this.buttonLineSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLineSquare.UseVisualStyleBackColor = true;
+            this.buttonLineSquare.Click += new System.EventHandler(this.buttonLineSquare_Click);
             // 
-            // button4
+            // buttonLineDot
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.button4.Location = new System.Drawing.Point(0, 0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(152, 25);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Сглаженная";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonLineDot.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonLineDot.FlatAppearance.BorderSize = 0;
+            this.buttonLineDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLineDot.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLineDot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonLineDot.Location = new System.Drawing.Point(0, 0);
+            this.buttonLineDot.Name = "buttonLineDot";
+            this.buttonLineDot.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.buttonLineDot.Size = new System.Drawing.Size(152, 25);
+            this.buttonLineDot.TabIndex = 2;
+            this.buttonLineDot.Text = "Сглаженная";
+            this.buttonLineDot.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLineDot.UseVisualStyleBackColor = true;
+            this.buttonLineDot.Click += new System.EventHandler(this.buttonLineDot_Click);
             // 
-            // button1
+            // buttonLine
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
-            this.button1.Location = new System.Drawing.Point(0, 104);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(152, 36);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Линия";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonLine.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonLine.FlatAppearance.BorderSize = 0;
+            this.buttonLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLine.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
+            this.buttonLine.Location = new System.Drawing.Point(0, 104);
+            this.buttonLine.Name = "buttonLine";
+            this.buttonLine.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonLine.Size = new System.Drawing.Size(152, 36);
+            this.buttonLine.TabIndex = 2;
+            this.buttonLine.Text = "Линия";
+            this.buttonLine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLine.UseVisualStyleBackColor = true;
+            this.buttonLine.Click += new System.EventHandler(this.buttonLine_Click);
             // 
-            // brushMenu
+            // panelBrush
             // 
-            this.brushMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.brushMenu.Controls.Add(this.buttonBrush2);
-            this.brushMenu.Controls.Add(this.buttonBrush1);
-            this.brushMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.brushMenu.Location = new System.Drawing.Point(0, 49);
-            this.brushMenu.Name = "brushMenu";
-            this.brushMenu.Size = new System.Drawing.Size(152, 55);
-            this.brushMenu.TabIndex = 1;
+            this.panelBrush.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panelBrush.Controls.Add(this.buttonBrushSquare);
+            this.panelBrush.Controls.Add(this.buttonBrushDot);
+            this.panelBrush.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBrush.Location = new System.Drawing.Point(0, 49);
+            this.panelBrush.Name = "panelBrush";
+            this.panelBrush.Size = new System.Drawing.Size(152, 55);
+            this.panelBrush.TabIndex = 1;
+            this.panelBrush.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBrush_Paint);
             // 
-            // buttonBrush2
+            // buttonBrushSquare
             // 
-            this.buttonBrush2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonBrush2.FlatAppearance.BorderSize = 0;
-            this.buttonBrush2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBrush2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonBrush2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.buttonBrush2.Location = new System.Drawing.Point(0, 25);
-            this.buttonBrush2.Name = "buttonBrush2";
-            this.buttonBrush2.Size = new System.Drawing.Size(152, 25);
-            this.buttonBrush2.TabIndex = 3;
-            this.buttonBrush2.Text = "Грубая";
-            this.buttonBrush2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBrush2.UseVisualStyleBackColor = true;
+            this.buttonBrushSquare.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonBrushSquare.FlatAppearance.BorderSize = 0;
+            this.buttonBrushSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBrushSquare.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBrushSquare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonBrushSquare.Location = new System.Drawing.Point(0, 25);
+            this.buttonBrushSquare.Name = "buttonBrushSquare";
+            this.buttonBrushSquare.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.buttonBrushSquare.Size = new System.Drawing.Size(152, 25);
+            this.buttonBrushSquare.TabIndex = 3;
+            this.buttonBrushSquare.Text = "Грубая";
+            this.buttonBrushSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBrushSquare.UseVisualStyleBackColor = true;
+            this.buttonBrushSquare.Click += new System.EventHandler(this.buttonBrushSquare_Click);
             // 
-            // buttonBrush1
+            // buttonBrushDot
             // 
-            this.buttonBrush1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonBrush1.FlatAppearance.BorderSize = 0;
-            this.buttonBrush1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBrush1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonBrush1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.buttonBrush1.Location = new System.Drawing.Point(0, 0);
-            this.buttonBrush1.Name = "buttonBrush1";
-            this.buttonBrush1.Size = new System.Drawing.Size(152, 25);
-            this.buttonBrush1.TabIndex = 2;
-            this.buttonBrush1.Text = "Сглаженная";
-            this.buttonBrush1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBrush1.UseVisualStyleBackColor = true;
+            this.buttonBrushDot.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonBrushDot.FlatAppearance.BorderSize = 0;
+            this.buttonBrushDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBrushDot.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBrushDot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonBrushDot.Location = new System.Drawing.Point(0, 0);
+            this.buttonBrushDot.Name = "buttonBrushDot";
+            this.buttonBrushDot.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.buttonBrushDot.Size = new System.Drawing.Size(152, 25);
+            this.buttonBrushDot.TabIndex = 2;
+            this.buttonBrushDot.Text = "Сглаженная";
+            this.buttonBrushDot.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBrushDot.UseVisualStyleBackColor = true;
+            this.buttonBrushDot.Click += new System.EventHandler(this.buttonBrushDot_Click);
             // 
             // buttonBrush
             // 
@@ -402,16 +402,18 @@
             this.buttonBrush.Text = "Кисть";
             this.buttonBrush.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBrush.UseVisualStyleBackColor = true;
+            this.buttonBrush.Click += new System.EventHandler(this.buttonBrush_Click);
             // 
-            // panel2
+            // panelProgram
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
-            this.panel2.Controls.Add(this.imageExit);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(150, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(704, 20);
-            this.panel2.TabIndex = 1;
+            this.panelProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
+            this.panelProgram.Controls.Add(this.imageExit);
+            this.panelProgram.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelProgram.Location = new System.Drawing.Point(150, 0);
+            this.panelProgram.Name = "panelProgram";
+            this.panelProgram.Size = new System.Drawing.Size(704, 20);
+            this.panelProgram.TabIndex = 1;
+            this.panelProgram.Paint += new System.Windows.Forms.PaintEventHandler(this.panelProgram_Paint);
             // 
             // imageExit
             // 
@@ -425,240 +427,116 @@
             this.imageExit.TabStop = false;
             this.imageExit.Click += new System.EventHandler(this.imageExit_Click);
             // 
-            // panel6
+            // panelSettings
             // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panel6.Controls.Add(this.label4);
-            this.panel6.Controls.Add(this.label3);
-            this.panel6.Controls.Add(this.textBox2);
-            this.panel6.Controls.Add(this.textBox1);
-            this.panel6.Controls.Add(this.pictureBox10);
-            this.panel6.Controls.Add(this.pictureBox11);
-            this.panel6.Controls.Add(this.pictureBox12);
-            this.panel6.Controls.Add(this.pictureBox13);
-            this.panel6.Controls.Add(this.pictureBox14);
-            this.panel6.Controls.Add(this.pictureBox15);
-            this.panel6.Controls.Add(this.pictureBox16);
-            this.panel6.Controls.Add(this.pictureBox17);
-            this.panel6.Controls.Add(this.pictureBox6);
-            this.panel6.Controls.Add(this.pictureBox7);
-            this.panel6.Controls.Add(this.pictureBox8);
-            this.panel6.Controls.Add(this.pictureBox9);
-            this.panel6.Controls.Add(this.pictureBox4);
-            this.panel6.Controls.Add(this.pictureBox5);
-            this.panel6.Controls.Add(this.pictureBox3);
-            this.panel6.Controls.Add(this.pictureBox2);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(150, 20);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(704, 40);
-            this.panel6.TabIndex = 2;
+            this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panelSettings.Controls.Add(this.pictureBoxPalette);
+            this.panelSettings.Controls.Add(this.pictureBoxPipette);
+            this.panelSettings.Controls.Add(this.label4);
+            this.panelSettings.Controls.Add(this.label3);
+            this.panelSettings.Controls.Add(this.textBoxScale);
+            this.panelSettings.Controls.Add(this.textBoxSize);
+            this.panelSettings.Controls.Add(this.palette1);
+            this.panelSettings.Controls.Add(this.palette2);
+            this.panelSettings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSettings.Location = new System.Drawing.Point(150, 20);
+            this.panelSettings.Name = "panelSettings";
+            this.panelSettings.Size = new System.Drawing.Size(704, 44);
+            this.panelSettings.TabIndex = 2;
+            this.panelSettings.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSettings_Paint);
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(515, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(129, 18);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Масштаб (%)";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(362, 2);
+            this.label3.Location = new System.Drawing.Point(518, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Размер (px)";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox2
+            // textBoxScale
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(494, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(42, 18);
-            this.textBox2.TabIndex = 17;
+            this.textBoxScale.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxScale.Location = new System.Drawing.Point(650, 22);
+            this.textBoxScale.Name = "textBoxScale";
+            this.textBoxScale.Size = new System.Drawing.Size(42, 18);
+            this.textBoxScale.TabIndex = 17;
+            this.textBoxScale.TextChanged += new System.EventHandler(this.textBoxScale_TextChanged);
             // 
-            // textBox1
+            // textBoxSize
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(494, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(42, 18);
-            this.textBox1.TabIndex = 16;
+            this.textBoxSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxSize.Location = new System.Drawing.Point(650, 3);
+            this.textBoxSize.Name = "textBoxSize";
+            this.textBoxSize.Size = new System.Drawing.Size(42, 18);
+            this.textBoxSize.TabIndex = 16;
+            this.textBoxSize.TextChanged += new System.EventHandler(this.textBoxSize_TextChanged);
             // 
-            // pictureBox10
+            // palette2
             // 
-            this.pictureBox10.BackColor = System.Drawing.Color.White;
-            this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox10.Location = new System.Drawing.Point(544, 20);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox10.TabIndex = 15;
-            this.pictureBox10.TabStop = false;
+            this.palette2.BackColor = System.Drawing.Color.White;
+            this.palette2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.palette2.Location = new System.Drawing.Point(21, 15);
+            this.palette2.Name = "palette2";
+            this.palette2.Size = new System.Drawing.Size(22, 22);
+            this.palette2.TabIndex = 15;
+            this.palette2.TabStop = false;
+            this.palette2.Click += new System.EventHandler(this.palette2_Click);
             // 
-            // pictureBox11
+            // palette1
             // 
-            this.pictureBox11.BackColor = System.Drawing.Color.Black;
-            this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox11.Location = new System.Drawing.Point(544, 0);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox11.TabIndex = 14;
-            this.pictureBox11.TabStop = false;
+            this.palette1.BackColor = System.Drawing.Color.Black;
+            this.palette1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.palette1.Location = new System.Drawing.Point(10, 4);
+            this.palette1.Name = "palette1";
+            this.palette1.Size = new System.Drawing.Size(22, 22);
+            this.palette1.TabIndex = 14;
+            this.palette1.TabStop = false;
+            this.palette1.Click += new System.EventHandler(this.palette1_Click);
             // 
-            // pictureBox12
+            // pictureBoxSheet
             // 
-            this.pictureBox12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox12.Location = new System.Drawing.Point(564, 20);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox12.TabIndex = 13;
-            this.pictureBox12.TabStop = false;
+            this.pictureBoxSheet.Location = new System.Drawing.Point(162, 70);
+            this.pictureBoxSheet.Name = "pictureBoxSheet";
+            this.pictureBoxSheet.Size = new System.Drawing.Size(680, 400);
+            this.pictureBoxSheet.TabIndex = 3;
+            this.pictureBoxSheet.TabStop = false;
+            this.pictureBoxSheet.Click += new System.EventHandler(this.pictureBoxSheet_Click);
             // 
-            // pictureBox13
+            // pictureBoxPipette
             // 
-            this.pictureBox13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox13.Location = new System.Drawing.Point(564, 0);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox13.TabIndex = 12;
-            this.pictureBox13.TabStop = false;
+            this.pictureBoxPipette.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPipette.Image")));
+            this.pictureBoxPipette.Location = new System.Drawing.Point(50, 10);
+            this.pictureBoxPipette.Name = "pictureBoxPipette";
+            this.pictureBoxPipette.Size = new System.Drawing.Size(22, 22);
+            this.pictureBoxPipette.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxPipette.TabIndex = 19;
+            this.pictureBoxPipette.TabStop = false;
+            this.pictureBoxPipette.Click += new System.EventHandler(this.pictureBoxPipette_Click);
             // 
-            // pictureBox14
+            // pictureBoxPalette
             // 
-            this.pictureBox14.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox14.Location = new System.Drawing.Point(584, 20);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox14.TabIndex = 11;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.BackColor = System.Drawing.Color.Gray;
-            this.pictureBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox15.Location = new System.Drawing.Point(584, 0);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox15.TabIndex = 10;
-            this.pictureBox15.TabStop = false;
-            // 
-            // pictureBox16
-            // 
-            this.pictureBox16.BackColor = System.Drawing.Color.Maroon;
-            this.pictureBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox16.Location = new System.Drawing.Point(604, 20);
-            this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox16.TabIndex = 9;
-            this.pictureBox16.TabStop = false;
-            // 
-            // pictureBox17
-            // 
-            this.pictureBox17.BackColor = System.Drawing.Color.Red;
-            this.pictureBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox17.Location = new System.Drawing.Point(604, 0);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox17.TabIndex = 8;
-            this.pictureBox17.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(624, 20);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox6.TabIndex = 7;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Location = new System.Drawing.Point(624, 0);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox7.TabIndex = 6;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BackColor = System.Drawing.Color.Olive;
-            this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox8.Location = new System.Drawing.Point(644, 20);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox8.TabIndex = 5;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BackColor = System.Drawing.Color.Yellow;
-            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox9.Location = new System.Drawing.Point(644, 0);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox9.TabIndex = 4;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Green;
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(664, 20);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Lime;
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(664, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Teal;
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(684, 20);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Aqua;
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(684, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(20, 20);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(161, 69);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(680, 400);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(359, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 18);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Масштаб (%)";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.pictureBoxPalette.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPalette.Image")));
+            this.pictureBoxPalette.Location = new System.Drawing.Point(78, 10);
+            this.pictureBoxPalette.Name = "pictureBoxPalette";
+            this.pictureBoxPalette.Size = new System.Drawing.Size(22, 22);
+            this.pictureBoxPalette.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxPalette.TabIndex = 20;
+            this.pictureBoxPalette.TabStop = false;
+            this.pictureBoxPalette.Click += new System.EventHandler(this.pictureBoxPalette_Click);
             // 
             // Form
             // 
@@ -666,43 +544,34 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(854, 480);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pictureBoxSheet);
+            this.Controls.Add(this.panelSettings);
+            this.Controls.Add(this.panelProgram);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Form_Load);
             this.panel1.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.panelInfo.ResumeLayout(false);
+            this.panelInfo.PerformLayout();
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).EndInit();
-            this.mainMenu.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.brushMenu.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.groupBoxMenu.ResumeLayout(false);
+            this.panelFigure.ResumeLayout(false);
+            this.panelLine.ResumeLayout(false);
+            this.panelBrush.ResumeLayout(false);
+            this.panelProgram.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageExit)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelSettings.ResumeLayout(false);
+            this.panelSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.palette2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.palette1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPipette)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPalette)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -710,51 +579,39 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelProgram;
         private System.Windows.Forms.FlowLayoutPanel panelLogo;
         private System.Windows.Forms.PictureBox imageLogo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox imageExit;
-        private System.Windows.Forms.GroupBox mainMenu;
-        private System.Windows.Forms.Panel brushMenu;
-        private System.Windows.Forms.Button buttonBrush2;
-        private System.Windows.Forms.Button buttonBrush1;
+        private System.Windows.Forms.GroupBox groupBoxMenu;
+        private System.Windows.Forms.Panel panelBrush;
+        private System.Windows.Forms.Button buttonBrushSquare;
+        private System.Windows.Forms.Button buttonBrushDot;
         private System.Windows.Forms.Button buttonBrush;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Panel panelFigure;
+        private System.Windows.Forms.Button buttonTriangleIsosceles;
         private System.Windows.Forms.Button buttonSquare;
         private System.Windows.Forms.Button buttonCircle;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.PictureBox pictureBox14;
-        private System.Windows.Forms.PictureBox pictureBox15;
-        private System.Windows.Forms.PictureBox pictureBox16;
-        private System.Windows.Forms.PictureBox pictureBox17;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button buttonFigure;
+        private System.Windows.Forms.Panel panelLine;
+        private System.Windows.Forms.Button buttonLineSquare;
+        private System.Windows.Forms.Button buttonLineDot;
+        private System.Windows.Forms.Button buttonLine;
+        private System.Windows.Forms.Panel panelInfo;
+        private System.Windows.Forms.Button buttonNAngular;
+        private System.Windows.Forms.Button buttonTriangleRectangular;
+        private System.Windows.Forms.Panel panelSettings;
+        private System.Windows.Forms.PictureBox pictureBoxSheet;
+        private System.Windows.Forms.PictureBox palette2;
+        private System.Windows.Forms.PictureBox palette1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxScale;
+        private System.Windows.Forms.TextBox textBoxSize;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBoxPalette;
+        private System.Windows.Forms.PictureBox pictureBoxPipette;
     }
 }
 
