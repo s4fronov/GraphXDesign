@@ -68,5 +68,20 @@ namespace GraphXDesign.Tests
 
             Assert.IsTrue(Equals(expected, actual));
         }
+
+        [Test]
+        public void DrawTest3()
+        {
+            Bitmap expected = new Bitmap(3, 3);
+            expected.SetPixel(0, 0, Color.Black);
+
+            Bitmap actual = new Bitmap(3, 3);
+            Dot dot = new Dot(0, 0, 1, Color.Black);
+
+            IBrush dotDrawer = new SquareBrush();
+            dot.Draw(actual, dotDrawer);
+
+            Assert.IsTrue(Equals(expected, actual));
+        }
     }
 }
