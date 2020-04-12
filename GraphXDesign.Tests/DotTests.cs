@@ -31,6 +31,7 @@ namespace GraphXDesign.Tests
             return true;
         }
 
+        [Test]
         public void DrawTest()
         {
             Bitmap expected = new Bitmap(5, 5);
@@ -40,8 +41,10 @@ namespace GraphXDesign.Tests
             expected.SetPixel(3, 3, Color.Blue);
 
             Bitmap actual = new Bitmap(5, 5);
-            Dot dot = new SquareDot(3, 3, 2, Color.Blue);
-            dot.Draw(actual);
+            Dot dot = new Dot(3, 3, 2, Color.Blue);
+
+            IBrush dotDrawer = new SquareBrush();
+            dot.Draw(actual, dotDrawer);
 
             Assert.IsTrue(Equals(expected, actual));
         }
@@ -58,8 +61,10 @@ namespace GraphXDesign.Tests
             expected.SetPixel(1, 2, Color.Red);
 
             Bitmap actual = new Bitmap(5, 5);
-            Dot dot = new SquareDot(0, 1, 3, Color.Red);
-            dot.Draw(actual);
+            Dot dot = new Dot(0, 1, 3, Color.Red);
+
+            IBrush dotDrawer = new SquareBrush();
+            dot.Draw(actual, dotDrawer);
 
             Assert.IsTrue(Equals(expected, actual));
         }

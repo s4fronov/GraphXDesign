@@ -7,21 +7,19 @@ using System.Drawing;
 
 namespace GraphXDesign
 {
-    public class SquareDot:Dot
+    public class SquareBrush:IBrush
     {
-        public SquareDot(int x, int y, int size, Color colour) : base(x, y, size, colour) { }
-
-        public override void Draw(Bitmap bmp)
+        public void Draw(Bitmap bmp, int x, int y, int size, Color color)
         {
             //x1 y1 левый верхний угол
             //x2 y2 правый нижний
-            int x1 = X - Size / 2;
-            int x2 = x1 + Size - 1;
-            int y1 = Y - Size / 2;
-            int y2 = y1 + Size - 1;
+            int x1 = x - size / 2;
+            int x2 = x1 + size - 1;
+            int y1 = y - size / 2;
+            int y2 = y1 + size - 1;
 
             //отрезаем то, что выходит за пределы битмапа
-            if (x1 < 0) 
+            if (x1 < 0)
                 x1 = 0;
             if (x2 >= bmp.Width)
                 x2 = bmp.Width - 1;
@@ -31,11 +29,11 @@ namespace GraphXDesign
                 y2 = bmp.Height - 1;
 
             //заполняем
-            for (int x = x1; x <= x2; x++)
+            for (int i = x1; i <= x2; i++)
             {
-                for (int y = y1; y <= y2; y++)
+                for (int j = y1; j <= y2; j++)
                 {
-                    bmp.SetPixel(x, y, Colour);
+                    bmp.SetPixel(i, j, color);
                 }
             }
         }

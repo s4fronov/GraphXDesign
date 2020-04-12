@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace GraphXDesign
 {
-    abstract public class Dot
+    public class Dot
     {
         public int X { get; set; }
         public int Y { get; set; }
@@ -22,6 +22,9 @@ namespace GraphXDesign
             Colour = colour;
         }
 
-        abstract public void Draw(Bitmap bmp);
+        public void Draw(Bitmap bmp, IBrush brush)
+        {
+            brush.Draw(bmp, X, Y, Size, Colour);
+        }
     }
 }

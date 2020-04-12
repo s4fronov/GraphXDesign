@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dot\Dot.cs" />
-    <Compile Include="Dot\SquareDot.cs" />
+    <Compile Include="Brush\IBrush.cs" />
+    <Compile Include="Brush\SquareBrush.cs" />
+    <Compile Include="Figures\Dot\Dot.cs" />
+    <Compile Include="Figures\Line\Line.cs" />
     <Compile Include="Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,5 +83,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
