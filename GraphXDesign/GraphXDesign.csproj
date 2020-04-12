@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dot\Dot.cs" />
+    <Compile Include="Dot\SquareDot.cs" />
     <Compile Include="Form.cs">
       <SubType>Form</SubType>
     </Compile>
