@@ -68,5 +68,46 @@ namespace GraphXDesign.Tests
 
             Assert.IsTrue(Equals(expected, actual));
         }
+
+        [Test]
+        public void DrawTest3()
+        {
+            Bitmap expected = new Bitmap(3, 3);
+            expected.SetPixel(0, 0, Color.Black);
+
+            Bitmap actual = new Bitmap(3, 3);
+            Dot dot = new Dot(0, 0, 1, Color.Black);
+
+            IBrush dotDrawer = new SquareBrush();
+            dot.Draw(actual, dotDrawer);
+
+            Assert.IsTrue(Equals(expected, actual));
+        }
+
+        [Test]
+        public void CircleDrawTest()
+        {
+            Bitmap expected = new Bitmap(5, 5);
+            expected.SetPixel(0, 1, Color.Red);
+            expected.SetPixel(0, 2, Color.Red);
+            expected.SetPixel(1, 0, Color.Red);
+            expected.SetPixel(1, 1, Color.Red);
+            expected.SetPixel(1, 2, Color.Red);
+            expected.SetPixel(1, 3, Color.Red);
+            expected.SetPixel(2, 0, Color.Red);
+            expected.SetPixel(2, 1, Color.Red);
+            expected.SetPixel(2, 2, Color.Red);
+            expected.SetPixel(2, 3, Color.Red);
+            expected.SetPixel(3, 1, Color.Red);
+            expected.SetPixel(3, 2, Color.Red);
+
+            Bitmap actual = new Bitmap(5, 5);
+            Dot dot = new Dot(2, 2, 4, Color.Red);
+
+            IBrush dotDrawer = new CircleBrush();
+            dot.Draw(actual, dotDrawer);
+
+            Assert.IsTrue(Equals(expected, actual));
+        }
     }
 }
