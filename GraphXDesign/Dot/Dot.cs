@@ -7,12 +7,12 @@ using System.Drawing;
 
 namespace GraphXDesign
 {
-    abstract class Dot
+    abstract public class Dot
     {
-        int X { get; set; }
-        int Y { get; set; }
-        int Size { get; set; }
-        Color Colour { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+        public int Size { get; set; }
+        public Color Colour { get; set; }
 
         public Dot(int x, int y, int size, Color colour)
         {
