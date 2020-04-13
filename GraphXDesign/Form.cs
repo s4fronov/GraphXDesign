@@ -15,6 +15,10 @@ namespace GraphXDesign
         Color paintColor1;
         Color paintColor2;
         int brushSize;
+        IBrush brush;
+        bool cursorActive;
+        Bitmap boxSheet;
+
         public Form()
         {
             InitializeComponent();
@@ -25,9 +29,12 @@ namespace GraphXDesign
 
         private void Form_Load(object sender, EventArgs e)
         {
-             paintColor1 = palette1.BackColor;
-             paintColor2 = palette2.BackColor;
-             brushSize = 1;
+            paintColor1 = palette1.BackColor;
+            paintColor2 = palette2.BackColor;
+            brushSize = 5;
+            boxSheet = new Bitmap(pictureBoxSheet.Width, pictureBoxSheet.Height);
+            cursorActive = false;
+            brush = new CircleBrush();
         }
 
         private void startProgram()
@@ -95,18 +102,6 @@ namespace GraphXDesign
 
         }
 
-        private void pictureBoxPalette_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxSize_TextChanged(object sender, EventArgs e)
-        {
-            brushSize = Convert.ToInt32(textBoxSize.Text);
-            if (brushSize > pictureBoxSheet.Width || brushSize > pictureBoxSheet.Height)
-                MessageBox.Show("Превышен размер кисти");
-        }
-
         private void textBoxScale_TextChanged(object sender, EventArgs e)
         {
 
@@ -129,12 +124,12 @@ namespace GraphXDesign
 
         private void buttonBrushDot_Click(object sender, EventArgs e)
         {
-
+            brush = new CircleBrush();
         }
 
         private void buttonBrushSquare_Click(object sender, EventArgs e)
         {
-
+            brush = new SquareBrush();
         }
 
         private void buttonLine_Click(object sender, EventArgs e)
@@ -195,6 +190,33 @@ namespace GraphXDesign
         private void pictureBoxSheet_Click(object sender, EventArgs e)
         {
             
+        }
+
+        private void pictureBoxSheet_MouseDown(object sender, MouseEventArgs e)
+        {
+            cursorActive = true;
+            brush.Draw(boxSheet, e.X, e.Y, brushSize, paintColor1);
+            pictureBoxSheet.Image = boxSheet;
+        }
+
+        private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (cursorActive == true)
+            {
+                brush.Draw(boxSheet, e.X, e.Y, brushSize, paintColor1);
+                pictureBoxSheet.Image = boxSheet;
+            }
+        }
+
+        private void pictureBoxSheet_MouseUp(object sender, MouseEventArgs e)
+        {
+            cursorActive = false;
+        }
+
+        private void trackBar_Scroll(object sender, EventArgs e)
+        {
+            labelSize.Text = trackBar.Value + "";
+            brushSize = Convert.ToInt32(labelSize.Text);
         }
     }
 }

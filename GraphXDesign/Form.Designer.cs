@@ -54,12 +54,10 @@
             this.panelProgram = new System.Windows.Forms.Panel();
             this.imageExit = new System.Windows.Forms.PictureBox();
             this.panelSettings = new System.Windows.Forms.Panel();
-            this.pictureBoxPalette = new System.Windows.Forms.PictureBox();
+            this.labelSize = new System.Windows.Forms.Label();
+            this.trackBar = new System.Windows.Forms.TrackBar();
             this.pictureBoxPipette = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxScale = new System.Windows.Forms.TextBox();
-            this.textBoxSize = new System.Windows.Forms.TextBox();
             this.palette1 = new System.Windows.Forms.PictureBox();
             this.palette2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxSheet = new System.Windows.Forms.PictureBox();
@@ -75,7 +73,7 @@
             this.panelProgram.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageExit)).BeginInit();
             this.panelSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPalette)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPipette)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.palette1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.palette2)).BeginInit();
@@ -431,12 +429,10 @@
             // panelSettings
             // 
             this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panelSettings.Controls.Add(this.pictureBoxPalette);
+            this.panelSettings.Controls.Add(this.labelSize);
+            this.panelSettings.Controls.Add(this.trackBar);
             this.panelSettings.Controls.Add(this.pictureBoxPipette);
-            this.panelSettings.Controls.Add(this.label4);
             this.panelSettings.Controls.Add(this.label3);
-            this.panelSettings.Controls.Add(this.textBoxScale);
-            this.panelSettings.Controls.Add(this.textBoxSize);
             this.panelSettings.Controls.Add(this.palette1);
             this.panelSettings.Controls.Add(this.palette2);
             this.panelSettings.Dock = System.Windows.Forms.DockStyle.Top;
@@ -446,16 +442,31 @@
             this.panelSettings.TabIndex = 2;
             this.panelSettings.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSettings_Paint);
             // 
-            // pictureBoxPalette
+            // labelSize
             // 
-            this.pictureBoxPalette.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPalette.Image")));
-            this.pictureBoxPalette.Location = new System.Drawing.Point(78, 10);
-            this.pictureBoxPalette.Name = "pictureBoxPalette";
-            this.pictureBoxPalette.Size = new System.Drawing.Size(22, 22);
-            this.pictureBoxPalette.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxPalette.TabIndex = 20;
-            this.pictureBoxPalette.TabStop = false;
-            this.pictureBoxPalette.Click += new System.EventHandler(this.pictureBoxPalette_Click);
+            this.labelSize.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSize.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelSize.Location = new System.Drawing.Point(659, 1);
+            this.labelSize.Name = "labelSize";
+            this.labelSize.Size = new System.Drawing.Size(33, 18);
+            this.labelSize.TabIndex = 20;
+            this.labelSize.Text = "5";
+            this.labelSize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // trackBar
+            // 
+            this.trackBar.LargeChange = 10;
+            this.trackBar.Location = new System.Drawing.Point(547, 22);
+            this.trackBar.Margin = new System.Windows.Forms.Padding(0);
+            this.trackBar.Maximum = 680;
+            this.trackBar.Minimum = 1;
+            this.trackBar.MinimumSize = new System.Drawing.Size(0, 20);
+            this.trackBar.Name = "trackBar";
+            this.trackBar.Size = new System.Drawing.Size(153, 45);
+            this.trackBar.SmallChange = 2;
+            this.trackBar.TabIndex = 0;
+            this.trackBar.Value = 4;
+            this.trackBar.Scroll += new System.EventHandler(this.trackBar_Scroll);
             // 
             // pictureBoxPipette
             // 
@@ -468,45 +479,16 @@
             this.pictureBoxPipette.TabStop = false;
             this.pictureBoxPipette.Click += new System.EventHandler(this.pictureBoxPipette_Click);
             // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(515, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(129, 18);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Масштаб (%)";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(518, 3);
+            this.label3.Location = new System.Drawing.Point(539, 1);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 18);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Размер (px)";
+            this.label3.Text = "Размер кисти (px):";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBoxScale
-            // 
-            this.textBoxScale.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxScale.Location = new System.Drawing.Point(650, 22);
-            this.textBoxScale.Name = "textBoxScale";
-            this.textBoxScale.Size = new System.Drawing.Size(42, 18);
-            this.textBoxScale.TabIndex = 17;
-            this.textBoxScale.TextChanged += new System.EventHandler(this.textBoxScale_TextChanged);
-            // 
-            // textBoxSize
-            // 
-            this.textBoxSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxSize.Location = new System.Drawing.Point(650, 3);
-            this.textBoxSize.Name = "textBoxSize";
-            this.textBoxSize.Size = new System.Drawing.Size(42, 18);
-            this.textBoxSize.TabIndex = 16;
-            this.textBoxSize.TextChanged += new System.EventHandler(this.textBoxSize_TextChanged);
             // 
             // palette1
             // 
@@ -538,6 +520,9 @@
             this.pictureBoxSheet.TabIndex = 3;
             this.pictureBoxSheet.TabStop = false;
             this.pictureBoxSheet.Click += new System.EventHandler(this.pictureBoxSheet_Click);
+            this.pictureBoxSheet.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseDown);
+            this.pictureBoxSheet.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseMove);
+            this.pictureBoxSheet.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseUp);
             // 
             // Form
             // 
@@ -568,7 +553,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageExit)).EndInit();
             this.panelSettings.ResumeLayout(false);
             this.panelSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPalette)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPipette)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.palette1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.palette2)).EndInit();
@@ -608,12 +593,10 @@
         private System.Windows.Forms.PictureBox palette2;
         private System.Windows.Forms.PictureBox palette1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxScale;
-        private System.Windows.Forms.TextBox textBoxSize;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pictureBoxPalette;
         private System.Windows.Forms.PictureBox pictureBoxPipette;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.TrackBar trackBar;
+        private System.Windows.Forms.Label labelSize;
     }
 }
 
