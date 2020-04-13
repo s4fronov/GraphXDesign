@@ -12,6 +12,9 @@ namespace GraphXDesign
 {
     public partial class Form : System.Windows.Forms.Form
     {
+        Color paintColor1;
+        Color paintColor2;
+        int brushSize;
         public Form()
         {
             InitializeComponent();
@@ -22,7 +25,9 @@ namespace GraphXDesign
 
         private void Form_Load(object sender, EventArgs e)
         {
-            
+             paintColor1 = palette1.BackColor;
+             paintColor2 = palette2.BackColor;
+             brushSize = 1;
         }
 
         private void startProgram()
@@ -71,12 +76,16 @@ namespace GraphXDesign
 
         private void palette1_Click(object sender, EventArgs e)
         {
-
+            colorDialog1.AllowFullOpen = true;
+            if(colorDialog1.ShowDialog() == DialogResult.OK)
+            { palette1.BackColor = colorDialog1.Color; }
         }
 
         private void palette2_Click(object sender, EventArgs e)
         {
-
+            colorDialog1.AllowFullOpen = true;
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            { palette2.BackColor = colorDialog1.Color; }
         }
 
         private void pictureBoxPipette_Click(object sender, EventArgs e)
@@ -91,7 +100,9 @@ namespace GraphXDesign
 
         private void textBoxSize_TextChanged(object sender, EventArgs e)
         {
-
+            brushSize = Convert.ToInt32(textBoxSize.Text);
+            if (brushSize > pictureBoxSheet.Width || brushSize > pictureBoxSheet.Height)
+                MessageBox.Show("Превышен размер кисти");
         }
 
         private void textBoxScale_TextChanged(object sender, EventArgs e)
@@ -136,7 +147,7 @@ namespace GraphXDesign
 
         private void buttonLineDot_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void buttonLineSquare_Click(object sender, EventArgs e)
