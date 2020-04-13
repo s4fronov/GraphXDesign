@@ -79,6 +79,7 @@ namespace GraphXDesign
             colorDialog1.AllowFullOpen = true;
             if(colorDialog1.ShowDialog() == DialogResult.OK)
             { palette1.BackColor = colorDialog1.Color; }
+            paintColor1 = palette1.BackColor;
         }
 
         private void palette2_Click(object sender, EventArgs e)
@@ -86,6 +87,7 @@ namespace GraphXDesign
             colorDialog1.AllowFullOpen = true;
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             { palette2.BackColor = colorDialog1.Color; }
+            paintColor2 = palette2.BackColor;
         }
 
         private void pictureBoxPipette_Click(object sender, EventArgs e)
