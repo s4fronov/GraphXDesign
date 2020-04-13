@@ -455,7 +455,7 @@
             // 
             // trackBar
             // 
-            this.trackBar.LargeChange = 10;
+            this.trackBar.LargeChange = 1;
             this.trackBar.Location = new System.Drawing.Point(547, 22);
             this.trackBar.Margin = new System.Windows.Forms.Padding(0);
             this.trackBar.Maximum = 680;
@@ -463,7 +463,6 @@
             this.trackBar.MinimumSize = new System.Drawing.Size(0, 20);
             this.trackBar.Name = "trackBar";
             this.trackBar.Size = new System.Drawing.Size(153, 45);
-            this.trackBar.SmallChange = 2;
             this.trackBar.TabIndex = 0;
             this.trackBar.Value = 4;
             this.trackBar.Scroll += new System.EventHandler(this.trackBar_Scroll);

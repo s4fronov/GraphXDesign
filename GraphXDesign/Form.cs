@@ -18,6 +18,8 @@ namespace GraphXDesign
         IBrush brush;
         bool cursorActive;
         Bitmap boxSheet;
+        int x1, y1, x2, y2;
+        
 
         public Form()
         {
@@ -34,7 +36,8 @@ namespace GraphXDesign
             brushSize = 5;
             boxSheet = new Bitmap(pictureBoxSheet.Width, pictureBoxSheet.Height);
             cursorActive = false;
-            brush = new CircleBrush();
+            brush = new CircleBrush(brushSize, paintColor1);
+
         }
 
         private void startProgram()
@@ -84,9 +87,9 @@ namespace GraphXDesign
         private void palette1_Click(object sender, EventArgs e)
         {
             colorDialog1.AllowFullOpen = true;
-            if(colorDialog1.ShowDialog() == DialogResult.OK)
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
             { palette1.BackColor = colorDialog1.Color; }
-            paintColor1 = palette1.BackColor;
+            brush.BrushColor = palette1.BackColor;
         }
 
         private void palette2_Click(object sender, EventArgs e)
@@ -124,12 +127,12 @@ namespace GraphXDesign
 
         private void buttonBrushDot_Click(object sender, EventArgs e)
         {
-            brush = new CircleBrush();
+            brush = new CircleBrush(brush);
         }
 
         private void buttonBrushSquare_Click(object sender, EventArgs e)
         {
-            brush = new SquareBrush();
+            brush = new SquareBrush(brush);
         }
 
         private void buttonLine_Click(object sender, EventArgs e)
@@ -144,7 +147,7 @@ namespace GraphXDesign
 
         private void buttonLineDot_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void buttonLineSquare_Click(object sender, EventArgs e)
@@ -189,21 +192,28 @@ namespace GraphXDesign
 
         private void pictureBoxSheet_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void pictureBoxSheet_MouseDown(object sender, MouseEventArgs e)
         {
             cursorActive = true;
-            brush.Draw(boxSheet, e.X, e.Y, brushSize, paintColor1);
+            x1 = e.X;
+            y1 = e.Y;
+            brush.DrawDot(boxSheet, e.X, e.Y);
             pictureBoxSheet.Image = boxSheet;
         }
 
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
         {
+
             if (cursorActive == true)
             {
-                brush.Draw(boxSheet, e.X, e.Y, brushSize, paintColor1);
+                x2 = e.X;
+                y2 = e.Y;
+                brush.DrawLine(boxSheet, x1, y1, x2, y2);
+                x1 = x2;
+                y1 = y2;
                 pictureBoxSheet.Image = boxSheet;
             }
         }
@@ -211,12 +221,14 @@ namespace GraphXDesign
         private void pictureBoxSheet_MouseUp(object sender, MouseEventArgs e)
         {
             cursorActive = false;
+            x2 = e.X;
+            y2 = e.Y;
         }
 
         private void trackBar_Scroll(object sender, EventArgs e)
         {
             labelSize.Text = trackBar.Value + "";
-            brushSize = Convert.ToInt32(labelSize.Text);
+            brush.BrushSize = Convert.ToInt32(labelSize.Text);
         }
     }
 }
