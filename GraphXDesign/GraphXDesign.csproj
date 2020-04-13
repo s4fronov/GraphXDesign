@@ -49,8 +49,8 @@
     <Compile Include="Brush\CircleBrush.cs" />
     <Compile Include="Brush\IBrush.cs" />
     <Compile Include="Brush\SquareBrush.cs" />
-    <Compile Include="Figures\Dot\Dot.cs" />
-    <Compile Include="Figures\Line\Line.cs" />
+    <Compile Include="Figures\IFigure.cs" />
+    <Compile Include="Figures\Line.cs" />
     <Compile Include="Form.cs">
       <SubType>Form</SubType>
     </Compile>

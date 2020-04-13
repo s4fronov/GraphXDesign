@@ -31,6 +31,27 @@ namespace GraphXDesign.Tests
         }
 
         [Test]
+        public void BlackSquare()
+        {
+            Bitmap expected = new Bitmap(100, 100);
+            for (int i = 0; i < 100; i++)
+                for (int j = 0; j < 100; j++)
+                    expected.SetPixel(i, j, Color.Black);
+
+            Bitmap actual = new Bitmap(100, 100);
+            IBrush brush = new SquareBrush(1, Color.Black);
+            for (int i = 0; i < 100; i++)
+            {
+                brush.DrawLine(actual, 50, 50, 0, i);
+                brush.DrawLine(actual, 50, 50, i, 0);
+                brush.DrawLine(actual, 50, 50, 99, i);
+                brush.DrawLine(actual, 50, 50, i, 99);
+            }
+
+            Assert.IsTrue(Equals(expected, actual));
+        }
+
+        [Test]
         public void DrawTest()
         {
             Bitmap expected = new Bitmap(10, 5);
@@ -42,13 +63,12 @@ namespace GraphXDesign.Tests
             expected.SetPixel(7, 3, Color.Blue);
             expected.SetPixel(8, 4, Color.Blue);
             expected.SetPixel(9, 4, Color.Blue);
-            
+
 
             Bitmap actual = new Bitmap(10, 5);
-            Line line = new Line(2, 1, 9, 4, 1, Color.Blue);
-
-            IBrush dotDrawer = new SquareBrush();
-            line.Draw(actual, dotDrawer);
+            IBrush brush = new SquareBrush(1, Color.Blue);
+            Line line = new Line(2, 1, 9, 4, brush);
+            line.Draw(actual);
 
             Assert.IsTrue(Equals(expected, actual));
         }
@@ -68,10 +88,9 @@ namespace GraphXDesign.Tests
 
 
             Bitmap actual = new Bitmap(10, 5);
-            Line line = new Line(9, 1, 2, 4, 1, Color.Blue);
-
-            IBrush dotDrawer = new SquareBrush();
-            line.Draw(actual, dotDrawer);
+            IBrush brush = new SquareBrush(1, Color.Blue);
+            Line line = new Line(9, 1, 2, 4, brush);
+            line.Draw(actual);
 
             Assert.IsTrue(Equals(expected, actual));
         }
@@ -91,10 +110,9 @@ namespace GraphXDesign.Tests
 
 
             Bitmap actual = new Bitmap(5, 10);
-            Line line = new Line(4, 9, 1, 2, 1, Color.Blue);
-
-            IBrush dotDrawer = new SquareBrush();
-            line.Draw(actual, dotDrawer);
+            IBrush brush = new SquareBrush(1, Color.Blue);
+            Line line = new Line(4, 9, 1, 2, brush);
+            line.Draw(actual);
 
             Assert.IsTrue(Equals(expected, actual));
         }
@@ -106,10 +124,9 @@ namespace GraphXDesign.Tests
             expected.SetPixel(1, 2, Color.Blue);
 
             Bitmap actual = new Bitmap(3, 3);
-            Line line = new Line(1, 2, 1, 2, 1, Color.Blue);
-
-            IBrush dotDrawer = new SquareBrush();
-            line.Draw(actual, dotDrawer);
+            IBrush brush = new SquareBrush(1, Color.Blue);
+            Line line = new Line(1, 2, 1, 2, brush);
+            line.Draw(actual);
 
             Assert.IsTrue(Equals(expected, actual));
         }

@@ -9,14 +9,28 @@ namespace GraphXDesign
 {
     public class SquareBrush:IBrush
     {
-        public void Draw(Bitmap bmp, int x, int y, int size, Color color)
+        public int BrushSize { get; set; }
+        public Color BrushColor { get; set; }
+
+        public SquareBrush(int size, Color color)
+        {
+            BrushSize = size;
+            BrushColor = color;
+        }
+        public SquareBrush(IBrush brush)
+        {
+            BrushSize = brush.BrushSize;
+            BrushColor = brush.BrushColor;
+        }
+
+        public void DrawDot(Bitmap bmp, int x, int y)
         {
             //x1 y1 левый верхний угол
             //x2 y2 правый нижний
-            int x1 = x - size / 2;
-            int x2 = x1 + size - 1;
-            int y1 = y - size / 2;
-            int y2 = y1 + size - 1;
+            int x1 = x - BrushSize / 2;
+            int x2 = x1 + BrushSize - 1;
+            int y1 = y - BrushSize / 2;
+            int y2 = y1 + BrushSize - 1;
 
             //отрезаем то, что выходит за пределы битмапа
             if (x1 < 0)
@@ -33,8 +47,63 @@ namespace GraphXDesign
             {
                 for (int j = y1; j <= y2; j++)
                 {
-                    bmp.SetPixel(i, j, color);
+                    bmp.SetPixel(i, j, BrushColor);
                 }
+            }
+        }
+
+        public void DrawLine(Bitmap bmp, int x1, int y1, int x2, int y2)
+        {
+            int deltaX = x2 - x1;
+            int deltaY = y2 - y1;
+
+            //если 2 крайние точки совпадают просто рисую точку
+            if (deltaX == 0 && deltaY == 0)
+            {
+                DrawDot(bmp, x1, y1);
+                return;
+            }
+
+            if (Math.Abs(deltaX) >= Math.Abs(deltaY))
+            {
+                //идем по оси х и считаем на каждом шаге y
+                int y;
+                double dydx = (double)deltaY / deltaX;
+
+                //двигаемся слева направо
+                if (x1 <= x2)
+                    for (int x = x1; x <= x2; x++)
+                    {
+                        y = (int)(Math.Round((x - x1) * dydx)) + y1;
+                        DrawDot(bmp, x, y);
+                    }
+                //справа налево
+                else
+                    for (int x = x1; x >= x2; x--)
+                    {
+                        y = (int)(Math.Round((x - x1) * dydx)) + y1;
+                        DrawDot(bmp, x, y);
+                    }
+            }
+            else
+            {
+                //идем по оси y и считаем на каждом шаге x
+                int x;
+                double dxdy = (double)deltaX / deltaY;
+                //сверху вниз
+                if (y1 <= y2)
+                    for (int y = y1; y <= y2; y++)
+                    {
+                        x = (int)(Math.Round((y - y1) * dxdy)) + x1;
+                        DrawDot(bmp, x, y);
+                    }
+                //снизу вверх
+                else
+                    for (int y = y1; y >= y2; y--)
+                    {
+                        x = (int)(Math.Round((y - y1) * dxdy)) + x1;
+                        DrawDot(bmp, x, y);
+                    }
             }
         }
     }
