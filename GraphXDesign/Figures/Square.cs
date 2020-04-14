@@ -31,7 +31,7 @@ namespace GraphXDesign
             Yd = y2;
             Xl = x1;
             Yl = y2;
-            Xr = Math.Abs(y1 - y2) + x1;
+            Xr = Math.Abs(y1 -y2) + x1;
             Yr = y1;
             Brush = brush;
         }

@@ -12,7 +12,6 @@ namespace GraphXDesign
     {
         bool cursorActive;
         int x1, y1, x2, y2;
-        Bitmap tmp;
 
         public SquareTool()
         {
@@ -20,34 +19,34 @@ namespace GraphXDesign
         }
 
         //весь код для рисования формы перенесен сюда полностью
-        public void MouseDown(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
+        public void MouseDown(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
+            canvas.SaveToCache();
             cursorActive = true;
             x1 = e.X;
             y1 = e.Y;
             x2 = e.X;
             y2 = e.Y;
-            sheet.Image = bmp;
+            sheet.Image = canvas.Bmp;
         }
-        public void MouseMove(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
+        public void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
             Square square = new Square(x1, y1, x2, y2, brush);
             if (cursorActive == true)
             {
-                tmp = new Bitmap(bmp);
+                canvas.LoadFromCache();
                 x2 = e.X;
                 y2 = e.Y;
-                square.Draw(tmp);
-                sheet.Image = tmp;
+                square.DrawSquare(canvas.Bmp, x1, y1, x2, y2); ;
+                sheet.Image = canvas.Bmp;
             }
-
         }
-        public void MouseUp(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
+        public void MouseUp(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
             cursorActive = false;
             x2 = e.X;
             y2 = e.Y;
-            sheet.Image = tmp;
+            sheet.Image = canvas.Bmp;
         }
 
     }
