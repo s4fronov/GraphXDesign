@@ -160,14 +160,14 @@ namespace GraphXDesign
 
         private void buttonLineDot_Click(object sender, EventArgs e)
         {
-
-            brush.BrushColor = palette1.BackColor;
+            brush = new CircleBrush(brush);
+            tool = new LineTool();
         }
 
         private void buttonLineSquare_Click(object sender, EventArgs e)
         {
-
-            brush.BrushColor = palette1.BackColor;
+            brush = new SquareBrush(brush);
+            tool = new LineTool();
         }
 
         private void buttonFigure_Click(object sender, EventArgs e)
