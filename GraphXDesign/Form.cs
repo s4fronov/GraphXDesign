@@ -19,6 +19,7 @@ namespace GraphXDesign
         bool cursorActive;
         Bitmap boxSheet;
         int x1, y1, x2, y2;
+        ITool tool;
         
 
         public Form()
@@ -37,7 +38,7 @@ namespace GraphXDesign
             boxSheet = new Bitmap(pictureBoxSheet.Width, pictureBoxSheet.Height);
             cursorActive = false;
             brush = new CircleBrush(brushSize, paintColor1);
-
+            tool = new PenTool();
         }
 
         private void startProgram()
@@ -195,36 +196,24 @@ namespace GraphXDesign
 
         }
 
+        //основные события все тут
+
         private void pictureBoxSheet_MouseDown(object sender, MouseEventArgs e)
         {
-            cursorActive = true;
-            x1 = e.X;
-            y1 = e.Y;
-            brush.DrawDot(boxSheet, e.X, e.Y);
-            pictureBoxSheet.Image = boxSheet;
+            tool.MouseDown((PictureBox)sender, boxSheet, brush, e);
         }
 
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
-        {
-
-            if (cursorActive == true)
-            {
-                x2 = e.X;
-                y2 = e.Y;
-                brush.DrawLine(boxSheet, x1, y1, x2, y2);
-                x1 = x2;
-                y1 = y2;
-                pictureBoxSheet.Image = boxSheet;
-            }
+        { 
+            tool.MouseMove((PictureBox)sender, boxSheet, brush, e);
         }
 
         private void pictureBoxSheet_MouseUp(object sender, MouseEventArgs e)
         {
-            cursorActive = false;
-            x2 = e.X;
-            y2 = e.Y;
+            tool.MouseUp((PictureBox)sender, boxSheet, brush, e);
         }
 
+        
         private void trackBar_Scroll(object sender, EventArgs e)
         {
             labelSize.Text = trackBar.Value + "";
