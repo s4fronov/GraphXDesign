@@ -49,6 +49,7 @@
     <Compile Include="Brush\CircleBrush.cs" />
     <Compile Include="Brush\IBrush.cs" />
     <Compile Include="Brush\SquareBrush.cs" />
+    <Compile Include="Canvas.cs" />
     <Compile Include="Figures\IFigure.cs" />
     <Compile Include="Figures\Line.cs" />
     <Compile Include="Figures\Square.cs" />

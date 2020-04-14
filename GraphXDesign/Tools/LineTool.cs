@@ -12,38 +12,38 @@ namespace GraphXDesign
     {
         bool cursorActive;
         int x1, y1, x2, y2;
-        Bitmap tmp;
 
         public LineTool()
         {
             cursorActive = false;
         }
 
-        public void MouseDown(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
+        public void MouseDown(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
+            canvas.SaveToCache();
             cursorActive = true;
             x1 = e.X;
             y1 = e.Y;
-            brush.DrawDot(bmp, e.X, e.Y);
-            sheet.Image = bmp;
+            brush.DrawDot(canvas.Bmp, e.X, e.Y);
+            sheet.Image = canvas.Bmp;
         }
-        public void MouseMove(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
+        public void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
-            tmp = new Bitmap(bmp);
             if (cursorActive == true)
             {
+                canvas.LoadFromCache();
                 x2 = e.X;
                 y2 = e.Y;
-                brush.DrawLine(tmp, x1, y1, x2, y2);
-                sheet.Image = tmp;
+                brush.DrawLine(canvas.Bmp, x1, y1, x2, y2);
+                sheet.Image = canvas.Bmp;
             }
         }
-        public void MouseUp(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
+        public void MouseUp(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
             cursorActive = false;
             x2 = e.X;
             y2 = e.Y;
-            sheet.Image = tmp;
+            sheet.Image = canvas.Bmp;
         }
     }
 }

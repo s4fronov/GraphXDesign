@@ -20,27 +20,27 @@ namespace GraphXDesign
         }
 
         //весь код для рисования формы перенесен сюда полностью
-        public void MouseDown(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
+        public void MouseDown(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
             cursorActive = true;
             x1 = e.X;
             y1 = e.Y;
-            brush.DrawDot(bmp, e.X, e.Y);
-            sheet.Image = bmp;
+            brush.DrawDot(canvas.Bmp, e.X, e.Y);
+            sheet.Image = canvas.Bmp;
         }
-        public void MouseMove(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
+        public void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
             if (cursorActive == true)
             {
                 x2 = e.X;
                 y2 = e.Y;
-                brush.DrawLine(bmp, x1, y1, x2, y2);
+                brush.DrawLine(canvas.Bmp, x1, y1, x2, y2);
                 x1 = x2;
                 y1 = y2;
-                sheet.Image = bmp;
+                sheet.Image = canvas.Bmp;
             }
         }
-        public void MouseUp(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
+        public void MouseUp(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
             cursorActive = false;
             x2 = e.X;
