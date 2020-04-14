@@ -8,11 +8,10 @@ using System.Drawing;
 
 namespace GraphXDesign
 {
-    public class RectangleTool : ITool
+    public class RectangleTool:ITool
     {
         bool cursorActive;
         int x1, y1, x2, y2;
-        Bitmap tmp;
 
         public RectangleTool()
         {
@@ -20,34 +19,34 @@ namespace GraphXDesign
         }
 
         //весь код для рисования формы перенесен сюда полностью
-        public void MouseDown(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
+        public void MouseDown(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
+            canvas.SaveToCache();
             cursorActive = true;
             x1 = e.X;
             y1 = e.Y;
             x2 = e.X;
             y2 = e.Y;
-            sheet.Image = bmp;
+            sheet.Image = canvas.Bmp;
         }
-        public void MouseMove(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
+        public void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
             Rectangle rectangle = new Rectangle(x1, y1, x2, y2, brush);
-            tmp = new Bitmap(bmp);
             if (cursorActive == true)
             {
+                canvas.LoadFromCache();
                 x2 = e.X;
                 y2 = e.Y;
-                rectangle.DrawRectangle(tmp, x1, y1, x2, y2);
-                sheet.Image = tmp;
+                rectangle.DrawRectangle(canvas.Bmp, x1, y1, x2, y2);
+                sheet.Image = canvas.Bmp;
             }
         }
-        public void MouseUp(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
+        public void MouseUp(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
-            
             cursorActive = false;
             x2 = e.X;
             y2 = e.Y;
-            sheet.Image = tmp;
+            sheet.Image = canvas.Bmp;
         }
 
     }

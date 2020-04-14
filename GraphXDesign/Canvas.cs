@@ -22,12 +22,12 @@ namespace GraphXDesign
             Height = height;
         }
 
-        public void Save()
+        public void SaveToCache()
         {
             Cache = new Bitmap(Bmp);
         }
 
-        public void Load()
+        public void LoadFromCache()
         {
             Bmp = new Bitmap(Cache);
         }
