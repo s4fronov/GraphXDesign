@@ -109,6 +109,8 @@ namespace GraphXDesign
                         DrawDot(bmp, x, y);
                     }
             }
+
         }
+
     }
 }

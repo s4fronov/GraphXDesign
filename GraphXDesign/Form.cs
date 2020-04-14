@@ -141,12 +141,14 @@ namespace GraphXDesign
 
         private void buttonBrushDot_Click(object sender, EventArgs e)
         {
+            tool = new PenTool();
             brush = new CircleBrush(brush);
             brush.BrushColor = palette1.BackColor;
         }
 
         private void buttonBrushSquare_Click(object sender, EventArgs e)
         {
+            tool = new PenTool();
             brush = new SquareBrush(brush);
             brush.BrushColor = palette1.BackColor;
         }
@@ -180,7 +182,8 @@ namespace GraphXDesign
 
         private void buttonSquare_Click(object sender, EventArgs e)
         {
-
+            
+            tool = new RectangleTool();
         }
 
         private void buttonTriangleIsosceles_Click(object sender, EventArgs e)
