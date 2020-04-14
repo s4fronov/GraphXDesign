@@ -52,16 +52,29 @@
             this.buttonBrushDot = new System.Windows.Forms.Button();
             this.buttonBrush = new System.Windows.Forms.Button();
             this.panelProgram = new System.Windows.Forms.Panel();
+            this.panelProgramControl = new System.Windows.Forms.Panel();
             this.imageExit = new System.Windows.Forms.PictureBox();
+            this.imageExpand = new System.Windows.Forms.PictureBox();
+            this.imageCollapse = new System.Windows.Forms.PictureBox();
             this.panelSettings = new System.Windows.Forms.Panel();
-            this.labelSize = new System.Windows.Forms.Label();
-            this.trackBar = new System.Windows.Forms.TrackBar();
-            this.pictureBoxPipette = new System.Windows.Forms.PictureBox();
+            this.panelSize = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.labelSize = new System.Windows.Forms.Label();
+            this.trackBarSize = new System.Windows.Forms.TrackBar();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBoxRedo = new System.Windows.Forms.PictureBox();
             this.palette1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxUndo = new System.Windows.Forms.PictureBox();
+            this.pictureBoxReverse = new System.Windows.Forms.PictureBox();
             this.palette2 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxClearAll = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPipette = new System.Windows.Forms.PictureBox();
+            this.pictureBoxEraser = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFill = new System.Windows.Forms.PictureBox();
             this.pictureBoxSheet = new System.Windows.Forms.PictureBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.panelDesk = new System.Windows.Forms.Panel();
+            this.panelResizeSheet = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -71,13 +84,25 @@
             this.panelLine.SuspendLayout();
             this.panelBrush.SuspendLayout();
             this.panelProgram.SuspendLayout();
+            this.panelProgramControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageExpand)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollapse)).BeginInit();
             this.panelSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPipette)).BeginInit();
+            this.panelSize.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSize)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRedo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.palette1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReverse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.palette2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClearAll)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPipette)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEraser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).BeginInit();
+            this.panelDesk.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -158,7 +183,6 @@
             this.groupBoxMenu.Size = new System.Drawing.Size(152, 440);
             this.groupBoxMenu.TabIndex = 3;
             this.groupBoxMenu.TabStop = false;
-            this.groupBoxMenu.Enter += new System.EventHandler(this.groupBoxMenu_Enter);
             // 
             // panelFigure
             // 
@@ -173,7 +197,6 @@
             this.panelFigure.Name = "panelFigure";
             this.panelFigure.Size = new System.Drawing.Size(152, 130);
             this.panelFigure.TabIndex = 5;
-            this.panelFigure.Paint += new System.Windows.Forms.PaintEventHandler(this.panelFigure_Paint);
             // 
             // buttonNAngular
             // 
@@ -265,7 +288,7 @@
             this.buttonFigure.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonFigure.FlatAppearance.BorderSize = 0;
             this.buttonFigure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFigure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFigure.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonFigure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
             this.buttonFigure.Location = new System.Drawing.Point(0, 195);
             this.buttonFigure.Name = "buttonFigure";
@@ -287,7 +310,6 @@
             this.panelLine.Name = "panelLine";
             this.panelLine.Size = new System.Drawing.Size(152, 55);
             this.panelLine.TabIndex = 3;
-            this.panelLine.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLine_Paint);
             // 
             // buttonLineSquare
             // 
@@ -328,7 +350,7 @@
             this.buttonLine.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonLine.FlatAppearance.BorderSize = 0;
             this.buttonLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLine.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
             this.buttonLine.Location = new System.Drawing.Point(0, 104);
             this.buttonLine.Name = "buttonLine";
@@ -350,7 +372,6 @@
             this.panelBrush.Name = "panelBrush";
             this.panelBrush.Size = new System.Drawing.Size(152, 55);
             this.panelBrush.TabIndex = 1;
-            this.panelBrush.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBrush_Paint);
             // 
             // buttonBrushSquare
             // 
@@ -391,7 +412,7 @@
             this.buttonBrush.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonBrush.FlatAppearance.BorderSize = 0;
             this.buttonBrush.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBrush.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBrush.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonBrush.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
             this.buttonBrush.Location = new System.Drawing.Point(0, 13);
             this.buttonBrush.Name = "buttonBrush";
@@ -406,71 +427,209 @@
             // panelProgram
             // 
             this.panelProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
-            this.panelProgram.Controls.Add(this.imageExit);
+            this.panelProgram.Controls.Add(this.panelProgramControl);
             this.panelProgram.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelProgram.Location = new System.Drawing.Point(150, 0);
             this.panelProgram.Name = "panelProgram";
-            this.panelProgram.Size = new System.Drawing.Size(704, 20);
+            this.panelProgram.Size = new System.Drawing.Size(710, 20);
             this.panelProgram.TabIndex = 1;
-            this.panelProgram.Paint += new System.Windows.Forms.PaintEventHandler(this.panelProgram_Paint);
+            this.panelProgram.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelProgram_MouseMove);
+            // 
+            // panelProgramControl
+            // 
+            this.panelProgramControl.Controls.Add(this.imageExit);
+            this.panelProgramControl.Controls.Add(this.imageExpand);
+            this.panelProgramControl.Controls.Add(this.imageCollapse);
+            this.panelProgramControl.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelProgramControl.Location = new System.Drawing.Point(644, 0);
+            this.panelProgramControl.Name = "panelProgramControl";
+            this.panelProgramControl.Size = new System.Drawing.Size(66, 20);
+            this.panelProgramControl.TabIndex = 5;
             // 
             // imageExit
             // 
-            this.imageExit.Dock = System.Windows.Forms.DockStyle.Right;
             this.imageExit.Image = ((System.Drawing.Image)(resources.GetObject("imageExit.Image")));
-            this.imageExit.Location = new System.Drawing.Point(678, 0);
+            this.imageExit.Location = new System.Drawing.Point(43, 0);
             this.imageExit.Name = "imageExit";
-            this.imageExit.Size = new System.Drawing.Size(26, 20);
+            this.imageExit.Size = new System.Drawing.Size(20, 20);
             this.imageExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.imageExit.TabIndex = 2;
             this.imageExit.TabStop = false;
             this.imageExit.Click += new System.EventHandler(this.imageExit_Click);
             // 
+            // imageExpand
+            // 
+            this.imageExpand.Image = ((System.Drawing.Image)(resources.GetObject("imageExpand.Image")));
+            this.imageExpand.Location = new System.Drawing.Point(3, 0);
+            this.imageExpand.Name = "imageExpand";
+            this.imageExpand.Size = new System.Drawing.Size(20, 20);
+            this.imageExpand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageExpand.TabIndex = 4;
+            this.imageExpand.TabStop = false;
+            this.imageExpand.Click += new System.EventHandler(this.imageExpand_Click);
+            // 
+            // imageCollapse
+            // 
+            this.imageCollapse.Image = ((System.Drawing.Image)(resources.GetObject("imageCollapse.Image")));
+            this.imageCollapse.Location = new System.Drawing.Point(23, 0);
+            this.imageCollapse.Name = "imageCollapse";
+            this.imageCollapse.Size = new System.Drawing.Size(20, 20);
+            this.imageCollapse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageCollapse.TabIndex = 3;
+            this.imageCollapse.TabStop = false;
+            this.imageCollapse.Click += new System.EventHandler(this.imageCollapse_Click);
+            // 
             // panelSettings
             // 
             this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panelSettings.Controls.Add(this.labelSize);
-            this.panelSettings.Controls.Add(this.trackBar);
-            this.panelSettings.Controls.Add(this.pictureBoxPipette);
-            this.panelSettings.Controls.Add(this.label3);
-            this.panelSettings.Controls.Add(this.palette1);
-            this.panelSettings.Controls.Add(this.palette2);
+            this.panelSettings.Controls.Add(this.panelSize);
+            this.panelSettings.Controls.Add(this.panel2);
             this.panelSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSettings.Location = new System.Drawing.Point(150, 20);
             this.panelSettings.Name = "panelSettings";
-            this.panelSettings.Size = new System.Drawing.Size(704, 44);
+            this.panelSettings.Size = new System.Drawing.Size(710, 44);
             this.panelSettings.TabIndex = 2;
-            this.panelSettings.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSettings_Paint);
+            // 
+            // panelSize
+            // 
+            this.panelSize.Controls.Add(this.label3);
+            this.panelSize.Controls.Add(this.labelSize);
+            this.panelSize.Controls.Add(this.trackBarSize);
+            this.panelSize.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelSize.Location = new System.Drawing.Point(549, 0);
+            this.panelSize.Name = "panelSize";
+            this.panelSize.Size = new System.Drawing.Size(161, 44);
+            this.panelSize.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(13, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(112, 18);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Размер кисти (px):";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelSize
             // 
-            this.labelSize.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSize.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelSize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelSize.Location = new System.Drawing.Point(659, 1);
+            this.labelSize.Location = new System.Drawing.Point(118, 5);
             this.labelSize.Name = "labelSize";
             this.labelSize.Size = new System.Drawing.Size(33, 18);
             this.labelSize.TabIndex = 20;
             this.labelSize.Text = "5";
             this.labelSize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // trackBar
+            // trackBarSize
             // 
-            this.trackBar.LargeChange = 1;
-            this.trackBar.Location = new System.Drawing.Point(547, 22);
-            this.trackBar.Margin = new System.Windows.Forms.Padding(0);
-            this.trackBar.Maximum = 680;
-            this.trackBar.Minimum = 1;
-            this.trackBar.MinimumSize = new System.Drawing.Size(0, 20);
-            this.trackBar.Name = "trackBar";
-            this.trackBar.Size = new System.Drawing.Size(153, 45);
-            this.trackBar.TabIndex = 0;
-            this.trackBar.Value = 4;
-            this.trackBar.Scroll += new System.EventHandler(this.trackBar_Scroll);
+            this.trackBarSize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.trackBarSize.LargeChange = 1;
+            this.trackBarSize.Location = new System.Drawing.Point(10, 22);
+            this.trackBarSize.Margin = new System.Windows.Forms.Padding(0);
+            this.trackBarSize.Maximum = 280;
+            this.trackBarSize.Minimum = 1;
+            this.trackBarSize.MinimumSize = new System.Drawing.Size(0, 20);
+            this.trackBarSize.Name = "trackBarSize";
+            this.trackBarSize.Size = new System.Drawing.Size(145, 45);
+            this.trackBarSize.TabIndex = 0;
+            this.trackBarSize.Value = 4;
+            this.trackBarSize.Scroll += new System.EventHandler(this.trackBarSize_Scroll);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBoxRedo);
+            this.panel2.Controls.Add(this.palette1);
+            this.panel2.Controls.Add(this.pictureBoxUndo);
+            this.panel2.Controls.Add(this.pictureBoxReverse);
+            this.panel2.Controls.Add(this.palette2);
+            this.panel2.Controls.Add(this.pictureBoxClearAll);
+            this.panel2.Controls.Add(this.pictureBoxPipette);
+            this.panel2.Controls.Add(this.pictureBoxEraser);
+            this.panel2.Controls.Add(this.pictureBoxFill);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(256, 44);
+            this.panel2.TabIndex = 4;
+            // 
+            // pictureBoxRedo
+            // 
+            this.pictureBoxRedo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxRedo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRedo.Image")));
+            this.pictureBoxRedo.Location = new System.Drawing.Point(196, 12);
+            this.pictureBoxRedo.Name = "pictureBoxRedo";
+            this.pictureBoxRedo.Size = new System.Drawing.Size(22, 22);
+            this.pictureBoxRedo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxRedo.TabIndex = 26;
+            this.pictureBoxRedo.TabStop = false;
+            // 
+            // palette1
+            // 
+            this.palette1.BackColor = System.Drawing.Color.Black;
+            this.palette1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.palette1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.palette1.Location = new System.Drawing.Point(7, 4);
+            this.palette1.Name = "palette1";
+            this.palette1.Size = new System.Drawing.Size(22, 22);
+            this.palette1.TabIndex = 14;
+            this.palette1.TabStop = false;
+            this.palette1.Click += new System.EventHandler(this.palette1_Click);
+            // 
+            // pictureBoxUndo
+            // 
+            this.pictureBoxUndo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxUndo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxUndo.Image")));
+            this.pictureBoxUndo.Location = new System.Drawing.Point(168, 11);
+            this.pictureBoxUndo.Name = "pictureBoxUndo";
+            this.pictureBoxUndo.Size = new System.Drawing.Size(22, 22);
+            this.pictureBoxUndo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxUndo.TabIndex = 25;
+            this.pictureBoxUndo.TabStop = false;
+            // 
+            // pictureBoxReverse
+            // 
+            this.pictureBoxReverse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxReverse.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxReverse.Image")));
+            this.pictureBoxReverse.Location = new System.Drawing.Point(2, 27);
+            this.pictureBoxReverse.Name = "pictureBoxReverse";
+            this.pictureBoxReverse.Size = new System.Drawing.Size(14, 14);
+            this.pictureBoxReverse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxReverse.TabIndex = 24;
+            this.pictureBoxReverse.TabStop = false;
+            this.pictureBoxReverse.Click += new System.EventHandler(this.pictureBoxReverse_Click);
+            // 
+            // palette2
+            // 
+            this.palette2.BackColor = System.Drawing.Color.White;
+            this.palette2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.palette2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.palette2.Location = new System.Drawing.Point(18, 15);
+            this.palette2.Name = "palette2";
+            this.palette2.Size = new System.Drawing.Size(22, 22);
+            this.palette2.TabIndex = 15;
+            this.palette2.TabStop = false;
+            this.palette2.Click += new System.EventHandler(this.palette2_Click);
+            // 
+            // pictureBoxClearAll
+            // 
+            this.pictureBoxClearAll.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxClearAll.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClearAll.Image")));
+            this.pictureBoxClearAll.Location = new System.Drawing.Point(134, 10);
+            this.pictureBoxClearAll.Name = "pictureBoxClearAll";
+            this.pictureBoxClearAll.Size = new System.Drawing.Size(26, 26);
+            this.pictureBoxClearAll.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxClearAll.TabIndex = 23;
+            this.pictureBoxClearAll.TabStop = false;
+            this.pictureBoxClearAll.Click += new System.EventHandler(this.pictureBoxClearAll_Click);
             // 
             // pictureBoxPipette
             // 
+            this.pictureBoxPipette.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxPipette.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPipette.Image")));
-            this.pictureBoxPipette.Location = new System.Drawing.Point(50, 10);
+            this.pictureBoxPipette.Location = new System.Drawing.Point(47, 12);
             this.pictureBoxPipette.Name = "pictureBoxPipette";
             this.pictureBoxPipette.Size = new System.Drawing.Size(22, 22);
             this.pictureBoxPipette.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -478,58 +637,66 @@
             this.pictureBoxPipette.TabStop = false;
             this.pictureBoxPipette.Click += new System.EventHandler(this.pictureBoxPipette_Click);
             // 
-            // label3
+            // pictureBoxEraser
             // 
-            this.label3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(539, 1);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(126, 18);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Размер кисти (px):";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.pictureBoxEraser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxEraser.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEraser.Image")));
+            this.pictureBoxEraser.Location = new System.Drawing.Point(102, 11);
+            this.pictureBoxEraser.Name = "pictureBoxEraser";
+            this.pictureBoxEraser.Size = new System.Drawing.Size(22, 22);
+            this.pictureBoxEraser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxEraser.TabIndex = 22;
+            this.pictureBoxEraser.TabStop = false;
+            this.pictureBoxEraser.Click += new System.EventHandler(this.pictureBoxEraser_Click);
             // 
-            // palette1
+            // pictureBoxFill
             // 
-            this.palette1.BackColor = System.Drawing.Color.Black;
-            this.palette1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.palette1.Location = new System.Drawing.Point(10, 4);
-            this.palette1.Name = "palette1";
-            this.palette1.Size = new System.Drawing.Size(22, 22);
-            this.palette1.TabIndex = 14;
-            this.palette1.TabStop = false;
-            this.palette1.Click += new System.EventHandler(this.palette1_Click);
-            // 
-            // palette2
-            // 
-            this.palette2.BackColor = System.Drawing.Color.White;
-            this.palette2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.palette2.Location = new System.Drawing.Point(21, 15);
-            this.palette2.Name = "palette2";
-            this.palette2.Size = new System.Drawing.Size(22, 22);
-            this.palette2.TabIndex = 15;
-            this.palette2.TabStop = false;
-            this.palette2.Click += new System.EventHandler(this.palette2_Click);
+            this.pictureBoxFill.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxFill.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFill.Image")));
+            this.pictureBoxFill.Location = new System.Drawing.Point(73, 12);
+            this.pictureBoxFill.Name = "pictureBoxFill";
+            this.pictureBoxFill.Size = new System.Drawing.Size(22, 22);
+            this.pictureBoxFill.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFill.TabIndex = 21;
+            this.pictureBoxFill.TabStop = false;
             // 
             // pictureBoxSheet
             // 
-            this.pictureBoxSheet.Location = new System.Drawing.Point(162, 70);
+            this.pictureBoxSheet.Location = new System.Drawing.Point(15, 8);
             this.pictureBoxSheet.Name = "pictureBoxSheet";
             this.pictureBoxSheet.Size = new System.Drawing.Size(680, 400);
+            this.pictureBoxSheet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSheet.TabIndex = 3;
             this.pictureBoxSheet.TabStop = false;
-            this.pictureBoxSheet.Click += new System.EventHandler(this.pictureBoxSheet_Click);
             this.pictureBoxSheet.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseDown);
             this.pictureBoxSheet.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseMove);
             this.pictureBoxSheet.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseUp);
+            // 
+            // panelDesk
+            // 
+            this.panelDesk.Controls.Add(this.panelResizeSheet);
+            this.panelDesk.Controls.Add(this.pictureBoxSheet);
+            this.panelDesk.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesk.Location = new System.Drawing.Point(150, 64);
+            this.panelDesk.Name = "panelDesk";
+            this.panelDesk.Size = new System.Drawing.Size(710, 416);
+            this.panelDesk.TabIndex = 4;
+            // 
+            // panelResizeSheet
+            // 
+            this.panelResizeSheet.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelResizeSheet.Location = new System.Drawing.Point(695, 408);
+            this.panelResizeSheet.Name = "panelResizeSheet";
+            this.panelResizeSheet.Size = new System.Drawing.Size(10, 10);
+            this.panelResizeSheet.TabIndex = 4;
             // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(854, 480);
-            this.Controls.Add(this.pictureBoxSheet);
+            this.ClientSize = new System.Drawing.Size(860, 480);
+            this.Controls.Add(this.panelDesk);
             this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.panelProgram);
             this.Controls.Add(this.panel1);
@@ -549,14 +716,26 @@
             this.panelLine.ResumeLayout(false);
             this.panelBrush.ResumeLayout(false);
             this.panelProgram.ResumeLayout(false);
+            this.panelProgramControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageExpand)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollapse)).EndInit();
             this.panelSettings.ResumeLayout(false);
-            this.panelSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPipette)).EndInit();
+            this.panelSize.ResumeLayout(false);
+            this.panelSize.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarSize)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRedo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.palette1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReverse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.palette2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClearAll)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPipette)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEraser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).EndInit();
+            this.panelDesk.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -594,8 +773,21 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBoxPipette;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.TrackBar trackBar;
+        private System.Windows.Forms.TrackBar trackBarSize;
         private System.Windows.Forms.Label labelSize;
+        private System.Windows.Forms.PictureBox pictureBoxFill;
+        private System.Windows.Forms.PictureBox pictureBoxClearAll;
+        private System.Windows.Forms.PictureBox pictureBoxEraser;
+        private System.Windows.Forms.PictureBox pictureBoxReverse;
+        private System.Windows.Forms.Panel panelSize;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox imageExpand;
+        private System.Windows.Forms.PictureBox imageCollapse;
+        private System.Windows.Forms.PictureBox pictureBoxRedo;
+        private System.Windows.Forms.PictureBox pictureBoxUndo;
+        private System.Windows.Forms.Panel panelProgramControl;
+        private System.Windows.Forms.Panel panelDesk;
+        private System.Windows.Forms.Panel panelResizeSheet;
     }
 }
 
