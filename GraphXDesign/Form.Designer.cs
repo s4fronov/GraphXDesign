@@ -205,13 +205,15 @@
             this.buttonNAngular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonNAngular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNAngular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonNAngular.Image = ((System.Drawing.Image)(resources.GetObject("buttonNAngular.Image")));
+            this.buttonNAngular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonNAngular.Location = new System.Drawing.Point(0, 100);
             this.buttonNAngular.Name = "buttonNAngular";
-            this.buttonNAngular.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.buttonNAngular.Size = new System.Drawing.Size(152, 25);
             this.buttonNAngular.TabIndex = 6;
-            this.buttonNAngular.Text = "N-угольник";
+            this.buttonNAngular.Text = "   N-угольник";
             this.buttonNAngular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNAngular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonNAngular.UseVisualStyleBackColor = true;
             this.buttonNAngular.Click += new System.EventHandler(this.buttonNAngular_Click);
             // 
@@ -222,13 +224,16 @@
             this.buttonTriangleRectangular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTriangleRectangular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTriangleRectangular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonTriangleRectangular.Image = ((System.Drawing.Image)(resources.GetObject("buttonTriangleRectangular.Image")));
+            this.buttonTriangleRectangular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonTriangleRectangular.Location = new System.Drawing.Point(0, 75);
             this.buttonTriangleRectangular.Name = "buttonTriangleRectangular";
-            this.buttonTriangleRectangular.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.buttonTriangleRectangular.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.buttonTriangleRectangular.Size = new System.Drawing.Size(152, 25);
             this.buttonTriangleRectangular.TabIndex = 5;
-            this.buttonTriangleRectangular.Text = "Треугольник (прямоугольный)";
+            this.buttonTriangleRectangular.Text = "  Треугольник";
             this.buttonTriangleRectangular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTriangleRectangular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonTriangleRectangular.UseVisualStyleBackColor = true;
             this.buttonTriangleRectangular.Click += new System.EventHandler(this.buttonTriangleRectangular_Click);
             // 
@@ -239,13 +244,15 @@
             this.buttonTriangleIsosceles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTriangleIsosceles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTriangleIsosceles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonTriangleIsosceles.Image = ((System.Drawing.Image)(resources.GetObject("buttonTriangleIsosceles.Image")));
+            this.buttonTriangleIsosceles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonTriangleIsosceles.Location = new System.Drawing.Point(0, 50);
             this.buttonTriangleIsosceles.Name = "buttonTriangleIsosceles";
-            this.buttonTriangleIsosceles.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.buttonTriangleIsosceles.Size = new System.Drawing.Size(152, 25);
             this.buttonTriangleIsosceles.TabIndex = 4;
-            this.buttonTriangleIsosceles.Text = "Треугольник (равнобедренный)";
+            this.buttonTriangleIsosceles.Text = "   Треугольник";
             this.buttonTriangleIsosceles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTriangleIsosceles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonTriangleIsosceles.UseVisualStyleBackColor = true;
             this.buttonTriangleIsosceles.Click += new System.EventHandler(this.buttonTriangleIsosceles_Click);
             // 
@@ -256,13 +263,15 @@
             this.buttonSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSquare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSquare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonSquare.Image = ((System.Drawing.Image)(resources.GetObject("buttonSquare.Image")));
+            this.buttonSquare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSquare.Location = new System.Drawing.Point(0, 25);
             this.buttonSquare.Name = "buttonSquare";
-            this.buttonSquare.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.buttonSquare.Size = new System.Drawing.Size(152, 25);
             this.buttonSquare.TabIndex = 3;
-            this.buttonSquare.Text = "Прямоугольник";
+            this.buttonSquare.Text = "   Прямоугольник";
             this.buttonSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSquare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonSquare.UseVisualStyleBackColor = true;
             this.buttonSquare.Click += new System.EventHandler(this.buttonSquare_Click);
             // 
@@ -273,13 +282,15 @@
             this.buttonCircle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCircle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCircle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonCircle.Image = ((System.Drawing.Image)(resources.GetObject("buttonCircle.Image")));
+            this.buttonCircle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCircle.Location = new System.Drawing.Point(0, 0);
             this.buttonCircle.Name = "buttonCircle";
-            this.buttonCircle.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.buttonCircle.Size = new System.Drawing.Size(152, 25);
             this.buttonCircle.TabIndex = 2;
-            this.buttonCircle.Text = "Овал";
+            this.buttonCircle.Text = "   Овал";
             this.buttonCircle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCircle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonCircle.UseVisualStyleBackColor = true;
             this.buttonCircle.Click += new System.EventHandler(this.buttonCircle_Click);
             // 
@@ -290,13 +301,16 @@
             this.buttonFigure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFigure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonFigure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
+            this.buttonFigure.Image = ((System.Drawing.Image)(resources.GetObject("buttonFigure.Image")));
+            this.buttonFigure.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonFigure.Location = new System.Drawing.Point(0, 195);
             this.buttonFigure.Name = "buttonFigure";
             this.buttonFigure.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.buttonFigure.Size = new System.Drawing.Size(152, 36);
             this.buttonFigure.TabIndex = 4;
-            this.buttonFigure.Text = "Фигура";
+            this.buttonFigure.Text = "  Фигура";
             this.buttonFigure.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonFigure.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonFigure.UseVisualStyleBackColor = true;
             this.buttonFigure.Click += new System.EventHandler(this.buttonFigure_Click);
             // 
@@ -318,13 +332,15 @@
             this.buttonLineSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLineSquare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLineSquare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonLineSquare.Image = ((System.Drawing.Image)(resources.GetObject("buttonLineSquare.Image")));
+            this.buttonLineSquare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonLineSquare.Location = new System.Drawing.Point(0, 25);
             this.buttonLineSquare.Name = "buttonLineSquare";
-            this.buttonLineSquare.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.buttonLineSquare.Size = new System.Drawing.Size(152, 25);
             this.buttonLineSquare.TabIndex = 3;
-            this.buttonLineSquare.Text = "Грубая";
+            this.buttonLineSquare.Text = "   Грубая";
             this.buttonLineSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLineSquare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonLineSquare.UseVisualStyleBackColor = true;
             this.buttonLineSquare.Click += new System.EventHandler(this.buttonLineSquare_Click);
             // 
@@ -335,13 +351,15 @@
             this.buttonLineDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLineDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLineDot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonLineDot.Image = ((System.Drawing.Image)(resources.GetObject("buttonLineDot.Image")));
+            this.buttonLineDot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonLineDot.Location = new System.Drawing.Point(0, 0);
             this.buttonLineDot.Name = "buttonLineDot";
-            this.buttonLineDot.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.buttonLineDot.Size = new System.Drawing.Size(152, 25);
             this.buttonLineDot.TabIndex = 2;
-            this.buttonLineDot.Text = "Сглаженная";
+            this.buttonLineDot.Text = "   Сглаженная";
             this.buttonLineDot.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLineDot.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonLineDot.UseVisualStyleBackColor = true;
             this.buttonLineDot.Click += new System.EventHandler(this.buttonLineDot_Click);
             // 
@@ -352,13 +370,16 @@
             this.buttonLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
+            this.buttonLine.Image = ((System.Drawing.Image)(resources.GetObject("buttonLine.Image")));
+            this.buttonLine.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonLine.Location = new System.Drawing.Point(0, 104);
             this.buttonLine.Name = "buttonLine";
             this.buttonLine.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.buttonLine.Size = new System.Drawing.Size(152, 36);
             this.buttonLine.TabIndex = 2;
-            this.buttonLine.Text = "Линия";
+            this.buttonLine.Text = "  Линия";
             this.buttonLine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLine.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonLine.UseVisualStyleBackColor = true;
             this.buttonLine.Click += new System.EventHandler(this.buttonLine_Click);
             // 
@@ -380,13 +401,15 @@
             this.buttonBrushSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBrushSquare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonBrushSquare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonBrushSquare.Image = ((System.Drawing.Image)(resources.GetObject("buttonBrushSquare.Image")));
+            this.buttonBrushSquare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBrushSquare.Location = new System.Drawing.Point(0, 25);
             this.buttonBrushSquare.Name = "buttonBrushSquare";
-            this.buttonBrushSquare.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.buttonBrushSquare.Size = new System.Drawing.Size(152, 25);
             this.buttonBrushSquare.TabIndex = 3;
-            this.buttonBrushSquare.Text = "Грубая";
+            this.buttonBrushSquare.Text = "   Грубая";
             this.buttonBrushSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBrushSquare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonBrushSquare.UseVisualStyleBackColor = true;
             this.buttonBrushSquare.Click += new System.EventHandler(this.buttonBrushSquare_Click);
             // 
@@ -397,13 +420,15 @@
             this.buttonBrushDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBrushDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonBrushDot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonBrushDot.Image = ((System.Drawing.Image)(resources.GetObject("buttonBrushDot.Image")));
+            this.buttonBrushDot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBrushDot.Location = new System.Drawing.Point(0, 0);
             this.buttonBrushDot.Name = "buttonBrushDot";
-            this.buttonBrushDot.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.buttonBrushDot.Size = new System.Drawing.Size(152, 25);
             this.buttonBrushDot.TabIndex = 2;
-            this.buttonBrushDot.Text = "Сглаженная";
+            this.buttonBrushDot.Text = "   Сглаженная";
             this.buttonBrushDot.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBrushDot.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonBrushDot.UseVisualStyleBackColor = true;
             this.buttonBrushDot.Click += new System.EventHandler(this.buttonBrushDot_Click);
             // 
@@ -414,13 +439,16 @@
             this.buttonBrush.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBrush.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonBrush.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
+            this.buttonBrush.Image = ((System.Drawing.Image)(resources.GetObject("buttonBrush.Image")));
+            this.buttonBrush.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonBrush.Location = new System.Drawing.Point(0, 13);
             this.buttonBrush.Name = "buttonBrush";
             this.buttonBrush.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.buttonBrush.Size = new System.Drawing.Size(152, 36);
             this.buttonBrush.TabIndex = 0;
-            this.buttonBrush.Text = "Кисть";
+            this.buttonBrush.Text = "  Кисть";
             this.buttonBrush.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBrush.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonBrush.UseVisualStyleBackColor = true;
             this.buttonBrush.Click += new System.EventHandler(this.buttonBrush_Click);
             // 
