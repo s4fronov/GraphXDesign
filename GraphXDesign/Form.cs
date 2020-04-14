@@ -187,12 +187,12 @@ namespace GraphXDesign
 
         private void buttonTriangleIsosceles_Click(object sender, EventArgs e)
         {
-
+            tool = new TrianglesamesizesTool();
         }
 
         private void buttonTriangleRectangular_Click(object sender, EventArgs e)
         {
-
+            tool = new TriangleRectangularTool();
         }
 
         private void buttonNAngular_Click(object sender, EventArgs e)
