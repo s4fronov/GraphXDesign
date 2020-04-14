@@ -37,7 +37,7 @@ namespace GraphXDesign
                 tmp = new Bitmap(bmp);
                 x2 = e.X;
                 y2 = e.Y;
-                square.DrawSquare(bmp, x1, y1, x2, y2);
+                square.Draw(tmp);
                 sheet.Image = tmp;
             }
 

@@ -37,10 +37,9 @@ namespace GraphXDesign
                 tmp = new Bitmap(bmp);
                 x2 = e.X;
                 y2 = e.Y;
-                rectangle.DrawRectangle(tmp, x1, y1, x2, y2);
+                rectangle.Draw(tmp);
                 sheet.Image = tmp;
             }
-
         }
         public void MouseUp(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
         {
