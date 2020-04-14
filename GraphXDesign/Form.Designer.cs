@@ -288,7 +288,7 @@
             this.buttonFigure.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonFigure.FlatAppearance.BorderSize = 0;
             this.buttonFigure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFigure.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonFigure.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonFigure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
             this.buttonFigure.Location = new System.Drawing.Point(0, 195);
             this.buttonFigure.Name = "buttonFigure";
@@ -350,7 +350,7 @@
             this.buttonLine.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonLine.FlatAppearance.BorderSize = 0;
             this.buttonLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLine.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
             this.buttonLine.Location = new System.Drawing.Point(0, 104);
             this.buttonLine.Name = "buttonLine";
@@ -412,7 +412,7 @@
             this.buttonBrush.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonBrush.FlatAppearance.BorderSize = 0;
             this.buttonBrush.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBrush.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBrush.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonBrush.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
             this.buttonBrush.Location = new System.Drawing.Point(0, 13);
             this.buttonBrush.Name = "buttonBrush";
@@ -503,7 +503,7 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label3.Location = new System.Drawing.Point(13, 5);
             this.label3.Name = "label3";
@@ -514,14 +514,15 @@
             // 
             // labelSize
             // 
-            this.labelSize.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelSize.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelSize.Location = new System.Drawing.Point(118, 5);
+            this.labelSize.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelSize.Location = new System.Drawing.Point(118, 4);
             this.labelSize.Name = "labelSize";
             this.labelSize.Size = new System.Drawing.Size(33, 18);
             this.labelSize.TabIndex = 20;
             this.labelSize.Text = "5";
-            this.labelSize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelSize.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // trackBarSize
             // 

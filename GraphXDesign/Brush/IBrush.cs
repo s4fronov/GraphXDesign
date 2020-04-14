@@ -13,5 +13,6 @@ namespace GraphXDesign
         Color BrushColor { get; set; }
         void DrawDot(Bitmap bmp, int x, int y);
         void DrawLine(Bitmap bmp, int x1, int y1, int x2, int y2);
+        
     }
 }

@@ -18,11 +18,10 @@ namespace GraphXDesign
         IBrush brush;
         bool expandActive;
         bool cursorActive;
-        Bitmap boxSheet;
         ITool tool;
         private Point MouseHook;
         private Point MouseHookSheet;
-
+        Canvas canvas;
 
         public Form()
         {
@@ -49,7 +48,7 @@ namespace GraphXDesign
             panelLine.Visible = false;
             panelFigure.Visible = false;
             pictureBoxSheet.BackColor = Color.White;
-            boxSheet = new Bitmap(pictureBoxSheet.Width, pictureBoxSheet.Height);
+            canvas = new Canvas(pictureBoxSheet.Width, pictureBoxSheet.Height);
         }
 
         // Методы меню
@@ -141,12 +140,14 @@ namespace GraphXDesign
 
         private void buttonBrushDot_Click(object sender, EventArgs e)
         {
+            tool = new PenTool();
             brush = new CircleBrush(brush);
             brush.BrushColor = palette1.BackColor;
         }
 
         private void buttonBrushSquare_Click(object sender, EventArgs e)
         {
+            tool = new PenTool();
             brush = new SquareBrush(brush);
             brush.BrushColor = palette1.BackColor;
         }
@@ -158,14 +159,14 @@ namespace GraphXDesign
 
         private void buttonLineDot_Click(object sender, EventArgs e)
         {
-
-            brush.BrushColor = palette1.BackColor;
+            brush = new CircleBrush(brush);
+            tool = new LineTool();
         }
 
         private void buttonLineSquare_Click(object sender, EventArgs e)
         {
-
-            brush.BrushColor = palette1.BackColor;
+            brush = new SquareBrush(brush);
+            tool = new LineTool();
         }
 
         private void buttonFigure_Click(object sender, EventArgs e)
@@ -180,7 +181,8 @@ namespace GraphXDesign
 
         private void buttonSquare_Click(object sender, EventArgs e)
         {
-
+            
+            tool = new RectangleTool();
         }
 
         private void buttonTriangleIsosceles_Click(object sender, EventArgs e)
@@ -195,14 +197,14 @@ namespace GraphXDesign
 
         private void buttonNAngular_Click(object sender, EventArgs e)
         {
-
+            tool = new SquareTool();
         }
 
         // Методы основных событий
 
         private void pictureBoxSheet_MouseDown(object sender, MouseEventArgs e)
         {
-            tool.MouseDown((PictureBox)sender, boxSheet, brush, e);
+            tool.MouseDown((PictureBox)sender, canvas, brush, e);
         }
 
         private void pictureBoxClearAll_Click(object sender, EventArgs e)
@@ -227,12 +229,12 @@ namespace GraphXDesign
 
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
         {
-            tool.MouseMove((PictureBox)sender, boxSheet, brush, e);
+            tool.MouseMove((PictureBox)sender, canvas, brush, e);
         }
 
         private void pictureBoxSheet_MouseUp(object sender, MouseEventArgs e)
         {
-            tool.MouseUp((PictureBox)sender, boxSheet, brush, e);
+            tool.MouseUp((PictureBox)sender, canvas, brush, e);
         }
 
         private void trackBarSize_Scroll(object sender, EventArgs e)
