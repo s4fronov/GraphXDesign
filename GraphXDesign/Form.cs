@@ -198,7 +198,7 @@ namespace GraphXDesign
 
         private void buttonNAngular_Click(object sender, EventArgs e)
         {
-
+            tool = new SquareTool();
         }
 
         // Методы основных событий
@@ -206,6 +206,7 @@ namespace GraphXDesign
         private void pictureBoxSheet_MouseDown(object sender, MouseEventArgs e)
         {
             tool.MouseDown((PictureBox)sender, boxSheet, brush, e);
+            
         }
 
         private void pictureBoxClearAll_Click(object sender, EventArgs e)
@@ -231,11 +232,13 @@ namespace GraphXDesign
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
         {
             tool.MouseMove((PictureBox)sender, boxSheet, brush, e);
+            
         }
 
         private void pictureBoxSheet_MouseUp(object sender, MouseEventArgs e)
         {
             tool.MouseUp((PictureBox)sender, boxSheet, brush, e);
+            boxSheet = new Bitmap(pictureBoxSheet.Image);
         }
 
         private void trackBarSize_Scroll(object sender, EventArgs e)

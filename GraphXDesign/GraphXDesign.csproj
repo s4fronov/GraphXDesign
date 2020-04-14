@@ -51,6 +51,7 @@
     <Compile Include="Brush\SquareBrush.cs" />
     <Compile Include="Figures\IFigure.cs" />
     <Compile Include="Figures\Line.cs" />
+    <Compile Include="Figures\Square.cs" />
     <Compile Include="Figures\Rectangle.cs" />
     <Compile Include="Form.cs">
       <SubType>Form</SubType>
@@ -63,6 +64,7 @@
     <Compile Include="Tools\ITool.cs" />
     <Compile Include="Tools\LineTool.cs" />
     <Compile Include="Tools\PenTool.cs" />
+    <Compile Include="Tools\SquareTool.cs" />
     <Compile Include="Tools\RectangleTool.cs" />
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>

@@ -8,13 +8,13 @@ using System.Drawing;
 
 namespace GraphXDesign
 {
-    public class RectangleTool : ITool
+    public class SquareTool : ITool
     {
         bool cursorActive;
         int x1, y1, x2, y2;
         Bitmap tmp;
 
-        public RectangleTool()
+        public SquareTool()
         {
             cursorActive = false;
         }
@@ -31,13 +31,13 @@ namespace GraphXDesign
         }
         public void MouseMove(PictureBox sheet, Bitmap bmp, IBrush brush, MouseEventArgs e)
         {
-            Rectangle rectangle = new Rectangle(x1, y1, x2, y2, brush);
+            Square square = new Square(x1, y1, x2, y2, brush);
             if (cursorActive == true)
             {
                 tmp = new Bitmap(bmp);
                 x2 = e.X;
                 y2 = e.Y;
-                rectangle.DrawRectangle(tmp, x1, y1, x2, y2);
+                square.DrawSquare(bmp, x1, y1, x2, y2);
                 sheet.Image = tmp;
             }
 
