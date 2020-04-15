@@ -131,6 +131,36 @@ namespace GraphXDesign
 
         }
 
+        private void panelResizeSheet_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (cursorActive == false)
+            {
+                MouseHook = e.Location;
+                cursorActive = true;
+            }
+        }
+
+        private void panelResizeSheet_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                MouseHookSheet = panelResizeSheet.Location;
+                panelResizeSheet.Location += (Size)e.Location;
+                pictureBoxSheet.Size += (Size)e.Location;
+            }
+        }
+
+        private void panelResizeSheet_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (cursorActive == true)
+            {
+                canvas.Width = pictureBoxSheet.Width;
+                canvas.Height = pictureBoxSheet.Height;
+                canvas = new Canvas(pictureBoxSheet.Width, pictureBoxSheet.Height); // Нужно присвоить содержимому в пикчербоксе
+                cursorActive = false;
+            }
+        }
+
         // Методы панели инструментов
 
         private void buttonBrush_Click(object sender, EventArgs e)

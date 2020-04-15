@@ -713,11 +713,14 @@
             // 
             // panelResizeSheet
             // 
-            this.panelResizeSheet.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelResizeSheet.BackColor = System.Drawing.Color.Maroon;
             this.panelResizeSheet.Location = new System.Drawing.Point(695, 408);
             this.panelResizeSheet.Name = "panelResizeSheet";
             this.panelResizeSheet.Size = new System.Drawing.Size(10, 10);
             this.panelResizeSheet.TabIndex = 4;
+            this.panelResizeSheet.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelResizeSheet_MouseDown);
+            this.panelResizeSheet.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelResizeSheet_MouseMove);
+            this.panelResizeSheet.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelResizeSheet_MouseUp);
             // 
             // Form
             // 
