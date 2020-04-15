@@ -28,7 +28,7 @@ namespace GraphXDesign
             y1 = e.Y;
             x2 = e.X;
             y2 = e.Y;
-            sheet.Image = canvas.Bmp;
+            canvas.WriteToPictureBox(sheet);
         }
         public void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
@@ -38,8 +38,8 @@ namespace GraphXDesign
                 canvas.LoadFromCache();
                 x2 = e.X;
                 y2 = e.Y;
-                triangle2.DrawTriangleRectangular(canvas.Bmp, x1, y1, x2, y2); ;
-                sheet.Image = canvas.Bmp;
+                triangle2.DrawTriangleRectangular(canvas, x1, y1, x2, y2); ;
+                canvas.WriteToPictureBox(sheet);
             }
         }
         public void MouseUp(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
@@ -47,7 +47,7 @@ namespace GraphXDesign
             cursorActive = false;
             x2 = e.X;
             y2 = e.Y;
-            sheet.Image = canvas.Bmp;
+            canvas.WriteToPictureBox(sheet);
         }
     }
 

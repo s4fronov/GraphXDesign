@@ -35,16 +35,16 @@ namespace GraphXDesign
             Yr = y1;
             Brush = brush;
         }
-        public void DrawSquare(Bitmap bmp, int x1, int y1, int x2, int y2)
+        public void DrawSquare(Canvas canvas, int x1, int y1, int x2, int y2)
         {
-            Brush.DrawLine(bmp, X1, Y1, Xl, Yl);
-            Brush.DrawLine(bmp, X1, Y1, Xr, Yr);
-            Brush.DrawLine(bmp, Xd, Yd, Xl, Yl);
-            Brush.DrawLine(bmp, Xd, Yd, Xr, Yr);
+            Brush.DrawLine(canvas, X1, Y1, Xl, Yl);
+            Brush.DrawLine(canvas, X1, Y1, Xr, Yr);
+            Brush.DrawLine(canvas, Xd, Yd, Xl, Yl);
+            Brush.DrawLine(canvas, Xd, Yd, Xr, Yr);
         }
-        public void Draw(Bitmap bmp)
+        public void Draw(Canvas canvas)
         {
-            DrawSquare(bmp, X1, Y1, Xl, Yl);
+            DrawSquare(canvas, X1, Y1, Xl, Yl);
         }
     }
 }

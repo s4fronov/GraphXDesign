@@ -25,9 +25,9 @@ namespace GraphXDesign
             Brush = brush;
         }
 
-        public void Draw(Bitmap bmp)
+        public void Draw(Canvas canvas)
         {
-            Brush.DrawLine(bmp, X1, Y1, X2, Y2);
+            Brush.DrawLine(canvas, X1, Y1, X2, Y2);
         }
     }
 }

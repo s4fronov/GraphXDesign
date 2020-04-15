@@ -39,8 +39,8 @@ namespace GraphXDesign
                 canvas.LoadFromCache();
                 x2 = e.X;
                 y2 = e.Y;
-                triangle1.DrawTrianglesamesizes(canvas.Bmp, x1, y1, x2, y2); ;
-                sheet.Image = canvas.Bmp;
+                triangle1.DrawTrianglesamesizes(canvas, x1, y1, x2, y2); ;
+                canvas.WriteToPictureBox(sheet);
             }
         }
         public void MouseUp(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)

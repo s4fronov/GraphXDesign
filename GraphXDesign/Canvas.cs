@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace GraphXDesign
 {
@@ -43,5 +44,10 @@ namespace GraphXDesign
                 if (y >= 0 && y < Height)
                     Bmp.SetPixel(x, y, color);
         }  
+
+        public void WriteToPictureBox(PictureBox pb)
+        {
+            pb.Image = Bmp;
+        }
     }
 }
