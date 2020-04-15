@@ -25,8 +25,8 @@ namespace GraphXDesign
             cursorActive = true;
             x1 = e.X;
             y1 = e.Y;
-            brush.DrawDot(canvas.Bmp, e.X, e.Y);
-            sheet.Image = canvas.Bmp;
+            brush.DrawDot(canvas, e.X, e.Y);
+            canvas.WriteToPictureBox(sheet);
         }
         public void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
@@ -34,10 +34,10 @@ namespace GraphXDesign
             {
                 x2 = e.X;
                 y2 = e.Y;
-                brush.DrawLine(canvas.Bmp, x1, y1, x2, y2);
+                brush.DrawLine(canvas, x1, y1, x2, y2);
                 x1 = x2;
                 y1 = y2;
-                sheet.Image = canvas.Bmp;
+                canvas.WriteToPictureBox(sheet);
             }
         }
         public void MouseUp(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)

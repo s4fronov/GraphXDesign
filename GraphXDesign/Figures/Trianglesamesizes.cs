@@ -61,30 +61,30 @@ namespace GraphXDesign
 
 
 
-        public void DrawTrianglesamesizes(Bitmap bmp, int x1, int y1, int x2, int y2)
+        public void DrawTrianglesamesizes(Canvas canvas, int x1, int y1, int x2, int y2)
         {
             if (x2 >= x1)
             {
 
-                Brush.DrawLine(bmp, X1, Y1, Xr, Yr);
-                Brush.DrawLine(bmp, X1, Y1, Xh, Yh);
-                Brush.DrawLine(bmp, Xh, Yh, Xr, Yr);
+                Brush.DrawLine(canvas, X1, Y1, Xr, Yr);
+                Brush.DrawLine(canvas, X1, Y1, Xh, Yh);
+                Brush.DrawLine(canvas, Xh, Yh, Xr, Yr);
             }
             else
             {
 
 
-                Brush.DrawLine(bmp, X1, Y1, Xl, Yl);
-                Brush.DrawLine(bmp, X1, Y1, Xh, Yh);
-                Brush.DrawLine(bmp, Xh, Yh, Xl, Yl);
+                Brush.DrawLine(canvas, X1, Y1, Xl, Yl);
+                Brush.DrawLine(canvas, X1, Y1, Xh, Yh);
+                Brush.DrawLine(canvas, Xh, Yh, Xl, Yl);
             }
 
         }
 
 
-        public void Draw(Bitmap bmp)
+        public void Draw(Canvas canvas)
             {
-                DrawTrianglesamesizes(bmp, X1, Y1, Xl, Yl);
+                DrawTrianglesamesizes(canvas, X1, Y1, Xl, Yl);
             }
         
     }

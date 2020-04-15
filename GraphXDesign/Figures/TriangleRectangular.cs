@@ -41,18 +41,18 @@ namespace GraphXDesign
 
 
 
-        public void DrawTriangleRectangular(Bitmap bmp, int x1, int y1, int x2, int y2)
+        public void DrawTriangleRectangular(Canvas canvas, int x1, int y1, int x2, int y2)
         {
 
-            Brush.DrawLine(bmp, X1, Y1, Xr, Yr);
-            Brush.DrawLine(bmp, X1, Y1, Xh, Yh);
-            Brush.DrawLine(bmp, Xh, Yh, Xr, Yr);
+            Brush.DrawLine(canvas, X1, Y1, Xr, Yr);
+            Brush.DrawLine(canvas, X1, Y1, Xh, Yh);
+            Brush.DrawLine(canvas, Xh, Yh, Xr, Yr);
         }
 
 
-        public void Draw(Bitmap bmp)
+        public void Draw(Canvas canvas)
         {
-            DrawTriangleRectangular(bmp, X1, Y1, Xl, Yl);
+            DrawTriangleRectangular(canvas, X1, Y1, Xl, Yl);
         }
 
     }
