@@ -25,29 +25,60 @@ namespace GraphXDesign
 
         public Trianglesamesizes(int x1, int y1, int x2, int y2, IBrush brush)
         {
-            
-            X1 = x1;
-            Y1 = y1;
-            X2 = x2;
-            Y2 = y2;
-            Xl = x1;
-            Yl = y2;
-            Xr = x2;
-            Yr = y1;
-            Xh = (x1)+Math.Abs((x2 - x1)/2);
-            Yh = y2-((int)(Math.Sqrt(3.0) * Math.Abs((x2 - x1) / 2))); 
+            if (x2 >= x1)
+            {
 
-            Brush = brush;
+                X1 = x1;
+                Y1 = y1;
+                X2 = x2;
+                Y2 = y2;
+                Xl = x1;
+                Yl = y2;
+                Xr = x2;
+                Yr = y1;
+                Xh = (x1) + Math.Abs((x2 - x1) / 2);
+                Yh = y2 - ((int)(Math.Sqrt(3.0) * Math.Abs((x2 - x1) / 2)));
+
+                Brush = brush;
+            }
+            else
+            {
+                X1 = x1;
+                Y1 = y1;
+                X2 = x2;
+                Y2 = y2;
+                Xl = x2;
+                Yl = y1;
+                Xr = x1;
+                Yr = y2;
+                Xh = (x1) - Math.Abs((x1 - x2) / 2);
+                Yh = y2 - ((int)(Math.Sqrt(3.0) * Math.Abs((x1 - x2) / 2)));
+
+                Brush = brush;
+            }
+
         }
 
 
 
         public void DrawTrianglesamesizes(Bitmap bmp, int x1, int y1, int x2, int y2)
         {
-           
-            Brush.DrawLine(bmp, X1, Y1, Xr, Yr);
-            Brush.DrawLine(bmp, X1, Y1, Xh, Yh);
-            Brush.DrawLine(bmp, Xh, Yh, Xr, Yr);
+            if (x2 >= x1)
+            {
+
+                Brush.DrawLine(bmp, X1, Y1, Xr, Yr);
+                Brush.DrawLine(bmp, X1, Y1, Xh, Yh);
+                Brush.DrawLine(bmp, Xh, Yh, Xr, Yr);
+            }
+            else
+            {
+
+
+                Brush.DrawLine(bmp, X1, Y1, Xl, Yl);
+                Brush.DrawLine(bmp, X1, Y1, Xh, Yh);
+                Brush.DrawLine(bmp, Xh, Yh, Xl, Yl);
+            }
+
         }
 
 
