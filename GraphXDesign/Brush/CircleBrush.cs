@@ -33,17 +33,6 @@ namespace GraphXDesign
             //координаты центра
             double xCenter = (x1 + x2) / (double)2;
             double yCenter = (y1 + y2) / (double)2;
- 
-
-            //отрезаем то, что выходит за пределы битмапа
-            if (x1 < 0)
-                x1 = 0;
-            if (x2 >= canvas.Width)
-                x2 = canvas.Width - 1;
-            if (y1 < 0)
-                y1 = 0;
-            if (y2 >= canvas.Height)
-                y2 = canvas.Height - 1;
 
             double radius = BrushSize / (double)2;
             //заполняем с проверкой на расстояние от центра
@@ -56,61 +45,13 @@ namespace GraphXDesign
                 }
             }
         }
-        public void DrawLine(Canvas canvas, int x1, int y1, int x2, int y2)
+        public void DrawLine(Canvas canvas, int x1, int y1, int x2, int y2, bool drawFirstDot = true)
         {
-            int deltaX = x2 - x1;
-            int deltaY = y2 - y1;
+            PathCalculator lineCalc = new PathCalculator();
+            List<Tuple<int, int>> dotList = lineCalc.CalculateLinePath(x1, y1, x2, y2);
 
-            //если 2 крайние точки совпадают просто рисую точку
-            if (deltaX == 0 && deltaY == 0)
-            {
-                DrawDot(canvas, x1, y1);
-                return;
-            }
-
-            if (Math.Abs(deltaX) >= Math.Abs(deltaY))
-            {
-                //идем по оси х и считаем на каждом шаге y
-                int y;
-                double dydx = (double)deltaY / deltaX;
-
-                //двигаемся слева направо
-                if (x1 <= x2)
-                    for (int x = x1; x <= x2; x++)
-                    {
-                        y = (int)(Math.Round((x - x1) * dydx)) + y1;
-                        DrawDot(canvas, x, y);
-                    }
-                //справа налево
-                else
-                    for (int x = x1; x >= x2; x--)
-                    {
-                        y = (int)(Math.Round((x - x1) * dydx)) + y1;
-                        DrawDot(canvas, x, y);
-                    }
-            }
-            else
-            {
-                //идем по оси y и считаем на каждом шаге x
-                int x;
-                double dxdy = (double)deltaX / deltaY;
-                //сверху вниз
-                if (y1 <= y2)
-                    for (int y = y1; y <= y2; y++)
-                    {
-                        x = (int)(Math.Round((y - y1) * dxdy)) + x1;
-                        DrawDot(canvas, x, y);
-                    }
-                //снизу вверх
-                else
-                    for (int y = y1; y >= y2; y--)
-                    {
-                        x = (int)(Math.Round((y - y1) * dxdy)) + x1;
-                        DrawDot(canvas, x, y);
-                    }
-            }
-
+            for (int i = 0; i < dotList.Count; i++)
+                DrawDot(canvas, dotList[i].Item1, dotList[i].Item2);
         }
-
     }
 }

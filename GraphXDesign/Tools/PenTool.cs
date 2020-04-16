@@ -34,7 +34,7 @@ namespace GraphXDesign
             {
                 x2 = e.X;
                 y2 = e.Y;
-                brush.DrawLine(canvas, x1, y1, x2, y2);
+                brush.DrawLine(canvas, x1, y1, x2, y2, false);
                 x1 = x2;
                 y1 = y2;
                 canvas.WriteToPictureBox(sheet);
