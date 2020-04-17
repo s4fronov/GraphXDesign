@@ -16,9 +16,9 @@ namespace GraphXDesign
         Color paintColor2;
         int brushSize;
         IBrush brush;
+        ITool tool;
         bool expandActive;
         bool cursorActive;
-        ITool tool;
         private Point MouseHook;
         private Point MouseHookSheet;
         Canvas canvas;
@@ -32,9 +32,14 @@ namespace GraphXDesign
         {
             hideSubMenu();
             startProgram();
-            pictureBoxSheet.SizeMode = PictureBoxSizeMode.StretchImage;
+            panelBrush.Visible = false;
+            panelLine.Visible = false;
+            panelFigure.Visible = false;
+            pictureBoxSheet.SizeMode = PictureBoxSizeMode.Normal;
             paintColor1 = palette1.BackColor;
             paintColor2 = palette2.BackColor;
+            pictureBoxSheet.Image = null;
+            pictureBoxSheet.BackColor = Color.White;
             brushSize = 5;
             expandActive = false;
             cursorActive = false;
@@ -44,10 +49,6 @@ namespace GraphXDesign
 
         private void startProgram()
         {
-            panelBrush.Visible = false;
-            panelLine.Visible = false;
-            panelFigure.Visible = false;
-            pictureBoxSheet.BackColor = Color.White;
             canvas = new Canvas(pictureBoxSheet.Width, pictureBoxSheet.Height);
         }
 
@@ -154,9 +155,8 @@ namespace GraphXDesign
         {
             if (cursorActive == true)
             {
-                canvas.Width = pictureBoxSheet.Width;
-                canvas.Height = pictureBoxSheet.Height;
-                canvas = new Canvas(pictureBoxSheet.Width, pictureBoxSheet.Height); // Нужно присвоить содержимому в пикчербоксе
+                pictureBoxSheet.Size += (Size)e.Location;
+                startProgram();
                 cursorActive = false;
             }
         }
@@ -239,7 +239,8 @@ namespace GraphXDesign
 
         private void pictureBoxClearAll_Click(object sender, EventArgs e)
         {
-            startProgram(); //что-то еще нужно добавить, чтобы обновлялся по клику, а не после того, как коснешься кистью листа
+            pictureBoxSheet.Image = null; 
+            startProgram();
         }
 
         private void pictureBoxReverse_Click(object sender, EventArgs e)
@@ -254,7 +255,8 @@ namespace GraphXDesign
         private void pictureBoxEraser_Click(object sender, EventArgs e)
         {
             brush = new SquareBrush(brush);
-            brush.BrushColor = Color.White;
+            tool = new PenTool();
+            brush.BrushColor = pictureBoxSheet.BackColor;
         }
 
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)

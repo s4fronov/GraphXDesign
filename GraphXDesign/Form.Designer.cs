@@ -75,6 +75,7 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panelDesk = new System.Windows.Forms.Panel();
             this.panelResizeSheet = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -187,6 +188,7 @@
             // panelFigure
             // 
             this.panelFigure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panelFigure.Controls.Add(this.button1);
             this.panelFigure.Controls.Add(this.buttonNAngular);
             this.panelFigure.Controls.Add(this.buttonTriangleRectangular);
             this.panelFigure.Controls.Add(this.buttonTriangleIsosceles);
@@ -195,7 +197,7 @@
             this.panelFigure.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelFigure.Location = new System.Drawing.Point(0, 231);
             this.panelFigure.Name = "panelFigure";
-            this.panelFigure.Size = new System.Drawing.Size(152, 130);
+            this.panelFigure.Size = new System.Drawing.Size(152, 155);
             this.panelFigure.TabIndex = 5;
             // 
             // buttonNAngular
@@ -722,6 +724,24 @@
             this.panelResizeSheet.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelResizeSheet_MouseMove);
             this.panelResizeSheet.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelResizeSheet_MouseUp);
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 125);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(152, 25);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "   N-угольник";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -820,6 +840,7 @@
         private System.Windows.Forms.Panel panelProgramControl;
         private System.Windows.Forms.Panel panelDesk;
         private System.Windows.Forms.Panel panelResizeSheet;
+        private System.Windows.Forms.Button button1;
     }
 }
 
