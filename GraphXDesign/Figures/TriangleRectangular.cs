@@ -15,10 +15,7 @@ namespace GraphXDesign
         public int Y2 { get; set; }
         public int Xl { get; set; }
         public int Yl { get; set; }
-        public int Xr { get; set; }
-        public int Yr { get; set; }
-        public int Xh { get; set; }
-        public int Yh { get; set; }
+        
 
         public IBrush Brush { get; set; }
 
@@ -32,10 +29,8 @@ namespace GraphXDesign
             Y2 = y2;
             Xl = x1;
             Yl = y2;
-            Xr = x2;
-            Yr = y1;
-            Xh = x1;
-            Yh = y1 - Math.Abs(y1 - y2);
+            
+           
             Brush = brush;
         }
 
@@ -44,15 +39,15 @@ namespace GraphXDesign
         public void DrawTriangleRectangular(Canvas canvas, int x1, int y1, int x2, int y2)
         {
 
-            Brush.DrawLine(canvas, X1, Y1, Xr, Yr);
-            Brush.DrawLine(canvas, X1, Y1, Xh, Yh);
-            Brush.DrawLine(canvas, Xh, Yh, Xr, Yr);
+            Brush.DrawLine(canvas, X1, Y1, X2, Y2);
+            Brush.DrawLine(canvas, X1, Y1, Xl, Yl);
+            Brush.DrawLine(canvas, Xl, Yl, X2, Y2);
         }
 
 
         public void Draw(Canvas canvas)
         {
-            DrawTriangleRectangular(canvas, X1, Y1, Xl, Yl);
+            DrawTriangleRectangular(canvas, X1, Y1, X2, Y2);
         }
 
     }
