@@ -63,7 +63,6 @@ namespace GraphXDesign
                         dotList.Add(new Tuple<int, int>(x, y));
                     }
             }
-
             return dotList;
         }
     }

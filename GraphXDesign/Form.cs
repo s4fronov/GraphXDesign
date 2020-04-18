@@ -15,6 +15,7 @@ namespace GraphXDesign
         Color paintColor1;
         Color paintColor2;
         int brushSize;
+        int n_angle;
         IBrush brush;
         ITool tool;
         bool expandActive;
@@ -41,6 +42,7 @@ namespace GraphXDesign
             pictureBoxSheet.Image = null;
             pictureBoxSheet.BackColor = Color.White;
             brushSize = 5;
+            n_angle = 5; //!!!!!!!!!!!!
             expandActive = false;
             cursorActive = false;
             brush = new CircleBrush(brushSize, paintColor1);
@@ -206,7 +208,7 @@ namespace GraphXDesign
 
         private void buttonCircle_Click(object sender, EventArgs e)
         {
-
+            tool = new EllipsTool();
         }
 
         private void buttonSquare_Click(object sender, EventArgs e)
@@ -227,7 +229,9 @@ namespace GraphXDesign
 
         private void buttonNAngular_Click(object sender, EventArgs e)
         {
-            tool = new SquareTool();
+            tool = new NgonTool();
+            
+            //MessageBox.TextBox
         }
 
         // Методы основных событий

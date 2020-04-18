@@ -51,6 +51,8 @@
     <Compile Include="Brush\IBrush.cs" />
     <Compile Include="Brush\SquareBrush.cs" />
     <Compile Include="Canvas.cs" />
+    <Compile Include="Figures\Ellips.cs" />
+    <Compile Include="Figures\N-gon.cs" />
     <Compile Include="Figures\TriangleRectangular.cs" />
     <Compile Include="Figures\Trianglesamesizes.cs" />
     <Compile Include="Figures\IFigure.cs" />
@@ -66,6 +68,8 @@
     <Compile Include="PathCalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\EllipsTool.cs" />
+    <Compile Include="Tools\NgonTool.cs" />
     <Compile Include="Tools\TriangleRectangularTool.cs" />
     <Compile Include="Tools\TrianglesamesizesTool.cs" />
     <Compile Include="Tools\ITool.cs" />
