@@ -278,5 +278,10 @@ namespace GraphXDesign
             labelSize.Text = trackBarSize.Value + "";
             brush.BrushSize = Convert.ToInt32(labelSize.Text);
         }
+
+        private void Square_Click(object sender, EventArgs e)
+        {
+            tool = new SquareTool();
+        }
     }
 }
