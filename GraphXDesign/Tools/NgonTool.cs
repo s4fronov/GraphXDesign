@@ -8,43 +8,46 @@ using System.Drawing;
 
 namespace GraphXDesign
 {
-    public class PenTool:ITool
+    public class NgonTool:ITool
     {
-        //какие то штуки, которые нужны для конкретного инструмента
         bool cursorActive;
-        int x1, y1, x2, y2;
-
-        public PenTool()
+        int x1, y1, x2, y2, n;
+        public NgonTool(int n)
         {
-            cursorActive = false; 
+            cursorActive = false;
+            this.n = n;
         }
 
-        //весь код для рисования формы перенесен сюда полностью
         public void MouseDown(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
+            canvas.SaveToCache();
             cursorActive = true;
             x1 = e.X;
             y1 = e.Y;
-            brush.DrawDot(canvas, e.X, e.Y);
+            x2 = e.X;
+            y2 = e.Y;
             canvas.WriteToPictureBox(sheet);
         }
+
         public void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
+            N_gon ngon = new N_gon(x1, y1, x2, y2,n, brush);
             if (cursorActive == true)
             {
+                canvas.LoadFromCache();
                 x2 = e.X;
                 y2 = e.Y;
-                brush.DrawLine(canvas, x1, y1, x2, y2, false);
-                x1 = x2;
-                y1 = y2;
+                ngon.Draw(canvas);
                 canvas.WriteToPictureBox(sheet);
             }
         }
+
         public void MouseUp(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
             cursorActive = false;
             x2 = e.X;
             y2 = e.Y;
+            canvas.WriteToPictureBox(sheet);
         }
     }
 }

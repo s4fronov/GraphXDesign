@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Windows.Forms;
 
 namespace GraphXDesign
@@ -25,18 +26,22 @@ namespace GraphXDesign
 
         public void SaveToCache()
         {
-            Cache = new Bitmap(Bmp);
+            Cache = (Bitmap)Bmp.Clone();
         }
 
         public void LoadFromCache()
         {
-            Bmp = new Bitmap(Cache);
+            Bmp = (Bitmap)Cache.Clone();
         }
 
-        /*public Color GetPixel(int x, int y)
+        public Color GetPixel(int x, int y)
         {
-
-        }*/
+            if (x >= 0 && x < Width)
+                if (y >= 0 && y < Height)
+                    return Bmp.GetPixel(x, y);
+                    return Color.White;
+                        
+        }
 
         public void SetPixel(int x, int y, Color color)
         {

@@ -15,10 +15,13 @@ namespace GraphXDesign
         Color paintColor1;
         Color paintColor2;
         int brushSize;
+        int n;
         IBrush brush;
+        ITool tool;
+        ITool toolTmp;
+        int option; // 0 - круг, 1 - квадрат
         bool expandActive;
         bool cursorActive;
-        ITool tool;
         private Point MouseHook;
         private Point MouseHookSheet;
         Canvas canvas;
@@ -32,10 +35,16 @@ namespace GraphXDesign
         {
             hideSubMenu();
             startProgram();
-            pictureBoxSheet.SizeMode = PictureBoxSizeMode.StretchImage;
+            panelBrush.Visible = false;
+            panelLine.Visible = false;
+            panelFigure.Visible = false;
+            pictureBoxSheet.SizeMode = PictureBoxSizeMode.Normal;
             paintColor1 = palette1.BackColor;
             paintColor2 = palette2.BackColor;
+            pictureBoxSheet.Image = null;
+            pictureBoxSheet.BackColor = Color.White;
             brushSize = 5;
+            numericUpDown1.Value = 5;
             expandActive = false;
             cursorActive = false;
             brush = new CircleBrush(brushSize, paintColor1);
@@ -44,10 +53,6 @@ namespace GraphXDesign
 
         private void startProgram()
         {
-            panelBrush.Visible = false;
-            panelLine.Visible = false;
-            panelFigure.Visible = false;
-            pictureBoxSheet.BackColor = Color.White;
             canvas = new Canvas(pictureBoxSheet.Width, pictureBoxSheet.Height);
         }
 
@@ -110,7 +115,7 @@ namespace GraphXDesign
 
         // Методы панели настроек рисунка
 
-        private void palette1_Click(object sender, EventArgs e)
+        public void palette1_Click(object sender, EventArgs e)
         {
             colorDialog1.AllowFullOpen = true;
             if (colorDialog1.ShowDialog() == DialogResult.OK)
@@ -128,7 +133,8 @@ namespace GraphXDesign
 
         private void pictureBoxPipette_Click(object sender, EventArgs e)
         {
-
+            tool = new PipetteTool();
+            option = 0;
         }
 
         private void panelResizeSheet_MouseDown(object sender, MouseEventArgs e)
@@ -154,9 +160,8 @@ namespace GraphXDesign
         {
             if (cursorActive == true)
             {
-                canvas.Width = pictureBoxSheet.Width;
-                canvas.Height = pictureBoxSheet.Height;
-                canvas = new Canvas(pictureBoxSheet.Width, pictureBoxSheet.Height); // Нужно присвоить содержимому в пикчербоксе
+                pictureBoxSheet.Size += (Size)e.Location;
+                startProgram();
                 cursorActive = false;
             }
         }
@@ -173,6 +178,7 @@ namespace GraphXDesign
             tool = new PenTool();
             brush = new CircleBrush(brush);
             brush.BrushColor = palette1.BackColor;
+            option = 0;
         }
 
         private void buttonBrushSquare_Click(object sender, EventArgs e)
@@ -180,6 +186,7 @@ namespace GraphXDesign
             tool = new PenTool();
             brush = new SquareBrush(brush);
             brush.BrushColor = palette1.BackColor;
+            option = 0;
         }
 
         private void buttonLine_Click(object sender, EventArgs e)
@@ -191,12 +198,14 @@ namespace GraphXDesign
         {
             brush = new CircleBrush(brush);
             tool = new LineTool();
+            option = 0;
         }
 
         private void buttonLineSquare_Click(object sender, EventArgs e)
         {
             brush = new SquareBrush(brush);
             tool = new LineTool();
+            option = 0;
         }
 
         private void buttonFigure_Click(object sender, EventArgs e)
@@ -206,40 +215,51 @@ namespace GraphXDesign
 
         private void buttonCircle_Click(object sender, EventArgs e)
         {
-
+            tool = new EllipsTool();
+            option = 1;
         }
 
         private void buttonSquare_Click(object sender, EventArgs e)
         {
-            
             tool = new RectangleTool();
+            option = 2;
         }
 
         private void buttonTriangleIsosceles_Click(object sender, EventArgs e)
         {
             tool = new TrianglesamesizesTool();
+            option = 0;
         }
 
         private void buttonTriangleRectangular_Click(object sender, EventArgs e)
         {
             tool = new TriangleRectangularTool();
+            option = 0;
         }
 
         private void buttonNAngular_Click(object sender, EventArgs e)
         {
-            tool = new SquareTool();
+            n = Convert.ToInt32(numericUpDown1.Value);
+            tool = new NgonTool(n);
+            option = 0;
+            panelAngles.Visible = true;
+            if (n is SyntaxErrorException || n < 3) // проверка количества углов
+            { 
+                n = 3;
+                numericUpDown1.Value = 3;
+            }
+            else if (n>=3) 
+            {
+                n =Convert.ToInt32(numericUpDown1.Value);
+            }
         }
 
         // Методы основных событий
-
-        private void pictureBoxSheet_MouseDown(object sender, MouseEventArgs e)
-        {
-            tool.MouseDown((PictureBox)sender, canvas, brush, e);
-        }
-
+        
         private void pictureBoxClearAll_Click(object sender, EventArgs e)
         {
-            startProgram(); //что-то еще нужно добавить, чтобы обновлялся по клику, а не после того, как коснешься кистью листа
+            pictureBoxSheet.Image = null; 
+            startProgram();
         }
 
         private void pictureBoxReverse_Click(object sender, EventArgs e)
@@ -254,23 +274,51 @@ namespace GraphXDesign
         private void pictureBoxEraser_Click(object sender, EventArgs e)
         {
             brush = new SquareBrush(brush);
-            brush.BrushColor = Color.White;
+            tool = new PenTool();
+            brush.BrushColor = pictureBoxSheet.BackColor;
+        }
+
+        private void pictureBoxSheet_MouseDown(object sender, MouseEventArgs e)
+        {
+            toolTmp = tool;
+            if ((Control.ModifierKeys & Keys.Shift) == Keys.Shift)
+            {
+                if (option == 1)
+                {
+                    tool = new CircleTool();
+                }
+                if (option == 2)
+                {
+                    tool = new SquareTool();
+                }
+            }
+            else
+                tool = toolTmp;
+            tool.MouseDown((PictureBox)sender, canvas, brush, e);
         }
 
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
         {
             tool.MouseMove((PictureBox)sender, canvas, brush, e);
+            palette1.BackColor = brush.BrushColor; // для пипетки
         }
 
         private void pictureBoxSheet_MouseUp(object sender, MouseEventArgs e)
         {
             tool.MouseUp((PictureBox)sender, canvas, brush, e);
+            tool = toolTmp;
         }
 
         private void trackBarSize_Scroll(object sender, EventArgs e)
         {
             labelSize.Text = trackBarSize.Value + "";
             brush.BrushSize = Convert.ToInt32(labelSize.Text);
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            n = Convert.ToInt32(numericUpDown1.Value);
+            tool = new NgonTool(n);
         }
     }
 }

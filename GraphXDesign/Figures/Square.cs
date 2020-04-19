@@ -23,24 +23,51 @@ namespace GraphXDesign
 
         public Square(int x1, int y1, int x2, int y2, IBrush brush)
         {
-            X1 = x1;
-            Y1 = y1;
-            X2 = x2;
-            Y2 = y2;
-            Xd = Math.Abs(y1-y2)+x1;
-            Yd = y2;
-            Xl = x1;
-            Yl = y2;
-            Xr = Math.Abs(y1 -y2) + x1;
-            Yr = y1;
+            if (x2 > x1)
+            {
+                X1 = x1;
+                Y1 = y1;
+                X2 = x2;
+                Y2 = y2;
+                Xd = x1+ Math.Abs(y1 - y2);
+                Yd = y2;
+                Xl = x1;
+                Yl = y2;
+                Xr = x1+Math.Abs(y1 - y2);
+                Yr = y1;
+            }
+            else
+            {
+                X1 = x1;
+                Y1 = y1;
+                X2 = x2;
+                Y2 = y2;
+                Xd = x1-Math.Abs(y1 - y2);
+                Yd = y2;
+                Xl = x1 - Math.Abs(y1 - y2);
+                Yl = y1;
+                Xr = x1;
+                Yr = y2;
+            }
             Brush = brush;
         }
         public void DrawSquare(Canvas canvas, int x1, int y1, int x2, int y2)
         {
-            Brush.DrawLine(canvas, X1, Y1, Xl, Yl);
-            Brush.DrawLine(canvas, X1, Y1, Xr, Yr);
-            Brush.DrawLine(canvas, Xd, Yd, Xl, Yl);
-            Brush.DrawLine(canvas, Xd, Yd, Xr, Yr);
+            if (x2>x1)
+            {
+                Brush.DrawLine(canvas, X1, Y1, Xl, Yl);
+                Brush.DrawLine(canvas, X1, Y1, Xr, Yr);
+                Brush.DrawLine(canvas, Xd, Yd, Xl, Yl);
+                Brush.DrawLine(canvas, Xd, Yd, Xr, Yr);
+            }
+            else
+
+            {
+                Brush.DrawLine(canvas, X1, Y1, Xl, Yl);
+                Brush.DrawLine(canvas, X1, Y1, Xr, Yr);
+                Brush.DrawLine(canvas, Xd, Yd, Xl, Yl);
+                Brush.DrawLine(canvas, Xd, Yd, Xr, Yr);
+            }
         }
         public void Draw(Canvas canvas)
         {
