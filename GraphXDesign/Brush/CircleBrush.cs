@@ -78,14 +78,20 @@ namespace GraphXDesign
             //проходим по оси x
             for (int i = x1 + margin; i <= x2 - margin; i++)
             {
-                canvas.SetPixel(i, (int)(yCenter + Math.Sqrt(radius * radius - (i - xCenter) * (i - xCenter))), BrushColor);
-                canvas.SetPixel(i, (int)(yCenter - Math.Sqrt(radius * radius - (i - xCenter) * (i - xCenter))), BrushColor);
+                double sqrt = Math.Sqrt(radius * radius - (i - xCenter) * (i - xCenter));
+                canvas.SetPixel(i, (int)(yCenter + sqrt), BrushColor);
+                canvas.SetPixel(i, (int)(yCenter + sqrt - 1), BrushColor);
+                canvas.SetPixel(i, (int)(yCenter - sqrt), BrushColor);
+                canvas.SetPixel(i, (int)(yCenter - sqrt + 1), BrushColor);
             }
             //проходим по оси y
             for (int j = y1 + margin; j <= y2 - margin; j++)
             {
-                canvas.SetPixel((int)(xCenter + Math.Sqrt(radius * radius - (j - yCenter) * (j - yCenter))), j, BrushColor);
-                canvas.SetPixel((int)(xCenter - Math.Sqrt(radius * radius - (j - yCenter) * (j - yCenter))), j, BrushColor);
+                double sqrt = Math.Sqrt(radius * radius - (j - yCenter) * (j - yCenter));
+                canvas.SetPixel((int)(xCenter + sqrt), j, BrushColor);
+                canvas.SetPixel((int)(xCenter + sqrt - 1), j, BrushColor);
+                canvas.SetPixel((int)(xCenter - sqrt), j, BrushColor);
+                canvas.SetPixel((int)(xCenter - sqrt + 1), j, BrushColor);
             }
         }
     }
