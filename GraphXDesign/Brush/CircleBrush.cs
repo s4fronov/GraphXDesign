@@ -47,7 +47,7 @@ namespace GraphXDesign
             }
         }
 
-        public void DrawLine(Canvas canvas, int x1, int y1, int x2, int y2, bool drawFirstDot = true)
+        public void DrawLine(Canvas canvas, int x1, int y1, int x2, int y2, bool drawFirstDot = false)
         {
             PathCalculator lineCalc = new PathCalculator();
             List<Tuple<int, int>> dotList = lineCalc.CalculateLinePath(x1, y1, x2, y2);
