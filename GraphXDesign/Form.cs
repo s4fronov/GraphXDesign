@@ -162,6 +162,7 @@ namespace GraphXDesign
             {
                 pictureBoxSheet.Size += (Size)e.Location;
                 startProgram();
+                pictureBoxSheet.DrawToBitmap(canvas.Bmp, pictureBoxSheet.ClientRectangle);
                 cursorActive = false;
             }
         }
