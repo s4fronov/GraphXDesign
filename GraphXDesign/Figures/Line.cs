@@ -28,6 +28,7 @@ namespace GraphXDesign
         public void Draw(Canvas canvas)
         {
             Brush.DrawLine(canvas, X1, Y1, X2, Y2);
+            Brush.DrawDot(canvas, X2, Y2);
         }
     }
 }

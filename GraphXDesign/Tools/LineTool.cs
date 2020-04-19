@@ -24,7 +24,7 @@ namespace GraphXDesign
             cursorActive = true;
             x1 = e.X;
             y1 = e.Y;
-            brush.DrawDot(canvas, e.X, e.Y);
+            brush.DrawDot(canvas, x1, y1);
             canvas.WriteToPictureBox(sheet);
         }
         public void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
@@ -34,7 +34,8 @@ namespace GraphXDesign
                 canvas.LoadFromCache();
                 x2 = e.X;
                 y2 = e.Y;
-                brush.DrawLine(canvas, x1, y1, x2, y2);
+                brush.DrawLine(canvas, x1, y1, x2, y2, true);
+                brush.DrawDot(canvas, x2, y2);
                 canvas.WriteToPictureBox(sheet);
             }
         }

@@ -47,7 +47,7 @@ namespace GraphXDesign
             }
         }
 
-        public void DrawLine(Canvas canvas, int x1, int y1, int x2, int y2, bool drawFirstDot = true)
+        public void DrawLine(Canvas canvas, int x1, int y1, int x2, int y2, bool drawFirstDot = false)
         {
             PathCalculator lineCalc = new PathCalculator();
             List<Tuple<int, int>> dotList = lineCalc.CalculateLinePath(x1, y1, x2, y2);
@@ -78,14 +78,20 @@ namespace GraphXDesign
             //проходим по оси x
             for (int i = x1 + margin; i <= x2 - margin; i++)
             {
-                canvas.SetPixel(i, (int)(yCenter + Math.Sqrt(radius * radius - (i - xCenter) * (i - xCenter))), BrushColor);
-                canvas.SetPixel(i, (int)(yCenter - Math.Sqrt(radius * radius - (i - xCenter) * (i - xCenter))), BrushColor);
+                double sqrt = Math.Sqrt(radius * radius - (i - xCenter) * (i - xCenter));
+                canvas.SetPixel(i, (int)(yCenter + sqrt), BrushColor);
+                canvas.SetPixel(i, (int)(yCenter + sqrt - 1), BrushColor);
+                canvas.SetPixel(i, (int)(yCenter - sqrt), BrushColor);
+                canvas.SetPixel(i, (int)(yCenter - sqrt + 1), BrushColor);
             }
             //проходим по оси y
             for (int j = y1 + margin; j <= y2 - margin; j++)
             {
-                canvas.SetPixel((int)(xCenter + Math.Sqrt(radius * radius - (j - yCenter) * (j - yCenter))), j, BrushColor);
-                canvas.SetPixel((int)(xCenter - Math.Sqrt(radius * radius - (j - yCenter) * (j - yCenter))), j, BrushColor);
+                double sqrt = Math.Sqrt(radius * radius - (j - yCenter) * (j - yCenter));
+                canvas.SetPixel((int)(xCenter + sqrt), j, BrushColor);
+                canvas.SetPixel((int)(xCenter + sqrt - 1), j, BrushColor);
+                canvas.SetPixel((int)(xCenter - sqrt), j, BrushColor);
+                canvas.SetPixel((int)(xCenter - sqrt + 1), j, BrushColor);
             }
         }
     }

@@ -53,21 +53,10 @@ namespace GraphXDesign
         }
         public void DrawSquare(Canvas canvas, int x1, int y1, int x2, int y2)
         {
-            if (x2>x1)
-            {
-                Brush.DrawLine(canvas, X1, Y1, Xl, Yl);
-                Brush.DrawLine(canvas, X1, Y1, Xr, Yr);
-                Brush.DrawLine(canvas, Xd, Yd, Xl, Yl);
-                Brush.DrawLine(canvas, Xd, Yd, Xr, Yr);
-            }
-            else
-
-            {
-                Brush.DrawLine(canvas, X1, Y1, Xl, Yl);
-                Brush.DrawLine(canvas, X1, Y1, Xr, Yr);
-                Brush.DrawLine(canvas, Xd, Yd, Xl, Yl);
-                Brush.DrawLine(canvas, Xd, Yd, Xr, Yr);
-            }
+            Brush.DrawLine(canvas, X1, Y1, Xl, Yl, true);
+            Brush.DrawLine(canvas, Xl, Yl, Xd, Yd);
+            Brush.DrawLine(canvas, Xd, Yd, Xr, Yr);
+            Brush.DrawLine(canvas, Xr, Yr, X1, Y1);
         }
         public void Draw(Canvas canvas)
         {
