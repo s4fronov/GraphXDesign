@@ -12,9 +12,10 @@ namespace GraphXDesign
     {
         bool cursorActive;
         int x1, y1, x2, y2, n;
-        public NgonTool()
+        public NgonTool(int n)
         {
             cursorActive = false;
+            this.n = n;
         }
 
         public void MouseDown(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
@@ -30,7 +31,7 @@ namespace GraphXDesign
 
         public void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
-            N_gon ngon = new N_gon(x1, y1, x2, y2, brush);
+            N_gon ngon = new N_gon(x1, y1, x2, y2,n, brush);
             if (cursorActive == true)
             {
                 canvas.LoadFromCache();

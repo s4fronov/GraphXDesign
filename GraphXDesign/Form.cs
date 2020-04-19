@@ -15,7 +15,7 @@ namespace GraphXDesign
         Color paintColor1;
         Color paintColor2;
         int brushSize;
-        int n_angle;
+        int n;
         IBrush brush;
         ITool tool;
         ITool toolTmp;
@@ -44,7 +44,7 @@ namespace GraphXDesign
             pictureBoxSheet.Image = null;
             pictureBoxSheet.BackColor = Color.White;
             brushSize = 5;
-            n_angle = 6; //!!!!!!!!!!!!
+            numericUpDown1.Value = 5;
             expandActive = false;
             cursorActive = false;
             brush = new CircleBrush(brushSize, paintColor1);
@@ -239,18 +239,18 @@ namespace GraphXDesign
 
         private void buttonNAngular_Click(object sender, EventArgs e)
         {
-            tool = new NgonTool();
+            n = Convert.ToInt32(numericUpDown1.Value);
+            tool = new NgonTool(n);
             option = 0;
             panelAngles.Visible = true;
-            int n = Convert.ToInt32(textBoxAngle.Text);
-            if (Convert.ToInt32(textBoxAngle.Text) is SyntaxErrorException || n < 3) // проверка количества углов
+            if (n is SyntaxErrorException || n < 3) // проверка количества углов
             { 
-                n_angle = 3;
-                textBoxAngle.Text = "3";
+                n = 3;
+                numericUpDown1.Value = 3;
             }
             else if (n>=3) 
             {
-                n_angle = Convert.ToInt32(textBoxAngle.Text);
+                n =Convert.ToInt32(numericUpDown1.Value);
             }
         }
 
@@ -315,5 +315,10 @@ namespace GraphXDesign
             brush.BrushSize = Convert.ToInt32(labelSize.Text);
         }
 
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            n = Convert.ToInt32(numericUpDown1.Value);
+            tool = new NgonTool(n);
+        }
     }
 }

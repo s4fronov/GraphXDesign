@@ -59,8 +59,8 @@
             this.imageCollapse = new System.Windows.Forms.PictureBox();
             this.panelSettings = new System.Windows.Forms.Panel();
             this.panelAngles = new System.Windows.Forms.Panel();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxAngle = new System.Windows.Forms.TextBox();
             this.panelSize = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.labelSize = new System.Windows.Forms.Label();
@@ -94,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageCollapse)).BeginInit();
             this.panelSettings.SuspendLayout();
             this.panelAngles.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.panelSize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSize)).BeginInit();
             this.panelInstruments.SuspendLayout();
@@ -545,14 +546,37 @@
             // 
             // panelAngles
             // 
+            this.panelAngles.Controls.Add(this.numericUpDown1);
             this.panelAngles.Controls.Add(this.label4);
-            this.panelAngles.Controls.Add(this.textBoxAngle);
             this.panelAngles.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelAngles.Location = new System.Drawing.Point(230, 0);
             this.panelAngles.Name = "panelAngles";
             this.panelAngles.Size = new System.Drawing.Size(140, 44);
             this.panelAngles.TabIndex = 5;
             this.panelAngles.Visible = false;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(93, 12);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(44, 20);
+            this.numericUpDown1.TabIndex = 22;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
             // label4
             // 
@@ -564,14 +588,6 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Кол-во углов";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBoxAngle
-            // 
-            this.textBoxAngle.Location = new System.Drawing.Point(92, 13);
-            this.textBoxAngle.Name = "textBoxAngle";
-            this.textBoxAngle.Size = new System.Drawing.Size(35, 20);
-            this.textBoxAngle.TabIndex = 0;
-            this.textBoxAngle.Text = "6";
             // 
             // panelSize
             // 
@@ -809,7 +825,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageCollapse)).EndInit();
             this.panelSettings.ResumeLayout(false);
             this.panelAngles.ResumeLayout(false);
-            this.panelAngles.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.panelSize.ResumeLayout(false);
             this.panelSize.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSize)).EndInit();
@@ -880,7 +896,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelAngles;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxAngle;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }
 
