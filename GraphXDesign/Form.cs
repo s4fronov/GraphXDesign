@@ -18,6 +18,8 @@ namespace GraphXDesign
         int n_angle;
         IBrush brush;
         ITool tool;
+        ITool toolTmp;
+        int option; // 0 - круг, 1 - квадрат
         bool expandActive;
         bool cursorActive;
         private Point MouseHook;
@@ -175,6 +177,7 @@ namespace GraphXDesign
             tool = new PenTool();
             brush = new CircleBrush(brush);
             brush.BrushColor = palette1.BackColor;
+            option = 0;
         }
 
         private void buttonBrushSquare_Click(object sender, EventArgs e)
@@ -182,6 +185,7 @@ namespace GraphXDesign
             tool = new PenTool();
             brush = new SquareBrush(brush);
             brush.BrushColor = palette1.BackColor;
+            option = 0;
         }
 
         private void buttonLine_Click(object sender, EventArgs e)
@@ -193,12 +197,14 @@ namespace GraphXDesign
         {
             brush = new CircleBrush(brush);
             tool = new LineTool();
+            option = 0;
         }
 
         private void buttonLineSquare_Click(object sender, EventArgs e)
         {
             brush = new SquareBrush(brush);
             tool = new LineTool();
+            option = 0;
         }
 
         private void buttonFigure_Click(object sender, EventArgs e)
@@ -209,38 +215,36 @@ namespace GraphXDesign
         private void buttonCircle_Click(object sender, EventArgs e)
         {
             tool = new EllipsTool();
+            option = 1;
         }
 
         private void buttonSquare_Click(object sender, EventArgs e)
         {
-            
             tool = new RectangleTool();
+            option = 2;
         }
 
         private void buttonTriangleIsosceles_Click(object sender, EventArgs e)
         {
             tool = new TrianglesamesizesTool();
+            option = 0;
         }
 
         private void buttonTriangleRectangular_Click(object sender, EventArgs e)
         {
             tool = new TriangleRectangularTool();
+            option = 0;
         }
 
         private void buttonNAngular_Click(object sender, EventArgs e)
         {
             tool = new NgonTool();
-            
+            option = 0;
             //MessageBox.TextBox
         }
 
         // Методы основных событий
-
-        private void pictureBoxSheet_MouseDown(object sender, MouseEventArgs e)
-        {
-            tool.MouseDown((PictureBox)sender, canvas, brush, e);
-        }
-
+        
         private void pictureBoxClearAll_Click(object sender, EventArgs e)
         {
             pictureBoxSheet.Image = null; 
@@ -263,6 +267,25 @@ namespace GraphXDesign
             brush.BrushColor = pictureBoxSheet.BackColor;
         }
 
+        private void pictureBoxSheet_MouseDown(object sender, MouseEventArgs e)
+        {
+            toolTmp = tool;
+            if ((Control.ModifierKeys & Keys.Shift) == Keys.Shift)
+            {
+                if (option == 1)
+                {
+                    tool = new CircleTool();
+                }
+                if (option == 2)
+                {
+                    tool = new SquareTool();
+                }
+            }
+            else
+                tool = toolTmp;
+            tool.MouseDown((PictureBox)sender, canvas, brush, e);
+        }
+
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
         {
             tool.MouseMove((PictureBox)sender, canvas, brush, e);
@@ -271,6 +294,7 @@ namespace GraphXDesign
         private void pictureBoxSheet_MouseUp(object sender, MouseEventArgs e)
         {
             tool.MouseUp((PictureBox)sender, canvas, brush, e);
+            tool = toolTmp;
         }
 
         private void trackBarSize_Scroll(object sender, EventArgs e)
@@ -279,9 +303,5 @@ namespace GraphXDesign
             brush.BrushSize = Convert.ToInt32(labelSize.Text);
         }
 
-        private void Square_Click(object sender, EventArgs e)
-        {
-            tool = new SquareTool();
-        }
     }
 }

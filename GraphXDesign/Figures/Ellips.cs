@@ -13,6 +13,8 @@ namespace GraphXDesign
         public int Y1 { get; set; }
         public int X2 { get; set; }
         public int Y2 { get; set; }
+        int xd;
+        int yd;
         public IBrush Brush { get; set; }
 
         public Ellips(int x1, int y1, int x2, int y2, IBrush brush)
@@ -25,6 +27,7 @@ namespace GraphXDesign
 
             Brush = brush;
         }
+
         public void DrawEllips(Canvas canvas, int x1, int y1, int x2, int y2)
         {
             List<Tuple<int, int>> dotList = new List<Tuple<int, int>>();
@@ -45,10 +48,11 @@ namespace GraphXDesign
             for (int i = 1; i <= n + 1; i++)
             {
                 double angle = Math.PI * 2 / n * i;
-                //int xd = Convert.ToInt32(Math.Cos(angle) * delx - Math.Sin(angle) * dely + x1); // круг
-                //int yd = Convert.ToInt32(Math.Cos(angle) * dely + Math.Sin(angle) * delx + y1);
-                int xd = Convert.ToInt32((delx * Math.Cos(angle) + x1)); 
-                int yd = Convert.ToInt32((dely * Math.Sin(angle) + y1));
+                    //xd = Convert.ToInt32(Math.Cos(angle) * delx - Math.Sin(angle) * dely + x1); // круг
+                    //yd = Convert.ToInt32(Math.Cos(angle) * dely + Math.Sin(angle) * delx + y1);
+                    xd = Convert.ToInt32((delx * Math.Cos(angle) + x1)); // эллипс
+                    yd = Convert.ToInt32((dely * Math.Sin(angle) + y1));
+                
                 dotList.Add(new Tuple<int, int>(xd, yd));
             }
             for (int i = 1; i < dotList.Count; i++)
