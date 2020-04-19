@@ -79,7 +79,6 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panelDesk = new System.Windows.Forms.Panel();
             this.panelResizeSheet = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -563,7 +562,6 @@
             // panelSettings
             // 
             this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.panelSettings.Controls.Add(this.button2);
             this.panelSettings.Controls.Add(this.panelAngles);
             this.panelSettings.Controls.Add(this.panelSize);
             this.panelSettings.Controls.Add(this.panelInstruments);
@@ -805,6 +803,7 @@
             this.pictureBoxFill.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFill.TabIndex = 21;
             this.pictureBoxFill.TabStop = false;
+            this.pictureBoxFill.Click += new System.EventHandler(this.pictureBoxFill_Click);
             // 
             // pictureBoxSheet
             // 
@@ -841,16 +840,6 @@
             this.panelResizeSheet.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelResizeSheet_MouseDown);
             this.panelResizeSheet.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelResizeSheet_MouseMove);
             this.panelResizeSheet.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelResizeSheet_MouseUp);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(517, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "заливка";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form
             // 
@@ -957,7 +946,6 @@
         private System.Windows.Forms.Panel panelAngles;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button2;
     }
 }
 

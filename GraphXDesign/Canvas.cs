@@ -57,7 +57,7 @@ namespace GraphXDesign
         public void Fill(int x, int y, Color fillColor)
         {
             Color startingColor = GetPixel(x, y);
-            if (startingColor == fillColor)
+            if (startingColor.ToArgb() == fillColor.ToArgb())
                 return;
 
             Point point = new Point(x, y);
@@ -69,27 +69,29 @@ namespace GraphXDesign
             {
                 point = new Point(pointsToCheck.Peek().X, pointsToCheck.Peek().Y);
                 pointsToCheck.Dequeue();
-                if (x > 0 && GetPixel(point.X - 1, point.Y) == startingColor)
+                if (x > 0 && GetPixel(point.X - 1, point.Y).ToArgb() == startingColor.ToArgb())
                 {
                     SetPixel(point.X - 1, point.Y, fillColor);
                     pointsToCheck.Enqueue(new Point(point.X - 1, point.Y));
                 }
-                if (x < Width - 1 && GetPixel(point.X + 1, point.Y) == startingColor)
+                if (x < Width - 1 && GetPixel(point.X + 1, point.Y).ToArgb() == startingColor.ToArgb())
                 {
                     SetPixel(point.X + 1, point.Y, fillColor);
                     pointsToCheck.Enqueue(new Point(point.X + 1, point.Y));
                 }
-                if (y > 0 && GetPixel(point.X, point.Y - 1) == startingColor)
+                if (y > 0 && GetPixel(point.X, point.Y - 1).ToArgb() == startingColor.ToArgb())
                 {
                     SetPixel(point.X, point.Y - 1, fillColor);
                     pointsToCheck.Enqueue(new Point(point.X, point.Y - 1));
                 }
-                if (y < Height - 1 && GetPixel(point.X, point.Y + 1) == startingColor)
+                if (y < Height - 1 && GetPixel(point.X, point.Y + 1).ToArgb() == startingColor.ToArgb())
                 {
                     SetPixel(point.X, point.Y + 1, fillColor);
                     pointsToCheck.Enqueue(new Point(point.X, point.Y + 1));
                 }
             }
+
+            return;
         }
     }
 }

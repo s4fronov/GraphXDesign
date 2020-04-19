@@ -322,10 +322,9 @@ namespace GraphXDesign
             tool = new NgonTool(n);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void pictureBoxFill_Click(object sender, EventArgs e)
         {
-            canvas.Fill(10, 10, Color.Red);
-            canvas.WriteToPictureBox(pictureBoxSheet);
+            tool = new FillTool();
         }
     }
 }
