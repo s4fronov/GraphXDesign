@@ -44,7 +44,7 @@ namespace GraphXDesign
             pictureBoxSheet.Image = null;
             pictureBoxSheet.BackColor = Color.White;
             brushSize = 5;
-            n_angle = 5; //!!!!!!!!!!!!
+            n_angle = 6; //!!!!!!!!!!!!
             expandActive = false;
             cursorActive = false;
             brush = new CircleBrush(brushSize, paintColor1);
@@ -115,7 +115,7 @@ namespace GraphXDesign
 
         // Методы панели настроек рисунка
 
-        private void palette1_Click(object sender, EventArgs e)
+        public void palette1_Click(object sender, EventArgs e)
         {
             colorDialog1.AllowFullOpen = true;
             if (colorDialog1.ShowDialog() == DialogResult.OK)
@@ -133,7 +133,8 @@ namespace GraphXDesign
 
         private void pictureBoxPipette_Click(object sender, EventArgs e)
         {
-
+            tool = new PipetteTool();
+            option = 0;
         }
 
         private void panelResizeSheet_MouseDown(object sender, MouseEventArgs e)
@@ -240,7 +241,17 @@ namespace GraphXDesign
         {
             tool = new NgonTool();
             option = 0;
-            //MessageBox.TextBox
+            panelAngles.Visible = true;
+            int n = Convert.ToInt32(textBoxAngle.Text);
+            if (Convert.ToInt32(textBoxAngle.Text) is SyntaxErrorException || n < 3) // проверка количества углов
+            { 
+                n_angle = 3;
+                textBoxAngle.Text = "3";
+            }
+            else if (n>=3) 
+            {
+                n_angle = Convert.ToInt32(textBoxAngle.Text);
+            }
         }
 
         // Методы основных событий
@@ -289,6 +300,7 @@ namespace GraphXDesign
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
         {
             tool.MouseMove((PictureBox)sender, canvas, brush, e);
+            palette1.BackColor = brush.BrushColor; // для пипетки
         }
 
         private void pictureBoxSheet_MouseUp(object sender, MouseEventArgs e)

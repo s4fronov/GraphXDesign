@@ -58,11 +58,14 @@
             this.imageExpand = new System.Windows.Forms.PictureBox();
             this.imageCollapse = new System.Windows.Forms.PictureBox();
             this.panelSettings = new System.Windows.Forms.Panel();
+            this.panelAngles = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxAngle = new System.Windows.Forms.TextBox();
             this.panelSize = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.labelSize = new System.Windows.Forms.Label();
             this.trackBarSize = new System.Windows.Forms.TrackBar();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelInstruments = new System.Windows.Forms.Panel();
             this.pictureBoxRedo = new System.Windows.Forms.PictureBox();
             this.palette1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxUndo = new System.Windows.Forms.PictureBox();
@@ -90,9 +93,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageExpand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollapse)).BeginInit();
             this.panelSettings.SuspendLayout();
+            this.panelAngles.SuspendLayout();
             this.panelSize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSize)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.panelInstruments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRedo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.palette1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndo)).BeginInit();
@@ -530,13 +534,44 @@
             // panelSettings
             // 
             this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panelSettings.Controls.Add(this.panelAngles);
             this.panelSettings.Controls.Add(this.panelSize);
-            this.panelSettings.Controls.Add(this.panel2);
+            this.panelSettings.Controls.Add(this.panelInstruments);
             this.panelSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSettings.Location = new System.Drawing.Point(150, 20);
             this.panelSettings.Name = "panelSettings";
             this.panelSettings.Size = new System.Drawing.Size(710, 44);
             this.panelSettings.TabIndex = 2;
+            // 
+            // panelAngles
+            // 
+            this.panelAngles.Controls.Add(this.label4);
+            this.panelAngles.Controls.Add(this.textBoxAngle);
+            this.panelAngles.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelAngles.Location = new System.Drawing.Point(230, 0);
+            this.panelAngles.Name = "panelAngles";
+            this.panelAngles.Size = new System.Drawing.Size(140, 44);
+            this.panelAngles.TabIndex = 5;
+            this.panelAngles.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(3, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 18);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Кол-во углов";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // textBoxAngle
+            // 
+            this.textBoxAngle.Location = new System.Drawing.Point(92, 13);
+            this.textBoxAngle.Name = "textBoxAngle";
+            this.textBoxAngle.Size = new System.Drawing.Size(35, 20);
+            this.textBoxAngle.TabIndex = 0;
+            this.textBoxAngle.Text = "6";
             // 
             // panelSize
             // 
@@ -578,7 +613,7 @@
             this.trackBarSize.LargeChange = 1;
             this.trackBarSize.Location = new System.Drawing.Point(10, 22);
             this.trackBarSize.Margin = new System.Windows.Forms.Padding(0);
-            this.trackBarSize.Maximum = 280;
+            this.trackBarSize.Maximum = 80;
             this.trackBarSize.Minimum = 1;
             this.trackBarSize.MinimumSize = new System.Drawing.Size(0, 20);
             this.trackBarSize.Name = "trackBarSize";
@@ -587,22 +622,22 @@
             this.trackBarSize.Value = 4;
             this.trackBarSize.Scroll += new System.EventHandler(this.trackBarSize_Scroll);
             // 
-            // panel2
+            // panelInstruments
             // 
-            this.panel2.Controls.Add(this.pictureBoxRedo);
-            this.panel2.Controls.Add(this.palette1);
-            this.panel2.Controls.Add(this.pictureBoxUndo);
-            this.panel2.Controls.Add(this.pictureBoxReverse);
-            this.panel2.Controls.Add(this.palette2);
-            this.panel2.Controls.Add(this.pictureBoxClearAll);
-            this.panel2.Controls.Add(this.pictureBoxPipette);
-            this.panel2.Controls.Add(this.pictureBoxEraser);
-            this.panel2.Controls.Add(this.pictureBoxFill);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(256, 44);
-            this.panel2.TabIndex = 4;
+            this.panelInstruments.Controls.Add(this.pictureBoxRedo);
+            this.panelInstruments.Controls.Add(this.palette1);
+            this.panelInstruments.Controls.Add(this.pictureBoxUndo);
+            this.panelInstruments.Controls.Add(this.pictureBoxReverse);
+            this.panelInstruments.Controls.Add(this.palette2);
+            this.panelInstruments.Controls.Add(this.pictureBoxClearAll);
+            this.panelInstruments.Controls.Add(this.pictureBoxPipette);
+            this.panelInstruments.Controls.Add(this.pictureBoxEraser);
+            this.panelInstruments.Controls.Add(this.pictureBoxFill);
+            this.panelInstruments.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelInstruments.Location = new System.Drawing.Point(0, 0);
+            this.panelInstruments.Name = "panelInstruments";
+            this.panelInstruments.Size = new System.Drawing.Size(230, 44);
+            this.panelInstruments.TabIndex = 4;
             // 
             // pictureBoxRedo
             // 
@@ -773,10 +808,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageExpand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollapse)).EndInit();
             this.panelSettings.ResumeLayout(false);
+            this.panelAngles.ResumeLayout(false);
+            this.panelAngles.PerformLayout();
             this.panelSize.ResumeLayout(false);
             this.panelSize.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSize)).EndInit();
-            this.panel2.ResumeLayout(false);
+            this.panelInstruments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRedo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.palette1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndo)).EndInit();
@@ -832,7 +869,7 @@
         private System.Windows.Forms.PictureBox pictureBoxEraser;
         private System.Windows.Forms.PictureBox pictureBoxReverse;
         private System.Windows.Forms.Panel panelSize;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelInstruments;
         private System.Windows.Forms.PictureBox imageExpand;
         private System.Windows.Forms.PictureBox imageCollapse;
         private System.Windows.Forms.PictureBox pictureBoxRedo;
@@ -841,6 +878,9 @@
         private System.Windows.Forms.Panel panelDesk;
         private System.Windows.Forms.Panel panelResizeSheet;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panelAngles;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBoxAngle;
     }
 }
 

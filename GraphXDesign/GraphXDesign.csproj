@@ -72,6 +72,7 @@
     <Compile Include="Tools\CircleTool.cs" />
     <Compile Include="Tools\EllipsTool.cs" />
     <Compile Include="Tools\NgonTool.cs" />
+    <Compile Include="Tools\PipetteTool.cs" />
     <Compile Include="Tools\TriangleRectangularTool.cs" />
     <Compile Include="Tools\TrianglesamesizesTool.cs" />
     <Compile Include="Tools\ITool.cs" />
