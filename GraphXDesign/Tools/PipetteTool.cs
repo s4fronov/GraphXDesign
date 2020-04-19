@@ -16,7 +16,6 @@ namespace GraphXDesign
         public void MouseDown(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
         {
             cursorActive = true;
-            
             sheet.DrawToBitmap(canvas.Bmp, sheet.ClientRectangle);
             brush.BrushColor = canvas.GetPixel(e.X, e.Y);
         }
@@ -25,7 +24,7 @@ namespace GraphXDesign
         {
             if (cursorActive == true)
             {
-                        brush.BrushColor = canvas.GetPixel(e.X, e.Y);
+                brush.BrushColor = canvas.GetPixel(e.X, e.Y);
             }
         }
 
