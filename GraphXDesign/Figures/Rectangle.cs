@@ -33,10 +33,10 @@ namespace GraphXDesign
         }
         public void DrawRectangle(Canvas canvas, int x1, int y1, int x2, int y2)
         {
-            Brush.DrawLine(canvas, X1, Y1, Xl, Yl);
-            Brush.DrawLine(canvas, X1, Y1, Xr, Yr);
-            Brush.DrawLine(canvas, X2, Y2, Xl, Yl);
+            Brush.DrawLine(canvas, X1, Y1, Xl, Yl, true);
+            Brush.DrawLine(canvas, Xl, Yl, X2, Y2);
             Brush.DrawLine(canvas, X2, Y2, Xr, Yr);
+            Brush.DrawLine(canvas, Xr, Yr, X1, Y1);
         }
         public void Draw(Canvas canvas)
         {

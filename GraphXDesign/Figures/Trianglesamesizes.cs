@@ -51,20 +51,9 @@ namespace GraphXDesign
 
         public void DrawTrianglesamesizes(Canvas canvas, int x1, int y1, int x2, int y2)
         {
-            if (x2 >= x1)
-            {
-
-                Brush.DrawLine(canvas, X1, Y1, X2, Y2);
-                Brush.DrawLine(canvas, X1, Y1, Xl, Yl);
-                Brush.DrawLine(canvas, Xl, Yl, X2, Y2);
-            }
-            else
-            {
-                Brush.DrawLine(canvas, X1, Y1, X2, Y2);
-                Brush.DrawLine(canvas, X1, Y1, Xl, Yl);
-                Brush.DrawLine(canvas, Xl, Yl, X2, Y2);
-            }
-
+            Brush.DrawLine(canvas, X1, Y1, X2, Y2, true);
+            Brush.DrawLine(canvas, X2, Y2, Xl, Yl);
+            Brush.DrawLine(canvas, Xl, Yl, X1, Y1);
         }
         
         public void Draw(Canvas canvas)
