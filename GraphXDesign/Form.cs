@@ -321,5 +321,11 @@ namespace GraphXDesign
             n = Convert.ToInt32(numericUpDown1.Value);
             tool = new NgonTool(n);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            canvas.Fill(10, 10, Color.Red);
+            canvas.WriteToPictureBox(pictureBoxSheet);
+        }
     }
 }
