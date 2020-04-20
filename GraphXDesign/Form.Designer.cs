@@ -222,6 +222,7 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // buttonNAngular
             // 
@@ -759,6 +760,7 @@
             this.pictureBoxFill.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxFill.TabIndex = 21;
             this.pictureBoxFill.TabStop = false;
+            this.pictureBoxFill.Click += new System.EventHandler(this.pictureBoxFill_Click);
             // 
             // pictureBoxSheet
             // 
@@ -768,6 +770,7 @@
             this.pictureBoxSheet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSheet.TabIndex = 3;
             this.pictureBoxSheet.TabStop = false;
+            this.pictureBoxSheet.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseDoubleClick);
             this.pictureBoxSheet.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseDown);
             this.pictureBoxSheet.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseMove);
             this.pictureBoxSheet.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseUp);

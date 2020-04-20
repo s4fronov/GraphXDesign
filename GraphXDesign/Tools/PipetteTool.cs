@@ -32,5 +32,7 @@ namespace GraphXDesign
         {
             cursorActive = false;
         }
+        public void MouseDoubleClick(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        { }
     }
 }

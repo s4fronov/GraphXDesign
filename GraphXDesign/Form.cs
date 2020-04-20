@@ -321,5 +321,21 @@ namespace GraphXDesign
             n = Convert.ToInt32(numericUpDown1.Value);
             tool = new NgonTool(n);
         }
+
+        private void pictureBoxFill_Click(object sender, EventArgs e)
+        {
+            tool = new FillTool();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tool = new NNgonTool();
+        }
+
+        private void pictureBoxSheet_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            tool.MouseDoubleClick((PictureBox)sender, canvas, brush, e);
+            tool = toolTmp;
+        }
     }
 }
