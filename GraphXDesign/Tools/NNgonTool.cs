@@ -19,9 +19,9 @@ namespace GraphXDesign
             gon = false;
         }
 
-        public void MouseDown(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        public void MouseDown(PictureBox sheet, IBrush brush, MouseEventArgs e)
         {
-            canvas.SaveToCache();
+            Canvas.GetCanvas.SaveToCache();
             cursorActive = true;
             if (gon == false)
             {
@@ -37,36 +37,36 @@ namespace GraphXDesign
                 y1 = y2;
             }
             //brush.DrawDot(canvas, x1, y1);
-            brush.DrawLine(canvas, x1, y1, e.X, e.Y, true);
-            canvas.WriteToPictureBox(sheet);
+            brush.DrawLine(x1, y1, e.X, e.Y, true);
+            Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
-        public void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        public void MouseMove(PictureBox sheet, IBrush brush, MouseEventArgs e)
         {
             if (cursorActive == true)
             {
-                canvas.LoadFromCache();
+                Canvas.GetCanvas.LoadFromCache();
                 x2 = e.X;
                 y2 = e.Y;
                 dotList.Add(new Tuple<int, int>(x2, y2));
-                brush.DrawLine(canvas, x1, y1, x2, y2, true);
+                brush.DrawLine(x1, y1, x2, y2, true);
                 // brush.DrawDot(canvas, x2, y2);
-                canvas.WriteToPictureBox(sheet);
+                Canvas.GetCanvas.WriteToPictureBox(sheet);
             }
         }
-        public void MouseUp(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        public void MouseUp(PictureBox sheet, IBrush brush, MouseEventArgs e)
         {
             cursorActive = false;
             x2 = e.X;
             y2 = e.Y;
-            canvas.WriteToPictureBox(sheet);
+            Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
-        public void MouseDoubleClick(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        public void MouseDoubleClick(PictureBox sheet, IBrush brush, MouseEventArgs e)
         {
             cursorActive = false;
             x2 = e.X;
             y2 = e.Y;
-            brush.DrawLine(canvas, x0, y0, x2, y2, true);
-            canvas.WriteToPictureBox(sheet);
+            brush.DrawLine(x0, y0, x2, y2, true);
+            Canvas.GetCanvas.WriteToPictureBox(sheet);
             gon = false;
         }
     }

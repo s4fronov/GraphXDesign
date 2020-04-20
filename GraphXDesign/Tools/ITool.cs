@@ -11,9 +11,9 @@ namespace GraphXDesign
     public interface ITool
     {       
 
-        void MouseDown(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e);
-        void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e);
-        void MouseUp(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e);
-        void MouseDoubleClick(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e);
+        void MouseDown(PictureBox sheet, IBrush brush, MouseEventArgs e);
+        void MouseMove(PictureBox sheet, IBrush brush, MouseEventArgs e);
+        void MouseUp(PictureBox sheet, IBrush brush, MouseEventArgs e);
+        void MouseDoubleClick(PictureBox sheet, IBrush brush, MouseEventArgs e);
     }
 }

@@ -13,26 +13,26 @@ namespace GraphXDesign
         
         bool cursorActive;
 
-        public void MouseDown(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        public void MouseDown(PictureBox sheet, IBrush brush, MouseEventArgs e)
         {
             cursorActive = true;
-            sheet.DrawToBitmap(canvas.Bmp, sheet.ClientRectangle);
-            brush.BrushColor = canvas.GetPixel(e.X, e.Y);
+            sheet.DrawToBitmap(Canvas.GetCanvas.Bmp, sheet.ClientRectangle);
+            brush.BrushColor = Canvas.GetCanvas.GetPixel(e.X, e.Y);
         }
 
-        public void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        public void MouseMove(PictureBox sheet, IBrush brush, MouseEventArgs e)
         {
             if (cursorActive == true)
             {
-                brush.BrushColor = canvas.GetPixel(e.X, e.Y);
+                brush.BrushColor = Canvas.GetCanvas.GetPixel(e.X, e.Y);
             }
         }
 
-        public void MouseUp(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        public void MouseUp(PictureBox sheet, IBrush brush, MouseEventArgs e)
         {
             cursorActive = false;
         }
-        public void MouseDoubleClick(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        public void MouseDoubleClick(PictureBox sheet, IBrush brush, MouseEventArgs e)
         { }
     }
 }
