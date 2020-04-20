@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,14 +47,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Brush\CircleBrush.cs" />
+    <Compile Include="Brush\IBrush.cs" />
+    <Compile Include="Brush\SquareBrush.cs" />
+    <Compile Include="Canvas.cs" />
+    <Compile Include="Figures\Circle.cs" />
+    <Compile Include="Figures\Ellips.cs" />
+    <Compile Include="Figures\N-gon.cs" />
+    <Compile Include="Figures\TriangleRectangular.cs" />
+    <Compile Include="Figures\Trianglesamesizes.cs" />
+    <Compile Include="Figures\IFigure.cs" />
+    <Compile Include="Figures\Line.cs" />
+    <Compile Include="Figures\Square.cs" />
+    <Compile Include="Figures\Rectangle.cs" />
     <Compile Include="Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form.Designer.cs">
       <DependentUpon>Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="PathCalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\CircleTool.cs" />
+    <Compile Include="Tools\EllipsTool.cs" />
+    <Compile Include="Tools\FillTool.cs" />
+    <Compile Include="Tools\NgonTool.cs" />
+    <Compile Include="Tools\NNgonTool.cs" />
+    <Compile Include="Tools\PipetteTool.cs" />
+    <Compile Include="Tools\TriangleRectangularTool.cs" />
+    <Compile Include="Tools\TrianglesamesizesTool.cs" />
+    <Compile Include="Tools\ITool.cs" />
+    <Compile Include="Tools\LineTool.cs" />
+    <Compile Include="Tools\PenTool.cs" />
+    <Compile Include="Tools\SquareTool.cs" />
+    <Compile Include="Tools\RectangleTool.cs" />
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -65,6 +93,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -78,6 +107,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
