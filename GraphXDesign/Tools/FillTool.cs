@@ -14,6 +14,8 @@ namespace GraphXDesign
             canvas.Fill(e.X, e.Y, brush.BrushColor);
             canvas.WriteToPictureBox(sheet);
         }
+        public void MouseDoubleClick(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        { }
         public void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e) { return;  }
         public void MouseUp(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e) { return; }
     }

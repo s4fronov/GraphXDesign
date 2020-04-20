@@ -50,5 +50,7 @@ namespace GraphXDesign
             y2 = e.Y;
             sheet.Image = canvas.Bmp;
         }
+        public void MouseDoubleClick(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        { }
     }  
 }

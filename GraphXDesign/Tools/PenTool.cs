@@ -46,5 +46,7 @@ namespace GraphXDesign
             x2 = e.X;
             y2 = e.Y;
         }
+        public void MouseDoubleClick(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        { }
     }
 }

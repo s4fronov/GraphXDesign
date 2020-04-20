@@ -326,5 +326,16 @@ namespace GraphXDesign
         {
             tool = new FillTool();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tool = new NNgonTool();
+        }
+
+        private void pictureBoxSheet_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            tool.MouseDoubleClick((PictureBox)sender, canvas, brush, e);
+            tool = toolTmp;
+        }
     }
 }

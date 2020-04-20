@@ -48,6 +48,8 @@ namespace GraphXDesign
             y2 = e.Y;
             canvas.WriteToPictureBox(sheet);
         }
+        public void MouseDoubleClick(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        { }
 
     }
 }
