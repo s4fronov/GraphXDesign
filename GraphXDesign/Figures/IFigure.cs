@@ -14,6 +14,6 @@ namespace GraphXDesign
         int X2 { get; set; }
         int Y2 { get; set; }
         IBrush Brush { get; set; }
-        void Draw(Canvas canvas);
+        void Draw();
     }
 }

@@ -24,7 +24,7 @@ namespace GraphXDesign
 
             Brush = brush;
         }
-        public void DrawCircle(Canvas canvas, int x1, int y1, int x2, int y2)
+        public void DrawCircle(int x1, int y1, int x2, int y2)
         {
             List<Tuple<int, int>> dotList = new List<Tuple<int, int>>();
             int n = 360;
@@ -52,13 +52,13 @@ namespace GraphXDesign
             }
             for (int i = 1; i < dotList.Count; i++)
             {
-                Brush.DrawLine(canvas, dotList[i - 1].Item1, dotList[i - 1].Item2, dotList[i].Item1, dotList[i].Item2);
+                Brush.DrawLine(dotList[i - 1].Item1, dotList[i - 1].Item2, dotList[i].Item1, dotList[i].Item2);
             }
         }
 
-        public void Draw(Canvas canvas)
+        public void Draw()
         {
-            DrawCircle(canvas, X1, Y1, X2, Y2);
+            DrawCircle(X1, Y1, X2, Y2);
         }
     }
 }

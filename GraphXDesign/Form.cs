@@ -23,7 +23,6 @@ namespace GraphXDesign
         bool expandActive;
         bool cursorActive;
         private Point MouseHook;
-        Canvas canvas;
 
         public Form()
         {
@@ -52,7 +51,7 @@ namespace GraphXDesign
 
         private void startProgram()
         {
-            canvas = new Canvas(pictureBoxSheet.Width, pictureBoxSheet.Height);
+            Canvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
         }
 
         // Методы меню
@@ -167,7 +166,7 @@ namespace GraphXDesign
             {
                 pictureBoxSheet.Size += (Size)e.Location;
                 startProgram();
-                pictureBoxSheet.DrawToBitmap(canvas.Bmp, pictureBoxSheet.ClientRectangle);
+                pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp, pictureBoxSheet.ClientRectangle);
                 cursorActive = false;
             }
         }
@@ -316,18 +315,18 @@ namespace GraphXDesign
             }
             else
                 tool = toolTmp;
-            tool.MouseDown((PictureBox)sender, canvas, brush, e);
+            tool.MouseDown((PictureBox)sender, brush, e);
         }
 
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
         {
-            tool.MouseMove((PictureBox)sender, canvas, brush, e);
+            tool.MouseMove((PictureBox)sender, brush, e);
             palette1.BackColor = brush.BrushColor; // для пипетки
         }
 
         private void pictureBoxSheet_MouseUp(object sender, MouseEventArgs e)
         {
-            tool.MouseUp((PictureBox)sender, canvas, brush, e);
+            tool.MouseUp((PictureBox)sender, brush, e);
             tool = toolTmp;
         }
 
@@ -350,7 +349,7 @@ namespace GraphXDesign
 
         private void pictureBoxSheet_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            tool.MouseDoubleClick((PictureBox)sender, canvas, brush, e);
+            tool.MouseDoubleClick((PictureBox)sender, brush, e);
             tool = toolTmp;
         }
 

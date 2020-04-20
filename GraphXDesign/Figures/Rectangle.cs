@@ -31,16 +31,16 @@ namespace GraphXDesign
             Yr = y1;
             Brush = brush;
         }
-        public void DrawRectangle(Canvas canvas, int x1, int y1, int x2, int y2)
+        public void DrawRectangle(int x1, int y1, int x2, int y2)
         {
-            Brush.DrawLine(canvas, X1, Y1, Xl, Yl, true);
-            Brush.DrawLine(canvas, Xl, Yl, X2, Y2);
-            Brush.DrawLine(canvas, X2, Y2, Xr, Yr);
-            Brush.DrawLine(canvas, Xr, Yr, X1, Y1);
+            Brush.DrawLine(X1, Y1, Xl, Yl, true);
+            Brush.DrawLine(Xl, Yl, X2, Y2);
+            Brush.DrawLine(X2, Y2, Xr, Yr);
+            Brush.DrawLine(Xr, Yr, X1, Y1);
         }
-        public void Draw(Canvas canvas)
+        public void Draw()
         {
-            DrawRectangle(canvas, X1, Y1, Xl, Yl);
+            DrawRectangle(X1, Y1, Xl, Yl);
         }
     }
 }

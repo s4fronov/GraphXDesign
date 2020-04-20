@@ -27,7 +27,7 @@ namespace GraphXDesign
 
             Brush = brush;
         }
-        public void DrawNgon(Canvas canvas, int x1, int y1, int x2, int y2,int n)
+        public void DrawNgon(int x1, int y1, int x2, int y2,int n)
         {
             List<Tuple<int, int>> dotList = new List<Tuple<int, int>>();
             int delx;
@@ -52,13 +52,13 @@ namespace GraphXDesign
             }
             for (int i = 1; i < dotList.Count; i++)
             {
-                Brush.DrawLine(canvas, dotList[i - 1].Item1, dotList[i - 1].Item2, dotList[i].Item1, dotList[i].Item2);
+                Brush.DrawLine(dotList[i - 1].Item1, dotList[i - 1].Item2, dotList[i].Item1, dotList[i].Item2);
             }
         }
 
-        public void Draw(Canvas canvas)
+        public void Draw()
         {
-            DrawNgon(canvas, X1, Y1, X2, Y2,N);
+            DrawNgon(X1, Y1, X2, Y2,N);
         }
     }
 }

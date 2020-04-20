@@ -11,18 +11,34 @@ namespace GraphXDesign
 {
     public class Canvas
     {
-        public Bitmap Bmp { get; set; }
-        private Bitmap Cache { get; set; }
+        //singleton pattern
+        private static Canvas instance;
+        private Canvas() { }
+        public static Canvas GetCanvas
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new Canvas();
+                }
+                return instance;
+            }
+        }
 
-        public int Width { get; set; }
-        public int Height { get; set; }
-
-        public Canvas(int width, int height)
+        public void Init(int width, int height)
         {
             Bmp = new Bitmap(width, height);
             Width = width;
             Height = height;
         }
+
+
+        public Bitmap Bmp { get; set; }
+        private Bitmap Cache { get; set; }
+
+        public int Width { get; set; }
+        public int Height { get; set; }
 
         public void SaveToCache()
         {

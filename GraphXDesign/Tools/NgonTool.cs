@@ -18,38 +18,38 @@ namespace GraphXDesign
             this.n = n;
         }
 
-        public void MouseDown(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        public void MouseDown(PictureBox sheet, IBrush brush, MouseEventArgs e)
         {
-            canvas.SaveToCache();
+            Canvas.GetCanvas.SaveToCache();
             cursorActive = true;
             x1 = e.X;
             y1 = e.Y;
             x2 = e.X;
             y2 = e.Y;
-            canvas.WriteToPictureBox(sheet);
+            Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
 
-        public void MouseMove(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        public void MouseMove(PictureBox sheet, IBrush brush, MouseEventArgs e)
         {
             N_gon ngon = new N_gon(x1, y1, x2, y2,n, brush);
             if (cursorActive == true)
             {
-                canvas.LoadFromCache();
+                Canvas.GetCanvas.LoadFromCache();
                 x2 = e.X;
                 y2 = e.Y;
-                ngon.Draw(canvas);
-                canvas.WriteToPictureBox(sheet);
+                ngon.Draw();
+                Canvas.GetCanvas.WriteToPictureBox(sheet);
             }
         }
 
-        public void MouseUp(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        public void MouseUp(PictureBox sheet, IBrush brush, MouseEventArgs e)
         {
             cursorActive = false;
             x2 = e.X;
             y2 = e.Y;
-            canvas.WriteToPictureBox(sheet);
+            Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
-        public void MouseDoubleClick(PictureBox sheet, Canvas canvas, IBrush brush, MouseEventArgs e)
+        public void MouseDoubleClick(PictureBox sheet, IBrush brush, MouseEventArgs e)
         { }
     }
 }

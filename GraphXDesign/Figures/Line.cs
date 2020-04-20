@@ -25,10 +25,10 @@ namespace GraphXDesign
             Brush = brush;
         }
 
-        public void Draw(Canvas canvas)
+        public void Draw()
         {
-            Brush.DrawLine(canvas, X1, Y1, X2, Y2);
-            Brush.DrawDot(canvas, X2, Y2);
+            Brush.DrawLine(X1, Y1, X2, Y2);
+            Brush.DrawDot(X2, Y2);
         }
     }
 }
