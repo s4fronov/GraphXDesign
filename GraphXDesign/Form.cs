@@ -79,7 +79,7 @@ namespace GraphXDesign
 
         private void showOptMenu()
         {
-            if (!(tool is NgonTool))
+           // if (!(tool is NgonTool))
                 panelAngles.Visible = false;
             brush = new CircleBrush(brush);
         }
@@ -203,7 +203,7 @@ namespace GraphXDesign
 
         private void buttonLineDot_Click(object sender, EventArgs e)
         {
-            tool = new LineTool();
+            tool = new FigureTool(new Line());
             showOptMenu();
             brush = new CircleBrush(brush);
             option = 0;
@@ -211,7 +211,7 @@ namespace GraphXDesign
 
         private void buttonLineSquare_Click(object sender, EventArgs e)
         {
-            tool = new LineTool();
+            tool = new FigureTool(new Line());
             showOptMenu();
             brush = new SquareBrush(brush);
             option = 0;
@@ -224,28 +224,29 @@ namespace GraphXDesign
 
         private void buttonCircle_Click(object sender, EventArgs e)
         {
-            tool = new EllipsTool();
+          
+            tool = new FigureTool(new Ellips());
             showOptMenu();
             option = 1;
         }
 
         private void buttonSquare_Click(object sender, EventArgs e)
         {
-            tool = new RectangleTool();
+            tool = new FigureTool(new Rectangle());
             showOptMenu();
             option = 2;
         }
 
         private void buttonTriangleIsosceles_Click(object sender, EventArgs e)
         {
-            tool = new TrianglesamesizesTool();
+            tool = new FigureTool(new Trianglesamesizes());
             showOptMenu();
             option = 0;
         }
 
         private void buttonTriangleRectangular_Click(object sender, EventArgs e)
         {
-            tool = new TriangleRectangularTool();
+            tool = new FigureTool(new TriangleRectangular());
             showOptMenu();
             option = 0;
         }
@@ -259,7 +260,7 @@ namespace GraphXDesign
 
         private void buttonNAngular_Click(object sender, EventArgs e)
         {
-            tool = new NgonTool(n);
+            
             showOptMenu();
             n = Convert.ToInt32(numericUpDown1.Value);
             option = 0;
@@ -273,6 +274,7 @@ namespace GraphXDesign
             {
                 n = Convert.ToInt32(numericUpDown1.Value);
             }
+            tool = new FigureTool(new N_gon(n));
         }
 
         // Методы основных событий
@@ -306,11 +308,11 @@ namespace GraphXDesign
             {
                 if (option == 1)
                 {
-                    tool = new CircleTool();
+                    tool = new FigureTool(new Circle());
                 }
                 if (option == 2)
                 {
-                    tool = new SquareTool();
+                    tool = new FigureTool(new Square());
                 }
             }
             else
@@ -321,7 +323,12 @@ namespace GraphXDesign
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
         {
             tool.MouseMove((PictureBox)sender, brush, e);
-            palette1.BackColor = brush.BrushColor; // для пипетки
+            if (tool is PipetteTool)
+            {
+                palette1.BackColor = brush.BrushColor; // для пипетки
+            }
+            
+
         }
 
         private void pictureBoxSheet_MouseUp(object sender, MouseEventArgs e)
@@ -338,8 +345,8 @@ namespace GraphXDesign
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            n = Convert.ToInt32(numericUpDown1.Value);
-            tool = new NgonTool(n);
+            //n = Convert.ToInt32(numericUpDown1.Value);
+            tool = new FigureTool(new N_gon(Convert.ToInt32(numericUpDown1.Value)));
         }
 
         private void pictureBoxFill_Click(object sender, EventArgs e)

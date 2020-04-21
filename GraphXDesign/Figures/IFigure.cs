@@ -7,13 +7,16 @@ using System.Drawing;
 
 namespace GraphXDesign
 {
-    interface IFigure
+   public abstract class IFigure
     {
-        int X1 { get; set; }
-        int Y1 { get; set; }
-        int X2 { get; set; }
-        int Y2 { get; set; }
-        IBrush Brush { get; set; }
-        void Draw();
+        public List <Point> dotlist;
+
+       
+        
+        abstract public void Createdotlist(int x1, int y1, int x2, int y2);
+               
+
+
+
     }
 }
