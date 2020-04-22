@@ -37,34 +37,37 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBoxMenu = new System.Windows.Forms.GroupBox();
             this.panelAngles = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numericAngle = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.panelFigure = new System.Windows.Forms.Panel();
+            this.panelTools = new System.Windows.Forms.Panel();
             this.buttonNAngular = new System.Windows.Forms.Button();
             this.buttonNNgon = new System.Windows.Forms.Button();
             this.buttonTriangleRectangular = new System.Windows.Forms.Button();
             this.buttonTriangleIsosceles = new System.Windows.Forms.Button();
             this.buttonSquare = new System.Windows.Forms.Button();
             this.buttonCircle = new System.Windows.Forms.Button();
-            this.buttonFigure = new System.Windows.Forms.Button();
-            this.panelLine = new System.Windows.Forms.Panel();
-            this.buttonLineSquare = new System.Windows.Forms.Button();
-            this.buttonLineDot = new System.Windows.Forms.Button();
             this.buttonLine = new System.Windows.Forms.Button();
-            this.panelBrush = new System.Windows.Forms.Panel();
-            this.buttonBrushSquare = new System.Windows.Forms.Button();
-            this.buttonBrushDot = new System.Windows.Forms.Button();
             this.buttonBrush = new System.Windows.Forms.Button();
+            this.buttonTools = new System.Windows.Forms.Button();
             this.panelProgram = new System.Windows.Forms.Panel();
             this.panelProgramControl = new System.Windows.Forms.Panel();
             this.imageExit = new System.Windows.Forms.PictureBox();
             this.imageExpand = new System.Windows.Forms.PictureBox();
             this.imageCollapse = new System.Windows.Forms.PictureBox();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSettings = new System.Windows.Forms.Panel();
             this.panelSize = new System.Windows.Forms.Panel();
+            this.brushCircle = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.labelSize = new System.Windows.Forms.Label();
+            this.brushSquare = new System.Windows.Forms.PictureBox();
             this.trackBarSize = new System.Windows.Forms.TrackBar();
+            this.label5 = new System.Windows.Forms.Label();
             this.panelInstruments = new System.Windows.Forms.Panel();
             this.pictureBoxRedo = new System.Windows.Forms.PictureBox();
             this.palette1 = new System.Windows.Forms.PictureBox();
@@ -79,23 +82,26 @@
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panelDesk = new System.Windows.Forms.Panel();
             this.panelResizeSheet = new System.Windows.Forms.Panel();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).BeginInit();
             this.groupBoxMenu.SuspendLayout();
             this.panelAngles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.panelFigure.SuspendLayout();
-            this.panelLine.SuspendLayout();
-            this.panelBrush.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericAngle)).BeginInit();
+            this.panelTools.SuspendLayout();
             this.panelProgram.SuspendLayout();
             this.panelProgramControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageExit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageExpand)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollapse)).BeginInit();
+            this.menuStrip.SuspendLayout();
             this.panelSettings.SuspendLayout();
             this.panelSize.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.brushCircle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brushSquare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSize)).BeginInit();
             this.panelInstruments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRedo)).BeginInit();
@@ -176,13 +182,8 @@
             // groupBoxMenu
             // 
             this.groupBoxMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBoxMenu.Controls.Add(this.panelAngles);
-            this.groupBoxMenu.Controls.Add(this.panelFigure);
-            this.groupBoxMenu.Controls.Add(this.buttonFigure);
-            this.groupBoxMenu.Controls.Add(this.panelLine);
-            this.groupBoxMenu.Controls.Add(this.buttonLine);
-            this.groupBoxMenu.Controls.Add(this.panelBrush);
-            this.groupBoxMenu.Controls.Add(this.buttonBrush);
+            this.groupBoxMenu.Controls.Add(this.panelTools);
+            this.groupBoxMenu.Controls.Add(this.buttonTools);
             this.groupBoxMenu.Location = new System.Drawing.Point(-1, 52);
             this.groupBoxMenu.Margin = new System.Windows.Forms.Padding(0);
             this.groupBoxMenu.Name = "groupBoxMenu";
@@ -193,37 +194,37 @@
             // 
             // panelAngles
             // 
-            this.panelAngles.Controls.Add(this.numericUpDown1);
+            this.panelAngles.Controls.Add(this.numericAngle);
             this.panelAngles.Controls.Add(this.label4);
-            this.panelAngles.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAngles.Location = new System.Drawing.Point(0, 386);
+            this.panelAngles.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelAngles.Location = new System.Drawing.Point(349, 0);
             this.panelAngles.Name = "panelAngles";
             this.panelAngles.Size = new System.Drawing.Size(152, 44);
             this.panelAngles.TabIndex = 5;
             this.panelAngles.Visible = false;
             // 
-            // numericUpDown1
+            // numericAngle
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(96, 12);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.numericAngle.Location = new System.Drawing.Point(96, 12);
+            this.numericAngle.Maximum = new decimal(new int[] {
             360,
             0,
             0,
             0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.numericAngle.Minimum = new decimal(new int[] {
             3,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown1.TabIndex = 22;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.numericAngle.Name = "numericAngle";
+            this.numericAngle.Size = new System.Drawing.Size(44, 20);
+            this.numericAngle.TabIndex = 22;
+            this.numericAngle.Value = new decimal(new int[] {
             3,
             0,
             0,
             0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            this.numericAngle.ValueChanged += new System.EventHandler(this.numericAngle_ValueChanged);
             // 
             // label4
             // 
@@ -236,20 +237,22 @@
             this.label4.Text = "Кол-во углов:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panelFigure
+            // panelTools
             // 
-            this.panelFigure.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.panelFigure.Controls.Add(this.buttonNAngular);
-            this.panelFigure.Controls.Add(this.buttonNNgon);
-            this.panelFigure.Controls.Add(this.buttonTriangleRectangular);
-            this.panelFigure.Controls.Add(this.buttonTriangleIsosceles);
-            this.panelFigure.Controls.Add(this.buttonSquare);
-            this.panelFigure.Controls.Add(this.buttonCircle);
-            this.panelFigure.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelFigure.Location = new System.Drawing.Point(0, 231);
-            this.panelFigure.Name = "panelFigure";
-            this.panelFigure.Size = new System.Drawing.Size(152, 155);
-            this.panelFigure.TabIndex = 5;
+            this.panelTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panelTools.Controls.Add(this.buttonNAngular);
+            this.panelTools.Controls.Add(this.buttonNNgon);
+            this.panelTools.Controls.Add(this.buttonTriangleRectangular);
+            this.panelTools.Controls.Add(this.buttonTriangleIsosceles);
+            this.panelTools.Controls.Add(this.buttonSquare);
+            this.panelTools.Controls.Add(this.buttonCircle);
+            this.panelTools.Controls.Add(this.buttonLine);
+            this.panelTools.Controls.Add(this.buttonBrush);
+            this.panelTools.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTools.Location = new System.Drawing.Point(0, 49);
+            this.panelTools.Name = "panelTools";
+            this.panelTools.Size = new System.Drawing.Size(152, 207);
+            this.panelTools.TabIndex = 1;
             // 
             // buttonNAngular
             // 
@@ -259,13 +262,13 @@
             this.buttonNAngular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNAngular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonNAngular.Image = ((System.Drawing.Image)(resources.GetObject("buttonNAngular.Image")));
-            this.buttonNAngular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNAngular.Location = new System.Drawing.Point(0, 125);
+            this.buttonNAngular.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonNAngular.Location = new System.Drawing.Point(0, 175);
             this.buttonNAngular.Name = "buttonNAngular";
             this.buttonNAngular.Size = new System.Drawing.Size(152, 25);
-            this.buttonNAngular.TabIndex = 6;
+            this.buttonNAngular.TabIndex = 10;
             this.buttonNAngular.Text = "   N-угольник";
-            this.buttonNAngular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNAngular.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonNAngular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonNAngular.UseVisualStyleBackColor = true;
             this.buttonNAngular.Click += new System.EventHandler(this.buttonNAngular_Click);
@@ -278,13 +281,13 @@
             this.buttonNNgon.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNNgon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonNNgon.Image = ((System.Drawing.Image)(resources.GetObject("buttonNNgon.Image")));
-            this.buttonNNgon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonNNgon.Location = new System.Drawing.Point(0, 100);
+            this.buttonNNgon.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonNNgon.Location = new System.Drawing.Point(0, 150);
             this.buttonNNgon.Name = "buttonNNgon";
             this.buttonNNgon.Size = new System.Drawing.Size(152, 25);
-            this.buttonNNgon.TabIndex = 5;
+            this.buttonNNgon.TabIndex = 9;
             this.buttonNNgon.Text = "   N-угольник";
-            this.buttonNNgon.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonNNgon.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonNNgon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonNNgon.UseVisualStyleBackColor = true;
             this.buttonNNgon.Click += new System.EventHandler(this.buttonNNgon_Click);
@@ -297,14 +300,14 @@
             this.buttonTriangleRectangular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTriangleRectangular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonTriangleRectangular.Image = ((System.Drawing.Image)(resources.GetObject("buttonTriangleRectangular.Image")));
-            this.buttonTriangleRectangular.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonTriangleRectangular.Location = new System.Drawing.Point(0, 75);
+            this.buttonTriangleRectangular.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonTriangleRectangular.Location = new System.Drawing.Point(0, 125);
             this.buttonTriangleRectangular.Name = "buttonTriangleRectangular";
             this.buttonTriangleRectangular.Padding = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this.buttonTriangleRectangular.Size = new System.Drawing.Size(152, 25);
-            this.buttonTriangleRectangular.TabIndex = 4;
+            this.buttonTriangleRectangular.TabIndex = 8;
             this.buttonTriangleRectangular.Text = "  Треугольник";
-            this.buttonTriangleRectangular.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTriangleRectangular.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonTriangleRectangular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonTriangleRectangular.UseVisualStyleBackColor = true;
             this.buttonTriangleRectangular.Click += new System.EventHandler(this.buttonTriangleRectangular_Click);
@@ -317,13 +320,13 @@
             this.buttonTriangleIsosceles.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTriangleIsosceles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonTriangleIsosceles.Image = ((System.Drawing.Image)(resources.GetObject("buttonTriangleIsosceles.Image")));
-            this.buttonTriangleIsosceles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonTriangleIsosceles.Location = new System.Drawing.Point(0, 50);
+            this.buttonTriangleIsosceles.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonTriangleIsosceles.Location = new System.Drawing.Point(0, 100);
             this.buttonTriangleIsosceles.Name = "buttonTriangleIsosceles";
             this.buttonTriangleIsosceles.Size = new System.Drawing.Size(152, 25);
-            this.buttonTriangleIsosceles.TabIndex = 3;
+            this.buttonTriangleIsosceles.TabIndex = 7;
             this.buttonTriangleIsosceles.Text = "   Треугольник";
-            this.buttonTriangleIsosceles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTriangleIsosceles.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonTriangleIsosceles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonTriangleIsosceles.UseVisualStyleBackColor = true;
             this.buttonTriangleIsosceles.Click += new System.EventHandler(this.buttonTriangleIsosceles_Click);
@@ -336,13 +339,13 @@
             this.buttonSquare.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSquare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonSquare.Image = ((System.Drawing.Image)(resources.GetObject("buttonSquare.Image")));
-            this.buttonSquare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSquare.Location = new System.Drawing.Point(0, 25);
+            this.buttonSquare.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonSquare.Location = new System.Drawing.Point(0, 75);
             this.buttonSquare.Name = "buttonSquare";
             this.buttonSquare.Size = new System.Drawing.Size(152, 25);
-            this.buttonSquare.TabIndex = 2;
+            this.buttonSquare.TabIndex = 6;
             this.buttonSquare.Text = "   Прямоугольник";
-            this.buttonSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSquare.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonSquare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonSquare.UseVisualStyleBackColor = true;
             this.buttonSquare.Click += new System.EventHandler(this.buttonSquare_Click);
@@ -355,179 +358,80 @@
             this.buttonCircle.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCircle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonCircle.Image = ((System.Drawing.Image)(resources.GetObject("buttonCircle.Image")));
-            this.buttonCircle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCircle.Location = new System.Drawing.Point(0, 0);
+            this.buttonCircle.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonCircle.Location = new System.Drawing.Point(0, 50);
             this.buttonCircle.Name = "buttonCircle";
             this.buttonCircle.Size = new System.Drawing.Size(152, 25);
-            this.buttonCircle.TabIndex = 1;
-            this.buttonCircle.Text = "   Овал";
-            this.buttonCircle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCircle.TabIndex = 5;
+            this.buttonCircle.Text = "   Эллипс";
+            this.buttonCircle.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonCircle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonCircle.UseVisualStyleBackColor = true;
             this.buttonCircle.Click += new System.EventHandler(this.buttonCircle_Click);
-            // 
-            // buttonFigure
-            // 
-            this.buttonFigure.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonFigure.FlatAppearance.BorderSize = 0;
-            this.buttonFigure.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFigure.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonFigure.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
-            this.buttonFigure.Image = ((System.Drawing.Image)(resources.GetObject("buttonFigure.Image")));
-            this.buttonFigure.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFigure.Location = new System.Drawing.Point(0, 195);
-            this.buttonFigure.Name = "buttonFigure";
-            this.buttonFigure.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonFigure.Size = new System.Drawing.Size(152, 36);
-            this.buttonFigure.TabIndex = 4;
-            this.buttonFigure.Text = "  Фигура";
-            this.buttonFigure.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonFigure.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonFigure.UseVisualStyleBackColor = true;
-            this.buttonFigure.Click += new System.EventHandler(this.buttonFigure_Click);
-            // 
-            // panelLine
-            // 
-            this.panelLine.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.panelLine.Controls.Add(this.buttonLineSquare);
-            this.panelLine.Controls.Add(this.buttonLineDot);
-            this.panelLine.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLine.Location = new System.Drawing.Point(0, 140);
-            this.panelLine.Name = "panelLine";
-            this.panelLine.Size = new System.Drawing.Size(152, 55);
-            this.panelLine.TabIndex = 3;
-            // 
-            // buttonLineSquare
-            // 
-            this.buttonLineSquare.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonLineSquare.FlatAppearance.BorderSize = 0;
-            this.buttonLineSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLineSquare.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonLineSquare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.buttonLineSquare.Image = ((System.Drawing.Image)(resources.GetObject("buttonLineSquare.Image")));
-            this.buttonLineSquare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLineSquare.Location = new System.Drawing.Point(0, 25);
-            this.buttonLineSquare.Name = "buttonLineSquare";
-            this.buttonLineSquare.Size = new System.Drawing.Size(152, 25);
-            this.buttonLineSquare.TabIndex = 3;
-            this.buttonLineSquare.Text = "   Грубая";
-            this.buttonLineSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLineSquare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonLineSquare.UseVisualStyleBackColor = true;
-            this.buttonLineSquare.Click += new System.EventHandler(this.buttonLineSquare_Click);
-            // 
-            // buttonLineDot
-            // 
-            this.buttonLineDot.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonLineDot.FlatAppearance.BorderSize = 0;
-            this.buttonLineDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLineDot.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonLineDot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.buttonLineDot.Image = ((System.Drawing.Image)(resources.GetObject("buttonLineDot.Image")));
-            this.buttonLineDot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLineDot.Location = new System.Drawing.Point(0, 0);
-            this.buttonLineDot.Name = "buttonLineDot";
-            this.buttonLineDot.Size = new System.Drawing.Size(152, 25);
-            this.buttonLineDot.TabIndex = 2;
-            this.buttonLineDot.Text = "   Сглаженная";
-            this.buttonLineDot.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLineDot.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonLineDot.UseVisualStyleBackColor = true;
-            this.buttonLineDot.Click += new System.EventHandler(this.buttonLineDot_Click);
             // 
             // buttonLine
             // 
             this.buttonLine.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonLine.FlatAppearance.BorderSize = 0;
             this.buttonLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLine.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
+            this.buttonLine.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonLine.Image = ((System.Drawing.Image)(resources.GetObject("buttonLine.Image")));
-            this.buttonLine.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonLine.Location = new System.Drawing.Point(0, 104);
+            this.buttonLine.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonLine.Location = new System.Drawing.Point(0, 25);
             this.buttonLine.Name = "buttonLine";
-            this.buttonLine.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonLine.Size = new System.Drawing.Size(152, 36);
-            this.buttonLine.TabIndex = 2;
-            this.buttonLine.Text = "  Линия";
-            this.buttonLine.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonLine.Size = new System.Drawing.Size(152, 25);
+            this.buttonLine.TabIndex = 4;
+            this.buttonLine.Text = "   Линия";
+            this.buttonLine.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonLine.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonLine.UseVisualStyleBackColor = true;
             this.buttonLine.Click += new System.EventHandler(this.buttonLine_Click);
-            // 
-            // panelBrush
-            // 
-            this.panelBrush.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.panelBrush.Controls.Add(this.buttonBrushSquare);
-            this.panelBrush.Controls.Add(this.buttonBrushDot);
-            this.panelBrush.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBrush.Location = new System.Drawing.Point(0, 49);
-            this.panelBrush.Name = "panelBrush";
-            this.panelBrush.Size = new System.Drawing.Size(152, 55);
-            this.panelBrush.TabIndex = 1;
-            // 
-            // buttonBrushSquare
-            // 
-            this.buttonBrushSquare.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonBrushSquare.FlatAppearance.BorderSize = 0;
-            this.buttonBrushSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBrushSquare.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonBrushSquare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.buttonBrushSquare.Image = ((System.Drawing.Image)(resources.GetObject("buttonBrushSquare.Image")));
-            this.buttonBrushSquare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBrushSquare.Location = new System.Drawing.Point(0, 25);
-            this.buttonBrushSquare.Name = "buttonBrushSquare";
-            this.buttonBrushSquare.Size = new System.Drawing.Size(152, 25);
-            this.buttonBrushSquare.TabIndex = 3;
-            this.buttonBrushSquare.Text = "   Грубая";
-            this.buttonBrushSquare.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBrushSquare.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonBrushSquare.UseVisualStyleBackColor = true;
-            this.buttonBrushSquare.Click += new System.EventHandler(this.buttonBrushSquare_Click);
-            // 
-            // buttonBrushDot
-            // 
-            this.buttonBrushDot.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonBrushDot.FlatAppearance.BorderSize = 0;
-            this.buttonBrushDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBrushDot.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonBrushDot.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.buttonBrushDot.Image = ((System.Drawing.Image)(resources.GetObject("buttonBrushDot.Image")));
-            this.buttonBrushDot.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBrushDot.Location = new System.Drawing.Point(0, 0);
-            this.buttonBrushDot.Name = "buttonBrushDot";
-            this.buttonBrushDot.Size = new System.Drawing.Size(152, 25);
-            this.buttonBrushDot.TabIndex = 2;
-            this.buttonBrushDot.Text = "   Сглаженная";
-            this.buttonBrushDot.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBrushDot.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonBrushDot.UseVisualStyleBackColor = true;
-            this.buttonBrushDot.Click += new System.EventHandler(this.buttonBrushDot_Click);
             // 
             // buttonBrush
             // 
             this.buttonBrush.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonBrush.FlatAppearance.BorderSize = 0;
             this.buttonBrush.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBrush.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonBrush.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
+            this.buttonBrush.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBrush.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonBrush.Image = ((System.Drawing.Image)(resources.GetObject("buttonBrush.Image")));
-            this.buttonBrush.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBrush.Location = new System.Drawing.Point(0, 13);
+            this.buttonBrush.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonBrush.Location = new System.Drawing.Point(0, 0);
             this.buttonBrush.Name = "buttonBrush";
-            this.buttonBrush.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.buttonBrush.Size = new System.Drawing.Size(152, 36);
-            this.buttonBrush.TabIndex = 0;
-            this.buttonBrush.Text = "  Кисть";
-            this.buttonBrush.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBrush.Size = new System.Drawing.Size(152, 25);
+            this.buttonBrush.TabIndex = 2;
+            this.buttonBrush.Text = "   Кисть";
+            this.buttonBrush.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonBrush.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonBrush.UseVisualStyleBackColor = true;
             this.buttonBrush.Click += new System.EventHandler(this.buttonBrush_Click);
+            // 
+            // buttonTools
+            // 
+            this.buttonTools.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTools.FlatAppearance.BorderSize = 0;
+            this.buttonTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTools.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonTools.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
+            this.buttonTools.Image = ((System.Drawing.Image)(resources.GetObject("buttonTools.Image")));
+            this.buttonTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTools.Location = new System.Drawing.Point(0, 13);
+            this.buttonTools.Name = "buttonTools";
+            this.buttonTools.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.buttonTools.Size = new System.Drawing.Size(152, 36);
+            this.buttonTools.TabIndex = 0;
+            this.buttonTools.Text = " Инструменты";
+            this.buttonTools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTools.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonTools.UseVisualStyleBackColor = true;
+            this.buttonTools.Click += new System.EventHandler(this.buttonBrush_Click);
             // 
             // panelProgram
             // 
             this.panelProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
             this.panelProgram.Controls.Add(this.panelProgramControl);
+            this.panelProgram.Controls.Add(this.menuStrip);
             this.panelProgram.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelProgram.Location = new System.Drawing.Point(150, 0);
             this.panelProgram.Name = "panelProgram";
@@ -579,9 +483,69 @@
             this.imageCollapse.TabStop = false;
             this.imageCollapse.Click += new System.EventHandler(this.imageCollapse_Click);
             // 
+            // menuStrip
+            // 
+            this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
+            this.menuStrip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.menuStrip.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuStrip.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.файлToolStripMenuItem});
+            this.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(0);
+            this.menuStrip.Size = new System.Drawing.Size(53, 20);
+            this.menuStrip.TabIndex = 6;
+            // 
+            // файлToolStripMenuItem
+            // 
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.создатьToolStripMenuItem,
+            this.открытьToolStripMenuItem,
+            this.сохранитьToolStripMenuItem,
+            this.выходToolStripMenuItem});
+            this.файлToolStripMenuItem.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.файлToolStripMenuItem.Text = "Файл";
+            // 
+            // создатьToolStripMenuItem
+            // 
+            this.создатьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("создатьToolStripMenuItem.Image")));
+            this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.создатьToolStripMenuItem.Text = "Создать";
+            this.создатьToolStripMenuItem.Click += new System.EventHandler(this.CreateToolStripMenuItem_Click);
+            // 
+            // открытьToolStripMenuItem
+            // 
+            this.открытьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("открытьToolStripMenuItem.Image")));
+            this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.открытьToolStripMenuItem.Text = "Открыть";
+            this.открытьToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
+            // 
+            // сохранитьToolStripMenuItem
+            // 
+            this.сохранитьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("сохранитьToolStripMenuItem.Image")));
+            this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сохранитьToolStripMenuItem.Text = "Сохранить";
+            this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
+            // 
+            // выходToolStripMenuItem
+            // 
+            this.выходToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("выходToolStripMenuItem.Image")));
+            this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выходToolStripMenuItem.Text = "Выход";
+            this.выходToolStripMenuItem.Click += new System.EventHandler(this.imageExit_Click);
+            // 
             // panelSettings
             // 
             this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panelSettings.Controls.Add(this.panelAngles);
             this.panelSettings.Controls.Add(this.panelSize);
             this.panelSettings.Controls.Add(this.panelInstruments);
             this.panelSettings.Dock = System.Windows.Forms.DockStyle.Top;
@@ -592,20 +556,35 @@
             // 
             // panelSize
             // 
+            this.panelSize.Controls.Add(this.brushCircle);
             this.panelSize.Controls.Add(this.label3);
             this.panelSize.Controls.Add(this.labelSize);
+            this.panelSize.Controls.Add(this.brushSquare);
             this.panelSize.Controls.Add(this.trackBarSize);
+            this.panelSize.Controls.Add(this.label5);
             this.panelSize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelSize.Location = new System.Drawing.Point(549, 0);
+            this.panelSize.Location = new System.Drawing.Point(501, 0);
             this.panelSize.Name = "panelSize";
-            this.panelSize.Size = new System.Drawing.Size(161, 44);
+            this.panelSize.Size = new System.Drawing.Size(209, 44);
             this.panelSize.TabIndex = 4;
+            // 
+            // brushCircle
+            // 
+            this.brushCircle.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.brushCircle.Image = ((System.Drawing.Image)(resources.GetObject("brushCircle.Image")));
+            this.brushCircle.Location = new System.Drawing.Point(156, 22);
+            this.brushCircle.Name = "brushCircle";
+            this.brushCircle.Size = new System.Drawing.Size(16, 16);
+            this.brushCircle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.brushCircle.TabIndex = 28;
+            this.brushCircle.TabStop = false;
+            this.brushCircle.Click += new System.EventHandler(this.brushCircle_Click);
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(15, 4);
+            this.label3.Location = new System.Drawing.Point(9, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 18);
             this.label3.TabIndex = 4;
@@ -617,20 +596,31 @@
             this.labelSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelSize.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelSize.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.labelSize.Location = new System.Drawing.Point(125, 6);
+            this.labelSize.Location = new System.Drawing.Point(119, 6);
             this.labelSize.Name = "labelSize";
             this.labelSize.Size = new System.Drawing.Size(33, 18);
             this.labelSize.TabIndex = 20;
             this.labelSize.Text = "5";
             this.labelSize.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // brushSquare
+            // 
+            this.brushSquare.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.brushSquare.Image = ((System.Drawing.Image)(resources.GetObject("brushSquare.Image")));
+            this.brushSquare.Location = new System.Drawing.Point(179, 24);
+            this.brushSquare.Name = "brushSquare";
+            this.brushSquare.Size = new System.Drawing.Size(14, 14);
+            this.brushSquare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.brushSquare.TabIndex = 27;
+            this.brushSquare.TabStop = false;
+            this.brushSquare.Click += new System.EventHandler(this.brushSquare_Click);
+            // 
             // trackBarSize
             // 
             this.trackBarSize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.trackBarSize.LargeChange = 1;
-            this.trackBarSize.Location = new System.Drawing.Point(10, 22);
+            this.trackBarSize.Location = new System.Drawing.Point(4, 22);
             this.trackBarSize.Margin = new System.Windows.Forms.Padding(0);
-            this.trackBarSize.Maximum = 80;
+            this.trackBarSize.Maximum = 60;
             this.trackBarSize.Minimum = 1;
             this.trackBarSize.MinimumSize = new System.Drawing.Size(0, 20);
             this.trackBarSize.Name = "trackBarSize";
@@ -638,6 +628,17 @@
             this.trackBarSize.TabIndex = 0;
             this.trackBarSize.Value = 4;
             this.trackBarSize.Scroll += new System.EventHandler(this.trackBarSize_Scroll);
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(152, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(51, 18);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Режим:";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelInstruments
             // 
@@ -653,7 +654,7 @@
             this.panelInstruments.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelInstruments.Location = new System.Drawing.Point(0, 0);
             this.panelInstruments.Name = "panelInstruments";
-            this.panelInstruments.Size = new System.Drawing.Size(230, 44);
+            this.panelInstruments.Size = new System.Drawing.Size(225, 44);
             this.panelInstruments.TabIndex = 4;
             // 
             // pictureBoxRedo
@@ -764,6 +765,8 @@
             // 
             // pictureBoxSheet
             // 
+            this.pictureBoxSheet.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxSheet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxSheet.Location = new System.Drawing.Point(15, 8);
             this.pictureBoxSheet.Name = "pictureBoxSheet";
             this.pictureBoxSheet.Size = new System.Drawing.Size(680, 400);
@@ -796,6 +799,10 @@
             this.panelResizeSheet.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelResizeSheet_MouseMove);
             this.panelResizeSheet.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panelResizeSheet_MouseUp);
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog";
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -808,6 +815,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip;
             this.Name = "Form";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -819,18 +827,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).EndInit();
             this.groupBoxMenu.ResumeLayout(false);
             this.panelAngles.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.panelFigure.ResumeLayout(false);
-            this.panelLine.ResumeLayout(false);
-            this.panelBrush.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericAngle)).EndInit();
+            this.panelTools.ResumeLayout(false);
             this.panelProgram.ResumeLayout(false);
+            this.panelProgram.PerformLayout();
             this.panelProgramControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageExit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageExpand)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollapse)).EndInit();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.panelSettings.ResumeLayout(false);
             this.panelSize.ResumeLayout(false);
             this.panelSize.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.brushCircle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.brushSquare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSize)).EndInit();
             this.panelInstruments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRedo)).EndInit();
@@ -858,21 +869,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox imageExit;
         private System.Windows.Forms.GroupBox groupBoxMenu;
-        private System.Windows.Forms.Panel panelBrush;
-        private System.Windows.Forms.Button buttonBrushSquare;
-        private System.Windows.Forms.Button buttonBrushDot;
+        private System.Windows.Forms.Panel panelTools;
         private System.Windows.Forms.Button buttonBrush;
-        private System.Windows.Forms.Panel panelFigure;
-        private System.Windows.Forms.Button buttonTriangleIsosceles;
-        private System.Windows.Forms.Button buttonSquare;
-        private System.Windows.Forms.Button buttonCircle;
-        private System.Windows.Forms.Button buttonFigure;
-        private System.Windows.Forms.Panel panelLine;
-        private System.Windows.Forms.Button buttonLineSquare;
-        private System.Windows.Forms.Button buttonLineDot;
-        private System.Windows.Forms.Button buttonLine;
+        private System.Windows.Forms.Button buttonTools;
         private System.Windows.Forms.Panel panelInfo;
-        private System.Windows.Forms.Button buttonTriangleRectangular;
         private System.Windows.Forms.Panel panelSettings;
         private System.Windows.Forms.PictureBox pictureBoxSheet;
         private System.Windows.Forms.PictureBox palette2;
@@ -895,11 +895,27 @@
         private System.Windows.Forms.Panel panelProgramControl;
         private System.Windows.Forms.Panel panelDesk;
         private System.Windows.Forms.Panel panelResizeSheet;
-        private System.Windows.Forms.Button buttonNNgon;
         private System.Windows.Forms.Panel panelAngles;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numericAngle;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.Button buttonNAngular;
+        private System.Windows.Forms.Button buttonNNgon;
+        private System.Windows.Forms.Button buttonTriangleRectangular;
+        private System.Windows.Forms.Button buttonTriangleIsosceles;
+        private System.Windows.Forms.Button buttonSquare;
+        private System.Windows.Forms.Button buttonCircle;
+        private System.Windows.Forms.Button buttonLine;
+        private System.Windows.Forms.PictureBox brushCircle;
+        private System.Windows.Forms.PictureBox brushSquare;
+        private System.Windows.Forms.Label label5;
     }
 }
 
