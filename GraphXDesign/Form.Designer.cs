@@ -36,9 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBoxMenu = new System.Windows.Forms.GroupBox();
-            this.panelAngles = new System.Windows.Forms.Panel();
-            this.numericAngle = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
             this.panelTools = new System.Windows.Forms.Panel();
             this.buttonNAngular = new System.Windows.Forms.Button();
             this.buttonNNgon = new System.Windows.Forms.Button();
@@ -49,6 +46,9 @@
             this.buttonLine = new System.Windows.Forms.Button();
             this.buttonBrush = new System.Windows.Forms.Button();
             this.buttonTools = new System.Windows.Forms.Button();
+            this.panelAngles = new System.Windows.Forms.Panel();
+            this.numericAngle = new System.Windows.Forms.NumericUpDown();
+            this.label4 = new System.Windows.Forms.Label();
             this.panelProgram = new System.Windows.Forms.Panel();
             this.panelProgramControl = new System.Windows.Forms.Panel();
             this.imageExit = new System.Windows.Forms.PictureBox();
@@ -84,14 +84,20 @@
             this.panelResizeSheet = new System.Windows.Forms.Panel();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.labelY = new System.Windows.Forms.Label();
+            this.labelX = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).BeginInit();
             this.groupBoxMenu.SuspendLayout();
+            this.panelTools.SuspendLayout();
             this.panelAngles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericAngle)).BeginInit();
-            this.panelTools.SuspendLayout();
             this.panelProgram.SuspendLayout();
             this.panelProgramControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageExit)).BeginInit();
@@ -115,6 +121,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).BeginInit();
             this.panelDesk.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -125,7 +133,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 480);
+            this.panel1.Size = new System.Drawing.Size(150, 510);
             this.panel1.TabIndex = 0;
             // 
             // panelInfo
@@ -184,58 +192,13 @@
             this.groupBoxMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBoxMenu.Controls.Add(this.panelTools);
             this.groupBoxMenu.Controls.Add(this.buttonTools);
-            this.groupBoxMenu.Location = new System.Drawing.Point(-1, 52);
+            this.groupBoxMenu.Location = new System.Drawing.Point(-1, 50);
             this.groupBoxMenu.Margin = new System.Windows.Forms.Padding(0);
             this.groupBoxMenu.Name = "groupBoxMenu";
             this.groupBoxMenu.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBoxMenu.Size = new System.Drawing.Size(152, 436);
+            this.groupBoxMenu.Size = new System.Drawing.Size(152, 480);
             this.groupBoxMenu.TabIndex = 3;
             this.groupBoxMenu.TabStop = false;
-            // 
-            // panelAngles
-            // 
-            this.panelAngles.Controls.Add(this.numericAngle);
-            this.panelAngles.Controls.Add(this.label4);
-            this.panelAngles.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelAngles.Location = new System.Drawing.Point(349, 0);
-            this.panelAngles.Name = "panelAngles";
-            this.panelAngles.Size = new System.Drawing.Size(152, 44);
-            this.panelAngles.TabIndex = 5;
-            this.panelAngles.Visible = false;
-            // 
-            // numericAngle
-            // 
-            this.numericAngle.Location = new System.Drawing.Point(96, 12);
-            this.numericAngle.Maximum = new decimal(new int[] {
-            360,
-            0,
-            0,
-            0});
-            this.numericAngle.Minimum = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numericAngle.Name = "numericAngle";
-            this.numericAngle.Size = new System.Drawing.Size(44, 20);
-            this.numericAngle.TabIndex = 22;
-            this.numericAngle.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.numericAngle.ValueChanged += new System.EventHandler(this.numericAngle_ValueChanged);
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(7, 11);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 18);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Кол-во углов:";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // panelTools
             // 
@@ -427,6 +390,53 @@
             this.buttonTools.UseVisualStyleBackColor = true;
             this.buttonTools.Click += new System.EventHandler(this.buttonBrush_Click);
             // 
+            // panelAngles
+            // 
+            this.panelAngles.Controls.Add(this.numericAngle);
+            this.panelAngles.Controls.Add(this.label4);
+            this.panelAngles.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelAngles.Location = new System.Drawing.Point(355, 0);
+            this.panelAngles.Name = "panelAngles";
+            this.panelAngles.Size = new System.Drawing.Size(146, 44);
+            this.panelAngles.TabIndex = 5;
+            this.panelAngles.Visible = false;
+            // 
+            // numericAngle
+            // 
+            this.numericAngle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.numericAngle.ForeColor = System.Drawing.Color.White;
+            this.numericAngle.Location = new System.Drawing.Point(95, 12);
+            this.numericAngle.Maximum = new decimal(new int[] {
+            360,
+            0,
+            0,
+            0});
+            this.numericAngle.Minimum = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericAngle.Name = "numericAngle";
+            this.numericAngle.Size = new System.Drawing.Size(44, 20);
+            this.numericAngle.TabIndex = 22;
+            this.numericAngle.Value = new decimal(new int[] {
+            3,
+            0,
+            0,
+            0});
+            this.numericAngle.ValueChanged += new System.EventHandler(this.numericAngle_ValueChanged);
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(7, 11);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(84, 18);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Кол-во углов:";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // panelProgram
             // 
             this.panelProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
@@ -544,7 +554,7 @@
             // 
             // panelSettings
             // 
-            this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.panelSettings.Controls.Add(this.panelAngles);
             this.panelSettings.Controls.Add(this.panelSize);
             this.panelSettings.Controls.Add(this.panelInstruments);
@@ -570,9 +580,10 @@
             // 
             // brushCircle
             // 
+            this.brushCircle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.brushCircle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.brushCircle.Image = ((System.Drawing.Image)(resources.GetObject("brushCircle.Image")));
-            this.brushCircle.Location = new System.Drawing.Point(156, 22);
+            this.brushCircle.Location = new System.Drawing.Point(155, 23);
             this.brushCircle.Name = "brushCircle";
             this.brushCircle.Size = new System.Drawing.Size(16, 16);
             this.brushCircle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -584,7 +595,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(9, 4);
+            this.label3.Location = new System.Drawing.Point(9, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 18);
             this.label3.TabIndex = 4;
@@ -596,7 +607,7 @@
             this.labelSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelSize.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelSize.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.labelSize.Location = new System.Drawing.Point(119, 6);
+            this.labelSize.Location = new System.Drawing.Point(122, 5);
             this.labelSize.Name = "labelSize";
             this.labelSize.Size = new System.Drawing.Size(33, 18);
             this.labelSize.TabIndex = 20;
@@ -607,9 +618,9 @@
             // 
             this.brushSquare.Cursor = System.Windows.Forms.Cursors.Hand;
             this.brushSquare.Image = ((System.Drawing.Image)(resources.GetObject("brushSquare.Image")));
-            this.brushSquare.Location = new System.Drawing.Point(179, 24);
+            this.brushSquare.Location = new System.Drawing.Point(178, 23);
             this.brushSquare.Name = "brushSquare";
-            this.brushSquare.Size = new System.Drawing.Size(14, 14);
+            this.brushSquare.Size = new System.Drawing.Size(16, 16);
             this.brushSquare.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.brushSquare.TabIndex = 27;
             this.brushSquare.TabStop = false;
@@ -633,11 +644,11 @@
             // 
             this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(152, 4);
+            this.label5.Location = new System.Drawing.Point(152, 3);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 18);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Режим:";
+            this.label5.Text = "Форма:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelInstruments
@@ -767,6 +778,7 @@
             // 
             this.pictureBoxSheet.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxSheet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxSheet.Cursor = System.Windows.Forms.Cursors.Cross;
             this.pictureBoxSheet.Location = new System.Drawing.Point(15, 8);
             this.pictureBoxSheet.Name = "pictureBoxSheet";
             this.pictureBoxSheet.Size = new System.Drawing.Size(680, 400);
@@ -785,7 +797,7 @@
             this.panelDesk.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesk.Location = new System.Drawing.Point(150, 64);
             this.panelDesk.Name = "panelDesk";
-            this.panelDesk.Size = new System.Drawing.Size(710, 416);
+            this.panelDesk.Size = new System.Drawing.Size(710, 446);
             this.panelDesk.TabIndex = 4;
             // 
             // panelResizeSheet
@@ -803,12 +815,82 @@
             // 
             this.openFileDialog.FileName = "openFileDialog";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(150, 490);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(710, 20);
+            this.panel2.TabIndex = 5;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.labelY);
+            this.panel3.Controls.Add(this.labelX);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(480, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(230, 20);
+            this.panel3.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label8.Location = new System.Drawing.Point(175, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(11, 18);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "x";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelY
+            // 
+            this.labelY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelY.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelY.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelY.Location = new System.Drawing.Point(190, 0);
+            this.labelY.Name = "labelY";
+            this.labelY.Size = new System.Drawing.Size(40, 18);
+            this.labelY.TabIndex = 22;
+            this.labelY.Text = "5";
+            this.labelY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelX
+            // 
+            this.labelX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelX.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelX.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelX.Location = new System.Drawing.Point(130, 1);
+            this.labelX.Name = "labelX";
+            this.labelX.Size = new System.Drawing.Size(40, 18);
+            this.labelX.TabIndex = 21;
+            this.labelX.Text = "5";
+            this.labelX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(5, 1);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 18);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Размер рисунка (px):";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(860, 480);
+            this.ClientSize = new System.Drawing.Size(860, 510);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelDesk);
             this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.panelProgram);
@@ -826,9 +908,9 @@
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).EndInit();
             this.groupBoxMenu.ResumeLayout(false);
+            this.panelTools.ResumeLayout(false);
             this.panelAngles.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.numericAngle)).EndInit();
-            this.panelTools.ResumeLayout(false);
             this.panelProgram.ResumeLayout(false);
             this.panelProgram.PerformLayout();
             this.panelProgramControl.ResumeLayout(false);
@@ -855,6 +937,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).EndInit();
             this.panelDesk.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -916,6 +1000,12 @@
         private System.Windows.Forms.PictureBox brushCircle;
         private System.Windows.Forms.PictureBox brushSquare;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelY;
+        private System.Windows.Forms.Label labelX;
     }
 }
 

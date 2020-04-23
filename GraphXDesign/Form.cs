@@ -49,6 +49,8 @@ namespace GraphXDesign
 
         private void startProgram()
         {
+            labelX.Text = Convert.ToString(pictureBoxSheet.Width);
+            labelY.Text = Convert.ToString(pictureBoxSheet.Height);
             Canvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
         }
 
@@ -179,6 +181,7 @@ namespace GraphXDesign
         {
             pictureBoxSheet.Image = null;
             startProgram();
+            pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp, pictureBoxSheet.ClientRectangle); // Эта строка, делает фон листа белым
         }
 
         private void trackBarSize_Scroll(object sender, EventArgs e)
@@ -321,6 +324,8 @@ namespace GraphXDesign
             {
                 panelResizeSheet.Location += (Size)e.Location;
                 pictureBoxSheet.Size += (Size)e.Location;
+                labelX.Text = Convert.ToString(pictureBoxSheet.Width);
+                labelY.Text = Convert.ToString(pictureBoxSheet.Height);
             }
         }
 
@@ -338,11 +343,15 @@ namespace GraphXDesign
         private void brushSquare_Click(object sender, EventArgs e)
         {
             brush = new SquareBrush(brush);
+            brushSquare.BorderStyle = BorderStyle.Fixed3D;
+            brushCircle.BorderStyle = BorderStyle.None;
         }
 
         private void brushCircle_Click(object sender, EventArgs e)
         {
             brush = new CircleBrush(brush);
+            brushSquare.BorderStyle = BorderStyle.None;
+            brushCircle.BorderStyle = BorderStyle.Fixed3D;
         }
     }
 }
