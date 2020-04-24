@@ -10,7 +10,6 @@ namespace GraphXDesign
 {
     public interface ITool
     {       
-
         void MouseDown(PictureBox sheet, IBrush brush, MouseEventArgs e);
         void MouseMove(PictureBox sheet, IBrush brush, MouseEventArgs e);
         void MouseUp(PictureBox sheet, IBrush brush, MouseEventArgs e);
