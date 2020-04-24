@@ -21,7 +21,8 @@ namespace GraphXDesign
         public void Draw()
 
         {
-            for (int i = 0; i < figure.dotlist.Count - 1; i++)
+            brush.DrawLine(figure.dotlist[0].X, figure.dotlist[0].Y, figure.dotlist[1].X, figure.dotlist[1].Y, true);
+            for (int i = 1; i < figure.dotlist.Count - 1; i++)
             {
                 brush.DrawLine( figure.dotlist [i].X, figure.dotlist[i].Y, figure.dotlist[i + 1].X, figure.dotlist[i + 1].Y);
             }
