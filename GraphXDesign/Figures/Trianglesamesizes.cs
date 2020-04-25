@@ -8,9 +8,8 @@ using System.Drawing;
 
 namespace GraphXDesign
 {
-    class Trianglesamesizes:IFigure
+    public class Trianglesamesizes:IFigure
     {
-     
         public override void Createdotlist(int x1, int y1, int x2, int y2)
         {
             dotlist = new List<Point>();
@@ -25,6 +24,5 @@ namespace GraphXDesign
                 dotlist.Add(new Point(x2 + 2 * Math.Abs(x2 - x1), y2));
             }
         }
-    
     }
 }
