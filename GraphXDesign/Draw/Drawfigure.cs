@@ -28,8 +28,5 @@ namespace GraphXDesign
             }
             brush.DrawLine(figure.dotlist[figure.dotlist.Count - 1].X, figure.dotlist[figure.dotlist.Count - 1].Y, figure.dotlist[0].X, figure.dotlist[0].Y);
         }
-
-
-
     }
 }

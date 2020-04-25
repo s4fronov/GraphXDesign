@@ -10,13 +10,6 @@ namespace GraphXDesign
    public abstract class IFigure
     {
         public List <Point> dotlist;
-
-       
-        
         abstract public void Createdotlist(int x1, int y1, int x2, int y2);
-               
-
-
-
     }
 }

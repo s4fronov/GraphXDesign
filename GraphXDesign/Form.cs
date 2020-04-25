@@ -299,6 +299,10 @@ namespace GraphXDesign
         {
             tool.MouseUp((PictureBox)sender, brush, e);
             tool = toolTmp;
+            if (!(tool is PipetteTool))
+            {
+                Canvas.GetCanvas.AddToBmpList();
+            }
         }
 
         private void pictureBoxSheet_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -352,6 +356,16 @@ namespace GraphXDesign
             brush = new CircleBrush(brush);
             brushSquare.BorderStyle = BorderStyle.None;
             brushCircle.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void pictureBoxUndo_Click(object sender, EventArgs e)
+        {
+            Canvas.GetCanvas.Undo(pictureBoxSheet);
+        }
+
+        private void pictureBoxRedo_Click(object sender, EventArgs e)
+        {
+            Canvas.GetCanvas.Redo(pictureBoxSheet);
         }
     }
 }

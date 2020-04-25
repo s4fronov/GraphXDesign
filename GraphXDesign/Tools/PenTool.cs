@@ -10,16 +10,12 @@ namespace GraphXDesign
 {
     public class PenTool:ITool
     {
-        //какие то штуки, которые нужны для конкретного инструмента
         bool cursorActive;
         int x1, y1, x2, y2;
-
         public PenTool()
         {
             cursorActive = false; 
         }
-
-        //весь код для рисования формы перенесен сюда полностью
         public void MouseDown(PictureBox sheet, IBrush brush, MouseEventArgs e)
         {
             cursorActive = true;

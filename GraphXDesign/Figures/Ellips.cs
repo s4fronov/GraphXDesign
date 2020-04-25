@@ -9,11 +9,9 @@ namespace GraphXDesign
 {
     public class Ellips : IFigure
     {
-        
         public override void Createdotlist(int x1, int y1, int x2, int y2)
         {
             dotlist = new List<Point>(); 
-            int n = 360;
             int delx;
             int dely;
             if (x2 >= x1)
@@ -27,17 +25,13 @@ namespace GraphXDesign
                 dely = Math.Abs(y2 - y1);
             }
             double r = Math.Sqrt(Math.Pow(delx, 2) + Math.Pow(dely, 2));
-            for (int i = 1; i <= n + 1; i++)
+            for (int i = 1; i <= 50; i++)
             {
-                double angle = Math.PI * 2 / n * i;
-                  
+                double angle = Math.PI * 2 / 50 * i;
                    int xd = Convert.ToInt32((delx * Math.Cos(angle) + x1)); // эллипс
                    int yd = Convert.ToInt32((dely * Math.Sin(angle) + y1));
-
                 dotlist.Add(new Point(xd, yd));
             }
-           
         }
-
     }
 }

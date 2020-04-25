@@ -13,6 +13,8 @@ namespace GraphXDesign
     {
         //singleton pattern
         private static Canvas instance;
+        List<Bitmap> bitmapList;
+        int m;
         private Canvas() { }
         public static Canvas GetCanvas
         {
@@ -28,7 +30,10 @@ namespace GraphXDesign
 
         public void Init(int width, int height)
         {
+            bitmapList = new List<Bitmap>();
             Bmp = new Bitmap(width, height);
+            bitmapList.Add((Bitmap)Bmp.Clone());
+            m = bitmapList.Count - 1;
             Width = width;
             Height = height;
         }
@@ -48,6 +53,30 @@ namespace GraphXDesign
         public void LoadFromCache()
         {
             Bmp = (Bitmap)Cache.Clone();
+        }
+        public void AddToBmpList()
+        {
+            Bitmap bmp = (Bitmap)Bmp.Clone();
+            bitmapList.Add(bmp);
+            m++;
+        }
+        public void Undo(PictureBox a)
+        {
+            if (m>0)
+            {
+                m--;
+                Bmp = bitmapList[m];
+                WriteToPictureBox(a);
+            }
+        }
+        public void Redo(PictureBox a)
+        {
+            if (m < bitmapList.Count-1)
+            {
+                m++;
+                Bmp = bitmapList[m];
+                WriteToPictureBox(a);
+            }
         }
 
         public Color GetPixel(int x, int y)
