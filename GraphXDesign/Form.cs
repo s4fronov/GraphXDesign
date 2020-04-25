@@ -17,6 +17,7 @@ namespace GraphXDesign
         int brushSize;
         int n;
         IBrush brush;
+        IFill fill;
         ITool tool;
         ITool toolTmp;
         int option; // 0 - круг, 1 - квадрат
@@ -44,6 +45,8 @@ namespace GraphXDesign
             cursorActive = false;
             brush = new CircleBrush(brushSize, paintColor1);
             brush.BrushColor = palette1.BackColor;
+            fill = new SolidFill();
+            fill.FillColor = paintColor2;
             tool = new PenTool();
         }
 
@@ -149,6 +152,7 @@ namespace GraphXDesign
             if (colorDialog1.ShowDialog() == DialogResult.OK)
             { palette2.BackColor = colorDialog1.Color; }
             paintColor2 = palette2.BackColor;
+            fill.FillColor = palette2.BackColor;
         }
 
         private void pictureBoxReverse_Click(object sender, EventArgs e)
@@ -288,7 +292,7 @@ namespace GraphXDesign
 
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
         {
-            tool.MouseMove((PictureBox)sender, brush, e);
+            tool.MouseMove((PictureBox)sender, brush, fill, e);
             if (tool is PipetteTool)
             {
                 palette1.BackColor = brush.BrushColor; // Для пипетки

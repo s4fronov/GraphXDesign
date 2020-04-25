@@ -40,7 +40,7 @@ namespace GraphXDesign
             brush.DrawLine(x1, y1, e.X, e.Y, true);
             Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
-        public void MouseMove(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             if (cursorActive == true)
             {

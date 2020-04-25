@@ -61,6 +61,9 @@
     <Compile Include="Figures\Line.cs" />
     <Compile Include="Figures\Square.cs" />
     <Compile Include="Figures\Rectangle.cs" />
+    <Compile Include="Fill\IFill.cs" />
+    <Compile Include="Fill\NoFill.cs" />
+    <Compile Include="Fill\SolidFill.cs" />
     <Compile Include="Form.cs">
       <SubType>Form</SubType>
     </Compile>
