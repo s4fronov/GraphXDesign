@@ -71,6 +71,7 @@
     <Compile Include="PathCalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\EraserTool.cs" />
     <Compile Include="Tools\FigureTool.cs" />
     <Compile Include="Tools\FillTool.cs" />
     <Compile Include="Tools\NNgonTool.cs" />

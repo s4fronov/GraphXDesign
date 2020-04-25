@@ -173,8 +173,8 @@ namespace GraphXDesign
 
         private void pictureBoxEraser_Click(object sender, EventArgs e)
         {
-            tool = new PenTool();
-            brush.BrushColor = pictureBoxSheet.BackColor; // Color.Transparent для прозрачного PNG
+            tool = new EraserTool();
+            // brush.BrushColor = pictureBoxSheet.BackColor; // Color.Transparent для прозрачного PNG
         }
 
         private void pictureBoxClearAll_Click(object sender, EventArgs e)
