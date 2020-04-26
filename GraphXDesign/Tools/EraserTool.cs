@@ -17,7 +17,7 @@ namespace GraphXDesign
         {
             cursorActive = false;
         }
-        public void MouseDown(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseDown(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             color = brush.BrushColor;
             brush.BrushColor = sheet.BackColor;
@@ -39,7 +39,7 @@ namespace GraphXDesign
                 Canvas.GetCanvas.WriteToPictureBox(sheet);
             }
         }
-        public void MouseUp(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             cursorActive = false;
             brush.BrushColor = color;

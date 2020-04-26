@@ -19,7 +19,7 @@ namespace GraphXDesign
             gon = false;
         }
 
-        public void MouseDown(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseDown(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             Canvas.GetCanvas.SaveToCache();
             cursorActive = true;
@@ -53,14 +53,14 @@ namespace GraphXDesign
                 Canvas.GetCanvas.WriteToPictureBox(sheet);
             }
         }
-        public void MouseUp(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             cursorActive = false;
             x2 = e.X;
             y2 = e.Y;
             Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
-        public void MouseDoubleClick(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             cursorActive = false;
             x2 = e.X;

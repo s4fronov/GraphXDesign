@@ -45,8 +45,7 @@ namespace GraphXDesign
             cursorActive = false;
             brush = new CircleBrush(brushSize, paintColor1);
             brush.BrushColor = palette1.BackColor;
-            fill = new SolidFill();
-            fill.FillColor = paintColor2;
+            fill = new NoFill(paintColor2);
             tool = new PenTool();
         }
 
@@ -288,7 +287,7 @@ namespace GraphXDesign
             }
             else
                 tool = toolTmp;
-            tool.MouseDown((PictureBox)sender, brush, e);
+            tool.MouseDown((PictureBox)sender, brush, fill, e);
         }
 
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
@@ -302,7 +301,7 @@ namespace GraphXDesign
 
         private void pictureBoxSheet_MouseUp(object sender, MouseEventArgs e)
         {
-            tool.MouseUp((PictureBox)sender, brush, e);
+            tool.MouseUp((PictureBox)sender, brush, fill, e);
             tool = toolTmp;
             if (!(tool is PipetteTool))
             {
@@ -312,7 +311,7 @@ namespace GraphXDesign
 
         private void pictureBoxSheet_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            tool.MouseDoubleClick((PictureBox)sender, brush, e);
+            tool.MouseDoubleClick((PictureBox)sender, brush, fill, e);
             tool = toolTmp;
         }
 
@@ -375,17 +374,17 @@ namespace GraphXDesign
 
         private void labelFeelCont_Click(object sender, EventArgs e)
         {
-            
+            fill = new SolidFill(fill);
         }
 
         private void labelCont_Click(object sender, EventArgs e)
         {
-
+            fill = new NoFill(fill);
         }
 
         private void labelFeel_Click(object sender, EventArgs e)
         {
-
+            fill = new OnlyFill(fill);
         }
     }
 }
