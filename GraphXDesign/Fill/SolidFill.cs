@@ -9,8 +9,10 @@ namespace GraphXDesign
 {
     class SolidFill:IFill
     {
-        public Color FillColor { get; set; }
-        public void Fill(Bitmap bmp, Point startingPoint)
+        public SolidFill(IFill fill) : base(fill) { }
+        public SolidFill(Color color) : base(color) { }
+
+        public override void Fill(Bitmap bmp, Point startingPoint)
         {
             Color startingColor = bmp.GetPixel(startingPoint.X, startingPoint.Y);
             if (startingColor.ToArgb() == FillColor.ToArgb())

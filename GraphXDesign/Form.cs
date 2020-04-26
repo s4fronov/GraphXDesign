@@ -45,8 +45,7 @@ namespace GraphXDesign
             cursorActive = false;
             brush = new CircleBrush(brushSize, paintColor1);
             brush.BrushColor = palette1.BackColor;
-            fill = new SolidFill();
-            fill.FillColor = paintColor2;
+            fill = new NoFill(paintColor2);
             tool = new PenTool();
         }
 
@@ -375,17 +374,17 @@ namespace GraphXDesign
 
         private void labelFeelCont_Click(object sender, EventArgs e)
         {
-            
+            fill = new SolidFill(fill);
         }
 
         private void labelCont_Click(object sender, EventArgs e)
         {
-
+            fill = new NoFill(fill);
         }
 
         private void labelFeel_Click(object sender, EventArgs e)
         {
-
+            fill = new OnlyFill(fill);
         }
     }
 }

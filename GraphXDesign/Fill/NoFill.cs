@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
 
-namespace GraphXDesign.Fill
+namespace GraphXDesign
 {
-    class NoFill
+    class NoFill:IFill
     {
-        public Color FillColor { get; set; }
-        public void Fill(Bitmap bmp, Point point)
+        public NoFill(IFill fill) : base(fill) { }
+        public NoFill(Color color) : base(color) { }
+
+        public override void Fill(Bitmap bmp, Point point)
         {
             //ничего не делаем
             return;

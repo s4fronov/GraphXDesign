@@ -7,9 +7,18 @@ using System.Drawing;
 
 namespace GraphXDesign
 {
-    public interface IFill
+    public abstract class IFill
     {
-        Color FillColor { get; set; }
-        void Fill(Bitmap bmp, Point point);
+        public IFill (IFill fill)
+        {
+            this.FillColor = fill.FillColor;
+        }
+        public IFill(Color color)
+        {
+            this.FillColor = color;
+        }
+
+        public Color FillColor { get; set; }
+        public abstract void Fill(Bitmap bmp, Point point);
     }
 }
