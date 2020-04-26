@@ -162,6 +162,7 @@ namespace GraphXDesign
             paintColor1 = palette1.BackColor;
             paintColor2 = palette2.BackColor;
             brush.BrushColor = palette1.BackColor;
+            fill.FillColor = palette2.BackColor;
         }
 
         private void pictureBoxPipette_Click(object sender, EventArgs e)

@@ -10,6 +10,6 @@ namespace GraphXDesign
     public interface IFill
     {
         Color FillColor { get; set; }
-        void Fill(Point point);
+        void Fill(Bitmap bmp, Point point);
     }
 }

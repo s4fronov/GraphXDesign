@@ -10,9 +10,9 @@ namespace GraphXDesign
     class SolidFill:IFill
     {
         public Color FillColor { get; set; }
-        public void Fill(Point startingPoint)
+        public void Fill(Bitmap bmp, Point startingPoint)
         {
-            Color startingColor = Canvas.GetCanvas.GetPixel(startingPoint.X, startingPoint.Y);
+            Color startingColor = bmp.GetPixel(startingPoint.X, startingPoint.Y);
             if (startingColor.ToArgb() == FillColor.ToArgb())
                 return;
 
@@ -25,24 +25,24 @@ namespace GraphXDesign
             {
                 point = new Point(pointsToCheck.Peek().X, pointsToCheck.Peek().Y);
                 pointsToCheck.Dequeue();
-                if (startingPoint.X > 0 && Canvas.GetCanvas.GetPixel(point.X - 1, point.Y).ToArgb() == startingColor.ToArgb())
+                if (point.X > 0 && bmp.GetPixel(point.X - 1, point.Y).ToArgb() == startingColor.ToArgb())
                 {
-                    Canvas.GetCanvas.SetPixel(point.X - 1, point.Y, FillColor);
+                    bmp.SetPixel(point.X - 1, point.Y, FillColor);
                     pointsToCheck.Enqueue(new Point(point.X - 1, point.Y));
                 }
-                if (startingPoint.X < Canvas.GetCanvas.Width - 1 && Canvas.GetCanvas.GetPixel(point.X + 1, point.Y).ToArgb() == startingColor.ToArgb())
+                if (point.X < bmp.Width - 1 && bmp.GetPixel(point.X + 1, point.Y).ToArgb() == startingColor.ToArgb())
                 {
-                    Canvas.GetCanvas.SetPixel(point.X + 1, point.Y, FillColor);
+                    bmp.SetPixel(point.X + 1, point.Y, FillColor);
                     pointsToCheck.Enqueue(new Point(point.X + 1, point.Y));
                 }
-                if (startingPoint.Y > 0 && Canvas.GetCanvas.GetPixel(point.X, point.Y - 1).ToArgb() == startingColor.ToArgb())
+                if (point.Y > 0 && bmp.GetPixel(point.X, point.Y - 1).ToArgb() == startingColor.ToArgb())
                 {
-                    Canvas.GetCanvas.SetPixel(point.X, point.Y - 1, FillColor);
+                    bmp.SetPixel(point.X, point.Y - 1, FillColor);
                     pointsToCheck.Enqueue(new Point(point.X, point.Y - 1));
                 }
-                if (startingPoint.Y < Canvas.GetCanvas.Height - 1 && Canvas.GetCanvas.GetPixel(point.X, point.Y + 1).ToArgb() == startingColor.ToArgb())
+                if (point.Y < bmp.Height - 1 && bmp.GetPixel(point.X, point.Y + 1).ToArgb() == startingColor.ToArgb())
                 {
-                    Canvas.GetCanvas.SetPixel(point.X, point.Y + 1, FillColor);
+                    bmp.SetPixel(point.X, point.Y + 1, FillColor);
                     pointsToCheck.Enqueue(new Point(point.X, point.Y + 1));
                 }
             }

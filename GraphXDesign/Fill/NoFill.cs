@@ -10,7 +10,7 @@ namespace GraphXDesign.Fill
     class NoFill
     {
         public Color FillColor { get; set; }
-        public void Fill(Point point)
+        public void Fill(Bitmap bmp, Point point)
         {
             //ничего не делаем
             return;
