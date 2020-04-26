@@ -36,7 +36,7 @@ namespace GraphXDesign
             else
             {
                 leftX = x2;
-                rightX = x1 + (x2 - x1);
+                rightX = x1 + (x1 - x2);
             }
             if (y1 < y2)
             {

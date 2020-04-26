@@ -12,6 +12,8 @@ namespace GraphXDesign
         public NoFill(IFill fill) : base(fill) { }
         public NoFill(Color color) : base(color) { }
 
+        public NoFill() { }
+
         public override void Fill(Bitmap bmp, Point point)
         {
             //ничего не делаем

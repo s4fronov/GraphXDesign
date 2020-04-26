@@ -11,7 +11,7 @@ namespace GraphXDesign
     public class PipetteTool : ITool
     {
         bool cursorActive;
-        public void MouseDown(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseDown(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             cursorActive = true;
             sheet.DrawToBitmap(Canvas.GetCanvas.Bmp, sheet.ClientRectangle);
@@ -24,11 +24,11 @@ namespace GraphXDesign
                 brush.BrushColor = Canvas.GetCanvas.GetPixel(e.X, e.Y);
             }
         }
-        public void MouseUp(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             cursorActive = false;
         }
-        public void MouseDoubleClick(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         { }
     }
 }

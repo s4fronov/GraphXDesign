@@ -17,6 +17,7 @@ namespace GraphXDesign
         {
             this.FillColor = color;
         }
+        public IFill() { }
 
         public Color FillColor { get; set; }
         public abstract void Fill(Bitmap bmp, Point point);

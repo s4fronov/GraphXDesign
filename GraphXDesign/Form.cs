@@ -287,7 +287,7 @@ namespace GraphXDesign
             }
             else
                 tool = toolTmp;
-            tool.MouseDown((PictureBox)sender, brush, e);
+            tool.MouseDown((PictureBox)sender, brush, fill, e);
         }
 
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
@@ -301,7 +301,7 @@ namespace GraphXDesign
 
         private void pictureBoxSheet_MouseUp(object sender, MouseEventArgs e)
         {
-            tool.MouseUp((PictureBox)sender, brush, e);
+            tool.MouseUp((PictureBox)sender, brush, fill, e);
             tool = toolTmp;
             if (!(tool is PipetteTool))
             {
@@ -311,7 +311,7 @@ namespace GraphXDesign
 
         private void pictureBoxSheet_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            tool.MouseDoubleClick((PictureBox)sender, brush, e);
+            tool.MouseDoubleClick((PictureBox)sender, brush, fill, e);
             tool = toolTmp;
         }
 

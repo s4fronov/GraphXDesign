@@ -19,7 +19,7 @@ namespace GraphXDesign
             this.figure = figure;
             cursorActive = false;
         }
-        public void MouseDown(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseDown(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             Canvas.GetCanvas.SaveToCache();
             cursorActive = true;
@@ -37,21 +37,28 @@ namespace GraphXDesign
                 Canvas.GetCanvas.LoadFromCache();
                 x2 = e.X;
                 y2 = e.Y;
-                Drawfigure drawer = new Drawfigure(figure, brush, fill);
+                IFill tmpFill = new NoFill();
+                IBrush tmpBrush;
+                if (fill is OnlyFill)
+                    tmpBrush = new SquareBrush(1, fill.FillColor);
+                else
+                    tmpBrush = brush;
+                Drawfigure drawer = new Drawfigure(figure, tmpBrush, tmpFill);
                 drawer.Draw();
                 Canvas.GetCanvas.WriteToPictureBox(sheet);
             }
         }
-        public void MouseUp(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
 
             cursorActive = false;
             x2 = e.X;
             y2 = e.Y;
-            
+            Drawfigure drawer = new Drawfigure(figure, brush, fill);
+            drawer.Draw();
             Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
-        public void MouseDoubleClick(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         { }
     }
 }
