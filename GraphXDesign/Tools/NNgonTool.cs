@@ -37,10 +37,10 @@ namespace GraphXDesign
                 y1 = y2;
             }
             //brush.DrawDot(canvas, x1, y1);
-            brush.DrawLine(x1, y1, e.X, e.Y, true);
+            brush.DrawLine(Canvas.GetCanvas.Bmp, x1, y1, e.X, e.Y, true);
             Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
-        public void MouseMove(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             if (cursorActive == true)
             {
@@ -48,7 +48,7 @@ namespace GraphXDesign
                 x2 = e.X;
                 y2 = e.Y;
                 dotList.Add(new Tuple<int, int>(x2, y2));
-                brush.DrawLine(x1, y1, x2, y2, true);
+                brush.DrawLine(Canvas.GetCanvas.Bmp, x1, y1, x2, y2, true);
                 // brush.DrawDot(canvas, x2, y2);
                 Canvas.GetCanvas.WriteToPictureBox(sheet);
             }
@@ -65,7 +65,7 @@ namespace GraphXDesign
             cursorActive = false;
             x2 = e.X;
             y2 = e.Y;
-            brush.DrawLine(x0, y0, x2, y2, true);
+            brush.DrawLine(Canvas.GetCanvas.Bmp, x0, y0, x2, y2, true);
             Canvas.GetCanvas.WriteToPictureBox(sheet);
             gon = false;
         }

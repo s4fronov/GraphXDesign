@@ -29,15 +29,15 @@ namespace GraphXDesign
             y2 = e.Y;
             Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
-        public void MouseMove(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
-            figure.Createdotlist(x1, y1, x2, y2);
+            figure.Create(x1, y1, x2, y2);
             if (cursorActive == true)
             {
                 Canvas.GetCanvas.LoadFromCache();
                 x2 = e.X;
                 y2 = e.Y;
-                Drawfigure drawer = new Drawfigure(figure, brush);
+                Drawfigure drawer = new Drawfigure(figure, brush, fill);
                 drawer.Draw();
                 Canvas.GetCanvas.WriteToPictureBox(sheet);
             }
