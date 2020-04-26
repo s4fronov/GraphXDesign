@@ -372,5 +372,20 @@ namespace GraphXDesign
         {
             Canvas.GetCanvas.Redo(pictureBoxSheet);
         }
+
+        private void labelFeelCont_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void labelCont_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelFeel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
