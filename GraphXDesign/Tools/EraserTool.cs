@@ -27,7 +27,7 @@ namespace GraphXDesign
             brush.DrawDot(Canvas.GetCanvas.Bmp, e.X, e.Y);
             Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
-        public void MouseMove(PictureBox sheet, IBrush brush, MouseEventArgs e)
+        public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             if (cursorActive == true)
             {
