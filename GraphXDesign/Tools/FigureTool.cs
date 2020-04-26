@@ -44,9 +44,11 @@ namespace GraphXDesign
         }
         public void MouseUp(PictureBox sheet, IBrush brush, MouseEventArgs e)
         {
+
             cursorActive = false;
             x2 = e.X;
             y2 = e.Y;
+            
             Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
         public void MouseDoubleClick(PictureBox sheet, IBrush brush, MouseEventArgs e)

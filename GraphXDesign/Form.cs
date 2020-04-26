@@ -173,8 +173,8 @@ namespace GraphXDesign
 
         private void pictureBoxEraser_Click(object sender, EventArgs e)
         {
-            tool = new PenTool();
-            brush.BrushColor = pictureBoxSheet.BackColor; // Color.Transparent для прозрачного PNG
+            tool = new EraserTool();
+            // brush.BrushColor = pictureBoxSheet.BackColor; // Color.Transparent для прозрачного PNG
         }
 
         private void pictureBoxClearAll_Click(object sender, EventArgs e)
@@ -299,6 +299,10 @@ namespace GraphXDesign
         {
             tool.MouseUp((PictureBox)sender, brush, e);
             tool = toolTmp;
+            if (!(tool is PipetteTool))
+            {
+                Canvas.GetCanvas.AddToBmpList();
+            }
         }
 
         private void pictureBoxSheet_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -352,6 +356,16 @@ namespace GraphXDesign
             brush = new CircleBrush(brush);
             brushSquare.BorderStyle = BorderStyle.None;
             brushCircle.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void pictureBoxUndo_Click(object sender, EventArgs e)
+        {
+            Canvas.GetCanvas.Undo(pictureBoxSheet);
+        }
+
+        private void pictureBoxRedo_Click(object sender, EventArgs e)
+        {
+            Canvas.GetCanvas.Redo(pictureBoxSheet);
         }
     }
 }
