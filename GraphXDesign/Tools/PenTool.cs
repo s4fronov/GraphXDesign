@@ -10,11 +10,11 @@ namespace GraphXDesign
 {
     public class PenTool:ITool
     {
-        bool cursorActive;
+        bool cursorActive { get; set; }
         int x1, y1, x2, y2;
-        public PenTool()
+        public PenTool() 
         {
-            cursorActive = false; 
+            cursorActive = false;
         }
         public void MouseDown(PictureBox sheet, IBrush brush, MouseEventArgs e)
         {
