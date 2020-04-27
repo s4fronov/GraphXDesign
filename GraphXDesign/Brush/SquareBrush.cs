@@ -20,7 +20,7 @@ namespace GraphXDesign
             BrushColor = brush.BrushColor;
         }
 
-        public override void DrawDot(Bitmap bmp, int x, int y)
+        public override void DrawDot(BitmapWrap bmp, int x, int y)
         {
             //x1 y1 левый верхний угол
             //x2 y2 правый нижний
@@ -34,12 +34,12 @@ namespace GraphXDesign
             {
                 for (int j = y1; j <= y2; j++)
                 {
-                    SetPixel(bmp, i, j, BrushColor);
+                    bmp.SetPixel(i, j, BrushColor);
                 }
             }
         }
 
-        public override void DrawLine(Bitmap bmp, int x1, int y1, int x2, int y2, bool drawFirstDot = false)
+        public override void DrawLine(BitmapWrap bmp, int x1, int y1, int x2, int y2, bool drawFirstDot = false)
         {
             PathCalculator lineCalc = new PathCalculator();
             List<Tuple<int, int>> dotList = lineCalc.CalculateLinePath(x1, y1, x2, y2);
@@ -61,7 +61,7 @@ namespace GraphXDesign
         }
 
         enum Direction { Up, Down, Left, Right }
-        private void DrawDotBorder(Bitmap bmp, int x, int y, Direction direction)
+        private void DrawDotBorder(BitmapWrap bmp, int x, int y, Direction direction)
         {
             int x1 = x - BrushSize / 2;
             int x2 = x1 + BrushSize - 1;
@@ -71,25 +71,25 @@ namespace GraphXDesign
             if (direction == Direction.Up)
                 for (int i = x1; i <= x2; i++)
                 {
-                    SetPixel(bmp, i, y1, BrushColor);
+                    bmp.SetPixel(i, y1, BrushColor);
                 }
 
             if (direction == Direction.Down)
                 for (int i = x1; i <= x2; i++)
                 {
-                    SetPixel(bmp, i, y2, BrushColor);
+                    bmp.SetPixel(i, y2, BrushColor);
                 }
 
             if (direction == Direction.Left)
                 for (int j = y1; j <= y2; j++)
                 {
-                    SetPixel(bmp, x1, j, BrushColor);
+                    bmp.SetPixel(x1, j, BrushColor);
                 }
 
             if (direction == Direction.Right)
                 for (int j = y1; j <= y2; j++)
                 {
-                    SetPixel(bmp, x2, j, BrushColor);
+                    bmp.SetPixel(x2, j, BrushColor);
                 }
         }
     }

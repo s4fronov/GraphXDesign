@@ -20,6 +20,6 @@ namespace GraphXDesign
         public IFill() { }
 
         public Color FillColor { get; set; }
-        public abstract void Fill(Bitmap bmp, Point point);
+        public abstract void Fill(BitmapWrap bmp, Point point);
     }
 }

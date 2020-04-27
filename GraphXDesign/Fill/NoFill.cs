@@ -14,7 +14,7 @@ namespace GraphXDesign
 
         public NoFill() { }
 
-        public override void Fill(Bitmap bmp, Point point)
+        public override void Fill(BitmapWrap bmp, Point point)
         {
             //ничего не делаем
             return;

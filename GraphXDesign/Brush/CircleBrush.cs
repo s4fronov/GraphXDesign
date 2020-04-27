@@ -20,7 +20,7 @@ namespace GraphXDesign
             BrushColor = brush.BrushColor;
         }
 
-        public override void DrawDot(Bitmap bmp, int x, int y)
+        public override void DrawDot(BitmapWrap bmp, int x, int y)
         {
             //x1 y1 левый верхний угол
             //x2 y2 правый нижний
@@ -40,12 +40,12 @@ namespace GraphXDesign
                 for (int j = y1; j <= y2; j++)
                 {
                     if ((i - xCenter) * (i - xCenter) + (j - yCenter) * (j - yCenter) <= radius * radius)
-                        SetPixel(bmp, i, j, BrushColor);
+                        bmp.SetPixel(i, j, BrushColor);
                 }
             }
         }
 
-        public override void DrawLine(Bitmap bmp, int x1, int y1, int x2, int y2, bool drawFirstDot = false)
+        public override void DrawLine(BitmapWrap bmp, int x1, int y1, int x2, int y2, bool drawFirstDot = false)
         {
             PathCalculator lineCalc = new PathCalculator();
             List<Tuple<int, int>> dotList = lineCalc.CalculateLinePath(x1, y1, x2, y2);
@@ -57,7 +57,7 @@ namespace GraphXDesign
                 DrawBorder(bmp, dotList[i].Item1, dotList[i].Item2);
         }
 
-        private void DrawBorder(Bitmap bmp, int x, int y)
+        private void DrawBorder(BitmapWrap bmp, int x, int y)
         {
             //x1 y1 левый верхний угол
             //x2 y2 правый нижний
@@ -77,19 +77,19 @@ namespace GraphXDesign
             for (int i = x1 + margin; i <= x2 - margin; i++)
             {
                 double sqrt = Math.Sqrt(radius * radius - (i - xCenter) * (i - xCenter));
-                SetPixel(bmp, i, (int)(yCenter + sqrt), BrushColor);
-                SetPixel(bmp, i, (int)(yCenter + sqrt - 1), BrushColor);
-                SetPixel(bmp, i, (int)(yCenter - sqrt), BrushColor);
-                SetPixel(bmp, i, (int)(yCenter - sqrt + 1), BrushColor);
+                bmp.SetPixel(i, (int)(yCenter + sqrt), BrushColor);
+                bmp.SetPixel(i, (int)(yCenter + sqrt - 1), BrushColor);
+                bmp.SetPixel(i, (int)(yCenter - sqrt), BrushColor);
+                bmp.SetPixel(i, (int)(yCenter - sqrt + 1), BrushColor);
             }
             //проходим по оси y
             for (int j = y1 + margin; j <= y2 - margin; j++)
             {
                 double sqrt = Math.Sqrt(radius * radius - (j - yCenter) * (j - yCenter));
-                SetPixel(bmp, (int)(xCenter + sqrt), j, BrushColor);
-                SetPixel(bmp, (int)(xCenter + sqrt - 1), j, BrushColor);
-                SetPixel(bmp, (int)(xCenter - sqrt), j, BrushColor);
-                SetPixel(bmp, (int)(xCenter - sqrt + 1), j, BrushColor);
+                bmp.SetPixel((int)(xCenter + sqrt), j, BrushColor);
+                bmp.SetPixel((int)(xCenter + sqrt - 1), j, BrushColor);
+                bmp.SetPixel((int)(xCenter - sqrt), j, BrushColor);
+                bmp.SetPixel((int)(xCenter - sqrt + 1), j, BrushColor);
             }
         }
     }
