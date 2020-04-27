@@ -62,11 +62,20 @@ namespace GraphXDesign
         private void changeFill()
         {
             if (labelFillCont.ForeColor == Color.Gold)
+            {
+                pictureBoxFillCont.Visible = false;
                 labelFillCont.ForeColor = Color.White;
+            }
             if (labelFill.ForeColor == Color.Gold)
+            {
+                pictureBoxFillOnly.Visible = false;
                 labelFill.ForeColor = Color.White;
+            }
             if (labelCont.ForeColor == Color.Gold)
+            {
+                pictureBoxContOnly.Visible = false;
                 labelCont.ForeColor = Color.White;
+            }
         }
 
         private void showOptMenu()
@@ -393,6 +402,7 @@ namespace GraphXDesign
         {
             changeFill();
             labelFillCont.ForeColor = Color.Gold;
+            pictureBoxFillCont.Visible = true;
             fill = new SolidFill(fill);
         }
 
@@ -400,6 +410,7 @@ namespace GraphXDesign
         {
             changeFill();
             labelCont.ForeColor = Color.Gold;
+            pictureBoxContOnly.Visible = true;
             fill = new NoFill(fill);
         }
 
@@ -407,6 +418,7 @@ namespace GraphXDesign
         {
             changeFill();
             labelFill.ForeColor = Color.Gold;
+            pictureBoxFillOnly.Visible = true;
             fill = new OnlyFill(fill);
         }
     }
