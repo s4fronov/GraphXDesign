@@ -8,28 +8,17 @@ using System.Drawing;
 namespace GraphXDesign
 {
     public class N_gon : IFigure
-    {
-        public int X1 { get; set; }
-        public int Y1 { get; set; }
-        public int X2 { get; set; }
-        public int Y2 { get; set; }
-        public int N { get; set; }
-        public IBrush Brush { get; set; }
+    {    
+        public int n { get; set; }// где взять n???
 
-        public N_gon(int x1, int y1, int x2, int y2, int n, IBrush brush)
+        public N_gon(int n)
+
         {
-
-            X1 = x1;
-            Y1 = y1;
-            X2 = x2;
-            Y2 = y2;
-            N = n;
-
-            Brush = brush;
+            this.n = n;
         }
-        public void DrawNgon(Canvas canvas, int x1, int y1, int x2, int y2,int n)
+        public override void Createdotlist(int x1, int y1, int x2, int y2)
         {
-            List<Tuple<int, int>> dotList = new List<Tuple<int, int>>();
+            dotlist = new List<Point>();
             int delx;
             int dely;
             if (x2 >= x1)
@@ -43,22 +32,13 @@ namespace GraphXDesign
                 dely = Math.Abs(y2 - y1);
             }
             double r = Math.Sqrt(Math.Pow(delx, 2) + Math.Pow(dely, 2));
-            for (int i = 1; i <= n + 1; i++)
+            for (int i = 1; i <= n; i++)
             {
                 double angle = Math.PI * 2 / n * i;
                 int xd = Convert.ToInt32(Math.Cos(angle) * delx - Math.Sin(angle) * dely + x1);
                 int yd = Convert.ToInt32(Math.Cos(angle) * dely + Math.Sin(angle) * delx + y1);
-                dotList.Add(new Tuple<int, int>(xd, yd));
+                dotlist.Add(new Point(xd, yd));
             }
-            for (int i = 1; i < dotList.Count; i++)
-            {
-                Brush.DrawLine(canvas, dotList[i - 1].Item1, dotList[i - 1].Item2, dotList[i].Item1, dotList[i].Item2);
-            }
-        }
-
-        public void Draw(Canvas canvas)
-        {
-            DrawNgon(canvas, X1, Y1, X2, Y2,N);
         }
     }
 }

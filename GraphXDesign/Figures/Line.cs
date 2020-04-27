@@ -9,26 +9,11 @@ namespace GraphXDesign
 {
     public class Line:IFigure
     {
-        public int X1 { get; set; }
-        public int Y1 { get; set; }
-        public int X2 { get; set; }
-        public int Y2 { get; set; }
-        public IBrush Brush { get; set; }
-
-
-        public Line(int x1, int y1, int x2, int y2, IBrush brush)
+        public override void Createdotlist(int x1, int y1, int x2, int y2)
         {
-            X1 = x1;
-            Y1 = y1;
-            X2 = x2;
-            Y2 = y2;
-            Brush = brush;
-        }
-
-        public void Draw(Canvas canvas)
-        {
-            Brush.DrawLine(canvas, X1, Y1, X2, Y2);
-            Brush.DrawDot(canvas, X2, Y2);
+            dotlist = new List<Point>();
+            dotlist.Add(new Point(x1, y1));
+            dotlist.Add(new Point(x2, y2));
         }
     }
 }
