@@ -54,14 +54,26 @@ namespace GraphXDesign
             labelX.Text = Convert.ToString(pictureBoxSheet.Width);
             labelY.Text = Convert.ToString(pictureBoxSheet.Height);
             Canvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
+
         }
 
         // Методы меню
+
+        private void changeFill()
+        {
+            if (labelFillCont.ForeColor == Color.Gold)
+                labelFillCont.ForeColor = Color.White;
+            if (labelFill.ForeColor == Color.Gold)
+                labelFill.ForeColor = Color.White;
+            if (labelCont.ForeColor == Color.Gold)
+                labelCont.ForeColor = Color.White;
+        }
 
         private void showOptMenu()
         {
             // if (!(tool is NgonTool))
             panelAngles.Visible = false;
+            panelFill.Visible = false;
         }
 
         // Методы верхней панели и ее объектов
@@ -220,6 +232,7 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new Ellips());
             showOptMenu();
+            panelFill.Visible = true;
             option = 1;
         }
 
@@ -227,6 +240,7 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new Rectangle());
             showOptMenu();
+            panelFill.Visible = true;
             option = 2;
         }
 
@@ -234,6 +248,7 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new Trianglesamesizes());
             showOptMenu();
+            panelFill.Visible = true;
             option = 0;
         }
 
@@ -241,6 +256,7 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new TriangleRectangular());
             showOptMenu();
+            panelFill.Visible = true;
             option = 0;
         }
 
@@ -257,6 +273,7 @@ namespace GraphXDesign
             n = Convert.ToInt32(numericAngle.Value);
             option = 0;
             panelAngles.Visible = true;
+            panelFill.Visible = true;
             if (n is SyntaxErrorException || n < 3) // Проверка количества углов
             {
                 n = 3;
@@ -372,18 +389,24 @@ namespace GraphXDesign
             Canvas.GetCanvas.Redo(pictureBoxSheet);
         }
 
-        private void labelFeelCont_Click(object sender, EventArgs e)
+        private void labelFillCont_Click(object sender, EventArgs e)
         {
+            changeFill();
+            labelFillCont.ForeColor = Color.Gold;
             fill = new SolidFill(fill);
         }
 
         private void labelCont_Click(object sender, EventArgs e)
         {
+            changeFill();
+            labelCont.ForeColor = Color.Gold;
             fill = new NoFill(fill);
         }
 
-        private void labelFeel_Click(object sender, EventArgs e)
+        private void labelFill_Click(object sender, EventArgs e)
         {
+            changeFill();
+            labelFill.ForeColor = Color.Gold;
             fill = new OnlyFill(fill);
         }
     }
