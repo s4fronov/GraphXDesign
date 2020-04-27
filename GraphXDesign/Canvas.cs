@@ -13,7 +13,7 @@ namespace GraphXDesign
     {
         //singleton pattern
         private static Canvas instance;
-        List<Bitmap> bitmapList;
+        List<BitmapWrap> bitmapList;
         int m;
         private Canvas() { }
         public static Canvas GetCanvas
@@ -30,38 +30,38 @@ namespace GraphXDesign
 
         public void Init(int width, int height)
         {
-            bitmapList = new List<Bitmap>();
-            Bmp = new Bitmap(width, height);
-            Cache = new Bitmap(width, height);
-            bitmapList.Add((Bitmap)Bmp.Clone());
+            bitmapList = new List<BitmapWrap>();
+            Bmp = new BitmapWrap(width, height);
+            Cache = new BitmapWrap(width, height);
+            bitmapList.Add((BitmapWrap)Bmp.Clone());
             m = bitmapList.Count - 1;
             Width = width;
             Height = height;
         }
 
 
-        public Bitmap Bmp { get; set; }
-        private Bitmap Cache { get; set; }
+        public BitmapWrap Bmp { get; set; }
+        private BitmapWrap Cache { get; set; }
 
         public int Width { get; set; }
         public int Height { get; set; }
 
         public void SaveToCache()
         {
-            //Cache = (Bitmap)Bmp.Clone();
-            Graphics g = Graphics.FromImage(Cache);
-            g.DrawImage(Bmp, new System.Drawing.Rectangle(0, 0, Width, Height));
+            //Cache = (BitmapWrap)Bmp.Clone();
+            Graphics g = Graphics.FromImage(Cache.Bmp);
+            g.DrawImage(Bmp.Bmp, new System.Drawing.Rectangle(0, 0, Width, Height));
         }
 
         public void LoadFromCache()
         {
-            //Bmp = (Bitmap)Cache.Clone();
-            Graphics g = Graphics.FromImage(Bmp);
-            g.DrawImage(Cache, new System.Drawing.Rectangle(0, 0, Width, Height));
+            //Bmp = (BitmapWrap)Cache.Clone();
+            Graphics g = Graphics.FromImage(Bmp.Bmp);
+            g.DrawImage(Cache.Bmp, new System.Drawing.Rectangle(0, 0, Width, Height));
         }
         public void AddToBmpList()
         {
-            Bitmap bmp = (Bitmap)Bmp.Clone();
+            BitmapWrap bmp = (BitmapWrap)Bmp.Clone();
             bitmapList.Add(bmp);
             m++;
         }
@@ -102,7 +102,7 @@ namespace GraphXDesign
 
         public void WriteToPictureBox(PictureBox pb)
         {
-            pb.Image = Bmp;
+            pb.Image = Bmp.Bmp;
         }
 
         public void Fill(int x, int y, Color fillColor)

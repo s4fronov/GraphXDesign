@@ -12,7 +12,7 @@ namespace GraphXDesign
         public SolidFill(IFill fill) : base(fill) { }
         public SolidFill(Color color) : base(color) { }
 
-        public override void Fill(Bitmap bmp, Point startingPoint)
+        public override void Fill(BitmapWrap bmp, Point startingPoint)
         {
             Color startingColor = bmp.GetPixel(startingPoint.X, startingPoint.Y);
             if (startingColor.ToArgb() == FillColor.ToArgb())

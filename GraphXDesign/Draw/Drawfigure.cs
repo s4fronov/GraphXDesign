@@ -23,7 +23,7 @@ namespace GraphXDesign
 
         public void Draw()
         {
-            Bitmap tmp = new Bitmap(Canvas.GetCanvas.Width, Canvas.GetCanvas.Height);
+            BitmapWrap tmp = new BitmapWrap(Canvas.GetCanvas.Width, Canvas.GetCanvas.Height);
 
             IBrush tmpBrush = new SquareBrush(1, fill.FillColor);
             tmpBrush.DrawLine(tmp, figure.dotlist[0].X, figure.dotlist[0].Y, figure.dotlist[1].X, figure.dotlist[1].Y, true);
@@ -45,8 +45,8 @@ namespace GraphXDesign
                 brush.DrawLine(tmp, figure.dotlist[figure.dotlist.Count - 1].X, figure.dotlist[figure.dotlist.Count - 1].Y, figure.dotlist[0].X, figure.dotlist[0].Y);
             }
 
-            Graphics g = Graphics.FromImage(Canvas.GetCanvas.Bmp);
-            g.DrawImage(tmp, new System.Drawing.Rectangle(0, 0, Canvas.GetCanvas.Width, Canvas.GetCanvas.Height));
+            Graphics g = Graphics.FromImage(Canvas.GetCanvas.Bmp.Bmp);
+            g.DrawImage(tmp.Bmp, new System.Drawing.Rectangle(0, 0, Canvas.GetCanvas.Width, Canvas.GetCanvas.Height));
         }
     }
 }

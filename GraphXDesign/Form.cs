@@ -38,7 +38,7 @@ namespace GraphXDesign
             paintColor2 = palette2.BackColor;
             pictureBoxSheet.BackColor = Color.White;
             pictureBoxSheet.Image = null;
-            pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp, pictureBoxSheet.ClientRectangle); // Эта строка, делает фон листа белым
+            pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle); // Эта строка, делает фон листа белым
             brushSize = 5;
             numericAngle.Value = 5;
             expandActive = false;
@@ -119,7 +119,7 @@ namespace GraphXDesign
                 filePath = openFileDialog.FileName;
                 pictureBoxSheet.Load(filePath + "");
                 startProgram();
-                pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp, pictureBoxSheet.ClientRectangle);
+                pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
             }
         }
 
@@ -131,7 +131,7 @@ namespace GraphXDesign
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                Canvas.GetCanvas.Bmp.Save(saveFileDialog.FileName);
+                Canvas.GetCanvas.Bmp.Bmp.Save(saveFileDialog.FileName);
             }
         }
 
@@ -185,7 +185,7 @@ namespace GraphXDesign
         {
             pictureBoxSheet.Image = null;
             startProgram();
-            pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp, pictureBoxSheet.ClientRectangle); // Эта строка, делает фон листа белым
+            pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle); // Эта строка, делает фон листа белым
         }
 
         private void trackBarSize_Scroll(object sender, EventArgs e)
@@ -343,7 +343,7 @@ namespace GraphXDesign
             {
                 pictureBoxSheet.Size += (Size)e.Location;
                 startProgram();
-                pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp, pictureBoxSheet.ClientRectangle); // Эта строка, делает фон листа белым
+                pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle); // Эта строка, делает фон листа белым
                 cursorActive = false;
             }
         }
