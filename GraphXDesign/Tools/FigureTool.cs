@@ -44,7 +44,7 @@ namespace GraphXDesign
                 else
                     tmpBrush = brush;
                 Drawfigure drawer = new Drawfigure(figure, tmpBrush, tmpFill);
-                drawer.Draw();
+                drawer.Draw(Canvas.GetCanvas);
                 Canvas.GetCanvas.WriteToPictureBox(sheet);
             }
         }
@@ -55,7 +55,7 @@ namespace GraphXDesign
             x2 = e.X;
             y2 = e.Y;
             Drawfigure drawer = new Drawfigure(figure, brush, fill);
-            drawer.Draw();
+            drawer.Draw(Canvas.GetCanvas);
             Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
         public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)

@@ -21,9 +21,9 @@ namespace GraphXDesign
             this.fill = fill;
         }
 
-        public void Draw()
+        public void Draw(AbstractCanvas canvas)
         {
-            BitmapWrap tmp = new BitmapWrap(Canvas.GetCanvas.Width, Canvas.GetCanvas.Height);
+            BitmapWrap tmp = new BitmapWrap(canvas.Width, canvas.Height);
             tmp.Lock();
 
             IBrush tmpBrush = new SquareBrush(1, fill.FillColor);
@@ -47,8 +47,8 @@ namespace GraphXDesign
             }
 
             tmp.Unlock();
-            Graphics g = Graphics.FromImage(Canvas.GetCanvas.Bmp.Bmp);
-            g.DrawImage(tmp.Bmp, new System.Drawing.Rectangle(0, 0, Canvas.GetCanvas.Width, Canvas.GetCanvas.Height));
+            Graphics g = Graphics.FromImage(canvas.Bmp.Bmp);
+            g.DrawImage(tmp.Bmp, new System.Drawing.Rectangle(0, 0, canvas.Width, canvas.Height));
         }
     }
 }
