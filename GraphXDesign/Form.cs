@@ -299,6 +299,11 @@ namespace GraphXDesign
 
         private void pictureBoxSheet_MouseDown(object sender, MouseEventArgs e)
         {
+            if (!(tool is PipetteTool))
+            {
+                Canvas.GetCanvas.DeleteBmp(pictureBoxSheet);
+                Canvas.GetCanvas.AddToBmpList(pictureBoxSheet);
+            }
             toolTmp = tool;
             if ((Control.ModifierKeys & Keys.Shift) == Keys.Shift)
             {
@@ -329,10 +334,6 @@ namespace GraphXDesign
         {
             tool.MouseUp((PictureBox)sender, brush, fill, e);
             tool = toolTmp;
-            if (!(tool is PipetteTool))
-            {
-                Canvas.GetCanvas.AddToBmpList();
-            }
         }
 
         private void pictureBoxSheet_MouseDoubleClick(object sender, MouseEventArgs e)

@@ -38,8 +38,6 @@ namespace GraphXDesign
             Width = width;
             Height = height;
         }
-
-
         public BitmapWrap Bmp { get; set; }
         private BitmapWrap Cache { get; set; }
 
@@ -59,15 +57,26 @@ namespace GraphXDesign
             Graphics g = Graphics.FromImage(Bmp.Bmp);
             g.DrawImage(Cache.Bmp, new System.Drawing.Rectangle(0, 0, Width, Height));
         }
-        public void AddToBmpList()
+        public void AddToBmpList(PictureBox a)
         {
             BitmapWrap bmp = (BitmapWrap)Bmp.Clone();
             bitmapList.Add(bmp);
-            m++;
+            m = bitmapList.Count - 1;
+            Bmp = bitmapList[m];
+        }
+        public void DeleteBmp(PictureBox a)
+        {
+            if (m < bitmapList.Count - 1)
+            {
+                bitmapList.RemoveRange(m + 1, bitmapList.Count - 1 - m);
+                m = bitmapList.Count - 1;
+                Bmp = bitmapList[m];
+                WriteToPictureBox(a);
+            }
         }
         public void Undo(PictureBox a)
         {
-            if (m>0)
+            if (m > 0)
             {
                 m--;
                 Bmp = bitmapList[m];
@@ -76,7 +85,7 @@ namespace GraphXDesign
         }
         public void Redo(PictureBox a)
         {
-            if (m < bitmapList.Count-1)
+            if (m < bitmapList.Count - 1)
             {
                 m++;
                 Bmp = bitmapList[m];
@@ -91,7 +100,6 @@ namespace GraphXDesign
                     return Bmp.GetPixel(x, y);
             return Color.Transparent;
         }
-
         //в основной битмап
         public void SetPixel(int x, int y, Color color)
         {
