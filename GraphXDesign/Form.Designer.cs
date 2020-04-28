@@ -37,14 +37,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBoxMenu = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.buttonTransform = new System.Windows.Forms.Button();
             this.buttonResize = new System.Windows.Forms.Button();
             this.buttonHand = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.panelTools = new System.Windows.Forms.Panel();
-            this.buttonNAngular = new System.Windows.Forms.Button();
             this.buttonNNgon = new System.Windows.Forms.Button();
+            this.buttonNAngular = new System.Windows.Forms.Button();
             this.buttonTriangleRectangular = new System.Windows.Forms.Button();
             this.buttonTriangleIsosceles = new System.Windows.Forms.Button();
             this.buttonSquare = new System.Windows.Forms.Button();
@@ -67,8 +66,17 @@
             this.открытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сохранитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.режимToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.растроваяГрафикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.векторнаяГрафикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSettings = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.panelFill = new System.Windows.Forms.Panel();
+            this.pictureBoxFillOnly = new System.Windows.Forms.PictureBox();
+            this.pictureBoxContOnly = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFillCont = new System.Windows.Forms.PictureBox();
+            this.labelFill = new System.Windows.Forms.Label();
+            this.labelCont = new System.Windows.Forms.Label();
+            this.labelFillCont = new System.Windows.Forms.Label();
             this.panelSize = new System.Windows.Forms.Panel();
             this.brushCircle = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -98,9 +106,6 @@
             this.labelY = new System.Windows.Forms.Label();
             this.labelX = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.labelFeelCont = new System.Windows.Forms.Label();
-            this.labelCont = new System.Windows.Forms.Label();
-            this.labelFeel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -118,7 +123,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageCollapse)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.panelSettings.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.panelFill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFillOnly)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContOnly)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFillCont)).BeginInit();
             this.panelSize.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.brushCircle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.brushSquare)).BeginInit();
@@ -147,7 +155,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 510);
+            this.panel1.Size = new System.Drawing.Size(150, 516);
             this.panel1.TabIndex = 0;
             // 
             // panelInfo
@@ -219,8 +227,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.panel5.Controls.Add(this.button7);
-            this.panel5.Controls.Add(this.button8);
+            this.panel5.Controls.Add(this.buttonTransform);
             this.panel5.Controls.Add(this.buttonResize);
             this.panel5.Controls.Add(this.buttonHand);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -229,41 +236,23 @@
             this.panel5.Size = new System.Drawing.Size(152, 108);
             this.panel5.TabIndex = 3;
             // 
-            // button7
+            // buttonTransform
             // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button7.Location = new System.Drawing.Point(0, 75);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(152, 25);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "   Прямоугольник";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button8.Location = new System.Drawing.Point(0, 50);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(152, 25);
-            this.button8.TabIndex = 5;
-            this.button8.Text = "   Эллипс";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button8.UseVisualStyleBackColor = true;
+            this.buttonTransform.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTransform.FlatAppearance.BorderSize = 0;
+            this.buttonTransform.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTransform.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonTransform.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonTransform.Image = ((System.Drawing.Image)(resources.GetObject("buttonTransform.Image")));
+            this.buttonTransform.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonTransform.Location = new System.Drawing.Point(0, 50);
+            this.buttonTransform.Name = "buttonTransform";
+            this.buttonTransform.Size = new System.Drawing.Size(152, 25);
+            this.buttonTransform.TabIndex = 5;
+            this.buttonTransform.Text = "   Изменение";
+            this.buttonTransform.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.buttonTransform.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonTransform.UseVisualStyleBackColor = true;
             // 
             // buttonResize
             // 
@@ -323,8 +312,8 @@
             // panelTools
             // 
             this.panelTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.panelTools.Controls.Add(this.buttonNAngular);
             this.panelTools.Controls.Add(this.buttonNNgon);
+            this.panelTools.Controls.Add(this.buttonNAngular);
             this.panelTools.Controls.Add(this.buttonTriangleRectangular);
             this.panelTools.Controls.Add(this.buttonTriangleIsosceles);
             this.panelTools.Controls.Add(this.buttonSquare);
@@ -337,25 +326,6 @@
             this.panelTools.Size = new System.Drawing.Size(152, 208);
             this.panelTools.TabIndex = 1;
             // 
-            // buttonNAngular
-            // 
-            this.buttonNAngular.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonNAngular.FlatAppearance.BorderSize = 0;
-            this.buttonNAngular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNAngular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonNAngular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.buttonNAngular.Image = ((System.Drawing.Image)(resources.GetObject("buttonNAngular.Image")));
-            this.buttonNAngular.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonNAngular.Location = new System.Drawing.Point(0, 175);
-            this.buttonNAngular.Name = "buttonNAngular";
-            this.buttonNAngular.Size = new System.Drawing.Size(152, 25);
-            this.buttonNAngular.TabIndex = 10;
-            this.buttonNAngular.Text = "   N-угольник";
-            this.buttonNAngular.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.buttonNAngular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonNAngular.UseVisualStyleBackColor = true;
-            this.buttonNAngular.Click += new System.EventHandler(this.buttonNAngular_Click);
-            // 
             // buttonNNgon
             // 
             this.buttonNNgon.Dock = System.Windows.Forms.DockStyle.Top;
@@ -365,15 +335,34 @@
             this.buttonNNgon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonNNgon.Image = ((System.Drawing.Image)(resources.GetObject("buttonNNgon.Image")));
             this.buttonNNgon.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonNNgon.Location = new System.Drawing.Point(0, 150);
+            this.buttonNNgon.Location = new System.Drawing.Point(0, 175);
             this.buttonNNgon.Name = "buttonNNgon";
             this.buttonNNgon.Size = new System.Drawing.Size(152, 25);
-            this.buttonNNgon.TabIndex = 9;
+            this.buttonNNgon.TabIndex = 11;
             this.buttonNNgon.Text = "   N-угольник";
             this.buttonNNgon.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonNNgon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonNNgon.UseVisualStyleBackColor = true;
             this.buttonNNgon.Click += new System.EventHandler(this.buttonNNgon_Click);
+            // 
+            // buttonNAngular
+            // 
+            this.buttonNAngular.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonNAngular.FlatAppearance.BorderSize = 0;
+            this.buttonNAngular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNAngular.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNAngular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonNAngular.Image = ((System.Drawing.Image)(resources.GetObject("buttonNAngular.Image")));
+            this.buttonNAngular.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonNAngular.Location = new System.Drawing.Point(0, 150);
+            this.buttonNAngular.Name = "buttonNAngular";
+            this.buttonNAngular.Size = new System.Drawing.Size(152, 25);
+            this.buttonNAngular.TabIndex = 10;
+            this.buttonNAngular.Text = "   N-угольник";
+            this.buttonNAngular.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.buttonNAngular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonNAngular.UseVisualStyleBackColor = true;
+            this.buttonNAngular.Click += new System.EventHandler(this.buttonNAngular_Click);
             // 
             // buttonTriangleRectangular
             // 
@@ -632,12 +621,13 @@
             this.menuStrip.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuStrip.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
+            this.файлToolStripMenuItem,
+            this.режимToolStripMenuItem});
             this.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(0);
-            this.menuStrip.Size = new System.Drawing.Size(53, 20);
+            this.menuStrip.Size = new System.Drawing.Size(115, 20);
             this.menuStrip.TabIndex = 6;
             // 
             // файлToolStripMenuItem
@@ -684,10 +674,33 @@
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.imageExit_Click);
             // 
+            // режимToolStripMenuItem
+            // 
+            this.режимToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.растроваяГрафикаToolStripMenuItem,
+            this.векторнаяГрафикаToolStripMenuItem});
+            this.режимToolStripMenuItem.Name = "режимToolStripMenuItem";
+            this.режимToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.режимToolStripMenuItem.Text = "Режим";
+            // 
+            // растроваяГрафикаToolStripMenuItem
+            // 
+            this.растроваяГрафикаToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("растроваяГрафикаToolStripMenuItem.Image")));
+            this.растроваяГрафикаToolStripMenuItem.Name = "растроваяГрафикаToolStripMenuItem";
+            this.растроваяГрафикаToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.растроваяГрафикаToolStripMenuItem.Text = "Растровая графика";
+            // 
+            // векторнаяГрафикаToolStripMenuItem
+            // 
+            this.векторнаяГрафикаToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("векторнаяГрафикаToolStripMenuItem.Image")));
+            this.векторнаяГрафикаToolStripMenuItem.Name = "векторнаяГрафикаToolStripMenuItem";
+            this.векторнаяГрафикаToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.векторнаяГрафикаToolStripMenuItem.Text = "Векторная графика";
+            // 
             // panelSettings
             // 
             this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.panelSettings.Controls.Add(this.panel4);
+            this.panelSettings.Controls.Add(this.panelFill);
             this.panelSettings.Controls.Add(this.panelAngles);
             this.panelSettings.Controls.Add(this.panelSize);
             this.panelSettings.Controls.Add(this.panelInstruments);
@@ -697,16 +710,100 @@
             this.panelSettings.Size = new System.Drawing.Size(710, 54);
             this.panelSettings.TabIndex = 2;
             // 
-            // panel4
+            // panelFill
             // 
-            this.panel4.Controls.Add(this.labelFeel);
-            this.panel4.Controls.Add(this.labelCont);
-            this.panel4.Controls.Add(this.labelFeelCont);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(225, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(150, 54);
-            this.panel4.TabIndex = 6;
+            this.panelFill.Controls.Add(this.pictureBoxFillOnly);
+            this.panelFill.Controls.Add(this.pictureBoxContOnly);
+            this.panelFill.Controls.Add(this.pictureBoxFillCont);
+            this.panelFill.Controls.Add(this.labelFill);
+            this.panelFill.Controls.Add(this.labelCont);
+            this.panelFill.Controls.Add(this.labelFillCont);
+            this.panelFill.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelFill.Location = new System.Drawing.Point(225, 0);
+            this.panelFill.Name = "panelFill";
+            this.panelFill.Size = new System.Drawing.Size(183, 54);
+            this.panelFill.TabIndex = 6;
+            this.panelFill.Visible = false;
+            // 
+            // pictureBoxFillOnly
+            // 
+            this.pictureBoxFillOnly.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxFillOnly.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBoxFillOnly.Enabled = false;
+            this.pictureBoxFillOnly.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFillOnly.Image")));
+            this.pictureBoxFillOnly.Location = new System.Drawing.Point(12, 12);
+            this.pictureBoxFillOnly.Name = "pictureBoxFillOnly";
+            this.pictureBoxFillOnly.Size = new System.Drawing.Size(30, 30);
+            this.pictureBoxFillOnly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFillOnly.TabIndex = 35;
+            this.pictureBoxFillOnly.TabStop = false;
+            this.pictureBoxFillOnly.Visible = false;
+            // 
+            // pictureBoxContOnly
+            // 
+            this.pictureBoxContOnly.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxContOnly.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBoxContOnly.Enabled = false;
+            this.pictureBoxContOnly.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxContOnly.Image")));
+            this.pictureBoxContOnly.Location = new System.Drawing.Point(12, 12);
+            this.pictureBoxContOnly.Name = "pictureBoxContOnly";
+            this.pictureBoxContOnly.Size = new System.Drawing.Size(30, 30);
+            this.pictureBoxContOnly.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxContOnly.TabIndex = 34;
+            this.pictureBoxContOnly.TabStop = false;
+            // 
+            // pictureBoxFillCont
+            // 
+            this.pictureBoxFillCont.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBoxFillCont.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBoxFillCont.Enabled = false;
+            this.pictureBoxFillCont.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFillCont.Image")));
+            this.pictureBoxFillCont.Location = new System.Drawing.Point(12, 12);
+            this.pictureBoxFillCont.Name = "pictureBoxFillCont";
+            this.pictureBoxFillCont.Size = new System.Drawing.Size(30, 30);
+            this.pictureBoxFillCont.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxFillCont.TabIndex = 27;
+            this.pictureBoxFillCont.TabStop = false;
+            this.pictureBoxFillCont.Visible = false;
+            // 
+            // labelFill
+            // 
+            this.labelFill.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelFill.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelFill.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelFill.Location = new System.Drawing.Point(52, 32);
+            this.labelFill.Name = "labelFill";
+            this.labelFill.Size = new System.Drawing.Size(104, 18);
+            this.labelFill.TabIndex = 33;
+            this.labelFill.Text = "Заливка";
+            this.labelFill.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelFill.Click += new System.EventHandler(this.labelFill_Click);
+            // 
+            // labelCont
+            // 
+            this.labelCont.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelCont.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelCont.ForeColor = System.Drawing.Color.Gold;
+            this.labelCont.Location = new System.Drawing.Point(52, 16);
+            this.labelCont.Name = "labelCont";
+            this.labelCont.Size = new System.Drawing.Size(104, 18);
+            this.labelCont.TabIndex = 32;
+            this.labelCont.Text = "Контур";
+            this.labelCont.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelCont.Click += new System.EventHandler(this.labelCont_Click);
+            // 
+            // labelFillCont
+            // 
+            this.labelFillCont.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelFillCont.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelFillCont.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelFillCont.Location = new System.Drawing.Point(52, 0);
+            this.labelFillCont.Name = "labelFillCont";
+            this.labelFillCont.Size = new System.Drawing.Size(104, 18);
+            this.labelFillCont.TabIndex = 31;
+            this.labelFillCont.Text = "Контур + заливка";
+            this.labelFillCont.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelFillCont.Click += new System.EventHandler(this.labelFillCont_Click);
             // 
             // panelSize
             // 
@@ -943,7 +1040,7 @@
             this.panelDesk.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesk.Location = new System.Drawing.Point(150, 74);
             this.panelDesk.Name = "panelDesk";
-            this.panelDesk.Size = new System.Drawing.Size(710, 436);
+            this.panelDesk.Size = new System.Drawing.Size(710, 442);
             this.panelDesk.TabIndex = 4;
             // 
             // panelResizeSheet
@@ -966,7 +1063,7 @@
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(150, 490);
+            this.panel2.Location = new System.Drawing.Point(150, 496);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(710, 20);
             this.panel2.TabIndex = 5;
@@ -1030,48 +1127,12 @@
             this.label6.Text = "Размер рисунка (px):";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelFeelCont
-            // 
-            this.labelFeelCont.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelFeelCont.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelFeelCont.Location = new System.Drawing.Point(26, 0);
-            this.labelFeelCont.Name = "labelFeelCont";
-            this.labelFeelCont.Size = new System.Drawing.Size(110, 18);
-            this.labelFeelCont.TabIndex = 31;
-            this.labelFeelCont.Text = "Контур + заливка";
-            this.labelFeelCont.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelFeelCont.Click += new System.EventHandler(this.labelFeelCont_Click);
-            // 
-            // labelCont
-            // 
-            this.labelCont.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelCont.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelCont.Location = new System.Drawing.Point(26, 18);
-            this.labelCont.Name = "labelCont";
-            this.labelCont.Size = new System.Drawing.Size(110, 18);
-            this.labelCont.TabIndex = 32;
-            this.labelCont.Text = "Контур";
-            this.labelCont.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelCont.Click += new System.EventHandler(this.labelCont_Click);
-            // 
-            // labelFeel
-            // 
-            this.labelFeel.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelFeel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelFeel.Location = new System.Drawing.Point(26, 36);
-            this.labelFeel.Name = "labelFeel";
-            this.labelFeel.Size = new System.Drawing.Size(110, 18);
-            this.labelFeel.TabIndex = 33;
-            this.labelFeel.Text = "Заливка";
-            this.labelFeel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelFeel.Click += new System.EventHandler(this.labelFeel_Click);
-            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(860, 510);
+            this.ClientSize = new System.Drawing.Size(860, 516);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelDesk);
             this.Controls.Add(this.panelSettings);
@@ -1104,7 +1165,10 @@
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.panelSettings.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            this.panelFill.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFillOnly)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContOnly)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFillCont)).EndInit();
             this.panelSize.ResumeLayout(false);
             this.panelSize.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.brushCircle)).EndInit();
@@ -1176,7 +1240,6 @@
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.Button buttonNAngular;
-        private System.Windows.Forms.Button buttonNNgon;
         private System.Windows.Forms.Button buttonTriangleRectangular;
         private System.Windows.Forms.Button buttonTriangleIsosceles;
         private System.Windows.Forms.Button buttonSquare;
@@ -1192,16 +1255,22 @@
         private System.Windows.Forms.Label labelY;
         private System.Windows.Forms.Label labelX;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button buttonResize;
         private System.Windows.Forms.Button buttonHand;
         private System.Windows.Forms.Button buttonEdit;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panelFill;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label labelFeel;
+        private System.Windows.Forms.Label labelFill;
         private System.Windows.Forms.Label labelCont;
-        private System.Windows.Forms.Label labelFeelCont;
+        private System.Windows.Forms.Label labelFillCont;
+        private System.Windows.Forms.PictureBox pictureBoxFillOnly;
+        private System.Windows.Forms.PictureBox pictureBoxContOnly;
+        private System.Windows.Forms.PictureBox pictureBoxFillCont;
+        private System.Windows.Forms.Button buttonNNgon;
+        private System.Windows.Forms.ToolStripMenuItem режимToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem растроваяГрафикаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem векторнаяГрафикаToolStripMenuItem;
+        private System.Windows.Forms.Button buttonTransform;
     }
 }
 

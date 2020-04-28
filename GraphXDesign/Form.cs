@@ -54,14 +54,35 @@ namespace GraphXDesign
             labelX.Text = Convert.ToString(pictureBoxSheet.Width);
             labelY.Text = Convert.ToString(pictureBoxSheet.Height);
             Canvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
+
         }
 
         // Методы меню
+
+        private void changeFill()
+        {
+            if (labelFillCont.ForeColor == Color.Gold)
+            {
+                pictureBoxFillCont.Visible = false;
+                labelFillCont.ForeColor = Color.White;
+            }
+            if (labelFill.ForeColor == Color.Gold)
+            {
+                pictureBoxFillOnly.Visible = false;
+                labelFill.ForeColor = Color.White;
+            }
+            if (labelCont.ForeColor == Color.Gold)
+            {
+                pictureBoxContOnly.Visible = false;
+                labelCont.ForeColor = Color.White;
+            }
+        }
 
         private void showOptMenu()
         {
             // if (!(tool is NgonTool))
             panelAngles.Visible = false;
+            panelFill.Visible = false;
         }
 
         // Методы верхней панели и ее объектов
@@ -220,6 +241,7 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new Ellips());
             showOptMenu();
+            panelFill.Visible = true;
             option = 1;
         }
 
@@ -227,6 +249,7 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new Rectangle());
             showOptMenu();
+            panelFill.Visible = true;
             option = 2;
         }
 
@@ -234,6 +257,7 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new Trianglesamesizes());
             showOptMenu();
+            panelFill.Visible = true;
             option = 0;
         }
 
@@ -241,6 +265,7 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new TriangleRectangular());
             showOptMenu();
+            panelFill.Visible = true;
             option = 0;
         }
 
@@ -257,6 +282,7 @@ namespace GraphXDesign
             n = Convert.ToInt32(numericAngle.Value);
             option = 0;
             panelAngles.Visible = true;
+            panelFill.Visible = true;
             if (n is SyntaxErrorException || n < 3) // Проверка количества углов
             {
                 n = 3;
@@ -273,6 +299,11 @@ namespace GraphXDesign
 
         private void pictureBoxSheet_MouseDown(object sender, MouseEventArgs e)
         {
+            if (!(tool is PipetteTool))
+            {
+                Canvas.GetCanvas.DeleteBmp(pictureBoxSheet);
+                Canvas.GetCanvas.AddToBmpList(pictureBoxSheet);
+            }
             toolTmp = tool;
             if ((Control.ModifierKeys & Keys.Shift) == Keys.Shift)
             {
@@ -303,10 +334,6 @@ namespace GraphXDesign
         {
             tool.MouseUp((PictureBox)sender, brush, fill, e);
             tool = toolTmp;
-            if (!(tool is PipetteTool))
-            {
-                Canvas.GetCanvas.AddToBmpList();
-            }
         }
 
         private void pictureBoxSheet_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -372,18 +399,27 @@ namespace GraphXDesign
             Canvas.GetCanvas.Redo(pictureBoxSheet);
         }
 
-        private void labelFeelCont_Click(object sender, EventArgs e)
+        private void labelFillCont_Click(object sender, EventArgs e)
         {
+            changeFill();
+            labelFillCont.ForeColor = Color.Gold;
+            pictureBoxFillCont.Visible = true;
             fill = new SolidFill(fill);
         }
 
         private void labelCont_Click(object sender, EventArgs e)
         {
+            changeFill();
+            labelCont.ForeColor = Color.Gold;
+            pictureBoxContOnly.Visible = true;
             fill = new NoFill(fill);
         }
 
-        private void labelFeel_Click(object sender, EventArgs e)
+        private void labelFill_Click(object sender, EventArgs e)
         {
+            changeFill();
+            labelFill.ForeColor = Color.Gold;
+            pictureBoxFillOnly.Visible = true;
             fill = new OnlyFill(fill);
         }
     }
