@@ -53,6 +53,7 @@ namespace GraphXDesign
         {
             cursorActive = false;
             canvas.Render();
+            canvas.WriteToPictureBox(sheet);
         }
         public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         { }
