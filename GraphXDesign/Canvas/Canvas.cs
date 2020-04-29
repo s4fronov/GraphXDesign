@@ -13,8 +13,6 @@ namespace GraphXDesign
     {
         //singleton pattern
         private static Canvas instance;
-        List<BitmapWrap> bitmapList;
-        int m;
         private Canvas() { }
         public static Canvas GetCanvas
         {
@@ -28,6 +26,9 @@ namespace GraphXDesign
             }
         }
 
+        List<BitmapWrap> bitmapList;
+        int m;
+
         public void Init(int width, int height)
         {
             bitmapList = new List<BitmapWrap>();
@@ -38,22 +39,7 @@ namespace GraphXDesign
             Width = width;
             Height = height;
         }
-        
-        private BitmapWrap Cache { get; set; }
 
-        public void SaveToCache()
-        {
-            //Cache = (BitmapWrap)Bmp.Clone();
-            Graphics g = Graphics.FromImage(Cache.Bmp);
-            g.DrawImage(Bmp.Bmp, new System.Drawing.Rectangle(0, 0, Width, Height));
-        }
-
-        public void LoadFromCache()
-        {
-            //Bmp = (BitmapWrap)Cache.Clone();
-            Graphics g = Graphics.FromImage(Bmp.Bmp);
-            g.DrawImage(Cache.Bmp, new System.Drawing.Rectangle(0, 0, Width, Height));
-        }
         public void AddToBmpList(PictureBox a)
         {
             BitmapWrap bmp = (BitmapWrap)Bmp.Clone();
@@ -103,11 +89,6 @@ namespace GraphXDesign
             if (x >= 0 && x < Width)
                 if (y >= 0 && y < Height)
                     Bmp.SetPixel(x, y, color);
-        }
-
-        public void WriteToPictureBox(PictureBox pb)
-        {
-            pb.Image = Bmp.Bmp;
         }
 
         public void Fill(int x, int y, Color fillColor)

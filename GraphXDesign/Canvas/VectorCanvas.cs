@@ -25,7 +25,7 @@ namespace GraphXDesign
             }
         }
 
-        List<Drawfigure> figures;
+        public List<Drawfigure> figures;
 
         public void Init(int width, int height)
         {
@@ -38,26 +38,14 @@ namespace GraphXDesign
 
         public void Render()
         {
-            foreach(Drawfigure f in figures)
+            Bmp = new BitmapWrap(Width, Height);
+            foreach (Drawfigure f in figures)
             {
                 f.Draw(this);
             }
         }
 
-        public void SaveToCache()
-        {
-            //Cache = (BitmapWrap)Bmp.Clone();
-            Graphics g = Graphics.FromImage(Cache.Bmp);
-            g.DrawImage(Bmp.Bmp, new System.Drawing.Rectangle(0, 0, Width, Height));
-        }
-
-        public void LoadFromCache()
-        {
-            //Bmp = (BitmapWrap)Cache.Clone();
-            Graphics g = Graphics.FromImage(Bmp.Bmp);
-            g.DrawImage(Cache.Bmp, new System.Drawing.Rectangle(0, 0, Width, Height));
-        }
-
+        /*
         public Color GetPixel(int x, int y)
         {
             if (x >= 0 && x < Width)
@@ -65,10 +53,6 @@ namespace GraphXDesign
                     return Bmp.GetPixel(x, y);
             return Color.Transparent;
         }
-
-        public void WriteToPictureBox(PictureBox pb)
-        {
-            pb.Image = Bmp.Bmp;
-        }
+        */
     }
 }
