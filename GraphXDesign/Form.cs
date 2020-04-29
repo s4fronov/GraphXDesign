@@ -49,6 +49,7 @@ namespace GraphXDesign
             fill = new NoFill(paintColor2);
             tool = new PenTool();
             AbstractCanvas canvas = Canvas.GetCanvas;
+            showModeMenu();
         }
 
         private void startProgram()
@@ -86,6 +87,26 @@ namespace GraphXDesign
             // if (!(tool is NgonTool))
             panelAngles.Visible = false;
             panelFill.Visible = false;
+        }
+
+        private void showModeMenu()
+        {
+            if (canvas == Canvas.GetCanvas)
+            {
+                buttonEdit.Visible = false;
+                panel5.Visible = false;
+                buttonBrush.Visible = true;
+                buttonNNgon.Visible = true;
+                panelTools.Height = 208;
+            }
+            if (canvas == VectorCanvas.GetCanvas)
+            {
+                buttonEdit.Visible = true;
+                panel5.Visible = true;
+                buttonBrush.Visible = false;
+                buttonNNgon.Visible = false;
+                panelTools.Height = 158;
+            }
         }
 
         // Методы верхней панели и ее объектов
@@ -236,6 +257,7 @@ namespace GraphXDesign
         private void buttonLine_Click(object sender, EventArgs e)
         {
             tool = new FigureTool(new Line(), canvas);
+            fill = new NoFill(fill); // только первый цвет, по умолчанию
             showOptMenu();
             option = 0;
         }
@@ -443,6 +465,7 @@ namespace GraphXDesign
             canvas = Canvas.GetCanvas;
             canvas.WriteToPictureBox(pictureBoxSheet);
             tool = new PenTool();
+            showModeMenu();
         }
 
         private void векторнаяГрафикаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -450,11 +473,27 @@ namespace GraphXDesign
             canvas = VectorCanvas.GetCanvas;
             canvas.WriteToPictureBox(pictureBoxSheet);
             tool = null;
+            showModeMenu();
         }
 
         private void buttonHand_Click(object sender, EventArgs e)
         {
             tool = new VectorFigureMoveTool();
+        }
+
+        private void buttonResize_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonTransform_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonRotate_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
