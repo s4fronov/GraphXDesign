@@ -454,7 +454,7 @@ namespace GraphXDesign
 
         private void buttonHand_Click(object sender, EventArgs e)
         {
-
+            tool = new VectorFigureMoveTool();
         }
     }
 }

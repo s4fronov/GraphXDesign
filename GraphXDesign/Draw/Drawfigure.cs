@@ -10,15 +10,15 @@ namespace GraphXDesign
     public class Drawfigure:IDraw
 
     {
-        IFigure figure;
-        IBrush brush;
-        IFill fill;
+        public IFigure figure;
+        public IBrush brush;
+        public IFill fill;
 
         public  Drawfigure(IFigure figure, IBrush brush, IFill fill)
         {
-            this.figure = figure;
-            this.brush = brush;
-            this.fill = fill;
+            this.figure = (IFigure)figure.Clone();
+            this.brush = (IBrush)brush.Clone();
+            this.fill = (IFill)fill.Clone();
         }
 
         public void Draw(AbstractCanvas canvas)

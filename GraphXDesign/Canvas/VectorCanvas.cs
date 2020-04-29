@@ -44,6 +44,15 @@ namespace GraphXDesign
                 f.Draw(this);
             }
         }
+        public void RenderExceptFigure(Drawfigure df)
+        {
+            Bmp = new BitmapWrap(Width, Height);
+            foreach (Drawfigure f in figures)
+            {
+                if (df != f)
+                    f.Draw(this);
+            }
+        }
 
         /*
         public Color GetPixel(int x, int y)

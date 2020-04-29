@@ -86,6 +86,7 @@
     <Compile Include="Tools\PipetteTool.cs" />
     <Compile Include="Tools\ITool.cs" />
     <Compile Include="Tools\PenTool.cs" />
+    <Compile Include="Tools\VectorEditingTools\VectorFigureMoveTool.cs" />
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>
