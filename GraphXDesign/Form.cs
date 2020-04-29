@@ -93,6 +93,7 @@ namespace GraphXDesign
         {
             if (canvas == Canvas.GetCanvas)
             {
+                labelMode.Text = "Режим растровой графики";
                 buttonEdit.Visible = false;
                 panel5.Visible = false;
                 buttonBrush.Visible = true;
@@ -101,6 +102,7 @@ namespace GraphXDesign
             }
             if (canvas == VectorCanvas.GetCanvas)
             {
+                labelMode.Text = "Режим векторной графики";
                 buttonEdit.Visible = true;
                 panel5.Visible = true;
                 buttonBrush.Visible = false;
@@ -241,7 +243,6 @@ namespace GraphXDesign
 
         private void numericAngle_ValueChanged(object sender, EventArgs e)
         {
-            //n = Convert.ToInt32(numericUpDown1.Value);
             tool = new FigureTool(new N_gon(Convert.ToInt32(numericAngle.Value)), canvas);
         }
 
@@ -428,12 +429,18 @@ namespace GraphXDesign
 
         private void pictureBoxUndo_Click(object sender, EventArgs e)
         {
-            Canvas.GetCanvas.Undo(pictureBoxSheet);
+            if (canvas == Canvas.GetCanvas)
+                Canvas.GetCanvas.Undo(pictureBoxSheet);
+            //if (canvas == VectorCanvas.GetCanvas)
+            //    VectorCanvas.GetCanvas.Undo(pictureBoxSheet);
         }
 
         private void pictureBoxRedo_Click(object sender, EventArgs e)
         {
-            Canvas.GetCanvas.Redo(pictureBoxSheet);
+            if (canvas == Canvas.GetCanvas)
+                Canvas.GetCanvas.Redo(pictureBoxSheet);
+            //if (canvas == VectorCanvas.GetCanvas)
+            //    VectorCanvas.GetCanvas.Redo(pictureBoxSheet);
         }
 
         private void labelFillCont_Click(object sender, EventArgs e)
@@ -479,21 +486,28 @@ namespace GraphXDesign
         private void buttonHand_Click(object sender, EventArgs e)
         {
             tool = new VectorFigureMoveTool();
+            showOptMenu();
         }
 
         private void buttonResize_Click(object sender, EventArgs e)
         {
-
+            showOptMenu();
         }
 
         private void buttonTransform_Click(object sender, EventArgs e)
         {
-
+            tool = new VectorFigureTransformTool();
+            showOptMenu();
         }
 
         private void buttonRotate_Click(object sender, EventArgs e)
         {
+            showOptMenu();
+        }
 
+        private void buttonGitHub_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/9rape/GraphXDesign");
         }
     }
 }

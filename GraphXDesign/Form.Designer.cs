@@ -37,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBoxMenu = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.buttonRotate = new System.Windows.Forms.Button();
             this.buttonTransform = new System.Windows.Forms.Button();
             this.buttonResize = new System.Windows.Forms.Button();
             this.buttonHand = new System.Windows.Forms.Button();
@@ -78,6 +79,7 @@
             this.labelCont = new System.Windows.Forms.Label();
             this.labelFillCont = new System.Windows.Forms.Label();
             this.panelSize = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.brushCircle = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.labelSize = new System.Windows.Forms.Label();
@@ -102,13 +104,13 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelY = new System.Windows.Forms.Label();
             this.labelX = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.buttonRotate = new System.Windows.Forms.Button();
+            this.labelMode = new System.Windows.Forms.Label();
+            this.buttonGitHub = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -169,7 +171,7 @@
             this.panelInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelInfo.Location = new System.Drawing.Point(0, 0);
             this.panelInfo.Name = "panelInfo";
-            this.panelInfo.Size = new System.Drawing.Size(180, 63);
+            this.panelInfo.Size = new System.Drawing.Size(180, 74);
             this.panelInfo.TabIndex = 2;
             // 
             // panelLogo
@@ -219,11 +221,11 @@
             this.groupBoxMenu.Controls.Add(this.buttonEdit);
             this.groupBoxMenu.Controls.Add(this.panelTools);
             this.groupBoxMenu.Controls.Add(this.buttonTools);
-            this.groupBoxMenu.Location = new System.Drawing.Point(-3, 52);
+            this.groupBoxMenu.Location = new System.Drawing.Point(-3, 54);
             this.groupBoxMenu.Margin = new System.Windows.Forms.Padding(0);
             this.groupBoxMenu.Name = "groupBoxMenu";
             this.groupBoxMenu.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBoxMenu.Size = new System.Drawing.Size(186, 478);
+            this.groupBoxMenu.Size = new System.Drawing.Size(186, 465);
             this.groupBoxMenu.TabIndex = 3;
             this.groupBoxMenu.TabStop = false;
             // 
@@ -239,6 +241,26 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(186, 108);
             this.panel5.TabIndex = 3;
+            // 
+            // buttonRotate
+            // 
+            this.buttonRotate.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonRotate.FlatAppearance.BorderSize = 0;
+            this.buttonRotate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRotate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonRotate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonRotate.Image = ((System.Drawing.Image)(resources.GetObject("buttonRotate.Image")));
+            this.buttonRotate.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonRotate.Location = new System.Drawing.Point(0, 75);
+            this.buttonRotate.Name = "buttonRotate";
+            this.buttonRotate.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.buttonRotate.Size = new System.Drawing.Size(186, 25);
+            this.buttonRotate.TabIndex = 6;
+            this.buttonRotate.Text = "   Вращение";
+            this.buttonRotate.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.buttonRotate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonRotate.UseVisualStyleBackColor = true;
+            this.buttonRotate.Click += new System.EventHandler(this.buttonRotate_Click);
             // 
             // buttonTransform
             // 
@@ -578,6 +600,7 @@
             // panelProgram
             // 
             this.panelProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
+            this.panelProgram.Controls.Add(this.buttonGitHub);
             this.panelProgram.Controls.Add(this.panelProgramControl);
             this.panelProgram.Controls.Add(this.menuStrip);
             this.panelProgram.Dock = System.Windows.Forms.DockStyle.Top;
@@ -697,6 +720,7 @@
             this.режимToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.растроваяГрафикаToolStripMenuItem,
             this.векторнаяГрафикаToolStripMenuItem});
+            this.режимToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.режимToolStripMenuItem.Name = "режимToolStripMenuItem";
             this.режимToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.режимToolStripMenuItem.Text = "Режим";
@@ -840,6 +864,17 @@
             this.panelSize.Size = new System.Drawing.Size(209, 54);
             this.panelSize.TabIndex = 4;
             // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.Location = new System.Drawing.Point(121, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(21, 18);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "px";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // brushCircle
             // 
             this.brushCircle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -857,7 +892,7 @@
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(11, 7);
+            this.label3.Location = new System.Drawing.Point(11, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 18);
             this.label3.TabIndex = 4;
@@ -1082,6 +1117,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panel2.Controls.Add(this.labelMode);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(180, 496);
@@ -1102,6 +1138,17 @@
             this.panel3.Size = new System.Drawing.Size(240, 20);
             this.panel3.TabIndex = 0;
             // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(217, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(20, 18);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "px";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -1112,7 +1159,7 @@
             this.label8.Size = new System.Drawing.Size(11, 18);
             this.label8.TabIndex = 23;
             this.label8.Text = "x";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelY
             // 
@@ -1124,70 +1171,61 @@
             this.labelY.Size = new System.Drawing.Size(40, 18);
             this.labelY.TabIndex = 22;
             this.labelY.Text = "5";
-            this.labelY.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelY.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelX
             // 
             this.labelX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelX.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelX.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.labelX.Location = new System.Drawing.Point(116, 1);
+            this.labelX.Location = new System.Drawing.Point(116, 0);
             this.labelX.Name = "labelX";
             this.labelX.Size = new System.Drawing.Size(40, 18);
             this.labelX.TabIndex = 21;
             this.labelX.Text = "5";
-            this.labelX.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelX.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(10, 1);
+            this.label6.Location = new System.Drawing.Point(10, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 18);
             this.label6.TabIndex = 5;
             this.label6.Text = "Размер рисунка";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label7
+            // labelMode
             // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(121, 5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(21, 18);
-            this.label7.TabIndex = 29;
-            this.label7.Text = "px";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.labelMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMode.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelMode.Location = new System.Drawing.Point(3, 0);
+            this.labelMode.Name = "labelMode";
+            this.labelMode.Size = new System.Drawing.Size(200, 18);
+            this.labelMode.TabIndex = 25;
+            this.labelMode.Text = "Режим";
+            this.labelMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label9
+            // buttonGitHub
             // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(217, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(20, 18);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "px";
-            // 
-            // buttonRotate
-            // 
-            this.buttonRotate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonRotate.FlatAppearance.BorderSize = 0;
-            this.buttonRotate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRotate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonRotate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.buttonRotate.Image = ((System.Drawing.Image)(resources.GetObject("buttonRotate.Image")));
-            this.buttonRotate.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonRotate.Location = new System.Drawing.Point(0, 75);
-            this.buttonRotate.Name = "buttonRotate";
-            this.buttonRotate.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.buttonRotate.Size = new System.Drawing.Size(186, 25);
-            this.buttonRotate.TabIndex = 6;
-            this.buttonRotate.Text = "   Вращение";
-            this.buttonRotate.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.buttonRotate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonRotate.UseVisualStyleBackColor = true;
-            this.buttonRotate.Click += new System.EventHandler(this.buttonRotate_Click);
+            this.buttonGitHub.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonGitHub.FlatAppearance.BorderSize = 0;
+            this.buttonGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGitHub.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGitHub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.buttonGitHub.Image = ((System.Drawing.Image)(resources.GetObject("buttonGitHub.Image")));
+            this.buttonGitHub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGitHub.Location = new System.Drawing.Point(576, 0);
+            this.buttonGitHub.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonGitHub.Name = "buttonGitHub";
+            this.buttonGitHub.Size = new System.Drawing.Size(68, 20);
+            this.buttonGitHub.TabIndex = 29;
+            this.buttonGitHub.Text = "  GitHub";
+            this.buttonGitHub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGitHub.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonGitHub.UseVisualStyleBackColor = true;
+            this.buttonGitHub.Click += new System.EventHandler(this.buttonGitHub_Click);
             // 
             // Form
             // 
@@ -1336,6 +1374,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonRotate;
+        private System.Windows.Forms.Label labelMode;
+        private System.Windows.Forms.Button buttonGitHub;
     }
 }
 

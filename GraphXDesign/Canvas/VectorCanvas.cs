@@ -53,6 +53,72 @@ namespace GraphXDesign
                     f.Draw(this);
             }
         }
+        //===================================================== Попытка реализовать смещение вершин
+
+        public int FindPointByPoint(Point p)
+        {
+            Bmp = new BitmapWrap(Width, Height);
+
+            foreach (Drawfigure f in figures)
+            {
+                if (f.figure.dotlist.Contains(p))
+                {
+                    return f.figure.dotlist.IndexOf(p);
+                }
+
+            }
+            return -1;
+        }
+
+        public Drawfigure FindFigureByPoint(Point p)
+        {
+            Bmp = new BitmapWrap(Width, Height);
+
+            foreach (Drawfigure f in figures)
+            {
+                if (f.figure.dotlist.Contains(p))
+                    return f;
+            }
+
+            return null;
+        }
+
+        public void PointChangeMode(PictureBox sheet)
+        {
+            DrawAllFigures(sheet);
+            Square brush = new Square();
+            foreach (Drawfigure f in figures)
+            {
+                foreach (Point t in f.figure.dotlist)
+                {
+                    for (int i = -3; i <= 3; i++)
+                    {
+                        Point p1 = new Point(t.X - 3, t.Y + i);
+                        Point p2 = new Point(t.X + 3, t.Y + i);
+                        brush.Createdotlist(p1.X, p1.Y, p2.X, p2.Y);
+
+                    }
+                }
+            }
+        }
+
+        public void DrawAllFigures(PictureBox sheet)
+        {
+            Bmp = new BitmapWrap(Width, Height);
+
+            Square brush = new Square();
+            foreach (Drawfigure f in figures)
+            {
+                Point tmp = f.figure.dotlist[0];
+                foreach (Point p in f.figure.dotlist)
+                {
+                    brush.Createdotlist(tmp.X, tmp.Y, p.X, p.Y);
+                    tmp = p;
+                }
+                brush.Createdotlist(tmp.X, tmp.Y, f.figure.dotlist[0].X, f.figure.dotlist[0].Y);
+            }
+        }
+        //=========================================================================================
 
         /*
         public Color GetPixel(int x, int y)
