@@ -496,6 +496,7 @@ namespace GraphXDesign
 
         private void buttonTransform_Click(object sender, EventArgs e)
         {
+            canvas.PointChangeMode(pictureBoxSheet); // берет пустую реализацию из родителя, вместо нормальной из наследника
             tool = new VectorFigureTransformTool();
             showOptMenu();
         }

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace GraphXDesign
 {
-    public class VectorCanvas:AbstractCanvas
+    public class VectorCanvas : AbstractCanvas
     {
         //singleton pattern
         private static VectorCanvas instance;
@@ -96,7 +96,7 @@ namespace GraphXDesign
                         Point p1 = new Point(t.X - 3, t.Y + i);
                         Point p2 = new Point(t.X + 3, t.Y + i);
                         brush.Createdotlist(p1.X, p1.Y, p2.X, p2.Y);
-
+                        WriteToPictureBox(sheet);
                     }
                 }
             }
@@ -113,9 +113,11 @@ namespace GraphXDesign
                 foreach (Point p in f.figure.dotlist)
                 {
                     brush.Createdotlist(tmp.X, tmp.Y, p.X, p.Y);
+                    WriteToPictureBox(sheet);
                     tmp = p;
                 }
                 brush.Createdotlist(tmp.X, tmp.Y, f.figure.dotlist[0].X, f.figure.dotlist[0].Y);
+                WriteToPictureBox(sheet);
             }
         }
         //=========================================================================================
