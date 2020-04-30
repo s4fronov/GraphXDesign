@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace GraphXDesign
 {
@@ -33,13 +35,10 @@ namespace GraphXDesign
 
         private void Form_Load(object sender, EventArgs e)
         {
-            startProgram();
             pictureBoxSheet.SizeMode = PictureBoxSizeMode.Normal;
             paintColor1 = palette1.BackColor;
             paintColor2 = palette2.BackColor;
             pictureBoxSheet.BackColor = Color.White;
-            pictureBoxSheet.Image = null;
-            pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle); // Эта строка, делает фон листа белым
             brushSize = 5;
             numericAngle.Value = 5;
             expandActive = false;
@@ -48,7 +47,8 @@ namespace GraphXDesign
             brush.BrushColor = palette1.BackColor;
             fill = new NoFill(paintColor2);
             tool = new PenTool();
-            canvas = Canvas.GetCanvas;
+            AbstractCanvas canvas = Canvas.GetCanvas;
+            startProgram();
             showModeMenu();
         }
 
@@ -56,9 +56,21 @@ namespace GraphXDesign
         {
             labelX.Text = Convert.ToString(pictureBoxSheet.Width);
             labelY.Text = Convert.ToString(pictureBoxSheet.Height);
-            Canvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
-            VectorCanvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
-          //  canvas = Canvas.GetCanvas;
+            if (canvas == Canvas.GetCanvas)
+            {
+                Canvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
+            }
+            if (canvas == VectorCanvas.GetCanvas)
+            {
+                VectorCanvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
+            }
+            if (canvas == null)
+            {
+                Canvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
+                VectorCanvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
+            }
+            //canvas = Canvas.GetCanvas;
+            pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
         }
 
         // Методы меню
@@ -145,9 +157,10 @@ namespace GraphXDesign
             this.Close();
         }
 
-        private void CreateToolStripMenuItem_Click(object sender, EventArgs e) // Создать
+        private void CreateToolStripMenuItem_Click(object sender, EventArgs e) // Новый
         {
             pictureBoxSheet.Image = null;
+            canvas.Bmp = null;
             startProgram();
         }
 
@@ -172,13 +185,20 @@ namespace GraphXDesign
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e) // Сохранить
         {
-            saveFileDialog.Filter = " Portable net graphics (*.png)|*.png| Bitmap files (*.bmp)|*.bmp";
-            saveFileDialog.FilterIndex = 1;
-            saveFileDialog.RestoreDirectory = true;
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (canvas == Canvas.GetCanvas)
             {
-                Canvas.GetCanvas.Bmp.Bmp.Save(saveFileDialog.FileName);
+                saveFileDialog.Filter = " Portable net graphics (*.png)|*.png| Bitmap files (*.bmp)|*.bmp";
+                saveFileDialog.FilterIndex = 1;
+                saveFileDialog.RestoreDirectory = true;
+
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    Canvas.GetCanvas.Bmp.Bmp.Save(saveFileDialog.FileName);
+                }
+            }
+            if (canvas == VectorCanvas.GetCanvas)
+            {
+                //string json = JsonSerializer.Serialize(сanvas.figures);
             }
         }
 
@@ -231,8 +251,8 @@ namespace GraphXDesign
         private void pictureBoxClearAll_Click(object sender, EventArgs e)
         {
             pictureBoxSheet.Image = null;
+            canvas.Bmp = null;
             startProgram();
-            pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle); // Эта строка, делает фон листа белым
         }
 
         private void trackBarSize_Scroll(object sender, EventArgs e)
