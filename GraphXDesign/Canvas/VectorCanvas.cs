@@ -85,8 +85,11 @@ namespace GraphXDesign
 
         public void PointChangeMode(PictureBox sheet)
         {
-            DrawAllFigures(sheet);
-            Square brush = new Square();
+
+            //Render();
+            SquareBrush brush = new SquareBrush(1, Color.Red);
+            Square square = new Square();
+            
             foreach (Drawfigure f in figures)
             {
                 foreach (Point t in f.figure.dotlist)
@@ -95,41 +98,50 @@ namespace GraphXDesign
                     {
                         Point p1 = new Point(t.X - 3, t.Y + i);
                         Point p2 = new Point(t.X + 3, t.Y + i);
-                        brush.Createdotlist(p1.X, p1.Y, p2.X, p2.Y);
+                        square.Createdotlist(p1.X, p1.Y, p2.X, p2.Y);
+                        //WriteToPictureBox(sheet);
+                        brush.DrawLine(Bmp, p1.X, p1.Y, p2.X, p2.Y, false);
                         WriteToPictureBox(sheet);
+                        
                     }
                 }
             }
         }
 
-        public void DrawAllFigures(PictureBox sheet)
-        {
-            Bmp = new BitmapWrap(Width, Height);
+        //public void DrawAllFigures(PictureBox sheet)
+        //{
+        //    Bmp = new BitmapWrap(Width, Height);
 
-            Square brush = new Square();
-            foreach (Drawfigure f in figures)
+        //    Square brush = new Square();
+        //    foreach (Drawfigure f in figures)
+        //    {
+        //        Point tmp = f.figure.dotlist[0];
+        //        foreach (Point p in f.figure.dotlist)
+        //        {
+        //            brush.Createdotlist(tmp.X, tmp.Y, p.X, p.Y);
+        //            WriteToPictureBox(sheet);
+        //            tmp = p;
+        //        }
+        //        brush.Createdotlist(tmp.X, tmp.Y, f.figure.dotlist[0].X, f.figure.dotlist[0].Y);
+        //        WriteToPictureBox(sheet);
+        //    }
+        //}
+
+        //public void ChangeSizeoffigures()
+        //{
+        //    FindFigureByPoint(Point p);
+
+
+            //=========================================================================================
+
+            /*
+            public Color GetPixel(int x, int y)
             {
-                Point tmp = f.figure.dotlist[0];
-                foreach (Point p in f.figure.dotlist)
-                {
-                    brush.Createdotlist(tmp.X, tmp.Y, p.X, p.Y);
-                    WriteToPictureBox(sheet);
-                    tmp = p;
-                }
-                brush.Createdotlist(tmp.X, tmp.Y, f.figure.dotlist[0].X, f.figure.dotlist[0].Y);
-                WriteToPictureBox(sheet);
+                if (x >= 0 && x < Width)
+                    if (y >= 0 && y < Height)
+                        return Bmp.GetPixel(x, y);
+                return Color.Transparent;
             }
+            */
         }
-        //=========================================================================================
-
-        /*
-        public Color GetPixel(int x, int y)
-        {
-            if (x >= 0 && x < Width)
-                if (y >= 0 && y < Height)
-                    return Bmp.GetPixel(x, y);
-            return Color.Transparent;
-        }
-        */
-    }
 }

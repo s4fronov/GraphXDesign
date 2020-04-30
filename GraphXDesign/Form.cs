@@ -48,7 +48,7 @@ namespace GraphXDesign
             brush.BrushColor = palette1.BackColor;
             fill = new NoFill(paintColor2);
             tool = new PenTool();
-            AbstractCanvas canvas = Canvas.GetCanvas;
+            canvas = Canvas.GetCanvas;
             showModeMenu();
         }
 
@@ -58,7 +58,7 @@ namespace GraphXDesign
             labelY.Text = Convert.ToString(pictureBoxSheet.Height);
             Canvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
             VectorCanvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
-            canvas = Canvas.GetCanvas;
+          //  canvas = Canvas.GetCanvas;
         }
 
         // Методы меню
@@ -496,7 +496,8 @@ namespace GraphXDesign
 
         private void buttonTransform_Click(object sender, EventArgs e)
         {
-            canvas.PointChangeMode(pictureBoxSheet); // берет пустую реализацию из родителя, вместо нормальной из наследника
+            
+            VectorCanvas.GetCanvas.PointChangeMode(pictureBoxSheet); // берет пустую реализацию из родителя, вместо нормальной из наследника
             tool = new VectorFigureTransformTool();
             showOptMenu();
         }

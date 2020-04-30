@@ -41,6 +41,7 @@ namespace GraphXDesign
                     break;
                 }
             }
+            canvas.RenderExceptFigure(activeFigure);
             canvas.SaveToCache();
         }
         public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
@@ -51,15 +52,17 @@ namespace GraphXDesign
                 {
                     canvas.LoadFromCache();
                     activeFigure.figure.dotlist[tmpIndex] = e.Location;
-                    canvas.PointChangeMode(sheet);
                     activeFigure.Draw(canvas);
+                    canvas.PointChangeMode(sheet);
                     canvas.WriteToPictureBox(sheet);
+
                 }
             }
         }
         public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             cursorActive = false;
+            canvas.PointChangeMode(sheet);
             canvas.WriteToPictureBox(sheet);
         }
         public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
