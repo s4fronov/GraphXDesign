@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace GraphXDesign
 {
-    public abstract class IFill
+    public abstract class IFill:ICloneable
     {
         public IFill (IFill fill)
         {
@@ -21,5 +21,9 @@ namespace GraphXDesign
 
         public Color FillColor { get; set; }
         public abstract void Fill(BitmapWrap bmp, Point point);
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
     }
 }
