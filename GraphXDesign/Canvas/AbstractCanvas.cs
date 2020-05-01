@@ -33,5 +33,6 @@ namespace GraphXDesign
             //Graphics g = Graphics.FromImage(Bmp.Bmp);
             //g.DrawImage(Cache.Bmp, new System.Drawing.Rectangle(0, 0, Width, Height));
         }
+      
     }
 }
