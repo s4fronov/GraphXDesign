@@ -279,6 +279,7 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new Line(), canvas);
             fill = new NoFill(fill); // только первый цвет, по умолчанию
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu();
             option = 0;
         }
@@ -286,6 +287,7 @@ namespace GraphXDesign
         private void buttonCircle_Click(object sender, EventArgs e)
         {
             tool = new FigureTool(new Ellips(), canvas);
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu();
             panelFill.Visible = true;
             option = 1;
@@ -294,6 +296,7 @@ namespace GraphXDesign
         private void buttonSquare_Click(object sender, EventArgs e)
         {
             tool = new FigureTool(new Rectangle(), canvas);
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu();
             panelFill.Visible = true;
             option = 2;
@@ -302,6 +305,7 @@ namespace GraphXDesign
         private void buttonTriangleIsosceles_Click(object sender, EventArgs e)
         {
             tool = new FigureTool(new Trianglesamesizes(), canvas);
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu();
             panelFill.Visible = true;
             option = 0;
@@ -310,6 +314,7 @@ namespace GraphXDesign
         private void buttonTriangleRectangular_Click(object sender, EventArgs e)
         {
             tool = new FigureTool(new TriangleRectangular(), canvas);
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu();
             panelFill.Visible = true;
             option = 0;
@@ -339,6 +344,7 @@ namespace GraphXDesign
                 n = Convert.ToInt32(numericAngle.Value);
             }
             tool = new FigureTool(new N_gon(n), canvas);
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
         }
 
         // Методы работы листа с мышью
@@ -506,6 +512,7 @@ namespace GraphXDesign
         private void buttonHand_Click(object sender, EventArgs e)
         {
             tool = new VectorFigureMoveTool();
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu();
         }
 
@@ -516,7 +523,7 @@ namespace GraphXDesign
 
         private void buttonTransform_Click(object sender, EventArgs e)
         {
-            
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             VectorCanvas.GetCanvas.PointChangeMode(pictureBoxSheet); // берет пустую реализацию из родителя, вместо нормальной из наследника
             tool = new VectorFigureTransformTool();
             showOptMenu();
