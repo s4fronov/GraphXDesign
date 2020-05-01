@@ -35,7 +35,11 @@ namespace GraphXDesign
             Height = height;
             figures = new List<Drawfigure>();
         }
-
+        public void RenderWrite(PictureBox pb)
+        {
+            Render();
+            WriteToPictureBox(pb);
+        }
         public void Render()
         {
             Bmp = new BitmapWrap(Width, Height);
@@ -85,8 +89,6 @@ namespace GraphXDesign
 
         public void PointChangeMode(PictureBox sheet)
         {
-
-            //Render();
             SquareBrush brush = new SquareBrush(1, Color.Red);
             Square square = new Square();
             
@@ -107,6 +109,8 @@ namespace GraphXDesign
                 }
             }
         }
+
+
 
         //public void DrawAllFigures(PictureBox sheet)
         //{
