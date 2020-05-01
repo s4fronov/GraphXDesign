@@ -116,6 +116,7 @@
     <Compile Include="Tools\PenTool.cs" />
     <Compile Include="Tools\VectorEditingTools\VectorFigureMoveTool.cs" />
     <Compile Include="Tools\VectorEditingTools\VectorFigureTransformTool.cs" />
+    <Compile Include="Tools\VectorEditingTools\VectorFigureTurnTool.cs" />
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>

@@ -123,5 +123,17 @@ namespace GraphXDesign
         {
             return MemberwiseClone();
         }
+        public void Turn()
+        {
+            int alpha = 45;
+            double angle = (alpha * Math.PI) / 180;
+            for (int i = 0; i < dotlist.Count; i++)
+            {
+                Point result = new Point();
+                result.X = (int)(Math.Cos(angle) * (dotlist[i].X - center.X) - Math.Sin(angle) * (dotlist[i].Y - center.Y) + center.X);
+                result.Y = (int)(Math.Sin(angle) * (dotlist[i].X - center.X) + Math.Cos(angle) * (dotlist[i].Y - center.Y) + center.Y);
+                dotlist[i] = result;
+            }
+        }
     }
 }
