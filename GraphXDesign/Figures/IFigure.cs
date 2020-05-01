@@ -15,6 +15,7 @@ namespace GraphXDesign
         public Point cornerBottomRight;
         public void Create(int x1, int y1, int x2, int y2)
         {
+            dotlist = new List<Point>();
             Createdotlist(x1, y1, x2, y2);
             CreateCorners(x1, y1, x2, y2);
             CreateCenter();

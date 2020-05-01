@@ -33,5 +33,32 @@ namespace GraphXDesign
                 dotlist.Add(new Point(xd, yd));
             }
         }
+        protected override void CreateCorners(int x1, int y1, int x2, int y2)
+        {
+            int leftX, rightX;
+            int topY, bottomY;
+            if (x1 < x2)
+            {
+                leftX = x1 - (x2 - x1);
+                rightX = x2;
+            }
+            else
+            {
+                leftX = x2;
+                rightX = x1 + (x1 - x2);
+            }
+            if (y1 < y2)
+            {
+                topY = y1 - (y2 - y1);
+                bottomY = y2;
+            }
+            else
+            {
+                topY = y2;
+                bottomY = y1 + (y1 - y1);
+            }
+            cornerTopLeft = new Point(leftX, topY);
+            cornerBottomRight = new Point(rightX, bottomY);
+        }
     }
 }
