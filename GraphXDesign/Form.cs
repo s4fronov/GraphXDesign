@@ -47,7 +47,6 @@ namespace GraphXDesign
             brush.BrushColor = palette1.BackColor;
             fill = new NoFill(paintColor2);
             tool = new PenTool();
-            AbstractCanvas canvas = Canvas.GetCanvas;
             startProgram();
             showModeMenu();
         }
@@ -68,6 +67,7 @@ namespace GraphXDesign
             {
                 Canvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
                 VectorCanvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
+                canvas = Canvas.GetCanvas;
             }
             //canvas = Canvas.GetCanvas;
             pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
