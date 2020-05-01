@@ -492,7 +492,6 @@ namespace GraphXDesign
             pictureBoxFillOnly.Visible = true;
             fill = new OnlyFill(fill);
         }
-
         private void растроваяГрафикаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             canvas = Canvas.GetCanvas;
@@ -500,7 +499,6 @@ namespace GraphXDesign
             tool = new PenTool();
             showModeMenu();
         }
-
         private void векторнаяГрафикаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             canvas = VectorCanvas.GetCanvas;
@@ -508,19 +506,16 @@ namespace GraphXDesign
             tool = null;
             showModeMenu();
         }
-
         private void buttonHand_Click(object sender, EventArgs e)
         {
             tool = new VectorFigureMoveTool();
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu();
         }
-
         private void buttonResize_Click(object sender, EventArgs e)
         {
             showOptMenu();
         }
-
         private void buttonTransform_Click(object sender, EventArgs e)
         {
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
@@ -528,12 +523,11 @@ namespace GraphXDesign
             tool = new VectorFigureTransformTool();
             showOptMenu();
         }
-
         private void buttonRotate_Click(object sender, EventArgs e)
         {
+            tool = new VectorFigureTurnTool();
             showOptMenu();
         }
-
         private void buttonGitHub_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/9rape/GraphXDesign");

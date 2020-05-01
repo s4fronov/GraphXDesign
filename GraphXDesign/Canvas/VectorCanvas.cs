@@ -91,7 +91,7 @@ namespace GraphXDesign
         {
             SquareBrush brush = new SquareBrush(1, Color.Red);
             Square square = new Square();
-            
+
             foreach (Drawfigure f in figures)
             {
                 foreach (Point t in f.figure.dotlist)
@@ -104,7 +104,7 @@ namespace GraphXDesign
                         //WriteToPictureBox(sheet);
                         brush.DrawLine(Bmp, p1.X, p1.Y, p2.X, p2.Y, false);
                         WriteToPictureBox(sheet);
-                        
+
                     }
                 }
             }
@@ -136,16 +136,17 @@ namespace GraphXDesign
         //    FindFigureByPoint(Point p);
 
 
-            //=========================================================================================
+        //=========================================================================================
 
-            /*
-            public Color GetPixel(int x, int y)
-            {
-                if (x >= 0 && x < Width)
-                    if (y >= 0 && y < Height)
-                        return Bmp.GetPixel(x, y);
-                return Color.Transparent;
-            }
-            */
+        /*
+        public Color GetPixel(int x, int y)
+        {
+            if (x >= 0 && x < Width)
+                if (y >= 0 && y < Height)
+                    return Bmp.GetPixel(x, y);
+            return Color.Transparent;
         }
+        */
+        
+    }
 }
