@@ -197,32 +197,21 @@ namespace GraphXDesign
                 saveFileDialog.Filter = " JSON (*.json)|*.json";
                 openFileDialog.FilterIndex = 1;
                 openFileDialog.RestoreDirectory = true;
+                var jsonSerializerSettings = new JsonSerializerSettings()
+                {
+                    TypeNameHandling = TypeNameHandling.All
+                };
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     filePath = openFileDialog.FileName;
                     fileContent = File.ReadAllLines(filePath);
                     VectorCanvas tmp = VectorCanvas.GetCanvas;
-                    for (int i = 0; i > fileContent.Length-1; i++)
+                    tmp.figures.Clear();
+                    for (int i = 0; i < fileContent.Length; i++)
                     {
-                        Drawfigure f = JsonConvert.DeserializeObject<Drawfigure>(fileContent[i]);
-                        tmp.figures.Add(f);
-                        //Color FillColor = f.fill.FillColor;
-                        //IFill fill = f.fill;
-                        //Color BrushColor = f.brush.BrushColor;
-                        //int BrushSize = f.brush.BrushSize;
-                        //IBrush brush = f.brush;
-                        //Point cornerBottomRight = f.figure.cornerBottomRight;
-                        //Point cornerTopLeft = f.figure.cornerTopLeft;
-                        //Point center = f.figure.center;
-                        //List<Point> dotlist = f.figure.dotlist;
-                        //IFigure figure = f.figure;
-
-                        //f.Draw(canvas);
-                        //tmp.RenderExceptFigure(f);
-                        //tmp.Render();
-                        //tmp.RenderWrite(pictureBoxSheet);
-
+                        Drawfigure f = JsonConvert.DeserializeObject<Drawfigure>(fileContent[i], jsonSerializerSettings);
+                        tmp.figures.Add(f);   
                     }
                     //List<Drawfigure> figureList = JsonConvert.DeserializeObject<List<Drawfigure>>(fileContent);
                     //tmp.figures = figureList;
@@ -230,6 +219,7 @@ namespace GraphXDesign
                     //startProgram();
                     //pictureBoxSheet.DrawToBitmap(VectorCanvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
                     textBox1.Text = fileContent[0];
+                    VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
                 }
             }
             }
@@ -252,13 +242,17 @@ namespace GraphXDesign
                 saveFileDialog.Filter = " JSON (*.json)|*.json";
                 saveFileDialog.FilterIndex = 1;
                 saveFileDialog.RestoreDirectory = true;
+                var jsonSerializerSettings = new JsonSerializerSettings()
+                {
+                    TypeNameHandling = TypeNameHandling.All
+                };
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     VectorCanvas tmp = VectorCanvas.GetCanvas;
                     string file = "";
                     foreach (Drawfigure f in tmp.figures)
                     {
-                        string json = JsonConvert.SerializeObject(f);
+                        string json = JsonConvert.SerializeObject(f, jsonSerializerSettings);
                         file += json + "\n";
                     }
                     //string json = JsonConvert.SerializeObject(tmp.figures);

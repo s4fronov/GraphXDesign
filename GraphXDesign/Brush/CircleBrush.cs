@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using Newtonsoft.Json;
 
 namespace GraphXDesign
 {
     public class CircleBrush : IBrush
     {
+        [JsonConstructor]
         public CircleBrush(int size, Color color)
         {
             BrushSize = size;
