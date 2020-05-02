@@ -411,10 +411,10 @@ namespace GraphXDesign
         }
 
         // ======================================== Методы боковой панели инструментов
-        
+
         private void buttonBrush_Click(object sender, EventArgs e)
         {
-            
+
             tool = new PenTool();
             showOptMenu(sender);
             option = 0;
@@ -627,11 +627,31 @@ namespace GraphXDesign
         {
             if (cursorActive == true)
             {
+                var jsonSerializerSettings = new JsonSerializerSettings()
+                {
+                    TypeNameHandling = TypeNameHandling.All
+                };
+                VectorCanvas tmp = VectorCanvas.GetCanvas;
+                string file = "";
+                foreach (Drawfigure f in tmp.figures)
+                {
+                    string json = JsonConvert.SerializeObject(f, jsonSerializerSettings);
+                    file += json + "|";
+                }
+
                 pictureBoxSheet.Size += (Size)e.Location;
-                startProgram();
                 pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
-                VectorCanvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height); // изменение размера векторного листа
-               cursorActive = false;
+                VectorCanvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height); 
+
+                string[] lines = file.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries);
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    Drawfigure f = JsonConvert.DeserializeObject<Drawfigure>(lines[i], jsonSerializerSettings);
+                    tmp.figures.Add(f);
+                }
+                VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
+
+                // нужно добавить нахождение фигур за пределами листа и их удаление
             }
         }
 
