@@ -110,6 +110,33 @@ namespace GraphXDesign
             }
         }
 
+        public void PointChangeModeofrectangle(PictureBox sheet, Drawfigure obj)
+        {
+            SquareBrush brush = new SquareBrush(1, Color.Blue);
+            Square square = new Square();
+            List<Point> rectanglelist = new List<Point>();
+            rectanglelist.Add(obj.figure.cornerTopLeft);
+            rectanglelist.Add(obj.figure.cornerBottomRight);
+            rectanglelist.Add(obj.figure.cornerBottomLeft);
+            rectanglelist.Add(obj.figure.cornerTopRight);
+                                 
+
+             foreach (Point t in rectanglelist)
+                {
+                    for (int i = -3; i <= 3; i++)
+                    {
+                        Point p1 = new Point(t.X - 3, t.Y + i);
+                        Point p2 = new Point(t.X + 3, t.Y + i);
+                        square.Createdotlist(p1.X, p1.Y, p2.X, p2.Y);
+                        //WriteToPictureBox(sheet);
+                        brush.DrawLine(Bmp, p1.X, p1.Y, p2.X, p2.Y, false);
+                        WriteToPictureBox(sheet);
+
+                    }
+                }
+            
+        }
+
 
 
         //public void DrawAllFigures(PictureBox sheet)
@@ -147,6 +174,6 @@ namespace GraphXDesign
             return Color.Transparent;
         }
         */
-        
+
     }
 }

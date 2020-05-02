@@ -61,9 +61,11 @@ namespace GraphXDesign
         }
         public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
+            activeFigure.figure.ChangeCorners();
             cursorActive = false;
             canvas.PointChangeMode(sheet);
             canvas.WriteToPictureBox(sheet);
+            
         }
         public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         { }
