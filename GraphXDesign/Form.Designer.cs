@@ -43,7 +43,6 @@
             this.buttonTransform = new System.Windows.Forms.Button();
             this.buttonResize = new System.Windows.Forms.Button();
             this.buttonHand = new System.Windows.Forms.Button();
-            this.labelMode = new System.Windows.Forms.Label();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.panelTools = new System.Windows.Forms.Panel();
             this.buttonNNgon = new System.Windows.Forms.Button();
@@ -55,6 +54,7 @@
             this.buttonLine = new System.Windows.Forms.Button();
             this.buttonBrush = new System.Windows.Forms.Button();
             this.buttonTools = new System.Windows.Forms.Button();
+            this.labelMode = new System.Windows.Forms.Label();
             this.panelAngles = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.numericAngle = new System.Windows.Forms.NumericUpDown();
@@ -73,6 +73,9 @@
             this.режимToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.растроваяГрафикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.векторнаяГрафикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.темаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.темнаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.светлаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSettings = new System.Windows.Forms.Panel();
             this.panelFill = new System.Windows.Forms.Panel();
             this.pictureBoxFillOnly = new System.Windows.Forms.PictureBox();
@@ -106,9 +109,10 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.labelTool = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -116,7 +120,6 @@
             this.labelY = new System.Windows.Forms.Label();
             this.labelX = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -145,9 +148,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).BeginInit();
             this.panelDesk.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -367,17 +370,6 @@
             this.buttonHand.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonHand.UseVisualStyleBackColor = true;
             this.buttonHand.Click += new System.EventHandler(this.buttonHand_Click);
-            // 
-            // labelMode
-            // 
-            this.labelMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelMode.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelMode.Location = new System.Drawing.Point(64, 0);
-            this.labelMode.Name = "labelMode";
-            this.labelMode.Size = new System.Drawing.Size(110, 18);
-            this.labelMode.TabIndex = 25;
-            this.labelMode.Text = "Растровая графика";
-            this.labelMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // buttonEdit
             // 
@@ -603,6 +595,17 @@
             this.buttonTools.UseVisualStyleBackColor = true;
             this.buttonTools.Click += new System.EventHandler(this.buttonBrush_Click);
             // 
+            // labelMode
+            // 
+            this.labelMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMode.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelMode.Location = new System.Drawing.Point(64, 0);
+            this.labelMode.Name = "labelMode";
+            this.labelMode.Size = new System.Drawing.Size(110, 18);
+            this.labelMode.TabIndex = 25;
+            this.labelMode.Text = "Растровая графика";
+            this.labelMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panelAngles
             // 
             this.panelAngles.Controls.Add(this.pictureBox1);
@@ -748,12 +751,13 @@
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.режимToolStripMenuItem});
+            this.режимToolStripMenuItem,
+            this.темаToolStripMenuItem});
             this.menuStrip.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(0);
-            this.menuStrip.Size = new System.Drawing.Size(112, 20);
+            this.menuStrip.Size = new System.Drawing.Size(281, 20);
             this.menuStrip.TabIndex = 6;
             // 
             // файлToolStripMenuItem
@@ -825,6 +829,29 @@
             this.векторнаяГрафикаToolStripMenuItem.Size = new System.Drawing.Size(194, 26);
             this.векторнаяГрафикаToolStripMenuItem.Text = "Векторная графика";
             this.векторнаяГрафикаToolStripMenuItem.Click += new System.EventHandler(this.векторнаяГрафикаToolStripMenuItem_Click);
+            // 
+            // темаToolStripMenuItem
+            // 
+            this.темаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.темнаяToolStripMenuItem,
+            this.светлаяToolStripMenuItem});
+            this.темаToolStripMenuItem.Name = "темаToolStripMenuItem";
+            this.темаToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.темаToolStripMenuItem.Text = "Тема";
+            // 
+            // темнаяToolStripMenuItem
+            // 
+            this.темнаяToolStripMenuItem.Name = "темнаяToolStripMenuItem";
+            this.темнаяToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.темнаяToolStripMenuItem.Text = "Темная";
+            this.темнаяToolStripMenuItem.Click += new System.EventHandler(this.темнаяToolStripMenuItem_Click);
+            // 
+            // светлаяToolStripMenuItem
+            // 
+            this.светлаяToolStripMenuItem.Name = "светлаяToolStripMenuItem";
+            this.светлаяToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.светлаяToolStripMenuItem.Text = "Светлая";
+            this.светлаяToolStripMenuItem.Click += new System.EventHandler(this.светлаяToolStripMenuItem_Click);
             // 
             // panelSettings
             // 
@@ -1218,6 +1245,27 @@
             this.panel2.Size = new System.Drawing.Size(780, 20);
             this.panel2.TabIndex = 5;
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label11);
+            this.panel7.Controls.Add(this.labelMode);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(364, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(176, 20);
+            this.panel7.TabIndex = 30;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 18);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Режим:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.label10);
@@ -1238,17 +1286,6 @@
             this.label10.TabIndex = 26;
             this.label10.Text = "Инструмент:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 18);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Режим:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelTool
             // 
@@ -1332,16 +1369,6 @@
             this.label6.Text = "Размер рисунка:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.label11);
-            this.panel7.Controls.Add(this.labelMode);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(364, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(176, 20);
-            this.panel7.TabIndex = 30;
-            // 
             // FormProgram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1392,9 +1419,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).EndInit();
             this.panelDesk.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1489,6 +1516,9 @@
         private System.Windows.Forms.Button buttonTriangleRectangular;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.ToolStripMenuItem темаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem темнаяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem светлаяToolStripMenuItem;
     }
 }
 

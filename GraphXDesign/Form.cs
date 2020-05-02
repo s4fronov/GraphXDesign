@@ -637,6 +637,92 @@ namespace GraphXDesign
             System.Diagnostics.Process.Start("https://github.com/9rape/GraphXDesign");
         }
 
-        
+        private void темнаяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelSettings.BackColor = Color.FromArgb(48, 48, 48);
+            panelInfo.BackColor = Color.FromArgb(32, 32, 32);
+            panelTools.BackColor = Color.FromArgb(48, 48, 48);
+            panelTools.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonTools.BackColor = Color.FromArgb(32, 32, 32);
+            buttonTools.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonEdit.BackColor = Color.FromArgb(32, 32, 32);
+            buttonEdit.ForeColor = Color.FromArgb(136, 185, 144);
+            panel5.BackColor = Color.FromArgb(32, 32, 32);
+            panel5.ForeColor = Color.FromArgb(136, 185, 144);
+            groupBoxMenu.BackColor = Color.FromArgb(32, 32, 32);
+            panelProgram.BackColor = Color.FromArgb(136, 185, 144);
+            файлToolStripMenuItem.BackColor = Color.FromArgb(136, 185, 144);
+            режимToolStripMenuItem.BackColor = Color.FromArgb(136, 185, 144);
+            темаToolStripMenuItem.BackColor = Color.FromArgb(136, 185, 144);
+            buttonBrush.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonCircle.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonLine.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonSquare.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonNAngular.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonNNgon.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonTriangleRectangular.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonTriangleIsosceles.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonHand.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonDelete.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonResize.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonTransform.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonRotate.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonPaint.ForeColor = Color.FromArgb(136, 185, 144);
+            panel2.BackColor = Color.FromArgb(32, 32, 32);
+            imageLogo.BackColor = Color.FromArgb(136, 185, 144);
+            label11.ForeColor = Color.White;
+            label10.ForeColor = Color.White;
+            labelX.ForeColor = Color.White;
+            labelY.ForeColor = Color.White;
+            labelTool.ForeColor = Color.White;
+            labelMode.ForeColor = Color.White;
+            label6.ForeColor = Color.White;
+            label8.ForeColor = Color.White;
+            label9.ForeColor = Color.White;
+        }
+
+        private void светлаяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelSettings.BackColor = Color.FromArgb(31,101,87);
+            panelInfo.BackColor = Color.FromArgb(136, 185, 144);
+            panelTools.BackColor = Color.FromArgb(31, 101, 87);
+            panelTools.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonTools.BackColor = Color.FromArgb(136, 185, 144);
+            buttonTools.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonEdit.BackColor = Color.FromArgb(136, 185, 144);
+            buttonEdit.ForeColor = Color.FromArgb(255, 255, 255);
+            panel5.BackColor = Color.FromArgb(31, 101, 87);
+            panel5.ForeColor = Color.FromArgb(255, 255, 255);
+            groupBoxMenu.BackColor = Color.FromArgb(136, 185, 144);
+            panelProgram.BackColor = Color.FromArgb(136, 185, 144);
+            файлToolStripMenuItem.BackColor = Color.FromArgb(136, 185, 144);
+            режимToolStripMenuItem.BackColor = Color.FromArgb(136, 185, 144);
+            темаToolStripMenuItem.BackColor = Color.FromArgb(136, 185, 144);
+            buttonBrush.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonCircle.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonLine.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonSquare.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonNAngular.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonNNgon.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonTriangleRectangular.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonTriangleIsosceles.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonHand.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonDelete.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonResize.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonTransform.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonRotate.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonPaint.ForeColor = Color.FromArgb(255, 255, 255);
+            panel2.BackColor = Color.FromArgb(136, 185, 144);
+            imageLogo.BackColor = Color.FromArgb(31, 101, 87);
+            label11.ForeColor = Color.Black;
+            label10.ForeColor = Color.Black;
+            labelX.ForeColor = Color.Black;
+            labelY.ForeColor = Color.Black;
+            labelTool.ForeColor = Color.Black;
+            labelMode.ForeColor = Color.Black;
+            label6.ForeColor = Color.Black;
+            label8.ForeColor = Color.Black;
+            label9.ForeColor = Color.Black;
+        }
     }
 }
