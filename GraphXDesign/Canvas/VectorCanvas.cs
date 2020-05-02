@@ -57,6 +57,64 @@ namespace GraphXDesign
                     f.Draw(this);
             }
         }
+
+        //===================================================== Попытка реализовать заливку
+
+        public Color GetPixel(int x, int y)
+        {
+            if (x >= 0 && x < Width)
+                if (y >= 0 && y < Height)
+                    return Bmp.GetPixel(x, y);
+            return Color.Transparent;
+        }
+        //в основной битмап
+        public void SetPixel(int x, int y, Color color)
+        {
+            if (x >= 0 && x < Width)
+                if (y >= 0 && y < Height)
+                    Bmp.SetPixel(x, y, color);
+        }
+
+        public void Fill(int x, int y, Color fillColor)
+        {
+            Color startingColor = GetPixel(x, y);
+            if (startingColor.ToArgb() == fillColor.ToArgb())
+                return;
+
+            Point point = new Point(x, y);
+
+            Queue<Point> pointsToCheck = new Queue<Point>();
+            pointsToCheck.Enqueue(point);
+
+            while (pointsToCheck.Count > 0)
+            {
+                point = new Point(pointsToCheck.Peek().X, pointsToCheck.Peek().Y);
+                pointsToCheck.Dequeue();
+                if (GetPixel(point.X - 1, point.Y).ToArgb() == startingColor.ToArgb())
+                {
+                    SetPixel(point.X - 1, point.Y, fillColor);
+                    pointsToCheck.Enqueue(new Point(point.X - 1, point.Y));
+                }
+                if (GetPixel(point.X + 1, point.Y).ToArgb() == startingColor.ToArgb())
+                {
+                    SetPixel(point.X + 1, point.Y, fillColor);
+                    pointsToCheck.Enqueue(new Point(point.X + 1, point.Y));
+                }
+                if (GetPixel(point.X, point.Y - 1).ToArgb() == startingColor.ToArgb())
+                {
+                    SetPixel(point.X, point.Y - 1, fillColor);
+                    pointsToCheck.Enqueue(new Point(point.X, point.Y - 1));
+                }
+                if (GetPixel(point.X, point.Y + 1).ToArgb() == startingColor.ToArgb())
+                {
+                    SetPixel(point.X, point.Y + 1, fillColor);
+                    pointsToCheck.Enqueue(new Point(point.X, point.Y + 1));
+                }
+            }
+
+            return;
+        }
+
         //===================================================== Попытка реализовать смещение вершин
 
         public int FindPointByPoint(Point p)
@@ -91,7 +149,7 @@ namespace GraphXDesign
         {
             SquareBrush brush = new SquareBrush(1, Color.Red);
             Square square = new Square();
-            
+
             foreach (Drawfigure f in figures)
             {
                 foreach (Point t in f.figure.dotlist)
@@ -104,7 +162,7 @@ namespace GraphXDesign
                         //WriteToPictureBox(sheet);
                         brush.DrawLine(Bmp, p1.X, p1.Y, p2.X, p2.Y, false);
                         WriteToPictureBox(sheet);
-                        
+
                     }
                 }
             }
@@ -136,16 +194,17 @@ namespace GraphXDesign
         //    FindFigureByPoint(Point p);
 
 
-            //=========================================================================================
+        //=========================================================================================
 
-            /*
-            public Color GetPixel(int x, int y)
-            {
-                if (x >= 0 && x < Width)
-                    if (y >= 0 && y < Height)
-                        return Bmp.GetPixel(x, y);
-                return Color.Transparent;
-            }
-            */
+        /*
+        public Color GetPixel(int x, int y)
+        {
+            if (x >= 0 && x < Width)
+                if (y >= 0 && y < Height)
+                    return Bmp.GetPixel(x, y);
+            return Color.Transparent;
         }
+        */
+        
+    }
 }

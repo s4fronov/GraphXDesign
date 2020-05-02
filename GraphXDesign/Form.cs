@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace GraphXDesign
 {
@@ -99,6 +99,11 @@ namespace GraphXDesign
             // if (!(tool is NgonTool))
             panelAngles.Visible = false;
             panelFill.Visible = false;
+            IFill fillTMP = fill;
+            if (tool is Line)
+                fill = new NoFill(fill);
+            if (tool != new FigureTool(new Line(), canvas))
+                fill = fillTMP;
         }
 
         private void showModeMenu()
@@ -166,22 +171,68 @@ namespace GraphXDesign
 
         private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // Открыть
         {
-            var fileContent = string.Empty;
-            var filePath = string.Empty;
-
-            openFileDialog.InitialDirectory = "c:\\";
-            openFileDialog.Filter = " All files (*.*)|*.*| Portable net graphics (*.png)|*.png| Bitmap files (*.bmp)|*.bmp";
-            openFileDialog.FilterIndex = 1;
-            openFileDialog.RestoreDirectory = true;
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (canvas == Canvas.GetCanvas)
             {
-                filePath = openFileDialog.FileName;
-                pictureBoxSheet.Load(filePath + "");
-                startProgram();
-                pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
+                string filePath;
+
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = " All files (*.*)|*.*| Portable net graphics (*.png)|*.png| Bitmap files (*.bmp)|*.bmp";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath = openFileDialog.FileName;
+                    pictureBoxSheet.Load(filePath + "");
+                    startProgram();
+                    pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
+                }
             }
-        }
+            if (canvas == VectorCanvas.GetCanvas)
+            {
+                string[] fileContent;
+                string filePath;
+
+                openFileDialog.InitialDirectory = "c:\\";
+                saveFileDialog.Filter = " JSON (*.json)|*.json";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath = openFileDialog.FileName;
+                    fileContent = File.ReadAllLines(filePath);
+                    VectorCanvas tmp = VectorCanvas.GetCanvas;
+                    for (int i = 0; i > fileContent.Length-1; i++)
+                    {
+                        Drawfigure f = JsonConvert.DeserializeObject<Drawfigure>(fileContent[i]);
+                        tmp.figures.Add(f);
+                        //Color FillColor = f.fill.FillColor;
+                        //IFill fill = f.fill;
+                        //Color BrushColor = f.brush.BrushColor;
+                        //int BrushSize = f.brush.BrushSize;
+                        //IBrush brush = f.brush;
+                        //Point cornerBottomRight = f.figure.cornerBottomRight;
+                        //Point cornerTopLeft = f.figure.cornerTopLeft;
+                        //Point center = f.figure.center;
+                        //List<Point> dotlist = f.figure.dotlist;
+                        //IFigure figure = f.figure;
+
+                        //f.Draw(canvas);
+                        //tmp.RenderExceptFigure(f);
+                        //tmp.Render();
+                        //tmp.RenderWrite(pictureBoxSheet);
+
+                    }
+                    //List<Drawfigure> figureList = JsonConvert.DeserializeObject<List<Drawfigure>>(fileContent);
+                    //tmp.figures = figureList;
+                    
+                    //startProgram();
+                    //pictureBoxSheet.DrawToBitmap(VectorCanvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
+                    textBox1.Text = fileContent[0];
+                }
+            }
+            }
 
         private void SaveToolStripMenuItem_Click(object sender, EventArgs e) // Сохранить
         {
@@ -198,7 +249,23 @@ namespace GraphXDesign
             }
             if (canvas == VectorCanvas.GetCanvas)
             {
-                //string json = JsonSerializer.Serialize(сanvas.figures);
+                saveFileDialog.Filter = " JSON (*.json)|*.json";
+                saveFileDialog.FilterIndex = 1;
+                saveFileDialog.RestoreDirectory = true;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    VectorCanvas tmp = VectorCanvas.GetCanvas;
+                    string file = "";
+                    foreach (Drawfigure f in tmp.figures)
+                    {
+                        string json = JsonConvert.SerializeObject(f);
+                        file += json + "\n";
+                    }
+                    //string json = JsonConvert.SerializeObject(tmp.figures);
+                    //File.WriteAllText(saveFileDialog.FileName, json);
+                    textBox1.Text = file;
+                    File.WriteAllText(saveFileDialog.FileName, file);
+                }
             }
         }
 
@@ -239,13 +306,12 @@ namespace GraphXDesign
 
         private void pictureBoxFill_Click(object sender, EventArgs e)
         {
-            tool = new FillTool();
+            tool = new FillTool(canvas);
         }
 
         private void pictureBoxEraser_Click(object sender, EventArgs e)
         {
             tool = new EraserTool();
-            // brush.BrushColor = pictureBoxSheet.BackColor; // Color.Transparent для прозрачного PNG
         }
 
         private void pictureBoxClearAll_Click(object sender, EventArgs e)
@@ -278,7 +344,6 @@ namespace GraphXDesign
         private void buttonLine_Click(object sender, EventArgs e)
         {
             tool = new FigureTool(new Line(), canvas);
-            fill = new NoFill(fill); // только первый цвет, по умолчанию
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu();
             option = 0;
@@ -361,13 +426,17 @@ namespace GraphXDesign
                 toolTmp = tool;
                 if ((Control.ModifierKeys & Keys.Shift) == Keys.Shift)
                 {
-                    if (option == 1)
+                    switch (option)
                     {
-                        tool = new FigureTool(new Circle(), canvas);
-                    }
-                    if (option == 2)
-                    {
-                        tool = new FigureTool(new Square(), canvas);
+                        case 1:
+                            tool = new FigureTool(new Circle(), canvas);
+                            break;
+                        case 2:
+                            tool = new FigureTool(new Square(), canvas);
+                            break;
+                        default:
+                            tool = toolTmp;
+                            break;
                     }
                 }
                 else
@@ -492,7 +561,6 @@ namespace GraphXDesign
             pictureBoxFillOnly.Visible = true;
             fill = new OnlyFill(fill);
         }
-
         private void растроваяГрафикаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             canvas = Canvas.GetCanvas;
@@ -500,7 +568,6 @@ namespace GraphXDesign
             tool = new PenTool();
             showModeMenu();
         }
-
         private void векторнаяГрафикаToolStripMenuItem_Click(object sender, EventArgs e)
         {
             canvas = VectorCanvas.GetCanvas;
@@ -508,19 +575,16 @@ namespace GraphXDesign
             tool = null;
             showModeMenu();
         }
-
         private void buttonHand_Click(object sender, EventArgs e)
         {
             tool = new VectorFigureMoveTool();
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu();
         }
-
         private void buttonResize_Click(object sender, EventArgs e)
         {
             showOptMenu();
         }
-
         private void buttonTransform_Click(object sender, EventArgs e)
         {
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
@@ -528,12 +592,11 @@ namespace GraphXDesign
             tool = new VectorFigureTransformTool();
             showOptMenu();
         }
-
         private void buttonRotate_Click(object sender, EventArgs e)
         {
+            tool = new VectorFigureTurnTool();
             showOptMenu();
         }
-
         private void buttonGitHub_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/9rape/GraphXDesign");
