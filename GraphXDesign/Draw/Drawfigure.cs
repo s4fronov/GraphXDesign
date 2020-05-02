@@ -34,7 +34,8 @@ namespace GraphXDesign
             }
             tmpBrush.DrawLine(tmp, figure.dotlist[figure.dotlist.Count - 1].X, figure.dotlist[figure.dotlist.Count - 1].Y, figure.dotlist[0].X, figure.dotlist[0].Y);
 
-            fill.Fill(tmp, figure.center);
+            if(figure.IsInside(figure.center))
+                fill.Fill(tmp, figure.center);
 
             if (!(fill is OnlyFill))
             {

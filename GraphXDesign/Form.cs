@@ -411,7 +411,7 @@ namespace GraphXDesign
         }
 
         // ======================================== Методы боковой панели инструментов
-
+        
         private void buttonBrush_Click(object sender, EventArgs e)
         {
             
@@ -634,5 +634,7 @@ namespace GraphXDesign
         {
             System.Diagnostics.Process.Start("https://github.com/9rape/GraphXDesign");
         }
+
+        
     }
 }
