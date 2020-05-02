@@ -637,6 +637,8 @@ namespace GraphXDesign
             System.Diagnostics.Process.Start("https://github.com/9rape/GraphXDesign");
         }
 
+        // ======================================== Методы изменения темы интерфейса
+
         private void темнаяToolStripMenuItem_Click(object sender, EventArgs e)
         {
             panelSettings.BackColor = Color.FromArgb(48, 48, 48);
