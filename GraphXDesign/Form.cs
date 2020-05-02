@@ -401,7 +401,12 @@ namespace GraphXDesign
         }
 
         // ======================================== Методы боковой панели инструментов
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tool = new VectorRepaintTool();
+            showOptMenu();
+            option = 0;
+        }
         private void buttonBrush_Click(object sender, EventArgs e)
         {
             tool = new PenTool();
@@ -608,5 +613,7 @@ namespace GraphXDesign
         {
             System.Diagnostics.Process.Start("https://github.com/9rape/GraphXDesign");
         }
+
+        
     }
 }
