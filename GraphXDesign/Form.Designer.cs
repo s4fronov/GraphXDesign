@@ -57,6 +57,7 @@
             this.numericAngle = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.panelProgram = new System.Windows.Forms.Panel();
+            this.buttonGitHub = new System.Windows.Forms.Button();
             this.panelProgramControl = new System.Windows.Forms.Panel();
             this.imageExit = new System.Windows.Forms.PictureBox();
             this.imageExpand = new System.Windows.Forms.PictureBox();
@@ -103,14 +104,14 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.labelMode = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelY = new System.Windows.Forms.Label();
             this.labelX = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.labelMode = new System.Windows.Forms.Label();
-            this.buttonGitHub = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -217,6 +218,7 @@
             // groupBoxMenu
             // 
             this.groupBoxMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.groupBoxMenu.Controls.Add(this.textBox1);
             this.groupBoxMenu.Controls.Add(this.panel5);
             this.groupBoxMenu.Controls.Add(this.buttonEdit);
             this.groupBoxMenu.Controls.Add(this.panelTools);
@@ -609,6 +611,26 @@
             this.panelProgram.Size = new System.Drawing.Size(710, 20);
             this.panelProgram.TabIndex = 1;
             this.panelProgram.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelProgram_MouseMove);
+            // 
+            // buttonGitHub
+            // 
+            this.buttonGitHub.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonGitHub.FlatAppearance.BorderSize = 0;
+            this.buttonGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGitHub.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGitHub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.buttonGitHub.Image = ((System.Drawing.Image)(resources.GetObject("buttonGitHub.Image")));
+            this.buttonGitHub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGitHub.Location = new System.Drawing.Point(576, 0);
+            this.buttonGitHub.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonGitHub.Name = "buttonGitHub";
+            this.buttonGitHub.Size = new System.Drawing.Size(68, 20);
+            this.buttonGitHub.TabIndex = 29;
+            this.buttonGitHub.Text = "  GitHub";
+            this.buttonGitHub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGitHub.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonGitHub.UseVisualStyleBackColor = true;
+            this.buttonGitHub.Click += new System.EventHandler(this.buttonGitHub_Click);
             // 
             // panelProgramControl
             // 
@@ -1125,6 +1147,17 @@
             this.panel2.Size = new System.Drawing.Size(710, 20);
             this.panel2.TabIndex = 5;
             // 
+            // labelMode
+            // 
+            this.labelMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMode.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelMode.Location = new System.Drawing.Point(3, 0);
+            this.labelMode.Name = "labelMode";
+            this.labelMode.Size = new System.Drawing.Size(200, 18);
+            this.labelMode.TabIndex = 25;
+            this.labelMode.Text = "Режим";
+            this.labelMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label9);
@@ -1196,36 +1229,12 @@
             this.label6.Text = "Размер рисунка";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // labelMode
+            // textBox1
             // 
-            this.labelMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelMode.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelMode.Location = new System.Drawing.Point(3, 0);
-            this.labelMode.Name = "labelMode";
-            this.labelMode.Size = new System.Drawing.Size(200, 18);
-            this.labelMode.TabIndex = 25;
-            this.labelMode.Text = "Режим";
-            this.labelMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // buttonGitHub
-            // 
-            this.buttonGitHub.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonGitHub.FlatAppearance.BorderSize = 0;
-            this.buttonGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGitHub.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonGitHub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.buttonGitHub.Image = ((System.Drawing.Image)(resources.GetObject("buttonGitHub.Image")));
-            this.buttonGitHub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGitHub.Location = new System.Drawing.Point(576, 0);
-            this.buttonGitHub.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonGitHub.Name = "buttonGitHub";
-            this.buttonGitHub.Size = new System.Drawing.Size(68, 20);
-            this.buttonGitHub.TabIndex = 29;
-            this.buttonGitHub.Text = "  GitHub";
-            this.buttonGitHub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGitHub.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonGitHub.UseVisualStyleBackColor = true;
-            this.buttonGitHub.Click += new System.EventHandler(this.buttonGitHub_Click);
+            this.textBox1.Location = new System.Drawing.Point(3, 407);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(128, 20);
+            this.textBox1.TabIndex = 5;
             // 
             // Form
             // 
@@ -1251,6 +1260,7 @@
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).EndInit();
             this.groupBoxMenu.ResumeLayout(false);
+            this.groupBoxMenu.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panelTools.ResumeLayout(false);
             this.panelAngles.ResumeLayout(false);
@@ -1376,6 +1386,7 @@
         private System.Windows.Forms.Button buttonRotate;
         private System.Windows.Forms.Label labelMode;
         private System.Windows.Forms.Button buttonGitHub;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
