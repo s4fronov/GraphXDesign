@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using Newtonsoft.Json;
 
 namespace GraphXDesign
 {
     class SolidFill:IFill
     {
         public SolidFill(IFill fill) : base(fill) { }
+        [JsonConstructor]
         public SolidFill(Color color) : base(color) { }
 
         public override void Fill(BitmapWrap bmp, Point startingPoint)
