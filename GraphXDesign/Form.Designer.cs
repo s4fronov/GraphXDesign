@@ -57,11 +57,6 @@
             this.numericAngle = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.panelProgram = new System.Windows.Forms.Panel();
-            this.buttonGitHub = new System.Windows.Forms.Button();
-            this.panelProgramControl = new System.Windows.Forms.Panel();
-            this.imageExit = new System.Windows.Forms.PictureBox();
-            this.imageExpand = new System.Windows.Forms.PictureBox();
-            this.imageCollapse = new System.Windows.Forms.PictureBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -88,15 +83,15 @@
             this.trackBarSize = new System.Windows.Forms.TrackBar();
             this.label5 = new System.Windows.Forms.Label();
             this.panelInstruments = new System.Windows.Forms.Panel();
-            this.pictureBoxRedo = new System.Windows.Forms.PictureBox();
+            this.buttonRedo = new System.Windows.Forms.Button();
+            this.buttonUndo = new System.Windows.Forms.Button();
+            this.buttonEraser = new System.Windows.Forms.Button();
+            this.buttonFill = new System.Windows.Forms.Button();
+            this.buttonPipette = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.buttonReverse = new System.Windows.Forms.Button();
             this.palette1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxUndo = new System.Windows.Forms.PictureBox();
-            this.pictureBoxReverse = new System.Windows.Forms.PictureBox();
             this.palette2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxClearAll = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPipette = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEraser = new System.Windows.Forms.PictureBox();
-            this.pictureBoxFill = new System.Windows.Forms.PictureBox();
             this.pictureBoxSheet = new System.Windows.Forms.PictureBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.panelDesk = new System.Windows.Forms.Panel();
@@ -111,7 +106,10 @@
             this.labelY = new System.Windows.Forms.Label();
             this.labelX = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttonExit = new System.Windows.Forms.Button();
+            this.buttonExpand = new System.Windows.Forms.Button();
+            this.buttonCollapse = new System.Windows.Forms.Button();
+            this.buttonGitHub = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -123,10 +121,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericAngle)).BeginInit();
             this.panelProgram.SuspendLayout();
-            this.panelProgramControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageExit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageExpand)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollapse)).BeginInit();
             this.menuStrip.SuspendLayout();
             this.panelSettings.SuspendLayout();
             this.panelFill.SuspendLayout();
@@ -138,15 +132,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.brushSquare)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSize)).BeginInit();
             this.panelInstruments.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRedo)).BeginInit();
+            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.palette1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReverse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.palette2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClearAll)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPipette)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEraser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFill)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).BeginInit();
             this.panelDesk.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -161,7 +149,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(180, 516);
+            this.panel1.Size = new System.Drawing.Size(180, 616);
             this.panel1.TabIndex = 0;
             // 
             // panelInfo
@@ -218,7 +206,6 @@
             // groupBoxMenu
             // 
             this.groupBoxMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBoxMenu.Controls.Add(this.textBox1);
             this.groupBoxMenu.Controls.Add(this.panel5);
             this.groupBoxMenu.Controls.Add(this.buttonEdit);
             this.groupBoxMenu.Controls.Add(this.panelTools);
@@ -227,7 +214,7 @@
             this.groupBoxMenu.Margin = new System.Windows.Forms.Padding(0);
             this.groupBoxMenu.Name = "groupBoxMenu";
             this.groupBoxMenu.Padding = new System.Windows.Forms.Padding(0);
-            this.groupBoxMenu.Size = new System.Drawing.Size(186, 465);
+            this.groupBoxMenu.Size = new System.Drawing.Size(186, 565);
             this.groupBoxMenu.TabIndex = 3;
             this.groupBoxMenu.TabStop = false;
             // 
@@ -246,6 +233,7 @@
             // 
             // buttonRotate
             // 
+            this.buttonRotate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRotate.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonRotate.FlatAppearance.BorderSize = 0;
             this.buttonRotate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -266,6 +254,7 @@
             // 
             // buttonTransform
             // 
+            this.buttonTransform.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonTransform.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonTransform.FlatAppearance.BorderSize = 0;
             this.buttonTransform.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -286,6 +275,7 @@
             // 
             // buttonResize
             // 
+            this.buttonResize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonResize.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonResize.FlatAppearance.BorderSize = 0;
             this.buttonResize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -306,6 +296,7 @@
             // 
             // buttonHand
             // 
+            this.buttonHand.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonHand.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonHand.FlatAppearance.BorderSize = 0;
             this.buttonHand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -362,6 +353,7 @@
             // 
             // buttonNNgon
             // 
+            this.buttonNNgon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonNNgon.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonNNgon.FlatAppearance.BorderSize = 0;
             this.buttonNNgon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -382,6 +374,7 @@
             // 
             // buttonNAngular
             // 
+            this.buttonNAngular.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonNAngular.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonNAngular.FlatAppearance.BorderSize = 0;
             this.buttonNAngular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -402,6 +395,7 @@
             // 
             // buttonTriangleRectangular
             // 
+            this.buttonTriangleRectangular.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonTriangleRectangular.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonTriangleRectangular.FlatAppearance.BorderSize = 0;
             this.buttonTriangleRectangular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -422,6 +416,7 @@
             // 
             // buttonTriangleIsosceles
             // 
+            this.buttonTriangleIsosceles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonTriangleIsosceles.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonTriangleIsosceles.FlatAppearance.BorderSize = 0;
             this.buttonTriangleIsosceles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -442,6 +437,7 @@
             // 
             // buttonSquare
             // 
+            this.buttonSquare.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonSquare.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonSquare.FlatAppearance.BorderSize = 0;
             this.buttonSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -462,6 +458,7 @@
             // 
             // buttonCircle
             // 
+            this.buttonCircle.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCircle.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonCircle.FlatAppearance.BorderSize = 0;
             this.buttonCircle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -482,6 +479,7 @@
             // 
             // buttonLine
             // 
+            this.buttonLine.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLine.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonLine.FlatAppearance.BorderSize = 0;
             this.buttonLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -502,6 +500,7 @@
             // 
             // buttonBrush
             // 
+            this.buttonBrush.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonBrush.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonBrush.FlatAppearance.BorderSize = 0;
             this.buttonBrush.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -546,7 +545,7 @@
             this.panelAngles.Controls.Add(this.numericAngle);
             this.panelAngles.Controls.Add(this.label4);
             this.panelAngles.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelAngles.Location = new System.Drawing.Point(411, 0);
+            this.panelAngles.Location = new System.Drawing.Point(481, 0);
             this.panelAngles.Name = "panelAngles";
             this.panelAngles.Size = new System.Drawing.Size(90, 54);
             this.panelAngles.TabIndex = 5;
@@ -603,78 +602,16 @@
             // 
             this.panelProgram.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
             this.panelProgram.Controls.Add(this.buttonGitHub);
-            this.panelProgram.Controls.Add(this.panelProgramControl);
+            this.panelProgram.Controls.Add(this.buttonCollapse);
+            this.panelProgram.Controls.Add(this.buttonExpand);
+            this.panelProgram.Controls.Add(this.buttonExit);
             this.panelProgram.Controls.Add(this.menuStrip);
             this.panelProgram.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelProgram.Location = new System.Drawing.Point(180, 0);
             this.panelProgram.Name = "panelProgram";
-            this.panelProgram.Size = new System.Drawing.Size(710, 20);
+            this.panelProgram.Size = new System.Drawing.Size(780, 20);
             this.panelProgram.TabIndex = 1;
             this.panelProgram.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelProgram_MouseMove);
-            // 
-            // buttonGitHub
-            // 
-            this.buttonGitHub.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonGitHub.FlatAppearance.BorderSize = 0;
-            this.buttonGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGitHub.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonGitHub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.buttonGitHub.Image = ((System.Drawing.Image)(resources.GetObject("buttonGitHub.Image")));
-            this.buttonGitHub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGitHub.Location = new System.Drawing.Point(576, 0);
-            this.buttonGitHub.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonGitHub.Name = "buttonGitHub";
-            this.buttonGitHub.Size = new System.Drawing.Size(68, 20);
-            this.buttonGitHub.TabIndex = 29;
-            this.buttonGitHub.Text = "  GitHub";
-            this.buttonGitHub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGitHub.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonGitHub.UseVisualStyleBackColor = true;
-            this.buttonGitHub.Click += new System.EventHandler(this.buttonGitHub_Click);
-            // 
-            // panelProgramControl
-            // 
-            this.panelProgramControl.Controls.Add(this.imageExit);
-            this.panelProgramControl.Controls.Add(this.imageExpand);
-            this.panelProgramControl.Controls.Add(this.imageCollapse);
-            this.panelProgramControl.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelProgramControl.Location = new System.Drawing.Point(644, 0);
-            this.panelProgramControl.Name = "panelProgramControl";
-            this.panelProgramControl.Size = new System.Drawing.Size(66, 20);
-            this.panelProgramControl.TabIndex = 5;
-            // 
-            // imageExit
-            // 
-            this.imageExit.Image = ((System.Drawing.Image)(resources.GetObject("imageExit.Image")));
-            this.imageExit.Location = new System.Drawing.Point(43, 0);
-            this.imageExit.Name = "imageExit";
-            this.imageExit.Size = new System.Drawing.Size(20, 20);
-            this.imageExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imageExit.TabIndex = 2;
-            this.imageExit.TabStop = false;
-            this.imageExit.Click += new System.EventHandler(this.imageExit_Click);
-            // 
-            // imageExpand
-            // 
-            this.imageExpand.Image = ((System.Drawing.Image)(resources.GetObject("imageExpand.Image")));
-            this.imageExpand.Location = new System.Drawing.Point(3, 0);
-            this.imageExpand.Name = "imageExpand";
-            this.imageExpand.Size = new System.Drawing.Size(20, 20);
-            this.imageExpand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imageExpand.TabIndex = 4;
-            this.imageExpand.TabStop = false;
-            this.imageExpand.Click += new System.EventHandler(this.imageExpand_Click);
-            // 
-            // imageCollapse
-            // 
-            this.imageCollapse.Image = ((System.Drawing.Image)(resources.GetObject("imageCollapse.Image")));
-            this.imageCollapse.Location = new System.Drawing.Point(23, 0);
-            this.imageCollapse.Name = "imageCollapse";
-            this.imageCollapse.Size = new System.Drawing.Size(20, 20);
-            this.imageCollapse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.imageCollapse.TabIndex = 3;
-            this.imageCollapse.TabStop = false;
-            this.imageCollapse.Click += new System.EventHandler(this.imageCollapse_Click);
             // 
             // menuStrip
             // 
@@ -709,15 +646,15 @@
             // 
             this.создатьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("создатьToolStripMenuItem.Image")));
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
-            this.создатьToolStripMenuItem.Text = "Создать";
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.создатьToolStripMenuItem.Text = "Новый";
             this.создатьToolStripMenuItem.Click += new System.EventHandler(this.CreateToolStripMenuItem_Click);
             // 
             // открытьToolStripMenuItem
             // 
             this.открытьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("открытьToolStripMenuItem.Image")));
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
@@ -725,7 +662,7 @@
             // 
             this.сохранитьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("сохранитьToolStripMenuItem.Image")));
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
@@ -733,7 +670,7 @@
             // 
             this.выходToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("выходToolStripMenuItem.Image")));
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.imageExit_Click);
             // 
@@ -773,7 +710,7 @@
             this.panelSettings.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSettings.Location = new System.Drawing.Point(180, 20);
             this.panelSettings.Name = "panelSettings";
-            this.panelSettings.Size = new System.Drawing.Size(710, 54);
+            this.panelSettings.Size = new System.Drawing.Size(780, 54);
             this.panelSettings.TabIndex = 2;
             // 
             // panelFill
@@ -785,7 +722,7 @@
             this.panelFill.Controls.Add(this.labelCont);
             this.panelFill.Controls.Add(this.labelFillCont);
             this.panelFill.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelFill.Location = new System.Drawing.Point(225, 0);
+            this.panelFill.Location = new System.Drawing.Point(196, 0);
             this.panelFill.Name = "panelFill";
             this.panelFill.Size = new System.Drawing.Size(161, 54);
             this.panelFill.TabIndex = 6;
@@ -881,7 +818,7 @@
             this.panelSize.Controls.Add(this.trackBarSize);
             this.panelSize.Controls.Add(this.label5);
             this.panelSize.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelSize.Location = new System.Drawing.Point(501, 0);
+            this.panelSize.Location = new System.Drawing.Point(571, 0);
             this.panelSize.Name = "panelSize";
             this.panelSize.Size = new System.Drawing.Size(209, 54);
             this.panelSize.TabIndex = 4;
@@ -972,128 +909,135 @@
             // 
             // panelInstruments
             // 
-            this.panelInstruments.Controls.Add(this.pictureBoxRedo);
-            this.panelInstruments.Controls.Add(this.palette1);
-            this.panelInstruments.Controls.Add(this.pictureBoxUndo);
-            this.panelInstruments.Controls.Add(this.pictureBoxReverse);
-            this.panelInstruments.Controls.Add(this.palette2);
-            this.panelInstruments.Controls.Add(this.pictureBoxClearAll);
-            this.panelInstruments.Controls.Add(this.pictureBoxPipette);
-            this.panelInstruments.Controls.Add(this.pictureBoxEraser);
-            this.panelInstruments.Controls.Add(this.pictureBoxFill);
+            this.panelInstruments.Controls.Add(this.buttonRedo);
+            this.panelInstruments.Controls.Add(this.buttonUndo);
+            this.panelInstruments.Controls.Add(this.buttonEraser);
+            this.panelInstruments.Controls.Add(this.buttonFill);
+            this.panelInstruments.Controls.Add(this.buttonPipette);
+            this.panelInstruments.Controls.Add(this.panel4);
             this.panelInstruments.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelInstruments.Location = new System.Drawing.Point(0, 0);
             this.panelInstruments.Name = "panelInstruments";
-            this.panelInstruments.Size = new System.Drawing.Size(225, 54);
+            this.panelInstruments.Size = new System.Drawing.Size(196, 54);
             this.panelInstruments.TabIndex = 4;
             // 
-            // pictureBoxRedo
+            // buttonRedo
             // 
-            this.pictureBoxRedo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxRedo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRedo.Image")));
-            this.pictureBoxRedo.Location = new System.Drawing.Point(196, 17);
-            this.pictureBoxRedo.Name = "pictureBoxRedo";
-            this.pictureBoxRedo.Size = new System.Drawing.Size(22, 22);
-            this.pictureBoxRedo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxRedo.TabIndex = 26;
-            this.pictureBoxRedo.TabStop = false;
-            this.pictureBoxRedo.Click += new System.EventHandler(this.pictureBoxRedo_Click);
+            this.buttonRedo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRedo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonRedo.FlatAppearance.BorderSize = 0;
+            this.buttonRedo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRedo.Image = ((System.Drawing.Image)(resources.GetObject("buttonRedo.Image")));
+            this.buttonRedo.Location = new System.Drawing.Point(161, 0);
+            this.buttonRedo.Name = "buttonRedo";
+            this.buttonRedo.Size = new System.Drawing.Size(28, 54);
+            this.buttonRedo.TabIndex = 10;
+            this.buttonRedo.UseVisualStyleBackColor = true;
+            this.buttonRedo.Click += new System.EventHandler(this.buttonRedo_Click);
+            // 
+            // buttonUndo
+            // 
+            this.buttonUndo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonUndo.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonUndo.FlatAppearance.BorderSize = 0;
+            this.buttonUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUndo.Image = ((System.Drawing.Image)(resources.GetObject("buttonUndo.Image")));
+            this.buttonUndo.Location = new System.Drawing.Point(133, 0);
+            this.buttonUndo.Name = "buttonUndo";
+            this.buttonUndo.Size = new System.Drawing.Size(28, 54);
+            this.buttonUndo.TabIndex = 9;
+            this.buttonUndo.UseVisualStyleBackColor = true;
+            this.buttonUndo.Click += new System.EventHandler(this.buttonUndo_Click);
+            // 
+            // buttonEraser
+            // 
+            this.buttonEraser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonEraser.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonEraser.FlatAppearance.BorderSize = 0;
+            this.buttonEraser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEraser.Image = ((System.Drawing.Image)(resources.GetObject("buttonEraser.Image")));
+            this.buttonEraser.Location = new System.Drawing.Point(105, 0);
+            this.buttonEraser.Name = "buttonEraser";
+            this.buttonEraser.Size = new System.Drawing.Size(28, 54);
+            this.buttonEraser.TabIndex = 7;
+            this.buttonEraser.UseVisualStyleBackColor = true;
+            this.buttonEraser.Click += new System.EventHandler(this.buttonEraser_Click);
+            // 
+            // buttonFill
+            // 
+            this.buttonFill.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonFill.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonFill.FlatAppearance.BorderSize = 0;
+            this.buttonFill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonFill.Image = ((System.Drawing.Image)(resources.GetObject("buttonFill.Image")));
+            this.buttonFill.Location = new System.Drawing.Point(77, 0);
+            this.buttonFill.Name = "buttonFill";
+            this.buttonFill.Size = new System.Drawing.Size(28, 54);
+            this.buttonFill.TabIndex = 6;
+            this.buttonFill.UseVisualStyleBackColor = true;
+            this.buttonFill.Click += new System.EventHandler(this.buttonFill_Click);
+            // 
+            // buttonPipette
+            // 
+            this.buttonPipette.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPipette.Dock = System.Windows.Forms.DockStyle.Left;
+            this.buttonPipette.FlatAppearance.BorderSize = 0;
+            this.buttonPipette.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPipette.Image = ((System.Drawing.Image)(resources.GetObject("buttonPipette.Image")));
+            this.buttonPipette.Location = new System.Drawing.Point(49, 0);
+            this.buttonPipette.Name = "buttonPipette";
+            this.buttonPipette.Size = new System.Drawing.Size(28, 54);
+            this.buttonPipette.TabIndex = 5;
+            this.buttonPipette.UseVisualStyleBackColor = true;
+            this.buttonPipette.Click += new System.EventHandler(this.buttonPipette_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.buttonReverse);
+            this.panel4.Controls.Add(this.palette1);
+            this.panel4.Controls.Add(this.palette2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(49, 54);
+            this.panel4.TabIndex = 5;
+            // 
+            // buttonReverse
+            // 
+            this.buttonReverse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonReverse.FlatAppearance.BorderSize = 0;
+            this.buttonReverse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReverse.Image = ((System.Drawing.Image)(resources.GetObject("buttonReverse.Image")));
+            this.buttonReverse.Location = new System.Drawing.Point(4, 34);
+            this.buttonReverse.Name = "buttonReverse";
+            this.buttonReverse.Size = new System.Drawing.Size(14, 14);
+            this.buttonReverse.TabIndex = 11;
+            this.buttonReverse.UseVisualStyleBackColor = true;
+            this.buttonReverse.Click += new System.EventHandler(this.buttonReverse_Click);
             // 
             // palette1
             // 
             this.palette1.BackColor = System.Drawing.Color.Black;
             this.palette1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.palette1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.palette1.Location = new System.Drawing.Point(7, 9);
+            this.palette1.Location = new System.Drawing.Point(9, 11);
             this.palette1.Name = "palette1";
             this.palette1.Size = new System.Drawing.Size(22, 22);
             this.palette1.TabIndex = 14;
             this.palette1.TabStop = false;
             this.palette1.Click += new System.EventHandler(this.palette1_Click);
             // 
-            // pictureBoxUndo
-            // 
-            this.pictureBoxUndo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxUndo.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxUndo.Image")));
-            this.pictureBoxUndo.Location = new System.Drawing.Point(168, 16);
-            this.pictureBoxUndo.Name = "pictureBoxUndo";
-            this.pictureBoxUndo.Size = new System.Drawing.Size(22, 22);
-            this.pictureBoxUndo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxUndo.TabIndex = 25;
-            this.pictureBoxUndo.TabStop = false;
-            this.pictureBoxUndo.Click += new System.EventHandler(this.pictureBoxUndo_Click);
-            // 
-            // pictureBoxReverse
-            // 
-            this.pictureBoxReverse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxReverse.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxReverse.Image")));
-            this.pictureBoxReverse.Location = new System.Drawing.Point(2, 32);
-            this.pictureBoxReverse.Name = "pictureBoxReverse";
-            this.pictureBoxReverse.Size = new System.Drawing.Size(14, 14);
-            this.pictureBoxReverse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxReverse.TabIndex = 24;
-            this.pictureBoxReverse.TabStop = false;
-            this.pictureBoxReverse.Click += new System.EventHandler(this.pictureBoxReverse_Click);
-            // 
             // palette2
             // 
             this.palette2.BackColor = System.Drawing.Color.White;
             this.palette2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.palette2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.palette2.Location = new System.Drawing.Point(18, 20);
+            this.palette2.Location = new System.Drawing.Point(20, 22);
             this.palette2.Name = "palette2";
             this.palette2.Size = new System.Drawing.Size(22, 22);
             this.palette2.TabIndex = 15;
             this.palette2.TabStop = false;
             this.palette2.Click += new System.EventHandler(this.palette2_Click);
-            // 
-            // pictureBoxClearAll
-            // 
-            this.pictureBoxClearAll.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxClearAll.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxClearAll.Image")));
-            this.pictureBoxClearAll.Location = new System.Drawing.Point(134, 15);
-            this.pictureBoxClearAll.Name = "pictureBoxClearAll";
-            this.pictureBoxClearAll.Size = new System.Drawing.Size(26, 26);
-            this.pictureBoxClearAll.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxClearAll.TabIndex = 23;
-            this.pictureBoxClearAll.TabStop = false;
-            this.pictureBoxClearAll.Click += new System.EventHandler(this.pictureBoxClearAll_Click);
-            // 
-            // pictureBoxPipette
-            // 
-            this.pictureBoxPipette.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxPipette.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPipette.Image")));
-            this.pictureBoxPipette.Location = new System.Drawing.Point(47, 17);
-            this.pictureBoxPipette.Name = "pictureBoxPipette";
-            this.pictureBoxPipette.Size = new System.Drawing.Size(22, 22);
-            this.pictureBoxPipette.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxPipette.TabIndex = 19;
-            this.pictureBoxPipette.TabStop = false;
-            this.pictureBoxPipette.Click += new System.EventHandler(this.pictureBoxPipette_Click);
-            // 
-            // pictureBoxEraser
-            // 
-            this.pictureBoxEraser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxEraser.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEraser.Image")));
-            this.pictureBoxEraser.Location = new System.Drawing.Point(102, 16);
-            this.pictureBoxEraser.Name = "pictureBoxEraser";
-            this.pictureBoxEraser.Size = new System.Drawing.Size(22, 22);
-            this.pictureBoxEraser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxEraser.TabIndex = 22;
-            this.pictureBoxEraser.TabStop = false;
-            this.pictureBoxEraser.Click += new System.EventHandler(this.pictureBoxEraser_Click);
-            // 
-            // pictureBoxFill
-            // 
-            this.pictureBoxFill.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxFill.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFill.Image")));
-            this.pictureBoxFill.Location = new System.Drawing.Point(73, 17);
-            this.pictureBoxFill.Name = "pictureBoxFill";
-            this.pictureBoxFill.Size = new System.Drawing.Size(22, 22);
-            this.pictureBoxFill.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxFill.TabIndex = 21;
-            this.pictureBoxFill.TabStop = false;
-            this.pictureBoxFill.Click += new System.EventHandler(this.pictureBoxFill_Click);
             // 
             // pictureBoxSheet
             // 
@@ -1102,7 +1046,7 @@
             this.pictureBoxSheet.Cursor = System.Windows.Forms.Cursors.Cross;
             this.pictureBoxSheet.Location = new System.Drawing.Point(15, 8);
             this.pictureBoxSheet.Name = "pictureBoxSheet";
-            this.pictureBoxSheet.Size = new System.Drawing.Size(680, 400);
+            this.pictureBoxSheet.Size = new System.Drawing.Size(750, 500);
             this.pictureBoxSheet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSheet.TabIndex = 3;
             this.pictureBoxSheet.TabStop = false;
@@ -1118,13 +1062,13 @@
             this.panelDesk.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesk.Location = new System.Drawing.Point(180, 74);
             this.panelDesk.Name = "panelDesk";
-            this.panelDesk.Size = new System.Drawing.Size(710, 442);
+            this.panelDesk.Size = new System.Drawing.Size(780, 542);
             this.panelDesk.TabIndex = 4;
             // 
             // panelResizeSheet
             // 
             this.panelResizeSheet.BackColor = System.Drawing.Color.Maroon;
-            this.panelResizeSheet.Location = new System.Drawing.Point(695, 408);
+            this.panelResizeSheet.Location = new System.Drawing.Point(764, 507);
             this.panelResizeSheet.Name = "panelResizeSheet";
             this.panelResizeSheet.Size = new System.Drawing.Size(10, 10);
             this.panelResizeSheet.TabIndex = 4;
@@ -1142,9 +1086,9 @@
             this.panel2.Controls.Add(this.labelMode);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(180, 496);
+            this.panel2.Location = new System.Drawing.Point(180, 596);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(710, 20);
+            this.panel2.Size = new System.Drawing.Size(780, 20);
             this.panel2.TabIndex = 5;
             // 
             // labelMode
@@ -1166,7 +1110,7 @@
             this.panel3.Controls.Add(this.labelX);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(470, 0);
+            this.panel3.Location = new System.Drawing.Point(540, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(240, 20);
             this.panel3.TabIndex = 0;
@@ -1229,19 +1173,74 @@
             this.label6.Text = "Размер рисунка";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // buttonExit
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 407);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(128, 20);
-            this.textBox1.TabIndex = 5;
+            this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Image = ((System.Drawing.Image)(resources.GetObject("buttonExit.Image")));
+            this.buttonExit.Location = new System.Drawing.Point(760, 0);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(20, 20);
+            this.buttonExit.TabIndex = 30;
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.imageExit_Click);
+            // 
+            // buttonExpand
+            // 
+            this.buttonExpand.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExpand.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonExpand.FlatAppearance.BorderSize = 0;
+            this.buttonExpand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExpand.Image = ((System.Drawing.Image)(resources.GetObject("buttonExpand.Image")));
+            this.buttonExpand.Location = new System.Drawing.Point(740, 0);
+            this.buttonExpand.Name = "buttonExpand";
+            this.buttonExpand.Size = new System.Drawing.Size(20, 20);
+            this.buttonExpand.TabIndex = 31;
+            this.buttonExpand.UseVisualStyleBackColor = true;
+            this.buttonExpand.Click += new System.EventHandler(this.imageExpand_Click);
+            // 
+            // buttonCollapse
+            // 
+            this.buttonCollapse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCollapse.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonCollapse.FlatAppearance.BorderSize = 0;
+            this.buttonCollapse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCollapse.Image = ((System.Drawing.Image)(resources.GetObject("buttonCollapse.Image")));
+            this.buttonCollapse.Location = new System.Drawing.Point(720, 0);
+            this.buttonCollapse.Name = "buttonCollapse";
+            this.buttonCollapse.Size = new System.Drawing.Size(20, 20);
+            this.buttonCollapse.TabIndex = 32;
+            this.buttonCollapse.UseVisualStyleBackColor = true;
+            this.buttonCollapse.Click += new System.EventHandler(this.imageCollapse_Click);
+            // 
+            // buttonGitHub
+            // 
+            this.buttonGitHub.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonGitHub.FlatAppearance.BorderSize = 0;
+            this.buttonGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGitHub.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGitHub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.buttonGitHub.Image = ((System.Drawing.Image)(resources.GetObject("buttonGitHub.Image")));
+            this.buttonGitHub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGitHub.Location = new System.Drawing.Point(652, 0);
+            this.buttonGitHub.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonGitHub.Name = "buttonGitHub";
+            this.buttonGitHub.Size = new System.Drawing.Size(68, 20);
+            this.buttonGitHub.TabIndex = 33;
+            this.buttonGitHub.Text = "  GitHub";
+            this.buttonGitHub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGitHub.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonGitHub.UseVisualStyleBackColor = true;
+            this.buttonGitHub.Click += new System.EventHandler(this.buttonGitHub_Click);
             // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(890, 516);
+            this.ClientSize = new System.Drawing.Size(960, 616);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelDesk);
             this.Controls.Add(this.panelSettings);
@@ -1260,7 +1259,6 @@
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageLogo)).EndInit();
             this.groupBoxMenu.ResumeLayout(false);
-            this.groupBoxMenu.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panelTools.ResumeLayout(false);
             this.panelAngles.ResumeLayout(false);
@@ -1268,10 +1266,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericAngle)).EndInit();
             this.panelProgram.ResumeLayout(false);
             this.panelProgram.PerformLayout();
-            this.panelProgramControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imageExit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageExpand)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollapse)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.panelSettings.ResumeLayout(false);
@@ -1285,15 +1279,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.brushSquare)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarSize)).EndInit();
             this.panelInstruments.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRedo)).EndInit();
+            this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.palette1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUndo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxReverse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.palette2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClearAll)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPipette)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEraser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFill)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).EndInit();
             this.panelDesk.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -1310,7 +1298,6 @@
         private System.Windows.Forms.PictureBox imageLogo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox imageExit;
         private System.Windows.Forms.GroupBox groupBoxMenu;
         private System.Windows.Forms.Panel panelTools;
         private System.Windows.Forms.Button buttonBrush;
@@ -1321,21 +1308,11 @@
         private System.Windows.Forms.PictureBox palette2;
         private System.Windows.Forms.PictureBox palette1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBoxPipette;
         private System.Windows.Forms.ColorDialog colorDialog1;
         private System.Windows.Forms.TrackBar trackBarSize;
         private System.Windows.Forms.Label labelSize;
-        private System.Windows.Forms.PictureBox pictureBoxFill;
-        private System.Windows.Forms.PictureBox pictureBoxClearAll;
-        private System.Windows.Forms.PictureBox pictureBoxEraser;
-        private System.Windows.Forms.PictureBox pictureBoxReverse;
         private System.Windows.Forms.Panel panelSize;
         private System.Windows.Forms.Panel panelInstruments;
-        private System.Windows.Forms.PictureBox imageExpand;
-        private System.Windows.Forms.PictureBox imageCollapse;
-        private System.Windows.Forms.PictureBox pictureBoxRedo;
-        private System.Windows.Forms.PictureBox pictureBoxUndo;
-        private System.Windows.Forms.Panel panelProgramControl;
         private System.Windows.Forms.Panel panelDesk;
         private System.Windows.Forms.Panel panelResizeSheet;
         private System.Windows.Forms.Panel panelAngles;
@@ -1385,8 +1362,17 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button buttonRotate;
         private System.Windows.Forms.Label labelMode;
+        private System.Windows.Forms.Button buttonPipette;
+        private System.Windows.Forms.Button buttonRedo;
+        private System.Windows.Forms.Button buttonUndo;
+        private System.Windows.Forms.Button buttonEraser;
+        private System.Windows.Forms.Button buttonFill;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button buttonReverse;
+        private System.Windows.Forms.Button buttonCollapse;
+        private System.Windows.Forms.Button buttonExpand;
+        private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonGitHub;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

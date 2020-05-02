@@ -23,11 +23,6 @@ namespace GraphXDesign
                 Canvas.GetCanvas.Fill(e.X, e.Y, brush.BrushColor);
                 Canvas.GetCanvas.WriteToPictureBox(sheet);
             }
-            if (canvas == VectorCanvas.GetCanvas)
-            {
-                VectorCanvas.GetCanvas.Fill(e.X, e.Y, brush.BrushColor);
-                VectorCanvas.GetCanvas.WriteToPictureBox(sheet);
-            }
             }
         public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         { }
