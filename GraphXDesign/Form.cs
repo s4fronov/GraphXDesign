@@ -524,11 +524,13 @@ namespace GraphXDesign
 
         private void buttonPaint_Click(object sender, EventArgs e)
         {
+            tool = new VectorRepaintTool();
             showOptMenu(sender);
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            tool = new VectorDeleteFigureTool();
             showOptMenu(sender);
         }
 
