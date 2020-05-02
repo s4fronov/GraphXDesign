@@ -90,6 +90,7 @@ namespace GraphXDesign
                  
                 }
             }
+            activeFigure.figure.ChangeCorners();
 
             if (activeFigure != null)
             {

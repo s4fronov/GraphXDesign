@@ -120,8 +120,6 @@ namespace GraphXDesign
                 dotlist[i] = new Point(dotlist[i].X + dx, dotlist[i].Y + dy);
             }
             center = new Point(center.X + dx, center.Y + dy);
-            cornerTopLeft = new Point(cornerTopLeft.X + dx, cornerTopLeft.Y + dy);
-            cornerBottomRight = new Point(cornerBottomRight.X + dx, cornerBottomRight.Y + dy);
         }
 
         public void ChangeSizeFigure(int dx, int dy)
