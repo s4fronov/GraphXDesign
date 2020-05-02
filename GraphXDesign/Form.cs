@@ -12,7 +12,7 @@ using System.IO;
 
 namespace GraphXDesign
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class FormProgram : System.Windows.Forms.Form
     {
         Color paintColor1;
         Color paintColor2;
@@ -28,7 +28,7 @@ namespace GraphXDesign
         private Point MouseHook;
         AbstractCanvas canvas; //переключается во вкладке режим
 
-        public Form()
+        public FormProgram()
         {
             InitializeComponent();
         }
@@ -94,6 +94,7 @@ namespace GraphXDesign
         {
             canvas = Canvas.GetCanvas;
             canvas.WriteToPictureBox(pictureBoxSheet);
+            labelTool.Text = "   Кисть";
             tool = new PenTool();
             showModeMenu();
         }
@@ -102,6 +103,7 @@ namespace GraphXDesign
         {
             canvas = VectorCanvas.GetCanvas;
             canvas.WriteToPictureBox(pictureBoxSheet);
+            labelTool.Text = "   Линия";
             tool = null;
             showModeMenu();
         }
@@ -127,10 +129,11 @@ namespace GraphXDesign
             }
         }
 
-        private void showOptMenu()
+        private void showOptMenu(object sender)
         {
             panelAngles.Visible = false;
             panelFill.Visible = false;
+            labelTool.Text = (sender as Button).Text;
         }
 
         private void showModeMenu()
@@ -138,13 +141,15 @@ namespace GraphXDesign
             if (canvas == Canvas.GetCanvas)
             {
                 tool = new PenTool();
-                labelMode.Text = "Режим растровой графики";
+                labelMode.Text = "Растровая графика";
                 buttonEdit.Visible = false;
                 panel5.Visible = false;
                 buttonBrush.Visible = true;
                 buttonNNgon.Visible = true;
                 buttonFill.Visible = true;
                 buttonEraser.Visible = true;
+                buttonUndo.Visible = true;
+                buttonRedo.Visible = true;
                 panelTools.Height = 208;
                 panelInstruments.Width = 196;
             }
@@ -152,13 +157,15 @@ namespace GraphXDesign
             {
                 tool = new FigureTool(new Line(), canvas);
                 VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-                labelMode.Text = "Режим векторной графики";
+                labelMode.Text = "Векторная графика";
                 buttonEdit.Visible = true;
                 panel5.Visible = true;
                 buttonBrush.Visible = false;
                 buttonNNgon.Visible = false;
                 buttonFill.Visible = false;
                 buttonEraser.Visible = false;
+                buttonUndo.Visible = false;
+                buttonRedo.Visible = false;
                 panelTools.Height = 158;
                 panelInstruments.Width = 140;
             }
@@ -182,13 +189,16 @@ namespace GraphXDesign
             if (expandActive == false)
             {
                 this.WindowState = FormWindowState.Maximized;
-                this.TopMost = true;
+                //this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                //this.Location = new Point(0, 0);
+                this.TopMost = false;
                 expandActive = true;
-                groupBoxMenu.Height = 2000;
+                groupBoxMenu.Height = this.Height;
             }
             else if (expandActive == true)
             {
                 this.WindowState = FormWindowState.Normal;
+                //this.Size = new Size(960, 616);
                 expandActive = false;
             }
         }
@@ -404,8 +414,9 @@ namespace GraphXDesign
 
         private void buttonBrush_Click(object sender, EventArgs e)
         {
+            
             tool = new PenTool();
-            showOptMenu();
+            showOptMenu(sender);
             option = 0;
         }
 
@@ -414,7 +425,7 @@ namespace GraphXDesign
             tool = new FigureTool(new Line(), canvas);
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             fill = new NoFill(fill);
-            showOptMenu();
+            showOptMenu(sender);
             option = 0;
         }
 
@@ -422,7 +433,7 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new Ellips(), canvas);
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-            showOptMenu();
+            showOptMenu(sender);
             panelFill.Visible = true;
             option = 1;
         }
@@ -431,7 +442,7 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new Rectangle(), canvas);
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-            showOptMenu();
+            showOptMenu(sender);
             panelFill.Visible = true;
             option = 2;
         }
@@ -440,7 +451,8 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new Trianglesamesizes(), canvas);
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-            showOptMenu();
+            showOptMenu(sender);
+            labelTool.Text += " равнобедренный";
             panelFill.Visible = true;
             option = 0;
         }
@@ -449,7 +461,8 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new TriangleRectangular(), canvas);
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-            showOptMenu();
+            showOptMenu(sender);
+            labelTool.Text += " прямоугольный";
             panelFill.Visible = true;
             option = 0;
         }
@@ -457,13 +470,15 @@ namespace GraphXDesign
         private void buttonNNgon_Click(object sender, EventArgs e)
         {
             tool = new NNgonTool();
-            showOptMenu();
+            showOptMenu(sender);
+            labelTool.Text += " неправильный";
             option = 0;
         }
 
         private void buttonNAngular_Click(object sender, EventArgs e)
         {
-            showOptMenu();
+            showOptMenu(sender);
+            labelTool.Text += " равносторонний";
             n = Convert.ToInt32(numericAngle.Value);
             option = 0;
             panelAngles.Visible = true;
@@ -485,12 +500,12 @@ namespace GraphXDesign
         {
             tool = new VectorFigureMoveTool();
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-            showOptMenu();
+            showOptMenu(sender);
         }
 
         private void buttonResize_Click(object sender, EventArgs e)
         {
-            showOptMenu();
+            showOptMenu(sender);
         }
 
         private void buttonTransform_Click(object sender, EventArgs e)
@@ -498,13 +513,23 @@ namespace GraphXDesign
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             VectorCanvas.GetCanvas.PointChangeMode(pictureBoxSheet);
             tool = new VectorFigureTransformTool();
-            showOptMenu();
+            showOptMenu(sender);
         }
 
         private void buttonRotate_Click(object sender, EventArgs e)
         {
             tool = new VectorFigureTurnTool();
-            showOptMenu();
+            showOptMenu(sender);
+        }
+
+        private void buttonPaint_Click(object sender, EventArgs e)
+        {
+            showOptMenu(sender);
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            showOptMenu(sender);
         }
 
         // ======================================== Методы работы листа с мышью
@@ -598,7 +623,8 @@ namespace GraphXDesign
                 pictureBoxSheet.Size += (Size)e.Location;
                 startProgram();
                 pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
-                cursorActive = false;
+                VectorCanvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height); // изменение размера векторного листа
+               cursorActive = false;
             }
         }
 

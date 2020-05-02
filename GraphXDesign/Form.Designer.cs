@@ -1,6 +1,6 @@
 ﻿namespace GraphXDesign
 {
-    partial class Form
+    partial class FormProgram
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProgram));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelInfo = new System.Windows.Forms.Panel();
             this.panelLogo = new System.Windows.Forms.FlowLayoutPanel();
@@ -37,16 +37,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBoxMenu = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonPaint = new System.Windows.Forms.Button();
             this.buttonRotate = new System.Windows.Forms.Button();
             this.buttonTransform = new System.Windows.Forms.Button();
             this.buttonResize = new System.Windows.Forms.Button();
             this.buttonHand = new System.Windows.Forms.Button();
+            this.labelMode = new System.Windows.Forms.Label();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.panelTools = new System.Windows.Forms.Panel();
             this.buttonNNgon = new System.Windows.Forms.Button();
             this.buttonNAngular = new System.Windows.Forms.Button();
-            this.buttonTriangleRectangular = new System.Windows.Forms.Button();
             this.buttonTriangleIsosceles = new System.Windows.Forms.Button();
+            this.buttonTriangleRectangular = new System.Windows.Forms.Button();
             this.buttonSquare = new System.Windows.Forms.Button();
             this.buttonCircle = new System.Windows.Forms.Button();
             this.buttonLine = new System.Windows.Forms.Button();
@@ -57,6 +60,10 @@
             this.numericAngle = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.panelProgram = new System.Windows.Forms.Panel();
+            this.buttonGitHub = new System.Windows.Forms.Button();
+            this.buttonCollapse = new System.Windows.Forms.Button();
+            this.buttonExpand = new System.Windows.Forms.Button();
+            this.buttonExit = new System.Windows.Forms.Button();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -99,17 +106,17 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.labelMode = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.labelTool = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelY = new System.Windows.Forms.Label();
             this.labelX = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.buttonExit = new System.Windows.Forms.Button();
-            this.buttonExpand = new System.Windows.Forms.Button();
-            this.buttonCollapse = new System.Windows.Forms.Button();
-            this.buttonGitHub = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -138,7 +145,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).BeginInit();
             this.panelDesk.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -221,6 +230,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.panel5.Controls.Add(this.buttonDelete);
+            this.panel5.Controls.Add(this.buttonPaint);
             this.panel5.Controls.Add(this.buttonRotate);
             this.panel5.Controls.Add(this.buttonTransform);
             this.panel5.Controls.Add(this.buttonResize);
@@ -228,8 +239,50 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 293);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(186, 108);
+            this.panel5.Size = new System.Drawing.Size(186, 158);
             this.panel5.TabIndex = 3;
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDelete.FlatAppearance.BorderSize = 0;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonDelete.Image = ((System.Drawing.Image)(resources.GetObject("buttonDelete.Image")));
+            this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonDelete.Location = new System.Drawing.Point(0, 125);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.buttonDelete.Size = new System.Drawing.Size(186, 25);
+            this.buttonDelete.TabIndex = 8;
+            this.buttonDelete.Text = "   Удаление";
+            this.buttonDelete.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // buttonPaint
+            // 
+            this.buttonPaint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonPaint.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonPaint.FlatAppearance.BorderSize = 0;
+            this.buttonPaint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPaint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonPaint.Image = ((System.Drawing.Image)(resources.GetObject("buttonPaint.Image")));
+            this.buttonPaint.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonPaint.Location = new System.Drawing.Point(0, 100);
+            this.buttonPaint.Name = "buttonPaint";
+            this.buttonPaint.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.buttonPaint.Size = new System.Drawing.Size(186, 25);
+            this.buttonPaint.TabIndex = 7;
+            this.buttonPaint.Text = "   Замена цвета";
+            this.buttonPaint.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.buttonPaint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonPaint.UseVisualStyleBackColor = true;
+            this.buttonPaint.Click += new System.EventHandler(this.buttonPaint_Click);
             // 
             // buttonRotate
             // 
@@ -315,6 +368,17 @@
             this.buttonHand.UseVisualStyleBackColor = true;
             this.buttonHand.Click += new System.EventHandler(this.buttonHand_Click);
             // 
+            // labelMode
+            // 
+            this.labelMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMode.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelMode.Location = new System.Drawing.Point(64, 0);
+            this.labelMode.Name = "labelMode";
+            this.labelMode.Size = new System.Drawing.Size(110, 18);
+            this.labelMode.TabIndex = 25;
+            this.labelMode.Text = "Растровая графика";
+            this.labelMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // buttonEdit
             // 
             this.buttonEdit.Dock = System.Windows.Forms.DockStyle.Top;
@@ -339,8 +403,8 @@
             this.panelTools.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.panelTools.Controls.Add(this.buttonNNgon);
             this.panelTools.Controls.Add(this.buttonNAngular);
-            this.panelTools.Controls.Add(this.buttonTriangleRectangular);
             this.panelTools.Controls.Add(this.buttonTriangleIsosceles);
+            this.panelTools.Controls.Add(this.buttonTriangleRectangular);
             this.panelTools.Controls.Add(this.buttonSquare);
             this.panelTools.Controls.Add(this.buttonCircle);
             this.panelTools.Controls.Add(this.buttonLine);
@@ -365,7 +429,7 @@
             this.buttonNNgon.Name = "buttonNNgon";
             this.buttonNNgon.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.buttonNNgon.Size = new System.Drawing.Size(186, 25);
-            this.buttonNNgon.TabIndex = 11;
+            this.buttonNNgon.TabIndex = 15;
             this.buttonNNgon.Text = "   N-угольник";
             this.buttonNNgon.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonNNgon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -386,33 +450,12 @@
             this.buttonNAngular.Name = "buttonNAngular";
             this.buttonNAngular.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.buttonNAngular.Size = new System.Drawing.Size(186, 25);
-            this.buttonNAngular.TabIndex = 10;
+            this.buttonNAngular.TabIndex = 14;
             this.buttonNAngular.Text = "   N-угольник";
             this.buttonNAngular.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonNAngular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonNAngular.UseVisualStyleBackColor = true;
             this.buttonNAngular.Click += new System.EventHandler(this.buttonNAngular_Click);
-            // 
-            // buttonTriangleRectangular
-            // 
-            this.buttonTriangleRectangular.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonTriangleRectangular.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonTriangleRectangular.FlatAppearance.BorderSize = 0;
-            this.buttonTriangleRectangular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTriangleRectangular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonTriangleRectangular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.buttonTriangleRectangular.Image = ((System.Drawing.Image)(resources.GetObject("buttonTriangleRectangular.Image")));
-            this.buttonTriangleRectangular.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonTriangleRectangular.Location = new System.Drawing.Point(0, 125);
-            this.buttonTriangleRectangular.Name = "buttonTriangleRectangular";
-            this.buttonTriangleRectangular.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.buttonTriangleRectangular.Size = new System.Drawing.Size(186, 25);
-            this.buttonTriangleRectangular.TabIndex = 8;
-            this.buttonTriangleRectangular.Text = "  Треугольник";
-            this.buttonTriangleRectangular.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.buttonTriangleRectangular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonTriangleRectangular.UseVisualStyleBackColor = true;
-            this.buttonTriangleRectangular.Click += new System.EventHandler(this.buttonTriangleRectangular_Click);
             // 
             // buttonTriangleIsosceles
             // 
@@ -424,16 +467,37 @@
             this.buttonTriangleIsosceles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonTriangleIsosceles.Image = ((System.Drawing.Image)(resources.GetObject("buttonTriangleIsosceles.Image")));
             this.buttonTriangleIsosceles.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonTriangleIsosceles.Location = new System.Drawing.Point(0, 100);
+            this.buttonTriangleIsosceles.Location = new System.Drawing.Point(0, 125);
             this.buttonTriangleIsosceles.Name = "buttonTriangleIsosceles";
             this.buttonTriangleIsosceles.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.buttonTriangleIsosceles.Size = new System.Drawing.Size(186, 25);
-            this.buttonTriangleIsosceles.TabIndex = 7;
+            this.buttonTriangleIsosceles.TabIndex = 13;
             this.buttonTriangleIsosceles.Text = "   Треугольник";
             this.buttonTriangleIsosceles.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonTriangleIsosceles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonTriangleIsosceles.UseVisualStyleBackColor = true;
             this.buttonTriangleIsosceles.Click += new System.EventHandler(this.buttonTriangleIsosceles_Click);
+            // 
+            // buttonTriangleRectangular
+            // 
+            this.buttonTriangleRectangular.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTriangleRectangular.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTriangleRectangular.FlatAppearance.BorderSize = 0;
+            this.buttonTriangleRectangular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTriangleRectangular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonTriangleRectangular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonTriangleRectangular.Image = ((System.Drawing.Image)(resources.GetObject("buttonTriangleRectangular.Image")));
+            this.buttonTriangleRectangular.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonTriangleRectangular.Location = new System.Drawing.Point(0, 100);
+            this.buttonTriangleRectangular.Name = "buttonTriangleRectangular";
+            this.buttonTriangleRectangular.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.buttonTriangleRectangular.Size = new System.Drawing.Size(186, 25);
+            this.buttonTriangleRectangular.TabIndex = 12;
+            this.buttonTriangleRectangular.Text = "   Треугольник";
+            this.buttonTriangleRectangular.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.buttonTriangleRectangular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonTriangleRectangular.UseVisualStyleBackColor = true;
+            this.buttonTriangleRectangular.Click += new System.EventHandler(this.buttonTriangleRectangular_Click);
             // 
             // buttonSquare
             // 
@@ -613,6 +677,68 @@
             this.panelProgram.TabIndex = 1;
             this.panelProgram.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelProgram_MouseMove);
             // 
+            // buttonGitHub
+            // 
+            this.buttonGitHub.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonGitHub.FlatAppearance.BorderSize = 0;
+            this.buttonGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGitHub.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGitHub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.buttonGitHub.Image = ((System.Drawing.Image)(resources.GetObject("buttonGitHub.Image")));
+            this.buttonGitHub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGitHub.Location = new System.Drawing.Point(646, 0);
+            this.buttonGitHub.Margin = new System.Windows.Forms.Padding(0);
+            this.buttonGitHub.Name = "buttonGitHub";
+            this.buttonGitHub.Size = new System.Drawing.Size(68, 20);
+            this.buttonGitHub.TabIndex = 33;
+            this.buttonGitHub.Text = "  GitHub";
+            this.buttonGitHub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGitHub.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonGitHub.UseVisualStyleBackColor = true;
+            this.buttonGitHub.Click += new System.EventHandler(this.buttonGitHub_Click);
+            // 
+            // buttonCollapse
+            // 
+            this.buttonCollapse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonCollapse.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonCollapse.FlatAppearance.BorderSize = 0;
+            this.buttonCollapse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCollapse.Image = ((System.Drawing.Image)(resources.GetObject("buttonCollapse.Image")));
+            this.buttonCollapse.Location = new System.Drawing.Point(714, 0);
+            this.buttonCollapse.Name = "buttonCollapse";
+            this.buttonCollapse.Size = new System.Drawing.Size(22, 20);
+            this.buttonCollapse.TabIndex = 32;
+            this.buttonCollapse.UseVisualStyleBackColor = true;
+            this.buttonCollapse.Click += new System.EventHandler(this.imageCollapse_Click);
+            // 
+            // buttonExpand
+            // 
+            this.buttonExpand.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExpand.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonExpand.FlatAppearance.BorderSize = 0;
+            this.buttonExpand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExpand.Image = ((System.Drawing.Image)(resources.GetObject("buttonExpand.Image")));
+            this.buttonExpand.Location = new System.Drawing.Point(736, 0);
+            this.buttonExpand.Name = "buttonExpand";
+            this.buttonExpand.Size = new System.Drawing.Size(22, 20);
+            this.buttonExpand.TabIndex = 31;
+            this.buttonExpand.UseVisualStyleBackColor = true;
+            this.buttonExpand.Click += new System.EventHandler(this.imageExpand_Click);
+            // 
+            // buttonExit
+            // 
+            this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonExit.FlatAppearance.BorderSize = 0;
+            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExit.Image = ((System.Drawing.Image)(resources.GetObject("buttonExit.Image")));
+            this.buttonExit.Location = new System.Drawing.Point(758, 0);
+            this.buttonExit.Name = "buttonExit";
+            this.buttonExit.Size = new System.Drawing.Size(22, 20);
+            this.buttonExit.TabIndex = 30;
+            this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.imageExit_Click);
+            // 
             // menuStrip
             // 
             this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
@@ -646,7 +772,7 @@
             // 
             this.создатьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("создатьToolStripMenuItem.Image")));
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.создатьToolStripMenuItem.Text = "Новый";
             this.создатьToolStripMenuItem.Click += new System.EventHandler(this.CreateToolStripMenuItem_Click);
             // 
@@ -654,7 +780,7 @@
             // 
             this.открытьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("открытьToolStripMenuItem.Image")));
             this.открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.открытьToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.открытьToolStripMenuItem.Text = "Открыть";
             this.открытьToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
@@ -662,7 +788,7 @@
             // 
             this.сохранитьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("сохранитьToolStripMenuItem.Image")));
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.SaveToolStripMenuItem_Click);
             // 
@@ -670,7 +796,7 @@
             // 
             this.выходToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("выходToolStripMenuItem.Image")));
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.imageExit_Click);
             // 
@@ -1044,7 +1170,7 @@
             this.pictureBoxSheet.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxSheet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBoxSheet.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.pictureBoxSheet.Location = new System.Drawing.Point(15, 8);
+            this.pictureBoxSheet.Location = new System.Drawing.Point(15, 11);
             this.pictureBoxSheet.Name = "pictureBoxSheet";
             this.pictureBoxSheet.Size = new System.Drawing.Size(750, 500);
             this.pictureBoxSheet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -1068,7 +1194,7 @@
             // panelResizeSheet
             // 
             this.panelResizeSheet.BackColor = System.Drawing.Color.Maroon;
-            this.panelResizeSheet.Location = new System.Drawing.Point(764, 507);
+            this.panelResizeSheet.Location = new System.Drawing.Point(765, 511);
             this.panelResizeSheet.Name = "panelResizeSheet";
             this.panelResizeSheet.Size = new System.Drawing.Size(10, 10);
             this.panelResizeSheet.TabIndex = 4;
@@ -1083,7 +1209,8 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.panel2.Controls.Add(this.labelMode);
+            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(180, 596);
@@ -1091,16 +1218,48 @@
             this.panel2.Size = new System.Drawing.Size(780, 20);
             this.panel2.TabIndex = 5;
             // 
-            // labelMode
+            // panel6
             // 
-            this.labelMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelMode.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelMode.Location = new System.Drawing.Point(3, 0);
-            this.labelMode.Name = "labelMode";
-            this.labelMode.Size = new System.Drawing.Size(200, 18);
-            this.labelMode.TabIndex = 25;
-            this.labelMode.Text = "Режим";
-            this.labelMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panel6.Controls.Add(this.label10);
+            this.panel6.Controls.Add(this.labelTool);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(280, 20);
+            this.panel6.TabIndex = 29;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(6, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 18);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Инструмент:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 18);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Режим:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // labelTool
+            // 
+            this.labelTool.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelTool.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelTool.Location = new System.Drawing.Point(83, 0);
+            this.labelTool.Name = "labelTool";
+            this.labelTool.Size = new System.Drawing.Size(200, 18);
+            this.labelTool.TabIndex = 28;
+            this.labelTool.Text = "   Кисть";
+            this.labelTool.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel3
             // 
@@ -1117,7 +1276,7 @@
             // 
             // label9
             // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label9.Location = new System.Drawing.Point(217, 0);
             this.label9.Name = "label9";
@@ -1140,7 +1299,7 @@
             // 
             // labelY
             // 
-            this.labelY.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelY.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelY.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelY.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelY.Location = new System.Drawing.Point(176, 0);
@@ -1152,7 +1311,7 @@
             // 
             // labelX
             // 
-            this.labelX.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelX.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelX.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.labelX.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.labelX.Location = new System.Drawing.Point(116, 0);
@@ -1166,76 +1325,24 @@
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(10, 0);
+            this.label6.Location = new System.Drawing.Point(4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 18);
+            this.label6.Size = new System.Drawing.Size(112, 18);
             this.label6.TabIndex = 5;
-            this.label6.Text = "Размер рисунка";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label6.Text = "Размер рисунка:";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // buttonExit
+            // panel7
             // 
-            this.buttonExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonExit.FlatAppearance.BorderSize = 0;
-            this.buttonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExit.Image = ((System.Drawing.Image)(resources.GetObject("buttonExit.Image")));
-            this.buttonExit.Location = new System.Drawing.Point(760, 0);
-            this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(20, 20);
-            this.buttonExit.TabIndex = 30;
-            this.buttonExit.UseVisualStyleBackColor = true;
-            this.buttonExit.Click += new System.EventHandler(this.imageExit_Click);
+            this.panel7.Controls.Add(this.label11);
+            this.panel7.Controls.Add(this.labelMode);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(364, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(176, 20);
+            this.panel7.TabIndex = 30;
             // 
-            // buttonExpand
-            // 
-            this.buttonExpand.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonExpand.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonExpand.FlatAppearance.BorderSize = 0;
-            this.buttonExpand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExpand.Image = ((System.Drawing.Image)(resources.GetObject("buttonExpand.Image")));
-            this.buttonExpand.Location = new System.Drawing.Point(740, 0);
-            this.buttonExpand.Name = "buttonExpand";
-            this.buttonExpand.Size = new System.Drawing.Size(20, 20);
-            this.buttonExpand.TabIndex = 31;
-            this.buttonExpand.UseVisualStyleBackColor = true;
-            this.buttonExpand.Click += new System.EventHandler(this.imageExpand_Click);
-            // 
-            // buttonCollapse
-            // 
-            this.buttonCollapse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonCollapse.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonCollapse.FlatAppearance.BorderSize = 0;
-            this.buttonCollapse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCollapse.Image = ((System.Drawing.Image)(resources.GetObject("buttonCollapse.Image")));
-            this.buttonCollapse.Location = new System.Drawing.Point(720, 0);
-            this.buttonCollapse.Name = "buttonCollapse";
-            this.buttonCollapse.Size = new System.Drawing.Size(20, 20);
-            this.buttonCollapse.TabIndex = 32;
-            this.buttonCollapse.UseVisualStyleBackColor = true;
-            this.buttonCollapse.Click += new System.EventHandler(this.imageCollapse_Click);
-            // 
-            // buttonGitHub
-            // 
-            this.buttonGitHub.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonGitHub.FlatAppearance.BorderSize = 0;
-            this.buttonGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGitHub.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonGitHub.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.buttonGitHub.Image = ((System.Drawing.Image)(resources.GetObject("buttonGitHub.Image")));
-            this.buttonGitHub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGitHub.Location = new System.Drawing.Point(652, 0);
-            this.buttonGitHub.Margin = new System.Windows.Forms.Padding(0);
-            this.buttonGitHub.Name = "buttonGitHub";
-            this.buttonGitHub.Size = new System.Drawing.Size(68, 20);
-            this.buttonGitHub.TabIndex = 33;
-            this.buttonGitHub.Text = "  GitHub";
-            this.buttonGitHub.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGitHub.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonGitHub.UseVisualStyleBackColor = true;
-            this.buttonGitHub.Click += new System.EventHandler(this.buttonGitHub_Click);
-            // 
-            // Form
+            // FormProgram
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1249,7 +1356,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
-            this.Name = "Form";
+            this.Name = "FormProgram";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form_Load);
@@ -1285,7 +1392,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).EndInit();
             this.panelDesk.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1326,9 +1435,6 @@
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сохранитьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
-        private System.Windows.Forms.Button buttonNAngular;
-        private System.Windows.Forms.Button buttonTriangleRectangular;
-        private System.Windows.Forms.Button buttonTriangleIsosceles;
         private System.Windows.Forms.Button buttonSquare;
         private System.Windows.Forms.Button buttonCircle;
         private System.Windows.Forms.Button buttonLine;
@@ -1353,7 +1459,6 @@
         private System.Windows.Forms.PictureBox pictureBoxFillOnly;
         private System.Windows.Forms.PictureBox pictureBoxContOnly;
         private System.Windows.Forms.PictureBox pictureBoxFillCont;
-        private System.Windows.Forms.Button buttonNNgon;
         private System.Windows.Forms.ToolStripMenuItem режимToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem растроваяГрафикаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem векторнаяГрафикаToolStripMenuItem;
@@ -1373,6 +1478,17 @@
         private System.Windows.Forms.Button buttonExpand;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonGitHub;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonPaint;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelTool;
+        private System.Windows.Forms.Button buttonNNgon;
+        private System.Windows.Forms.Button buttonNAngular;
+        private System.Windows.Forms.Button buttonTriangleIsosceles;
+        private System.Windows.Forms.Button buttonTriangleRectangular;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
     }
 }
 
