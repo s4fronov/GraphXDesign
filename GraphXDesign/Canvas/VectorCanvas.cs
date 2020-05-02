@@ -101,7 +101,6 @@ namespace GraphXDesign
                         Point p1 = new Point(t.X - 3, t.Y + i);
                         Point p2 = new Point(t.X + 3, t.Y + i);
                         square.Createdotlist(p1.X, p1.Y, p2.X, p2.Y);
-                        //WriteToPictureBox(sheet);
                         brush.DrawLine(Bmp, p1.X, p1.Y, p2.X, p2.Y, false);
                         WriteToPictureBox(sheet);
 
@@ -139,41 +138,8 @@ namespace GraphXDesign
 
 
 
-        //public void DrawAllFigures(PictureBox sheet)
-        //{
-        //    Bmp = new BitmapWrap(Width, Height);
-
-        //    Square brush = new Square();
-        //    foreach (Drawfigure f in figures)
-        //    {
-        //        Point tmp = f.figure.dotlist[0];
-        //        foreach (Point p in f.figure.dotlist)
-        //        {
-        //            brush.Createdotlist(tmp.X, tmp.Y, p.X, p.Y);
-        //            WriteToPictureBox(sheet);
-        //            tmp = p;
-        //        }
-        //        brush.Createdotlist(tmp.X, tmp.Y, f.figure.dotlist[0].X, f.figure.dotlist[0].Y);
-        //        WriteToPictureBox(sheet);
-        //    }
-        //}
-
-        //public void ChangeSizeoffigures()
-        //{
-        //    FindFigureByPoint(Point p);
-
-
-        //=========================================================================================
-
-        /*
-        public Color GetPixel(int x, int y)
-        {
-            if (x >= 0 && x < Width)
-                if (y >= 0 && y < Height)
-                    return Bmp.GetPixel(x, y);
-            return Color.Transparent;
-        }
-        */
+       
+        
 
     }
 }

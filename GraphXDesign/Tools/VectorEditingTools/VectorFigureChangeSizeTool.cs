@@ -14,7 +14,8 @@ namespace GraphXDesign
         VectorCanvas canvas;
         Drawfigure activeFigure;
         Point tmpPoint;
-        int tmpIndex;
+        string activecorner;
+       
         int dx, dy;
         bool havecorners = false;
         // Point farthest;
@@ -28,14 +29,26 @@ namespace GraphXDesign
         public void MouseDown(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             if (havecorners == true)
-
             {
-                if ((Math.Abs(e.Location.X - activeFigure.figure.cornerBottomRight.X) < 5) && (Math.Abs(e.Location.Y - activeFigure.figure.cornerBottomRight.Y) < 5))
-
+                if ((Math.Abs(e.Location.X - activeFigure.figure.cornerBottomRight.X) < 5) && (Math.Abs(e.Location.Y - activeFigure.figure.cornerBottomRight.Y) < 5 ))                 {
+                    cursorActive = true;
+                    activecorner = "cornerBottomRight";
+                }
+                if ((Math.Abs(e.Location.X - activeFigure.figure.cornerBottomLeft.X) < 5) && (Math.Abs(e.Location.Y - activeFigure.figure.cornerBottomLeft.Y) < 5))
                 {
                     cursorActive = true;
+                    activecorner = "cornerBottomLeft";
                 }
-
+                if ((Math.Abs(e.Location.X - activeFigure.figure.cornerTopLeft.X) < 5) && (Math.Abs(e.Location.Y - activeFigure.figure.cornerTopLeft.Y) < 5))
+                {
+                    cursorActive = true;
+                    activecorner = "cornerTopLeft";
+                }
+                if ((Math.Abs(e.Location.X - activeFigure.figure.cornerTopRight.X) < 5) && (Math.Abs(e.Location.Y - activeFigure.figure.cornerTopRight.Y) < 5))
+                {
+                    cursorActive = true;
+                    activecorner = "cornerTopRight";
+                }
 
             }
             tmpPoint = e.Location;
@@ -51,7 +64,7 @@ namespace GraphXDesign
                     canvas.LoadFromCache();
                     dx = e.X - tmpPoint.X;
                     dy = e.Y - tmpPoint.Y;
-                    activeFigure.figure.ChangeSizeFigure(dx, dy);
+                    activeFigure.figure.ChangeSizeFigure(dx, dy,activecorner);
                                                                           
                     tmpPoint = e.Location;
                     activeFigure.Draw(canvas);

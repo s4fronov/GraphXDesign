@@ -15,7 +15,7 @@ namespace GraphXDesign
         public Point cornerBottomRight;
         public Point cornerBottomLeft;
         public Point cornerTopRight;
-        public Point farthestpoint;
+       
         public void Create(int x1, int y1, int x2, int y2)
         {
             dotlist = new List<Point>();
@@ -122,76 +122,75 @@ namespace GraphXDesign
             center = new Point(center.X + dx, center.Y + dy);
         }
 
-        public void ChangeSizeFigure(int dx, int dy)
+        public void ChangeSizeFigure(int dx, int dy, string activecorner)
         {
-           // double k = 0;
-            double  leftX = cornerTopLeft.X;
+
+            double leftX = cornerTopLeft.X;
             double rightX = cornerBottomRight.X;
             double topY = cornerTopLeft.Y;
             double bottomY = cornerBottomRight.Y;
-
-            for (int i = 0; i < dotlist.Count; i++)
+            if (activecorner is "cornerBottomRight")
             {
-                
-                 dotlist[i] = new Point((int)(dotlist[i].X + dx * (dotlist[i].X - leftX) / (rightX - leftX)),(int)( dotlist[i].Y + dy * (dotlist[i].Y - topY) / (bottomY - topY)));
-            }
-                     
-               cornerBottomRight.X += dx;
-               cornerBottomRight.Y += dy;
-               cornerBottomLeft.Y += dy;
-               cornerTopRight.X += dx;
-
-        }
-        //{
-        //    int index = -1;
-        //    Point location = new Point();
-        //    location.X = x;
-        //    location.Y = y;
-
-        //    for (int i = dotlist.Count; i < index; i--)
-
-        //    {
-        //        dotlist[i] = new Point(dotlist[i].X + dx, dotlist[i].Y + dy);
-        //    }
-
-        //    for (int i = 0; i < index; i++)
-
-        //    {
-        //        dotlist[i] = new Point(dotlist[i].X + dx, dotlist[i].Y + dy);
-        //    }
-        //    center = new Point(center.X + dx, center.Y + dy);
-        //    cornerTopLeft = new Point(cornerTopLeft.X + dx, cornerTopLeft.Y + dy);
-        //    cornerBottomRight = new Point(cornerBottomRight.X + dx, cornerBottomRight.Y + dy);
-
-        //}
-
-        public int Findfarthestpoint(int x, int y)
-
-        {
-            int index = 0;
-            double lenghtmax = 0;
-            Point farthestpoint = new Point();
-            Point location = new Point();
-            location.X = x;
-            location.Y = y;
-            farthestpoint = dotlist[0];
-            lenghtmax = Math.Sqrt((x - dotlist[0].X) * (x - dotlist[0].X) + (y - dotlist[0].Y) * (y - dotlist[0].Y));
-            for (int i = 0; i < dotlist.Count; i++)
-            {
-                int lenght = (int)(Math.Sqrt((x - dotlist[i].X) * (x - dotlist[i].X) + (y - dotlist[i].Y) * (y - dotlist[i].Y)));
-                if (lenght > lenghtmax)
+                for (int i = 0; i < dotlist.Count; i++)
                 {
-                    lenghtmax = lenght;
-                    farthestpoint = new Point(dotlist[i].X, dotlist[i].X);
-                    index = i;
+
+                    dotlist[i] = new Point((int)(dotlist[i].X + dx * (dotlist[i].X - leftX) / (rightX - leftX)), (int)(dotlist[i].Y + dy * (dotlist[i].Y - topY) / (bottomY - topY)));
                 }
+
+                cornerBottomRight.X += dx;
+                cornerBottomRight.Y += dy;
+                cornerBottomLeft.Y += dy;
+                cornerTopRight.X += dx;
             }
-            return index;
+
+            if (activecorner is "cornerBottomLeft")
+            {
+                for (int i = 0; i < dotlist.Count; i++)
+                {
+
+                    dotlist[i] = new Point((int)(dotlist[i].X + dx*(dotlist[i].X - rightX) / (leftX  - rightX)), (int)(dotlist[i].Y + dy * (dotlist[i].Y - topY) / (bottomY - topY)));
+                }
+            
+
+                cornerBottomLeft.X += dx;
+                cornerBottomLeft.Y += dy;
+                cornerBottomRight.Y += dy; // норм
+                cornerTopLeft.X += dx;
+            }
+
+            if (activecorner is "cornerTopRight")
+            {
+                for (int i = 0; i < dotlist.Count; i++)
+                {
+
+                    dotlist[i] = new Point((int)(dotlist[i].X + dx * (dotlist[i].X - leftX) / (rightX - leftX)), (int)(dotlist[i].Y + dy * (bottomY -dotlist[i].Y ) / (bottomY - topY)));
+                }
+
+                cornerTopRight.X += dx;
+                cornerTopRight.Y += dy;
+                cornerBottomRight.X += dx;
+                cornerTopLeft.Y += dy;
+            }
+            if (activecorner is "cornerTopLeft")
+            {
+                for (int i = 0; i < dotlist.Count; i++)
+                {
+
+                    dotlist[i] = new Point((int)(dotlist[i].X + dx * (dotlist[i].X  - rightX ) / (leftX - rightX)), (int)(dotlist[i].Y + dy * (bottomY - dotlist[i].Y) / (bottomY - topY)));
+                }
+
+                cornerTopLeft.X += dx;
+                cornerTopLeft.Y += dy;
+                cornerBottomLeft.X += dx;
+                cornerTopRight.Y += dy;
+            }
 
 
         }
 
-        public object Clone()
+
+
+            public object Clone()
         {
             return MemberwiseClone();
         }

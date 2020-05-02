@@ -514,7 +514,6 @@ namespace GraphXDesign
         }
         private void buttonResize_Click(object sender, EventArgs e)
         {
-            VectorCanvas.GetCanvas.PointChangeMode(pictureBoxSheet);
             tool = new VectorFigureChangeSizeTool();
             showOptMenu();
         }
