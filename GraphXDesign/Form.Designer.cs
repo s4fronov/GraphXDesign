@@ -110,7 +110,6 @@
             this.labelY = new System.Windows.Forms.Label();
             this.labelX = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -207,7 +206,6 @@
             // groupBoxMenu
             // 
             this.groupBoxMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBoxMenu.Controls.Add(this.button1);
             this.groupBoxMenu.Controls.Add(this.panel5);
             this.groupBoxMenu.Controls.Add(this.buttonEdit);
             this.groupBoxMenu.Controls.Add(this.panelTools);
@@ -1237,16 +1235,6 @@
             this.label6.Text = "Размер рисунка";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(28, 433);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 30);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Repaint";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1385,7 +1373,6 @@
         private System.Windows.Forms.Button buttonExpand;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonGitHub;
-        private System.Windows.Forms.Button button1;
     }
 }
 
