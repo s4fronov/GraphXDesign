@@ -22,7 +22,7 @@ namespace GraphXDesign
         IFill fill;
         ITool tool;
         ITool toolTmp;
-        int option; // 0 - круг, 1 - квадрат
+        int option; // 1 - круг, 2 - квадрат
         bool expandActive;
         bool cursorActive;
         private Point MouseHook;
@@ -167,7 +167,7 @@ namespace GraphXDesign
                 buttonUndo.Visible = false;
                 buttonRedo.Visible = false;
                 panelTools.Height = 158;
-                panelInstruments.Width = 140;
+                panelInstruments.Width = 84;
             }
         }
 
@@ -528,6 +528,11 @@ namespace GraphXDesign
             showOptMenu(sender);
         }
 
+        private void buttonOriginalState_Click(object sender, EventArgs e)
+        {
+            showOptMenu(sender);
+        }
+
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             tool = new VectorDeleteFigureTool();
@@ -636,7 +641,5 @@ namespace GraphXDesign
         {
             System.Diagnostics.Process.Start("https://github.com/9rape/GraphXDesign");
         }
-
-        
     }
 }

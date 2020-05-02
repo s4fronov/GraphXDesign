@@ -37,13 +37,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBoxMenu = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonPaint = new System.Windows.Forms.Button();
             this.buttonRotate = new System.Windows.Forms.Button();
             this.buttonTransform = new System.Windows.Forms.Button();
             this.buttonResize = new System.Windows.Forms.Button();
             this.buttonHand = new System.Windows.Forms.Button();
-            this.labelMode = new System.Windows.Forms.Label();
             this.buttonEdit = new System.Windows.Forms.Button();
             this.panelTools = new System.Windows.Forms.Panel();
             this.buttonNNgon = new System.Windows.Forms.Button();
@@ -55,6 +53,7 @@
             this.buttonLine = new System.Windows.Forms.Button();
             this.buttonBrush = new System.Windows.Forms.Button();
             this.buttonTools = new System.Windows.Forms.Button();
+            this.labelMode = new System.Windows.Forms.Label();
             this.panelAngles = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.numericAngle = new System.Windows.Forms.NumericUpDown();
@@ -106,9 +105,10 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.labelTool = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -116,7 +116,8 @@
             this.labelY = new System.Windows.Forms.Label();
             this.labelX = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.buttonOriginalState = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panelInfo.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -145,9 +146,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).BeginInit();
             this.panelDesk.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -231,6 +232,7 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.panel5.Controls.Add(this.buttonDelete);
+            this.panel5.Controls.Add(this.buttonOriginalState);
             this.panel5.Controls.Add(this.buttonPaint);
             this.panel5.Controls.Add(this.buttonRotate);
             this.panel5.Controls.Add(this.buttonTransform);
@@ -239,29 +241,8 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 293);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(186, 158);
+            this.panel5.Size = new System.Drawing.Size(186, 183);
             this.panel5.TabIndex = 3;
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonDelete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonDelete.FlatAppearance.BorderSize = 0;
-            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
-            this.buttonDelete.Image = ((System.Drawing.Image)(resources.GetObject("buttonDelete.Image")));
-            this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.buttonDelete.Location = new System.Drawing.Point(0, 125);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.buttonDelete.Size = new System.Drawing.Size(186, 25);
-            this.buttonDelete.TabIndex = 8;
-            this.buttonDelete.Text = "   Удаление";
-            this.buttonDelete.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonPaint
             // 
@@ -367,17 +348,6 @@
             this.buttonHand.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonHand.UseVisualStyleBackColor = true;
             this.buttonHand.Click += new System.EventHandler(this.buttonHand_Click);
-            // 
-            // labelMode
-            // 
-            this.labelMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelMode.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.labelMode.Location = new System.Drawing.Point(64, 0);
-            this.labelMode.Name = "labelMode";
-            this.labelMode.Size = new System.Drawing.Size(110, 18);
-            this.labelMode.TabIndex = 25;
-            this.labelMode.Text = "Растровая графика";
-            this.labelMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // buttonEdit
             // 
@@ -602,6 +572,17 @@
             this.buttonTools.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonTools.UseVisualStyleBackColor = true;
             this.buttonTools.Click += new System.EventHandler(this.buttonBrush_Click);
+            // 
+            // labelMode
+            // 
+            this.labelMode.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelMode.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelMode.Location = new System.Drawing.Point(64, 0);
+            this.labelMode.Name = "labelMode";
+            this.labelMode.Size = new System.Drawing.Size(110, 18);
+            this.labelMode.TabIndex = 25;
+            this.labelMode.Text = "Растровая графика";
+            this.labelMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panelAngles
             // 
@@ -1218,6 +1199,27 @@
             this.panel2.Size = new System.Drawing.Size(780, 20);
             this.panel2.TabIndex = 5;
             // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label11);
+            this.panel7.Controls.Add(this.labelMode);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel7.Location = new System.Drawing.Point(364, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(176, 20);
+            this.panel7.TabIndex = 30;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label11.Location = new System.Drawing.Point(3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 18);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Режим:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.label10);
@@ -1238,17 +1240,6 @@
             this.label10.TabIndex = 26;
             this.label10.Text = "Инструмент:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label11.Location = new System.Drawing.Point(3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 18);
-            this.label11.TabIndex = 27;
-            this.label11.Text = "Режим:";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // labelTool
             // 
@@ -1332,15 +1323,47 @@
             this.label6.Text = "Размер рисунка:";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // panel7
+            // buttonOriginalState
             // 
-            this.panel7.Controls.Add(this.label11);
-            this.panel7.Controls.Add(this.labelMode);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel7.Location = new System.Drawing.Point(364, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(176, 20);
-            this.panel7.TabIndex = 30;
+            this.buttonOriginalState.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonOriginalState.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonOriginalState.FlatAppearance.BorderSize = 0;
+            this.buttonOriginalState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOriginalState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonOriginalState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonOriginalState.Image = ((System.Drawing.Image)(resources.GetObject("buttonOriginalState.Image")));
+            this.buttonOriginalState.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonOriginalState.Location = new System.Drawing.Point(0, 125);
+            this.buttonOriginalState.Name = "buttonOriginalState";
+            this.buttonOriginalState.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.buttonOriginalState.Size = new System.Drawing.Size(186, 25);
+            this.buttonOriginalState.TabIndex = 9;
+            this.buttonOriginalState.Text = "   Отмена изменений";
+            this.buttonOriginalState.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.buttonOriginalState.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonOriginalState.UseVisualStyleBackColor = true;
+            this.buttonOriginalState.Click += new System.EventHandler(this.buttonOriginalState_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonDelete.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonDelete.FlatAppearance.BorderSize = 0;
+            this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
+            this.buttonDelete.Image = ((System.Drawing.Image)(resources.GetObject("buttonDelete.Image")));
+            this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.buttonDelete.Location = new System.Drawing.Point(0, 150);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.buttonDelete.Size = new System.Drawing.Size(186, 25);
+            this.buttonDelete.TabIndex = 10;
+            this.buttonDelete.Text = "   Удаление";
+            this.buttonDelete.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.buttonDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // FormProgram
             // 
@@ -1392,9 +1415,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSheet)).EndInit();
             this.panelDesk.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1478,7 +1501,6 @@
         private System.Windows.Forms.Button buttonExpand;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonGitHub;
-        private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonPaint;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
@@ -1489,6 +1511,8 @@
         private System.Windows.Forms.Button buttonTriangleRectangular;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonOriginalState;
     }
 }
 
