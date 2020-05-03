@@ -23,6 +23,14 @@ namespace GraphXDesign
 
         public void Draw(AbstractCanvas canvas)
         {
+            //случай линии
+            if (figure.dotlist.Count == 2)
+            {
+                Drawline drawer = new Drawline(figure.dotlist[0].X, figure.dotlist[0].Y, figure.dotlist[1].X, figure.dotlist[1].Y, brush, true);
+                drawer.Draw(canvas);
+                return;
+            }
+
             BitmapWrap tmp = new BitmapWrap(canvas.Width, canvas.Height);
             tmp.Lock();
 
