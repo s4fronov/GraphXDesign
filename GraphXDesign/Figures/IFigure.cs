@@ -254,6 +254,7 @@ namespace GraphXDesign
             cornerTopRight = new Point(rightX, topY);
         }
 
+        //добавить проекцию точки на сторону в фигуру
         public void AddPoint(Point point, int tolerance)
         {
             for (int i = 0; i < dotlist.Count; i++)
@@ -271,6 +272,23 @@ namespace GraphXDesign
                     }
                 }
             }
+        }
+
+        //удалить точку из фигуры
+        public bool DeleteApproximatePoint(Point point, int tolerance)
+        {
+            if (dotlist.Count <= 2)
+                return false;
+
+            for (int i = 0; i < dotlist.Count; i++)
+            {
+                if (distanceSquared(point, dotlist[i]) < tolerance*tolerance)
+                {
+                    dotlist.RemoveAt(i);
+                    return true;
+                }
+            }
+            return false;
         }
 
         //квадрат расстояния между точками

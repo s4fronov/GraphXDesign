@@ -86,7 +86,12 @@ namespace GraphXDesign
             if (activeFigure != null)
             {
                 canvas.LoadFromCache();
-                activeFigure.figure.AddPoint(e.Location, 10);
+
+                //если попали по точке удаляем точку
+                //если нет, пытаемся добавить точку на грань
+                if (!activeFigure.figure.DeleteApproximatePoint(e.Location, 10))
+                    activeFigure.figure.AddPoint(e.Location, 10);
+
                 activeFigure.Draw(canvas);
                 canvas.PointChangeMode(sheet);
                 canvas.WriteToPictureBox(sheet);
