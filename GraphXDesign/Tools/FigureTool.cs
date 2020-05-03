@@ -65,7 +65,7 @@ namespace GraphXDesign
             drawer.Draw(canvas);
             canvas.WriteToPictureBox(sheet);
         }
-        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
-        { }
+        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
+        public void MouseClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
     }
 }

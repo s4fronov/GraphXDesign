@@ -55,9 +55,13 @@ namespace GraphXDesign
                 }
             }
             //---------
-
-            canvas.RenderExceptFigure(activeFigure);
-            canvas.SaveToCache();
+            if (activeFigure != null)
+            {
+                canvas.RenderExceptFigure(activeFigure);
+                canvas.SaveToCache();
+                activeFigure.Draw(canvas);
+                canvas.WriteToPictureBox(sheet);
+            }
         }
         public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
@@ -68,7 +72,8 @@ namespace GraphXDesign
                     canvas.LoadFromCache();
                     activeFigure.figure.dotlist[tmpIndex] = e.Location;
                     activeFigure.Draw(canvas);
-                    canvas.PointChangeMode(sheet);
+                    //canvas.PointChangeMode(sheet);
+                    canvas.PointChangeModeActiveFigure(sheet, activeFigure);
                     canvas.WriteToPictureBox(sheet);
 
                 }
@@ -76,9 +81,13 @@ namespace GraphXDesign
         }
         public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
-            cursorActive = false;
-            canvas.PointChangeMode(sheet);
-            canvas.WriteToPictureBox(sheet);
+            if (activeFigure != null)
+            {
+                cursorActive = false;
+                //canvas.PointChangeMode(sheet);
+                canvas.PointChangeModeActiveFigure(sheet, activeFigure);
+                canvas.WriteToPictureBox(sheet);
+            }
             
         }
         public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
@@ -93,9 +102,11 @@ namespace GraphXDesign
                     activeFigure.figure.AddPoint(e.Location, 10);
 
                 activeFigure.Draw(canvas);
-                canvas.PointChangeMode(sheet);
+                //canvas.PointChangeMode(sheet);
+                canvas.PointChangeModeActiveFigure(sheet, activeFigure);
                 canvas.WriteToPictureBox(sheet);
             }
         }
+        public void MouseClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
     }
 }

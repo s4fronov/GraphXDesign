@@ -54,7 +54,6 @@ namespace GraphXDesign
             }
             tmpPoint = e.Location;
 
-
         }
         public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
@@ -69,28 +68,24 @@ namespace GraphXDesign
                                                                           
                     tmpPoint = e.Location;
                     activeFigure.Draw(canvas);
-                    canvas.PointChangeModeofrectangle(sheet, activeFigure);
+                    canvas.PointChangeModeOfRectangle(sheet, activeFigure);
                     canvas.WriteToPictureBox(sheet);
-                   
-
-
                 }
             }
         }
         public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
-
             if (activeFigure != null)
             {
                 cursorActive = false;
                 canvas.Render();
-                canvas.PointChangeModeofrectangle(sheet, activeFigure);
+                canvas.PointChangeModeOfRectangle(sheet, activeFigure);
                 canvas.WriteToPictureBox(sheet);
             }
         }
-        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
+        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
+        public void MouseClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
-
             foreach (Drawfigure f in canvas.figures)
             {
 
@@ -101,19 +96,19 @@ namespace GraphXDesign
                     cursorActive = true;
                     canvas.RenderExceptFigure(activeFigure);
                     canvas.SaveToCache();
-                 
+
                 }
             }
             activeFigure.figure.ChangeCorners();
 
             if (activeFigure != null)
             {
-                canvas.PointChangeModeofrectangle(sheet, activeFigure);
+                canvas.PointChangeModeOfRectangle(sheet, activeFigure);
             }
             havecorners = true;
-
         }
-}   }  
+    }   
+}  
     
 
 

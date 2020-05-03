@@ -87,6 +87,12 @@ namespace GraphXDesign
             VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
         }
 
+        private void cleanMemory()
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
+
         // ======================================== Методы переключения режимов
 
         private void растроваяГрафикаToolStripMenuItem_Click(object sender, EventArgs e)
@@ -513,9 +519,9 @@ namespace GraphXDesign
 
         private void buttonTransform_Click(object sender, EventArgs e)
         {
-            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-            VectorCanvas.GetCanvas.PointChangeMode(pictureBoxSheet);
             tool = new VectorFigureTransformTool();
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
+            //VectorCanvas.GetCanvas.PointChangeMode(pictureBoxSheet);
             showOptMenu(sender);
         }
 
@@ -548,6 +554,15 @@ namespace GraphXDesign
         }
 
         // ======================================== Методы работы листа с мышью
+
+        private void pictureBoxSheet_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (tool != null)
+            {
+                tool.MouseClick((PictureBox)sender, brush, fill, e);
+                tool = toolTmp;
+            }
+        }
 
         private void pictureBoxSheet_MouseDown(object sender, MouseEventArgs e)
         {
@@ -607,6 +622,7 @@ namespace GraphXDesign
                 tool.MouseUp((PictureBox)sender, brush, fill, e);
                 tool = toolTmp;
             }
+            cleanMemory();
         }
 
         private void pictureBoxSheet_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -667,6 +683,8 @@ namespace GraphXDesign
                     tmp.figures.Add(f);
                 }
                 VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
+
+                cleanMemory();
 
                 // нужно добавить нахождение фигур за пределами листа и их удаление
             }

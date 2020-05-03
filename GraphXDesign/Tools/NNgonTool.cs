@@ -71,5 +71,6 @@ namespace GraphXDesign
             Canvas.GetCanvas.WriteToPictureBox(sheet);
             gon = false;
         }
+        public void MouseClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
     }
 }

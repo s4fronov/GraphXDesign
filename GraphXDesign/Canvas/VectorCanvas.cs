@@ -110,7 +110,28 @@ namespace GraphXDesign
             }
         }
 
-        public void PointChangeModeofrectangle(PictureBox sheet, Drawfigure obj)
+        public void PointChangeModeActiveFigure(PictureBox sheet, Drawfigure obj)
+        {
+            SquareBrush brush = new SquareBrush(1, Color.Red);
+            Square square = new Square();
+
+
+                foreach (Point t in obj.figure.dotlist)
+                {
+                    for (int i = -3; i <= 3; i++)
+                    {
+                        Point p1 = new Point(t.X - 3, t.Y + i);
+                        Point p2 = new Point(t.X + 3, t.Y + i);
+                        square.Createdotlist(p1.X, p1.Y, p2.X, p2.Y);
+                        brush.DrawLine(Bmp, p1.X, p1.Y, p2.X, p2.Y, false);
+                        WriteToPictureBox(sheet);
+
+                    }
+                }
+            
+        }
+
+        public void PointChangeModeOfRectangle(PictureBox sheet, Drawfigure obj)
         {
             SquareBrush brush = new SquareBrush(1, Color.Blue);
             Square square = new Square();
@@ -134,13 +155,6 @@ namespace GraphXDesign
 
                     }
                 }
-            
         }
-
-
-
-       
-        
-
     }
 }

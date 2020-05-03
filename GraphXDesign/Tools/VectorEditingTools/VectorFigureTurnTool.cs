@@ -33,16 +33,15 @@ namespace GraphXDesign
                 }
             }
         }
-        public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
-        {
-        }
+        public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
         public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             cursorActive = false;
             canvas.Render();
             canvas.WriteToPictureBox(sheet);
         }
-        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
+        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
+        public void MouseClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) 
         {
             if (cursorActive)
             {

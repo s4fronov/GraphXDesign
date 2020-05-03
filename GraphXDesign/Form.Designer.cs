@@ -75,8 +75,8 @@
             this.растроваяГрафикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.векторнаяГрафикаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.темаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.темнаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.светлаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.темнаяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelSettings = new System.Windows.Forms.Panel();
             this.panelFill = new System.Windows.Forms.Panel();
             this.pictureBoxFillOnly = new System.Windows.Forms.PictureBox();
@@ -325,7 +325,7 @@
             this.buttonRotate.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.buttonRotate.Size = new System.Drawing.Size(186, 25);
             this.buttonRotate.TabIndex = 6;
-            this.buttonRotate.Text = "   Вращение";
+            this.buttonRotate.Text = "   Поворот на 45°";
             this.buttonRotate.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonRotate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonRotate.UseVisualStyleBackColor = true;
@@ -862,21 +862,21 @@
             this.темаToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
             this.темаToolStripMenuItem.Text = "Тема";
             // 
-            // темнаяToolStripMenuItem
-            // 
-            this.темнаяToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("темнаяToolStripMenuItem.Image")));
-            this.темнаяToolStripMenuItem.Name = "темнаяToolStripMenuItem";
-            this.темнаяToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
-            this.темнаяToolStripMenuItem.Text = "Темная";
-            this.темнаяToolStripMenuItem.Click += new System.EventHandler(this.темнаяToolStripMenuItem_Click);
-            // 
             // светлаяToolStripMenuItem
             // 
             this.светлаяToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("светлаяToolStripMenuItem.Image")));
             this.светлаяToolStripMenuItem.Name = "светлаяToolStripMenuItem";
-            this.светлаяToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.светлаяToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
             this.светлаяToolStripMenuItem.Text = "Светлая";
             this.светлаяToolStripMenuItem.Click += new System.EventHandler(this.светлаяToolStripMenuItem_Click);
+            // 
+            // темнаяToolStripMenuItem
+            // 
+            this.темнаяToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("темнаяToolStripMenuItem.Image")));
+            this.темнаяToolStripMenuItem.Name = "темнаяToolStripMenuItem";
+            this.темнаяToolStripMenuItem.Size = new System.Drawing.Size(128, 26);
+            this.темнаяToolStripMenuItem.Text = "Темная";
+            this.темнаяToolStripMenuItem.Click += new System.EventHandler(this.темнаяToolStripMenuItem_Click);
             // 
             // panelSettings
             // 
@@ -1228,6 +1228,7 @@
             this.pictureBoxSheet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxSheet.TabIndex = 3;
             this.pictureBoxSheet.TabStop = false;
+            this.pictureBoxSheet.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseClick);
             this.pictureBoxSheet.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseDoubleClick);
             this.pictureBoxSheet.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseDown);
             this.pictureBoxSheet.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxSheet_MouseMove);
@@ -1544,7 +1545,7 @@
         private System.Windows.Forms.Button buttonOriginalState;
         private System.Windows.Forms.ToolStripMenuItem темаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem темнаяToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem светлаяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem светлаяToolStripMenuItem;
     }
 }
 
