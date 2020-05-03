@@ -542,6 +542,7 @@ namespace GraphXDesign
 
         private void buttonOriginalState_Click(object sender, EventArgs e)
         {
+            tool = new VectorFigureOriginalStateTool();
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu(sender);
         }

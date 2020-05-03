@@ -26,6 +26,7 @@ namespace GraphXDesign
         }
 
         public List<Drawfigure> figures;
+        public List<Drawfigure> figuresTmp;
 
         public void Init(int width, int height)
         {
@@ -34,6 +35,7 @@ namespace GraphXDesign
             Width = width;
             Height = height;
             figures = new List<Drawfigure>();
+            figuresTmp= new List<Drawfigure>();
         }
         public void RenderWrite(PictureBox pb)
         {
