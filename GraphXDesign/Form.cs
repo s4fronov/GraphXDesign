@@ -531,6 +531,7 @@ namespace GraphXDesign
             tool = new VectorRepaintTool();
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu(sender);
+            panelFill.Visible = true;
         }
 
         private void buttonOriginalState_Click(object sender, EventArgs e)
