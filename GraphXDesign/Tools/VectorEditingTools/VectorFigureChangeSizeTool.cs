@@ -30,7 +30,8 @@ namespace GraphXDesign
         {
             if (havecorners == true)
             {
-                if ((Math.Abs(e.Location.X - activeFigure.figure.cornerBottomRight.X) < 5) && (Math.Abs(e.Location.Y - activeFigure.figure.cornerBottomRight.Y) < 5 ))                 {
+                if ((Math.Abs(e.Location.X - activeFigure.figure.cornerBottomRight.X) < 5) && (Math.Abs(e.Location.Y - activeFigure.figure.cornerBottomRight.Y) < 5 ))
+                {
                     cursorActive = true;
                     activecorner = "cornerBottomRight";
                 }

@@ -12,7 +12,7 @@ using System.IO;
 
 namespace GraphXDesign
 {
-    public partial class FormProgram : System.Windows.Forms.Form
+    public partial class FormProgram : Form
     {
         Color paintColor1;
         Color paintColor2;
@@ -667,22 +667,6 @@ namespace GraphXDesign
 
         // ======================================== Методы дополнительного функционала
 
-        private void pictureBoxUndo_Click(object sender, EventArgs e)
-        {
-            if (canvas == Canvas.GetCanvas)
-                Canvas.GetCanvas.Undo(pictureBoxSheet);
-            //if (canvas == VectorCanvas.GetCanvas)
-            //    VectorCanvas.GetCanvas.Undo(pictureBoxSheet);
-        }
-
-        private void pictureBoxRedo_Click(object sender, EventArgs e)
-        {
-            if (canvas == Canvas.GetCanvas)
-                Canvas.GetCanvas.Redo(pictureBoxSheet);
-            //if (canvas == VectorCanvas.GetCanvas)
-            //    VectorCanvas.GetCanvas.Redo(pictureBoxSheet);
-        }
-
         private void buttonGitHub_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/9rape/GraphXDesign");
@@ -733,6 +717,8 @@ namespace GraphXDesign
             label6.ForeColor = Color.FromArgb(223, 223, 223);
             label8.ForeColor = Color.FromArgb(223, 223, 223);
             label9.ForeColor = Color.FromArgb(223, 223, 223);
+            numericAngle.ForeColor = Color.White;
+            numericAngle.BackColor = Color.FromArgb(48, 48, 48);
         }
 
         private void светлаяToolStripMenuItem_Click(object sender, EventArgs e)
@@ -778,6 +764,8 @@ namespace GraphXDesign
             label6.ForeColor = Color.FromArgb(48, 48, 48);
             label8.ForeColor = Color.FromArgb(48, 48, 48);
             label9.ForeColor = Color.FromArgb(48, 48, 48);
+            numericAngle.ForeColor = Color.Black;
+            numericAngle.BackColor = Color.FromArgb(136, 185, 144);
         }
     }
 }
