@@ -8,12 +8,12 @@ using System.Windows.Forms;
 
 namespace GraphXDesign
 {
-    class VectorFigureTurnTool : ITool
+    public class VectorDeleteFigureTool: ITool
     {
         bool cursorActive;
         VectorCanvas canvas;
         Drawfigure activeFigure;
-        public VectorFigureTurnTool()
+        public VectorDeleteFigureTool()
         {
             cursorActive = false;
             canvas = VectorCanvas.GetCanvas;
@@ -29,12 +29,15 @@ namespace GraphXDesign
                     cursorActive = true;
                     canvas.RenderExceptFigure(activeFigure);
                     canvas.SaveToCache();
-
+                    
                 }
             }
+            canvas.figures.Remove(activeFigure);
+            canvas.Render();
         }
         public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
+            
         }
         public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
@@ -44,13 +47,7 @@ namespace GraphXDesign
         }
         public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
-            if (cursorActive)
-            {
-                canvas.LoadFromCache();
-                activeFigure.figure.Turn();
-                activeFigure.Draw(canvas);
-                canvas.WriteToPictureBox(sheet);
-            }
+            
         }
     }
 }

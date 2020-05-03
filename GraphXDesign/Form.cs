@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace GraphXDesign
 {
-    public partial class Form : System.Windows.Forms.Form
+    public partial class FormProgram : System.Windows.Forms.Form
     {
         Color paintColor1;
         Color paintColor2;
@@ -22,13 +22,13 @@ namespace GraphXDesign
         IFill fill;
         ITool tool;
         ITool toolTmp;
-        int option; // 0 - круг, 1 - квадрат
+        int option; // 1 - круг, 2 - квадрат
         bool expandActive;
         bool cursorActive;
         private Point MouseHook;
         AbstractCanvas canvas; //переключается во вкладке режим
 
-        public Form()
+        public FormProgram()
         {
             InitializeComponent();
         }
@@ -43,13 +43,11 @@ namespace GraphXDesign
             numericAngle.Value = 5;
             expandActive = false;
             cursorActive = false;
-            brush = new CircleBrush(brushSize, paintColor1);
-            brush.BrushColor = palette1.BackColor;
-            fill = new NoFill(paintColor2);
-            tool = new PenTool();
             startProgram();
             showModeMenu();
         }
+
+        // ======================================== Методы сброса
 
         private void startProgram()
         {
@@ -58,22 +56,59 @@ namespace GraphXDesign
             if (canvas == Canvas.GetCanvas)
             {
                 Canvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
+                setDefaultToolRaster();
             }
             if (canvas == VectorCanvas.GetCanvas)
             {
                 VectorCanvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
+                setDefaultToolVector();
             }
             if (canvas == null)
             {
                 Canvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
                 VectorCanvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height);
                 canvas = Canvas.GetCanvas;
+                brush = new CircleBrush(brushSize, paintColor1);
+                brush.BrushColor = palette1.BackColor;
+                fill = new NoFill(paintColor2);
+                tool = new PenTool();
             }
             //canvas = Canvas.GetCanvas;
             pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
         }
 
-        // Методы меню
+        private void setDefaultToolRaster()
+        {
+            tool = new PenTool();
+        }
+
+        private void setDefaultToolVector()
+        {
+            tool = new FigureTool(new Line(), canvas);
+            VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
+        }
+
+        // ======================================== Методы переключения режимов
+
+        private void растроваяГрафикаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            canvas = Canvas.GetCanvas;
+            canvas.WriteToPictureBox(pictureBoxSheet);
+            labelTool.Text = "   Кисть";
+            tool = new PenTool();
+            showModeMenu();
+        }
+
+        private void векторнаяГрафикаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            canvas = VectorCanvas.GetCanvas;
+            canvas.WriteToPictureBox(pictureBoxSheet);
+            labelTool.Text = "   Линия";
+            tool = null;
+            showModeMenu();
+        }
+
+        // ======================================== Методы меню
 
         private void changeFill()
         {
@@ -94,36 +129,49 @@ namespace GraphXDesign
             }
         }
 
-        private void showOptMenu()
+        private void showOptMenu(object sender)
         {
-            // if (!(tool is NgonTool))
             panelAngles.Visible = false;
             panelFill.Visible = false;
+            labelTool.Text = (sender as Button).Text;
         }
 
         private void showModeMenu()
         {
             if (canvas == Canvas.GetCanvas)
             {
-                labelMode.Text = "Режим растровой графики";
+                tool = new PenTool();
+                labelMode.Text = "Растровая графика";
                 buttonEdit.Visible = false;
                 panel5.Visible = false;
                 buttonBrush.Visible = true;
                 buttonNNgon.Visible = true;
+                buttonFill.Visible = true;
+                buttonEraser.Visible = true;
+                buttonUndo.Visible = true;
+                buttonRedo.Visible = true;
                 panelTools.Height = 208;
+                panelInstruments.Width = 196;
             }
             if (canvas == VectorCanvas.GetCanvas)
             {
-                labelMode.Text = "Режим векторной графики";
+                tool = new FigureTool(new Line(), canvas);
+                VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
+                labelMode.Text = "Векторная графика";
                 buttonEdit.Visible = true;
                 panel5.Visible = true;
                 buttonBrush.Visible = false;
                 buttonNNgon.Visible = false;
+                buttonFill.Visible = false;
+                buttonEraser.Visible = false;
+                buttonUndo.Visible = false;
+                buttonRedo.Visible = false;
                 panelTools.Height = 158;
+                panelInstruments.Width = 84;
             }
         }
 
-        // Методы верхней панели и ее объектов
+        // ======================================== Методы верхней панели и ее объектов
 
         private void panelProgram_MouseMove(object sender, MouseEventArgs e) // Дижение окна формы
         {
@@ -141,13 +189,16 @@ namespace GraphXDesign
             if (expandActive == false)
             {
                 this.WindowState = FormWindowState.Maximized;
-                this.TopMost = true;
+                //this.Size = Screen.PrimaryScreen.WorkingArea.Size;
+                //this.Location = new Point(0, 0);
+                this.TopMost = false;
                 expandActive = true;
-                groupBoxMenu.Height = 2000;
+                groupBoxMenu.Height = this.Height;
             }
             else if (expandActive == true)
             {
                 this.WindowState = FormWindowState.Normal;
+                //this.Size = new Size(960, 616);
                 expandActive = false;
             }
         }
@@ -157,33 +208,63 @@ namespace GraphXDesign
             this.Close();
         }
 
-        private void CreateToolStripMenuItem_Click(object sender, EventArgs e) // Новый
+        private void CreateToolStripMenuItem_Click(object sender, EventArgs e) // Новый файл
         {
             pictureBoxSheet.Image = null;
             canvas.Bmp = null;
             startProgram();
         }
 
-        private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // Открыть
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e) // Открыть файл
         {
-            var fileContent = string.Empty;
-            var filePath = string.Empty;
-
-            openFileDialog.InitialDirectory = "c:\\";
-            openFileDialog.Filter = " All files (*.*)|*.*| Portable net graphics (*.png)|*.png| Bitmap files (*.bmp)|*.bmp";
-            openFileDialog.FilterIndex = 1;
-            openFileDialog.RestoreDirectory = true;
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            if (canvas == Canvas.GetCanvas)
             {
-                filePath = openFileDialog.FileName;
-                pictureBoxSheet.Load(filePath + "");
-                startProgram();
-                pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
+                string filePath;
+
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = " All files (*.*)|*.*| Portable net graphics (*.png)|*.png| Bitmap files (*.bmp)|*.bmp";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath = openFileDialog.FileName;
+                    pictureBoxSheet.Load(filePath + "");
+                    startProgram();
+                    pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
+                }
+            }
+            if (canvas == VectorCanvas.GetCanvas)
+            {
+                string[] fileContent;
+                string filePath;
+
+                openFileDialog.InitialDirectory = "c:\\";
+                saveFileDialog.Filter = " JSON (*.json)|*.json";
+                openFileDialog.FilterIndex = 1;
+                openFileDialog.RestoreDirectory = true;
+                var jsonSerializerSettings = new JsonSerializerSettings()
+                {
+                    TypeNameHandling = TypeNameHandling.All
+                };
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    filePath = openFileDialog.FileName;
+                    fileContent = File.ReadAllLines(filePath);
+                    VectorCanvas tmp = VectorCanvas.GetCanvas;
+                    tmp.figures.Clear();
+                    for (int i = 0; i < fileContent.Length; i++)
+                    {
+                        Drawfigure f = JsonConvert.DeserializeObject<Drawfigure>(fileContent[i], jsonSerializerSettings);
+                        tmp.figures.Add(f);
+                    }
+                    VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
+                }
             }
         }
 
-        private void SaveToolStripMenuItem_Click(object sender, EventArgs e) // Сохранить
+        private void SaveToolStripMenuItem_Click(object sender, EventArgs e) // Сохранить файл
         {
             if (canvas == Canvas.GetCanvas)
             {
@@ -198,11 +279,28 @@ namespace GraphXDesign
             }
             if (canvas == VectorCanvas.GetCanvas)
             {
-                //string json = JsonSerializer.Serialize(сanvas.figures);
+                saveFileDialog.Filter = " JSON (*.json)|*.json";
+                saveFileDialog.FilterIndex = 1;
+                saveFileDialog.RestoreDirectory = true;
+                var jsonSerializerSettings = new JsonSerializerSettings()
+                {
+                    TypeNameHandling = TypeNameHandling.All
+                };
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    VectorCanvas tmp = VectorCanvas.GetCanvas;
+                    string file = "";
+                    foreach (Drawfigure f in tmp.figures)
+                    {
+                        string json = JsonConvert.SerializeObject(f, jsonSerializerSettings);
+                        file += json + "\n";
+                    }
+                    File.WriteAllText(saveFileDialog.FileName, file);
+                }
             }
         }
 
-        // Методы панели настроек инструмента
+        // ======================================== Методы вехней панели инструментов
 
         public void palette1_Click(object sender, EventArgs e)
         {
@@ -221,7 +319,7 @@ namespace GraphXDesign
             fill.FillColor = palette2.BackColor;
         }
 
-        private void pictureBoxReverse_Click(object sender, EventArgs e)
+        private void buttonReverse_Click(object sender, EventArgs e)
         {
             palette1.BackColor = paintColor2;
             palette2.BackColor = brush.BrushColor;
@@ -231,28 +329,60 @@ namespace GraphXDesign
             fill.FillColor = palette2.BackColor;
         }
 
-        private void pictureBoxPipette_Click(object sender, EventArgs e)
+        private void buttonPipette_Click(object sender, EventArgs e)
         {
             tool = new PipetteTool();
             option = 0;
         }
 
-        private void pictureBoxFill_Click(object sender, EventArgs e)
+        private void buttonFill_Click(object sender, EventArgs e)
         {
-            tool = new FillTool();
+            tool = new FillTool(canvas);
         }
 
-        private void pictureBoxEraser_Click(object sender, EventArgs e)
+        private void buttonEraser_Click(object sender, EventArgs e)
         {
             tool = new EraserTool();
-            // brush.BrushColor = pictureBoxSheet.BackColor; // Color.Transparent для прозрачного PNG
         }
 
-        private void pictureBoxClearAll_Click(object sender, EventArgs e)
+        private void buttonUndo_Click(object sender, EventArgs e)
         {
-            pictureBoxSheet.Image = null;
-            canvas.Bmp = null;
-            startProgram();
+            if (canvas == Canvas.GetCanvas)
+                Canvas.GetCanvas.Undo(pictureBoxSheet);
+            //if (canvas == VectorCanvas.GetCanvas)
+            //    VectorCanvas.GetCanvas.Undo(pictureBoxSheet);
+        }
+
+        private void buttonRedo_Click(object sender, EventArgs e)
+        {
+            if (canvas == Canvas.GetCanvas)
+                Canvas.GetCanvas.Redo(pictureBoxSheet);
+            //if (canvas == VectorCanvas.GetCanvas)
+            //    VectorCanvas.GetCanvas.Redo(pictureBoxSheet);
+        }
+
+        private void labelFillCont_Click(object sender, EventArgs e)
+        {
+            changeFill();
+            labelFillCont.ForeColor = Color.Gold;
+            pictureBoxFillCont.Visible = true;
+            fill = new SolidFill(fill);
+        }
+
+        private void labelCont_Click(object sender, EventArgs e)
+        {
+            changeFill();
+            labelCont.ForeColor = Color.Gold;
+            pictureBoxContOnly.Visible = true;
+            fill = new NoFill(fill);
+        }
+
+        private void labelFill_Click(object sender, EventArgs e)
+        {
+            changeFill();
+            labelFill.ForeColor = Color.Gold;
+            pictureBoxFillOnly.Visible = true;
+            fill = new OnlyFill(fill);
         }
 
         private void trackBarSize_Scroll(object sender, EventArgs e)
@@ -266,21 +396,36 @@ namespace GraphXDesign
             tool = new FigureTool(new N_gon(Convert.ToInt32(numericAngle.Value)), canvas);
         }
 
-        // Методы панели инструментов
+        private void brushSquare_Click(object sender, EventArgs e)
+        {
+            brush = new SquareBrush(brush);
+            brushSquare.BorderStyle = BorderStyle.Fixed3D;
+            brushCircle.BorderStyle = BorderStyle.None;
+        }
+
+        private void brushCircle_Click(object sender, EventArgs e)
+        {
+            brush = new CircleBrush(brush);
+            brushSquare.BorderStyle = BorderStyle.None;
+            brushCircle.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        // ======================================== Методы боковой панели инструментов
 
         private void buttonBrush_Click(object sender, EventArgs e)
         {
+
             tool = new PenTool();
-            showOptMenu();
+            showOptMenu(sender);
             option = 0;
         }
 
         private void buttonLine_Click(object sender, EventArgs e)
         {
             tool = new FigureTool(new Line(), canvas);
-            fill = new NoFill(fill); // только первый цвет, по умолчанию
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-            showOptMenu();
+            fill = new NoFill(fill);
+            showOptMenu(sender);
             option = 0;
         }
 
@@ -288,7 +433,7 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new Ellips(), canvas);
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-            showOptMenu();
+            showOptMenu(sender);
             panelFill.Visible = true;
             option = 1;
         }
@@ -297,7 +442,7 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new Rectangle(), canvas);
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-            showOptMenu();
+            showOptMenu(sender);
             panelFill.Visible = true;
             option = 2;
         }
@@ -306,7 +451,8 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new Trianglesamesizes(), canvas);
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-            showOptMenu();
+            showOptMenu(sender);
+            labelTool.Text += " равнобедренный";
             panelFill.Visible = true;
             option = 0;
         }
@@ -315,7 +461,8 @@ namespace GraphXDesign
         {
             tool = new FigureTool(new TriangleRectangular(), canvas);
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-            showOptMenu();
+            showOptMenu(sender);
+            labelTool.Text += " прямоугольный";
             panelFill.Visible = true;
             option = 0;
         }
@@ -323,13 +470,15 @@ namespace GraphXDesign
         private void buttonNNgon_Click(object sender, EventArgs e)
         {
             tool = new NNgonTool();
-            showOptMenu();
+            showOptMenu(sender);
+            labelTool.Text += " неправильный";
             option = 0;
         }
 
         private void buttonNAngular_Click(object sender, EventArgs e)
         {
-            showOptMenu();
+            showOptMenu(sender);
+            labelTool.Text += " равносторонний";
             n = Convert.ToInt32(numericAngle.Value);
             option = 0;
             panelAngles.Visible = true;
@@ -347,7 +496,51 @@ namespace GraphXDesign
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
         }
 
-        // Методы работы листа с мышью
+        private void buttonHand_Click(object sender, EventArgs e)
+        {
+            tool = new VectorFigureMoveTool();
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
+            showOptMenu(sender);
+        }
+
+        private void buttonResize_Click(object sender, EventArgs e)
+        {
+            tool = new VectorFigureChangeSizeTool();
+            showOptMenu(sender);
+        }
+
+        private void buttonTransform_Click(object sender, EventArgs e)
+        {
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
+            VectorCanvas.GetCanvas.PointChangeMode(pictureBoxSheet);
+            tool = new VectorFigureTransformTool();
+            showOptMenu(sender);
+        }
+
+        private void buttonRotate_Click(object sender, EventArgs e)
+        {
+            tool = new VectorFigureTurnTool();
+            showOptMenu(sender);
+        }
+
+        private void buttonPaint_Click(object sender, EventArgs e)
+        {
+            tool = new VectorRepaintTool();
+            showOptMenu(sender);
+        }
+
+        private void buttonOriginalState_Click(object sender, EventArgs e)
+        {
+            showOptMenu(sender);
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            tool = new VectorDeleteFigureTool();
+            showOptMenu(sender);
+        }
+
+        // ======================================== Методы работы листа с мышью
 
         private void pictureBoxSheet_MouseDown(object sender, MouseEventArgs e)
         {
@@ -361,19 +554,22 @@ namespace GraphXDesign
                 toolTmp = tool;
                 if ((Control.ModifierKeys & Keys.Shift) == Keys.Shift)
                 {
-                    if (option == 1)
+                    switch (option)
                     {
-                        tool = new FigureTool(new Circle(), canvas);
-                    }
-                    if (option == 2)
-                    {
-                        tool = new FigureTool(new Square(), canvas);
+                        case 1:
+                            tool = new FigureTool(new Circle(), canvas);
+                            break;
+                        case 2:
+                            tool = new FigureTool(new Square(), canvas);
+                            break;
+                        default:
+                            break;
                     }
                 }
                 else
                     tool = toolTmp;
                 tool.MouseDown((PictureBox)sender, brush, fill, e);
-            }  
+            }
         }
 
         private void pictureBoxSheet_MouseMove(object sender, MouseEventArgs e)
@@ -406,7 +602,7 @@ namespace GraphXDesign
             }
         }
 
-        // Методы изменения размера листа
+        // ======================================== Методы изменения размера листа
 
         private void panelResizeSheet_MouseDown(object sender, MouseEventArgs e)
         {
@@ -432,26 +628,35 @@ namespace GraphXDesign
         {
             if (cursorActive == true)
             {
+                var jsonSerializerSettings = new JsonSerializerSettings()
+                {
+                    TypeNameHandling = TypeNameHandling.All
+                };
+                VectorCanvas tmp = VectorCanvas.GetCanvas;
+                string file = "";
+                foreach (Drawfigure f in tmp.figures)
+                {
+                    string json = JsonConvert.SerializeObject(f, jsonSerializerSettings);
+                    file += json + "|";
+                }
+
                 pictureBoxSheet.Size += (Size)e.Location;
-                startProgram();
-                pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle); // Эта строка, делает фон листа белым
-                cursorActive = false;
+                pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
+                VectorCanvas.GetCanvas.Init(pictureBoxSheet.Width, pictureBoxSheet.Height); 
+
+                string[] lines = file.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries);
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    Drawfigure f = JsonConvert.DeserializeObject<Drawfigure>(lines[i], jsonSerializerSettings);
+                    tmp.figures.Add(f);
+                }
+                VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
+
+                // нужно добавить нахождение фигур за пределами листа и их удаление
             }
         }
 
-        private void brushSquare_Click(object sender, EventArgs e)
-        {
-            brush = new SquareBrush(brush);
-            brushSquare.BorderStyle = BorderStyle.Fixed3D;
-            brushCircle.BorderStyle = BorderStyle.None;
-        }
-
-        private void brushCircle_Click(object sender, EventArgs e)
-        {
-            brush = new CircleBrush(brush);
-            brushSquare.BorderStyle = BorderStyle.None;
-            brushCircle.BorderStyle = BorderStyle.Fixed3D;
-        }
+        // ======================================== Методы дополнительного функционала
 
         private void pictureBoxUndo_Click(object sender, EventArgs e)
         {
@@ -469,69 +674,99 @@ namespace GraphXDesign
             //    VectorCanvas.GetCanvas.Redo(pictureBoxSheet);
         }
 
-        private void labelFillCont_Click(object sender, EventArgs e)
-        {
-            changeFill();
-            labelFillCont.ForeColor = Color.Gold;
-            pictureBoxFillCont.Visible = true;
-            fill = new SolidFill(fill);
-        }
-
-        private void labelCont_Click(object sender, EventArgs e)
-        {
-            changeFill();
-            labelCont.ForeColor = Color.Gold;
-            pictureBoxContOnly.Visible = true;
-            fill = new NoFill(fill);
-        }
-
-        private void labelFill_Click(object sender, EventArgs e)
-        {
-            changeFill();
-            labelFill.ForeColor = Color.Gold;
-            pictureBoxFillOnly.Visible = true;
-            fill = new OnlyFill(fill);
-        }
-        private void растроваяГрафикаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            canvas = Canvas.GetCanvas;
-            canvas.WriteToPictureBox(pictureBoxSheet);
-            tool = new PenTool();
-            showModeMenu();
-        }
-        private void векторнаяГрафикаToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            canvas = VectorCanvas.GetCanvas;
-            canvas.WriteToPictureBox(pictureBoxSheet);
-            tool = null;
-            showModeMenu();
-        }
-        private void buttonHand_Click(object sender, EventArgs e)
-        {
-            tool = new VectorFigureMoveTool();
-            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-            showOptMenu();
-        }
-        private void buttonResize_Click(object sender, EventArgs e)
-        {
-            tool = new VectorFigureChangeSizeTool();
-            showOptMenu();
-        }
-        private void buttonTransform_Click(object sender, EventArgs e)
-        {
-            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
-            VectorCanvas.GetCanvas.PointChangeMode(pictureBoxSheet); // берет пустую реализацию из родителя, вместо нормальной из наследника
-            tool = new VectorFigureTransformTool();
-            showOptMenu();
-        }
-        private void buttonRotate_Click(object sender, EventArgs e)
-        {
-            tool = new VectorFigureTurnTool();
-            showOptMenu();
-        }
         private void buttonGitHub_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/9rape/GraphXDesign");
+        }
+
+        // ======================================== Методы изменения темы интерфейса
+
+        private void темнаяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelSettings.BackColor = Color.FromArgb(48, 48, 48);
+            panelInfo.BackColor = Color.FromArgb(32, 32, 32);
+            panelTools.BackColor = Color.FromArgb(48, 48, 48);
+            panelTools.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonTools.BackColor = Color.FromArgb(32, 32, 32);
+            buttonTools.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonEdit.BackColor = Color.FromArgb(32, 32, 32);
+            buttonEdit.ForeColor = Color.FromArgb(136, 185, 144);
+            panel5.BackColor = Color.FromArgb(32, 32, 32);
+            panel5.ForeColor = Color.FromArgb(136, 185, 144);
+            groupBoxMenu.BackColor = Color.FromArgb(32, 32, 32);
+            panelProgram.BackColor = Color.FromArgb(136, 185, 144);
+            файлToolStripMenuItem.BackColor = Color.FromArgb(136, 185, 144);
+            режимToolStripMenuItem.BackColor = Color.FromArgb(136, 185, 144);
+            темаToolStripMenuItem.BackColor = Color.FromArgb(136, 185, 144);
+            buttonBrush.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonCircle.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonLine.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonSquare.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonNAngular.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonNNgon.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonTriangleRectangular.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonTriangleIsosceles.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonHand.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonDelete.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonResize.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonTransform.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonRotate.ForeColor = Color.FromArgb(136, 185, 144);
+            buttonPaint.ForeColor = Color.FromArgb(136, 185, 144);
+            panel2.BackColor = Color.FromArgb(32, 32, 32);
+            imageLogo.BackColor = Color.FromArgb(136, 185, 144);
+            label11.ForeColor = Color.White;
+            label10.ForeColor = Color.White;
+            labelX.ForeColor = Color.White;
+            labelY.ForeColor = Color.White;
+            labelTool.ForeColor = Color.White;
+            labelMode.ForeColor = Color.White;
+            label6.ForeColor = Color.White;
+            label8.ForeColor = Color.White;
+            label9.ForeColor = Color.White;
+        }
+
+        private void светлаяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panelSettings.BackColor = Color.FromArgb(31,101,87);
+            panelInfo.BackColor = Color.FromArgb(136, 185, 144);
+            panelTools.BackColor = Color.FromArgb(31, 101, 87);
+            panelTools.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonTools.BackColor = Color.FromArgb(136, 185, 144);
+            buttonTools.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonEdit.BackColor = Color.FromArgb(136, 185, 144);
+            buttonEdit.ForeColor = Color.FromArgb(255, 255, 255);
+            panel5.BackColor = Color.FromArgb(31, 101, 87);
+            panel5.ForeColor = Color.FromArgb(255, 255, 255);
+            groupBoxMenu.BackColor = Color.FromArgb(136, 185, 144);
+            panelProgram.BackColor = Color.FromArgb(136, 185, 144);
+            файлToolStripMenuItem.BackColor = Color.FromArgb(136, 185, 144);
+            режимToolStripMenuItem.BackColor = Color.FromArgb(136, 185, 144);
+            темаToolStripMenuItem.BackColor = Color.FromArgb(136, 185, 144);
+            buttonBrush.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonCircle.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonLine.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonSquare.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonNAngular.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonNNgon.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonTriangleRectangular.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonTriangleIsosceles.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonHand.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonDelete.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonResize.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonTransform.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonRotate.ForeColor = Color.FromArgb(255, 255, 255);
+            buttonPaint.ForeColor = Color.FromArgb(255, 255, 255);
+            panel2.BackColor = Color.FromArgb(136, 185, 144);
+            imageLogo.BackColor = Color.FromArgb(31, 101, 87);
+            label11.ForeColor = Color.Black;
+            label10.ForeColor = Color.Black;
+            labelX.ForeColor = Color.Black;
+            labelY.ForeColor = Color.Black;
+            labelTool.ForeColor = Color.Black;
+            labelMode.ForeColor = Color.Black;
+            label6.ForeColor = Color.Black;
+            label8.ForeColor = Color.Black;
+            label9.ForeColor = Color.Black;
         }
     }
 }

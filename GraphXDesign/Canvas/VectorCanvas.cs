@@ -57,6 +57,7 @@ namespace GraphXDesign
                     f.Draw(this);
             }
         }
+
         //===================================================== Попытка реализовать смещение вершин
 
         public int FindPointByPoint(Point p)
