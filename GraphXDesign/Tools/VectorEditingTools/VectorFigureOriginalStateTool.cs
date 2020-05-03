@@ -8,12 +8,19 @@ using System.Windows.Forms;
 
 namespace GraphXDesign
 {
+<<<<<<< HEAD
     class VectorFigureOriginalStateTool : ITool
+=======
+     class VectorFigureOriginalStateTool : ITool
+>>>>>>> NewTestCase
     {
         bool cursorActive;
         VectorCanvas canvas;
         Drawfigure activeFigure;
+<<<<<<< HEAD
         Drawfigure activeFigureTmp;
+=======
+>>>>>>> NewTestCase
         int index;
         public VectorFigureOriginalStateTool()
         {
@@ -26,6 +33,7 @@ namespace GraphXDesign
             foreach (Drawfigure f in canvas.figures)
             {
                 if (f.figure.IsInside(e.Location))
+<<<<<<< HEAD
                 {
                     activeFigure = f;
                     index = canvas.figures.IndexOf(activeFigure);
@@ -41,6 +49,15 @@ namespace GraphXDesign
 
                 }
 
+=======
+                {  
+                    index = canvas.figures.IndexOf(f);
+                    cursorActive = true;
+                    canvas.SaveToCache();
+                    
+                }
+               
+>>>>>>> NewTestCase
             }
         }
         public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
@@ -49,14 +66,22 @@ namespace GraphXDesign
         public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             cursorActive = false;
+<<<<<<< HEAD
+=======
+            canvas.figures.RemoveAt(index);
+            canvas.figures.Insert(index, canvas.figuresTmp[index]);
+>>>>>>> NewTestCase
             canvas.Render();
             canvas.WriteToPictureBox(sheet);
         }
         public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
         }
+<<<<<<< HEAD
         public void MouseClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
         }
+=======
+>>>>>>> NewTestCase
     }
 }
