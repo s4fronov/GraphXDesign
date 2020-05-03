@@ -561,7 +561,6 @@ namespace GraphXDesign
             if (tool != null)
             {
                 tool.MouseClick((PictureBox)sender, brush, fill, e);
-                tool = toolTmp;
             }
         }
 
