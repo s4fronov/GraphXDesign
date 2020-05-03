@@ -184,13 +184,10 @@ namespace GraphXDesign
                 cornerBottomLeft.X += dx;
                 cornerTopRight.Y += dy;
             }
-
-
+            CreateCenter();
         }
 
-
-
-            public object Clone()
+        public object Clone()
         {
             return MemberwiseClone();
         }
