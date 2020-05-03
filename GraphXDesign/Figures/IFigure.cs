@@ -145,7 +145,7 @@ namespace GraphXDesign
                 for (int i = 0; i < dotlist.Count; i++)
                 {
 
-                    dotlist[i] = new Point((int)(dotlist[i].X + dx * (dotlist[i].X - leftX) / (rightX - leftX)), (int)(dotlist[i].Y + dy * (dotlist[i].Y - topY) / (bottomY - topY)));
+                    dotlist[i] = new Point((int)(Math.Round(dotlist[i].X + dx * (dotlist[i].X - leftX) / (rightX - leftX))), (int)(Math.Round(dotlist[i].Y + dy * (dotlist[i].Y - topY) / (bottomY - topY))));
                 }
 
                 cornerBottomRight.X += dx;
@@ -159,9 +159,9 @@ namespace GraphXDesign
                 for (int i = 0; i < dotlist.Count; i++)
                 {
 
-                    dotlist[i] = new Point((int)(dotlist[i].X + dx*(dotlist[i].X - rightX) / (leftX  - rightX)), (int)(dotlist[i].Y + dy * (dotlist[i].Y - topY) / (bottomY - topY)));
+                    dotlist[i] = new Point((int)(Math.Round(dotlist[i].X + dx * (dotlist[i].X - rightX) / (leftX - rightX))), (int)(Math.Round(dotlist[i].Y + dy * (dotlist[i].Y - topY) / (bottomY - topY))));
                 }
-            
+
 
                 cornerBottomLeft.X += dx;
                 cornerBottomLeft.Y += dy;
@@ -174,7 +174,7 @@ namespace GraphXDesign
                 for (int i = 0; i < dotlist.Count; i++)
                 {
 
-                    dotlist[i] = new Point((int)(dotlist[i].X + dx * (dotlist[i].X - leftX) / (rightX - leftX)), (int)(dotlist[i].Y + dy * (bottomY -dotlist[i].Y ) / (bottomY - topY)));
+                    dotlist[i] = new Point((int)(Math.Round(dotlist[i].X + dx * (dotlist[i].X - leftX) / (rightX - leftX))), (int)(Math.Round(dotlist[i].Y + dy * (bottomY - dotlist[i].Y) / (bottomY - topY))));
                 }
 
                 cornerTopRight.X += dx;
@@ -187,7 +187,7 @@ namespace GraphXDesign
                 for (int i = 0; i < dotlist.Count; i++)
                 {
 
-                    dotlist[i] = new Point((int)(dotlist[i].X + dx * (dotlist[i].X  - rightX ) / (leftX - rightX)), (int)(dotlist[i].Y + dy * (bottomY - dotlist[i].Y) / (bottomY - topY)));
+                    dotlist[i] = new Point((int)(Math.Round(dotlist[i].X + dx * (dotlist[i].X - rightX) / (leftX - rightX))), (int)(Math.Round(dotlist[i].Y + dy * (bottomY - dotlist[i].Y) / (bottomY - topY))));
                 }
 
                 cornerTopLeft.X += dx;

@@ -23,6 +23,8 @@ namespace GraphXDesignTestMath
         }
 
         [TestCase(1, 1, 4, 2, ExpectedResult = new int[] { 1, 1, 4, 1, 4, 2, 1, 2 })]
+        [TestCase(0, 0, 0, 0, ExpectedResult = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 })]
+        [TestCase(-1, -1, 0, 0, ExpectedResult = new int[] { -1, -1, 0, -1, 0, 0, -1, 0 })]
         public int[] RectangleTest(int x1, int y1, int x2, int y2)
         {
             GraphXDesign.Rectangle a = new GraphXDesign.Rectangle();
@@ -32,6 +34,8 @@ namespace GraphXDesignTestMath
         }
 
         [TestCase(1, 1, 4, 2, ExpectedResult = new int[] { 1, 1, 2, 1, 2, 2, 1, 2 })]
+        [TestCase(0, 0, 0, 0, ExpectedResult = new int[] { 0, 0, 0, 0, 0, 0, 0, 0 })]
+        [TestCase(-1, -1, 0, 0, ExpectedResult = new int[] { -1, -1, 0, -1, 0, 0, -1, 0 })]
         public int[] SquareTest(int x1, int y1, int x2, int y2)
         {
             GraphXDesign.Square a = new GraphXDesign.Square();
@@ -41,6 +45,8 @@ namespace GraphXDesignTestMath
         }
 
         [TestCase(1, 1, 2, 2, ExpectedResult = new int[] { 1, 1, 2, 2, 1, 2 })]
+        [TestCase(0, 0, 0, 0, ExpectedResult = new int[] { 0, 0, 0, 0, 0, 0 })]
+        [TestCase(-1, -1, 0, 0, ExpectedResult = new int[] { -1, -1, 0, 0, -1, 0 })]
         public int[] TriangleRectangularTest(int x1, int y1, int x2, int y2)
         {
             TriangleRectangular a = new TriangleRectangular();
@@ -50,6 +56,8 @@ namespace GraphXDesignTestMath
         }
 
         [TestCase(5, 5, 7, 8, ExpectedResult = new int[] { 5, 5, 7, 8, 3, 8 })]
+        [TestCase(0, 0, 0, 0, ExpectedResult = new int[] { 0, 0, 0, 0, 0, 0 })]
+        [TestCase(-1, -1, 0, 0, ExpectedResult = new int[] { -1, -1, 0, 0, -2, 0 })]
         public int[] TrianglesamesizesTest(int x1, int y1, int x2, int y2)
         {
             Trianglesamesizes a = new Trianglesamesizes();
@@ -59,6 +67,7 @@ namespace GraphXDesignTestMath
         }
 
         [TestCase(3, 5, 2, 7, ExpectedResult = true)]
+        [TestCase(2, 2, 2, 7, ExpectedResult = false)]
         public bool EllipsTest(int x1, int y1, int x2, int y2)
         {
             Ellips a = new Ellips();
@@ -71,6 +80,7 @@ namespace GraphXDesignTestMath
         }
 
         [TestCase(4, 4, 6, 4, ExpectedResult = true)]
+        [TestCase(0, 0, 0, 0, ExpectedResult = false)]
         public bool CircleTest(int x1, int y1, int x2, int y2)
         {
             Circle a = new Circle();
@@ -82,6 +92,7 @@ namespace GraphXDesignTestMath
             return actual;
         }
         [TestCase(4, 4, 6, 4, ExpectedResult = true)]
+        [TestCase(0, 0, 0, 0, ExpectedResult = false)]
         public bool N_gonTest(int x1, int y1, int x2, int y2)
         {
             N_gon a = new N_gon(8);

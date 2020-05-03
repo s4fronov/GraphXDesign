@@ -14,5 +14,6 @@ namespace GraphXDesign
         void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e);
         void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e);
         void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e);
+        void MouseClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e);
     }
 }
