@@ -41,6 +41,21 @@ namespace GraphXDesign
                     break;
                 }
             }
+
+            //для дабл клика(добавления вершин)
+            if (activeFigure == null)
+            {
+                cursorActive = false;
+                foreach (Drawfigure f in canvas.figures)
+                {
+                    if (f.figure.IsInside(e.Location))
+                    {
+                        activeFigure = f;
+                    }
+                }
+            }
+            //---------
+
             canvas.RenderExceptFigure(activeFigure);
             canvas.SaveToCache();
         }
@@ -67,6 +82,20 @@ namespace GraphXDesign
             
         }
         public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
-        { }
+        {
+            if (activeFigure != null)
+            {
+                canvas.LoadFromCache();
+
+                //если попали по точке удаляем точку
+                //если нет, пытаемся добавить точку на грань
+                if (!activeFigure.figure.DeleteApproximatePoint(e.Location, 10))
+                    activeFigure.figure.AddPoint(e.Location, 10);
+
+                activeFigure.Draw(canvas);
+                canvas.PointChangeMode(sheet);
+                canvas.WriteToPictureBox(sheet);
+            }
+        }
     }
 }

@@ -62,9 +62,20 @@ namespace GraphXDesign
 
         public bool IsInside(Point point)
         {
-            /*if (cornerTopLeft.X <= point.X && point.X <= cornerBottomRight.X &&
-                cornerTopLeft.Y <= point.Y && point.Y <= cornerBottomRight.Y)
-                return true;*/
+            int tolerance = 10;
+            if (dotlist.Count == 2)
+            {
+                if (dotlist[0] != dotlist[1])
+                {
+                    Point pointToAdd = PerpendicularIntersection(dotlist[0], dotlist[1], point);
+                    if (distanceSquared(pointToAdd, point) <= tolerance * tolerance &&
+                        IsInsideLineSegment(dotlist[0], dotlist[1], pointToAdd))
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
 
             int intersectCount = 0;
             for (int i = 0; i < dotlist.Count; i++)
@@ -238,6 +249,71 @@ namespace GraphXDesign
             cornerBottomRight = new Point(rightX, bottomY);
             cornerBottomLeft = new Point(leftX, bottomY);
             cornerTopRight = new Point(rightX, topY);
+        }
+
+        //добавить проекцию точки на сторону в фигуру
+        public void AddPoint(Point point, int tolerance)
+        {
+            for (int i = 0; i < dotlist.Count; i++)
+            {
+                int i1 = i;
+                int i2 = (i < dotlist.Count - 1) ? (i + 1) : 0;
+                if (dotlist[i1] != dotlist[i2])
+                {
+                    Point pointToAdd = PerpendicularIntersection(dotlist[i1], dotlist[i2], point);
+                    if (distanceSquared(pointToAdd, point) <= tolerance * tolerance &&
+                        IsInsideLineSegment(dotlist[i1], dotlist[i2], pointToAdd))
+                    {
+                        dotlist.Insert(i1 + 1, pointToAdd);
+                        return;
+                    }
+                }
+            }
+        }
+
+        //удалить точку из фигуры
+        public bool DeleteApproximatePoint(Point point, int tolerance)
+        {
+            if (dotlist.Count <= 2)
+                return false;
+
+            for (int i = 0; i < dotlist.Count; i++)
+            {
+                if (distanceSquared(point, dotlist[i]) < tolerance*tolerance)
+                {
+                    dotlist.RemoveAt(i);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        //квадрат расстояния между точками
+        double distanceSquared(Point a, Point b)
+        {
+            return (b.X - a.X) * (b.X - a.X) + (b.Y - a.Y) * (b.Y - a.Y);
+        }
+        //точка пересечения линии через a и b, и перпендикуляра из p
+        Point PerpendicularIntersection(Point a, Point b, Point p)
+        {
+            Point intersection = new Point();
+            double k;
+            k = (double)((p.X - a.X) * (b.X - a.X) + (p.Y - a.Y) * (b.Y - a.Y)) / ((b.X - a.X) * (b.X - a.X) + (b.Y - a.Y) * (b.Y - a.Y));
+            intersection.X = (int)Math.Round(a.X + k * (b.X - a.X));
+            intersection.Y = (int)Math.Round(a.Y + k * (b.Y - a.Y));
+            return intersection;
+        }
+
+        //проверяем находится ли точка на линии в отрезке между другими двумя точками
+        bool IsInsideLineSegment(Point a, Point b, Point p)
+        {
+            if (a.X < p.X && p.X < b.X || b.X < p.X && p.X < a.X &&
+                a.Y < p.Y && p.Y < b.Y || b.Y < p.Y && p.Y < a.Y)
+            {
+                return true;
+            }
+            else
+                return false;
         }
     }
 }
