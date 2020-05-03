@@ -67,6 +67,15 @@ namespace GraphXDesign
             
         }
         public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
-        { }
+        {
+            /*if (activeFigure != null)
+            {
+                canvas.LoadFromCache();
+                activeFigure.figure.AddPoint(e.Location, 5);
+                activeFigure.Draw(canvas);
+                canvas.PointChangeMode(sheet);
+                canvas.WriteToPictureBox(sheet);
+            }*/
+        }
     }
 }
