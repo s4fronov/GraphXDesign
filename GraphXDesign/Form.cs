@@ -490,6 +490,7 @@ namespace GraphXDesign
 
         private void buttonResize_Click(object sender, EventArgs e)
         {
+            tool = new VectorFigureChangeSizeTool();
             showOptMenu();
         }
 
@@ -603,6 +604,22 @@ namespace GraphXDesign
         }
 
         // ======================================== Методы дополнительного функционала
+
+        private void pictureBoxUndo_Click(object sender, EventArgs e)
+        {
+            if (canvas == Canvas.GetCanvas)
+                Canvas.GetCanvas.Undo(pictureBoxSheet);
+            //if (canvas == VectorCanvas.GetCanvas)
+            //    VectorCanvas.GetCanvas.Undo(pictureBoxSheet);
+        }
+
+        private void pictureBoxRedo_Click(object sender, EventArgs e)
+        {
+            if (canvas == Canvas.GetCanvas)
+                Canvas.GetCanvas.Redo(pictureBoxSheet);
+            //if (canvas == VectorCanvas.GetCanvas)
+            //    VectorCanvas.GetCanvas.Redo(pictureBoxSheet);
+        }
 
         private void buttonGitHub_Click(object sender, EventArgs e)
         {

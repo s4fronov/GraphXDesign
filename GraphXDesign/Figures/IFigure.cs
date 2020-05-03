@@ -7,12 +7,15 @@ using System.Drawing;
 
 namespace GraphXDesign
 {
-   public abstract class IFigure:ICloneable
+    public abstract class IFigure : ICloneable
     {
-        public List <Point> dotlist;
+        public List<Point> dotlist;
         public Point center;
         public Point cornerTopLeft;
         public Point cornerBottomRight;
+        public Point cornerBottomLeft;
+        public Point cornerTopRight;
+       
         public void Create(int x1, int y1, int x2, int y2)
         {
             dotlist = new List<Point>();
@@ -47,6 +50,8 @@ namespace GraphXDesign
             }
             cornerTopLeft = new Point(leftX, topY);
             cornerBottomRight = new Point(rightX, bottomY);
+            cornerBottomLeft = new Point(leftX, bottomY);
+            cornerTopRight = new Point(rightX, topY);
         }
         protected virtual void CreateCenter()
         {
@@ -110,22 +115,88 @@ namespace GraphXDesign
 
         public void MoveFigure(int dx, int dy)
         {
-            for(int i = 0; i < dotlist.Count; i++)
+            for (int i = 0; i < dotlist.Count; i++)
             {
                 dotlist[i] = new Point(dotlist[i].X + dx, dotlist[i].Y + dy);
             }
             center = new Point(center.X + dx, center.Y + dy);
-            cornerTopLeft = new Point(cornerTopLeft.X + dx, cornerTopLeft.Y + dy);
-            cornerBottomRight = new Point(cornerBottomRight.X + dx, cornerBottomRight.Y + dy);
         }
 
-        public object Clone()
+        public void ChangeSizeFigure(int dx, int dy, string activecorner)
+        {
+
+            double leftX = cornerTopLeft.X;
+            double rightX = cornerBottomRight.X;
+            double topY = cornerTopLeft.Y;
+            double bottomY = cornerBottomRight.Y;
+            if (activecorner is "cornerBottomRight")
+            {
+                for (int i = 0; i < dotlist.Count; i++)
+                {
+
+                    dotlist[i] = new Point((int)(dotlist[i].X + dx * (dotlist[i].X - leftX) / (rightX - leftX)), (int)(dotlist[i].Y + dy * (dotlist[i].Y - topY) / (bottomY - topY)));
+                }
+
+                cornerBottomRight.X += dx;
+                cornerBottomRight.Y += dy;
+                cornerBottomLeft.Y += dy;
+                cornerTopRight.X += dx;
+            }
+
+            if (activecorner is "cornerBottomLeft")
+            {
+                for (int i = 0; i < dotlist.Count; i++)
+                {
+
+                    dotlist[i] = new Point((int)(dotlist[i].X + dx*(dotlist[i].X - rightX) / (leftX  - rightX)), (int)(dotlist[i].Y + dy * (dotlist[i].Y - topY) / (bottomY - topY)));
+                }
+            
+
+                cornerBottomLeft.X += dx;
+                cornerBottomLeft.Y += dy;
+                cornerBottomRight.Y += dy; // норм
+                cornerTopLeft.X += dx;
+            }
+
+            if (activecorner is "cornerTopRight")
+            {
+                for (int i = 0; i < dotlist.Count; i++)
+                {
+
+                    dotlist[i] = new Point((int)(dotlist[i].X + dx * (dotlist[i].X - leftX) / (rightX - leftX)), (int)(dotlist[i].Y + dy * (bottomY -dotlist[i].Y ) / (bottomY - topY)));
+                }
+
+                cornerTopRight.X += dx;
+                cornerTopRight.Y += dy;
+                cornerBottomRight.X += dx;
+                cornerTopLeft.Y += dy;
+            }
+            if (activecorner is "cornerTopLeft")
+            {
+                for (int i = 0; i < dotlist.Count; i++)
+                {
+
+                    dotlist[i] = new Point((int)(dotlist[i].X + dx * (dotlist[i].X  - rightX ) / (leftX - rightX)), (int)(dotlist[i].Y + dy * (bottomY - dotlist[i].Y) / (bottomY - topY)));
+                }
+
+                cornerTopLeft.X += dx;
+                cornerTopLeft.Y += dy;
+                cornerBottomLeft.X += dx;
+                cornerTopRight.Y += dy;
+            }
+
+
+        }
+
+
+
+            public object Clone()
         {
             return MemberwiseClone();
         }
         public void Turn()
         {
-            double angle =(45 * Math.PI) / 180;
+            double angle = (45 * Math.PI) / 180;
             for (int i = 0; i < dotlist.Count; i++)
             {
                 Point result = new Point();
@@ -133,6 +204,43 @@ namespace GraphXDesign
                 result.Y = (int)(Math.Round(Math.Sin(angle) * (dotlist[i].X - center.X) + Math.Cos(angle) * (dotlist[i].Y - center.Y) + center.Y));
                 dotlist[i] = result;
             }
+        }
+
+        public void ChangeCorners()
+
+        {
+            int leftX, rightX;
+            int topY, bottomY;
+            bottomY = dotlist[0].Y; // максимальное
+            rightX = dotlist[0].X;  // максимальное
+            leftX = dotlist[0].X;// минимальное
+            topY = dotlist[0].Y;// минимальное
+            for (int i = 1; i < dotlist.Count; i++)
+
+            {
+                if (bottomY < dotlist[i].Y)
+                {
+                    bottomY = dotlist[i].Y;
+                }
+                if (rightX < dotlist[i].X)
+                {
+                    rightX = dotlist[i].X;
+                }
+
+                if (topY > dotlist[i].Y)
+                {
+                    topY = dotlist[i].Y;
+                }
+                if (leftX > dotlist[i].X)
+                {
+                    leftX = dotlist[i].X;
+                }
+                               
+            }
+            cornerTopLeft = new Point(leftX, topY);
+            cornerBottomRight = new Point(rightX, bottomY);
+            cornerBottomLeft = new Point(leftX, bottomY);
+            cornerTopRight = new Point(rightX, topY);
         }
     }
 }

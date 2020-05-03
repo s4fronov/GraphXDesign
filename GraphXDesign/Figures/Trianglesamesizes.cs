@@ -50,6 +50,8 @@ namespace GraphXDesign
             }
             cornerTopLeft = new Point(leftX, topY);
             cornerBottomRight = new Point(rightX, bottomY);
+            cornerBottomLeft = new Point(leftX, bottomY);
+            cornerTopRight = new Point(rightX, topY);
         }
     }
 }
