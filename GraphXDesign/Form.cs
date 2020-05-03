@@ -568,6 +568,11 @@ namespace GraphXDesign
         {
             if (tool != null)
             {
+                if (!(tool is PipetteTool))
+                {
+                    Canvas.GetCanvas.DeleteBmp(pictureBoxSheet);
+                    Canvas.GetCanvas.AddToBmpList(pictureBoxSheet);
+                }
                 if ((tool is PenTool))
                 {
                     Canvas.GetCanvas.DeleteBmp(pictureBoxSheet);
@@ -602,12 +607,11 @@ namespace GraphXDesign
         {
             if (tool != null)
             {
-
-                tool.MouseMove((PictureBox)sender, brush, fill, e);
                 if (tool is PipetteTool)
                 {
                     palette1.BackColor = brush.BrushColor; // Для пипетки
                 }
+                tool.MouseMove((PictureBox)sender, brush, fill, e);
             }
         }
 
