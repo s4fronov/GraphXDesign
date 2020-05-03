@@ -118,6 +118,8 @@
     <Compile Include="Tools\ITool.cs" />
     <Compile Include="Tools\PenTool.cs" />
     <Compile Include="Tools\VectorEditingTools\VectorFigureChangeSizeTool.cs" />
+    <Compile Include="Tools\VectorEditingTools\VectorDeleteFigureTool.cs" />
+    <Compile Include="Tools\VectorEditingTools\VectorRepaintTool.cs" />
     <Compile Include="Tools\VectorEditingTools\VectorFigureMoveTool.cs" />
     <Compile Include="Tools\VectorEditingTools\VectorFigureTransformTool.cs" />
     <Compile Include="Tools\VectorEditingTools\VectorFigureTurnTool.cs" />
