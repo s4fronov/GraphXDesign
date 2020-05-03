@@ -9,6 +9,5 @@ namespace GraphXDesign
     interface IDraw
     {
         void Draw(AbstractCanvas canvas);
-
     }
 }
