@@ -19,7 +19,7 @@ namespace GraphXDesign
             canvas = VectorCanvas.GetCanvas;
             activeFigure = null;
         }
-        public void MouseDown(PictureBox sheet, IBrush brushFig, IFill fillFig, MouseEventArgs e)
+        public void MouseDown(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             foreach (Drawfigure f in canvas.figures)
             {
@@ -29,9 +29,7 @@ namespace GraphXDesign
                     cursorActive = true;
                     canvas.RenderExceptFigure(activeFigure);
                     canvas.SaveToCache();
-                    f.brush.BrushColor = brushFig.BrushColor;
-                    f.brush.BrushSize = brushFig.BrushSize;
-                    f.fill = fillFig;
+                    
                 }
             }
         }
@@ -39,8 +37,11 @@ namespace GraphXDesign
         {
 
         }
-        public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
+        public void MouseUp(PictureBox sheet, IBrush brushFig, IFill fillFig, MouseEventArgs e)
         {
+            activeFigure.brush.BrushColor = brushFig.BrushColor;
+            activeFigure.brush.BrushSize = brushFig.BrushSize;
+            activeFigure.fill = fillFig;
             cursorActive = false;
             canvas.Render();
             canvas.WriteToPictureBox(sheet);

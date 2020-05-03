@@ -72,10 +72,8 @@ namespace GraphXDesign
                     canvas.LoadFromCache();
                     activeFigure.figure.dotlist[tmpIndex] = e.Location;
                     activeFigure.Draw(canvas);
-                    //canvas.PointChangeMode(sheet);
                     canvas.PointChangeModeActiveFigure(sheet, activeFigure);
                     canvas.WriteToPictureBox(sheet);
-
                 }
             }
         }
