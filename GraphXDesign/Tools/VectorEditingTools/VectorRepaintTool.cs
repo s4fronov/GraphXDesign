@@ -31,7 +31,7 @@ namespace GraphXDesign
                         canvas.SaveToCache();
                     f.brush.BrushColor = brushFig.BrushColor;
                     f.brush.BrushSize = brushFig.BrushSize;
-                    f.fill.FillColor = fillFig.FillColor;
+                    f.fill = fillFig;
                     }
                 }
             }

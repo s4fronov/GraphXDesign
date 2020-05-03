@@ -531,6 +531,7 @@ namespace GraphXDesign
             tool = new VectorRepaintTool();
             if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu(sender);
+            panelFill.Visible = true;
         }
 
         private void buttonOriginalState_Click(object sender, EventArgs e)
@@ -552,10 +553,14 @@ namespace GraphXDesign
         {
             if (tool != null)
             {
-                if (!(tool is PipetteTool))
+                if ((tool is PenTool))
                 {
                     Canvas.GetCanvas.DeleteBmp(pictureBoxSheet);
                     Canvas.GetCanvas.AddToBmpList(pictureBoxSheet);
+                }
+                if (!(tool is PipetteTool) && !(tool is PenTool))
+                {
+                    Canvas.GetCanvas.DeleteBmp(pictureBoxSheet);
                 }
                 toolTmp = tool;
                 if ((Control.ModifierKeys & Keys.Shift) == Keys.Shift)
@@ -582,6 +587,7 @@ namespace GraphXDesign
         {
             if (tool != null)
             {
+
                 tool.MouseMove((PictureBox)sender, brush, fill, e);
                 if (tool is PipetteTool)
                 {
@@ -594,6 +600,10 @@ namespace GraphXDesign
         {
             if (tool != null)
             {
+                if (!(tool is PipetteTool) && !(tool is PenTool))
+                {
+                    Canvas.GetCanvas.AddToBmpList(pictureBoxSheet);
+                }
                 tool.MouseUp((PictureBox)sender, brush, fill, e);
                 tool = toolTmp;
             }
