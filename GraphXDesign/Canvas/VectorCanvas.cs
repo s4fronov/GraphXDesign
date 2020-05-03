@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,47 +37,7 @@ namespace GraphXDesign
             figures = new List<Drawfigure>();
             figuresTmp= new List<Drawfigure>();
         }
-=======
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
-using System.Windows.Forms;
 
-namespace GraphXDesign
-{
-    public class VectorCanvas : AbstractCanvas
-    {
-        //singleton pattern
-        private static VectorCanvas instance;
-        private VectorCanvas() { }
-        public static VectorCanvas GetCanvas
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new VectorCanvas();
-                }
-                return instance;
-            }
-        }
-
-        public List<Drawfigure> figures;
-        public List<Drawfigure> figuresTmp;
-
-        public void Init(int width, int height)
-        {
-            Bmp = new BitmapWrap(width, height);
-            Cache = new BitmapWrap(width, height);
-            Width = width;
-            Height = height;
-            figures = new List<Drawfigure>();
-            figuresTmp= new List<Drawfigure>();
-        }
->>>>>>> NewTestCase
         public void RenderWrite(PictureBox pb)
         {
             Render();
