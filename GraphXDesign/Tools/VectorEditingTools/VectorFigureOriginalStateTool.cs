@@ -55,5 +55,8 @@ namespace GraphXDesign
         public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
         }
+        public void MouseClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
+        {
+        }
     }
 }
