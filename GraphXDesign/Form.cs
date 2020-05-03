@@ -73,7 +73,6 @@ namespace GraphXDesign
                 fill = new NoFill(paintColor2);
                 tool = new PenTool();
             }
-            //canvas = Canvas.GetCanvas;
             pictureBoxSheet.DrawToBitmap(Canvas.GetCanvas.Bmp.Bmp, pictureBoxSheet.ClientRectangle);
         }
 
@@ -198,8 +197,6 @@ namespace GraphXDesign
             if (expandActive == false)
             {
                 this.WindowState = FormWindowState.Maximized;
-                //this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                //this.Location = new Point(0, 0);
                 this.TopMost = false;
                 expandActive = true;
                 groupBoxMenu.Height = this.Height;
@@ -207,7 +204,6 @@ namespace GraphXDesign
             else if (expandActive == true)
             {
                 this.WindowState = FormWindowState.Normal;
-                //this.Size = new Size(960, 616);
                 expandActive = false;
             }
         }
@@ -358,16 +354,12 @@ namespace GraphXDesign
         {
             if (canvas == Canvas.GetCanvas)
                 Canvas.GetCanvas.Undo(pictureBoxSheet);
-            //if (canvas == VectorCanvas.GetCanvas)
-            //    VectorCanvas.GetCanvas.Undo(pictureBoxSheet);
         }
 
         private void buttonRedo_Click(object sender, EventArgs e)
         {
             if (canvas == Canvas.GetCanvas)
                 Canvas.GetCanvas.Redo(pictureBoxSheet);
-            //if (canvas == VectorCanvas.GetCanvas)
-            //    VectorCanvas.GetCanvas.Redo(pictureBoxSheet);
         }
 
         private void labelFillCont_Click(object sender, EventArgs e)
@@ -515,6 +507,7 @@ namespace GraphXDesign
         private void buttonResize_Click(object sender, EventArgs e)
         {
             tool = new VectorFigureChangeSizeTool();
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu(sender);
         }
 
@@ -529,23 +522,27 @@ namespace GraphXDesign
         private void buttonRotate_Click(object sender, EventArgs e)
         {
             tool = new VectorFigureTurnTool();
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu(sender);
         }
 
         private void buttonPaint_Click(object sender, EventArgs e)
         {
             tool = new VectorRepaintTool();
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu(sender);
         }
 
         private void buttonOriginalState_Click(object sender, EventArgs e)
         {
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu(sender);
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             tool = new VectorDeleteFigureTool();
+            if (canvas is VectorCanvas) VectorCanvas.GetCanvas.RenderWrite(pictureBoxSheet);
             showOptMenu(sender);
         }
 
