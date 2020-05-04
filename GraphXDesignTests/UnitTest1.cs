@@ -103,5 +103,52 @@ namespace GraphXDesignTestMath
             { actual = true; }
             return actual;
         }
+
+        [TestCase(0, 0, 2, 3, ExpectedResult = 13)]
+        [TestCase(-4, -4, -1, -1, ExpectedResult = 18)]
+        [TestCase(-3, 2, 1, -3, ExpectedResult = 41)]
+        [TestCase(0, 0, 0, 0, ExpectedResult = 0)]
+        public double DistanceSquaredTest(int x1, int y1, int x2, int y2)
+        {
+            double actual;
+            Point a, b;
+            IFigure figure = new Square();
+            a = new Point(x1, y1);
+            b = new Point(x2, y2);
+            actual = figure.distanceSquared(a, b);
+            return actual;
+        }
+
+        [TestCase(0, 0, 5, 0, 1, 3, ExpectedResult = new double[] { 1, 0 })]
+        [TestCase(0, 0, 6, 6, 6, 0, ExpectedResult = new double[] { 3, 3 })]
+        [TestCase(2, 2, 2, 10, 3, 12, ExpectedResult = new double[] { 2, 12 })]
+        public double[] PerpendicularIntersectionTest(int ax, int ay, int bx, int by, int px, int py)
+        {
+            Point actual;
+            Point a, b, p;
+            IFigure figure = new Square();
+            a = new Point(ax, ay);
+            b = new Point(bx, by);
+            p = new Point(px, py);
+            actual = figure.PerpendicularIntersection(a, b, p);
+            return new double[] { actual.X, actual.Y };
+        }
+
+        [TestCase(0, 0, 5, 0, 2, 0, ExpectedResult = true)]
+        [TestCase(0, 0, 5, 0, 5, 0, ExpectedResult = true)]
+        [TestCase(0, 0, 5, 0, 6, 0, ExpectedResult = false)]
+        [TestCase(2, 2, 6, 10, 3, 4, ExpectedResult = true)]
+        [TestCase(2, 2, 6, 10, 1, 0, ExpectedResult = false)]
+        public bool IsInsideLineSegmentTest(int ax, int ay, int bx, int by, int px, int py)
+        {
+            bool actual;
+            Point a, b, p;
+            IFigure figure = new Square();
+            a = new Point(ax, ay);
+            b = new Point(bx, by);
+            p = new Point(px, py);
+            actual = figure.IsInsideLineSegment(a, b, p);
+            return actual;
+        }
     }
 }
