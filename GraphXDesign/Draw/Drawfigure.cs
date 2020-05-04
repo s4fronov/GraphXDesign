@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace GraphXDesign
 {
-    public class Drawfigure:IDraw
+    public class Drawfigure
 
     {
         public IFigure figure;

@@ -14,19 +14,20 @@ namespace GraphXDesign
 {
     public partial class FormProgram : Form
     {
-        Color paintColor1;
-        Color paintColor2;
-        int brushSize;
-        int n;
         IBrush brush;
         IFill fill;
         ITool tool;
         ITool toolTmp;
-        int option; // 1 - Круг, 2 - Квадрат (При нажатом Shift)
+        AbstractCanvas canvas;
+        Color paintColor1;
+        Color paintColor2;
+        int brushSize;
+        int n;
+        int option; // 1 - Круг, 2 - Квадрат (при нажатом Shift)
         bool expandActive;
         bool cursorActive;
         private Point MouseHook;
-        AbstractCanvas canvas;
+        
 
         public FormProgram()
         {
@@ -345,7 +346,7 @@ namespace GraphXDesign
             brush.BrushColor = palette1.BackColor;
         }
 
-        private void palette2_Click(object sender, EventArgs e)
+        private void palette2_Click(object sender, EventArgs e) // Дополнительный цвет
         {
             colorDialog1.AllowFullOpen = true;
             if (colorDialog1.ShowDialog() == DialogResult.OK)
@@ -354,7 +355,7 @@ namespace GraphXDesign
             fill.FillColor = palette2.BackColor;
         }
 
-        private void buttonReverse_Click(object sender, EventArgs e) // Дополнительный цвет
+        private void buttonReverse_Click(object sender, EventArgs e) // Поменять местами основной и дополнительный цвет
         {
             palette1.BackColor = paintColor2;
             palette2.BackColor = brush.BrushColor;

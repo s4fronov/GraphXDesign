@@ -253,7 +253,7 @@
             this.buttonDelete.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonDelete.Image = ((System.Drawing.Image)(resources.GetObject("buttonDelete.Image")));
             this.buttonDelete.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -274,7 +274,7 @@
             this.buttonOriginalState.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonOriginalState.FlatAppearance.BorderSize = 0;
             this.buttonOriginalState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonOriginalState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonOriginalState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonOriginalState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonOriginalState.Image = ((System.Drawing.Image)(resources.GetObject("buttonOriginalState.Image")));
             this.buttonOriginalState.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -295,7 +295,7 @@
             this.buttonPaint.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonPaint.FlatAppearance.BorderSize = 0;
             this.buttonPaint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonPaint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonPaint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonPaint.Image = ((System.Drawing.Image)(resources.GetObject("buttonPaint.Image")));
             this.buttonPaint.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -316,7 +316,7 @@
             this.buttonRotate.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonRotate.FlatAppearance.BorderSize = 0;
             this.buttonRotate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRotate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonRotate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonRotate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonRotate.Image = ((System.Drawing.Image)(resources.GetObject("buttonRotate.Image")));
             this.buttonRotate.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -337,7 +337,7 @@
             this.buttonTransform.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonTransform.FlatAppearance.BorderSize = 0;
             this.buttonTransform.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTransform.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonTransform.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTransform.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonTransform.Image = ((System.Drawing.Image)(resources.GetObject("buttonTransform.Image")));
             this.buttonTransform.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -346,7 +346,7 @@
             this.buttonTransform.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.buttonTransform.Size = new System.Drawing.Size(186, 25);
             this.buttonTransform.TabIndex = 5;
-            this.buttonTransform.Text = "   Изменение";
+            this.buttonTransform.Text = "   Трансформация";
             this.buttonTransform.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonTransform.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonTransform.UseVisualStyleBackColor = true;
@@ -358,7 +358,7 @@
             this.buttonResize.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonResize.FlatAppearance.BorderSize = 0;
             this.buttonResize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonResize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonResize.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonResize.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonResize.Image = ((System.Drawing.Image)(resources.GetObject("buttonResize.Image")));
             this.buttonResize.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -367,7 +367,7 @@
             this.buttonResize.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.buttonResize.Size = new System.Drawing.Size(186, 25);
             this.buttonResize.TabIndex = 4;
-            this.buttonResize.Text = "   Размер";
+            this.buttonResize.Text = "   Масштабирование";
             this.buttonResize.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonResize.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonResize.UseVisualStyleBackColor = true;
@@ -379,7 +379,7 @@
             this.buttonHand.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonHand.FlatAppearance.BorderSize = 0;
             this.buttonHand.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonHand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonHand.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonHand.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonHand.Image = ((System.Drawing.Image)(resources.GetObject("buttonHand.Image")));
             this.buttonHand.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -388,7 +388,7 @@
             this.buttonHand.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.buttonHand.Size = new System.Drawing.Size(186, 25);
             this.buttonHand.TabIndex = 2;
-            this.buttonHand.Text = "   Рука";
+            this.buttonHand.Text = "   Перемещение";
             this.buttonHand.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.buttonHand.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttonHand.UseVisualStyleBackColor = true;
@@ -399,7 +399,7 @@
             this.buttonEdit.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonEdit.FlatAppearance.BorderSize = 0;
             this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonEdit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
             this.buttonEdit.Image = ((System.Drawing.Image)(resources.GetObject("buttonEdit.Image")));
             this.buttonEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -436,7 +436,7 @@
             this.buttonNNgon.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonNNgon.FlatAppearance.BorderSize = 0;
             this.buttonNNgon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNNgon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNNgon.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNNgon.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonNNgon.Image = ((System.Drawing.Image)(resources.GetObject("buttonNNgon.Image")));
             this.buttonNNgon.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -457,7 +457,7 @@
             this.buttonNAngular.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonNAngular.FlatAppearance.BorderSize = 0;
             this.buttonNAngular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonNAngular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNAngular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonNAngular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonNAngular.Image = ((System.Drawing.Image)(resources.GetObject("buttonNAngular.Image")));
             this.buttonNAngular.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -478,7 +478,7 @@
             this.buttonTriangleIsosceles.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonTriangleIsosceles.FlatAppearance.BorderSize = 0;
             this.buttonTriangleIsosceles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTriangleIsosceles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonTriangleIsosceles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTriangleIsosceles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonTriangleIsosceles.Image = ((System.Drawing.Image)(resources.GetObject("buttonTriangleIsosceles.Image")));
             this.buttonTriangleIsosceles.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -499,7 +499,7 @@
             this.buttonTriangleRectangular.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonTriangleRectangular.FlatAppearance.BorderSize = 0;
             this.buttonTriangleRectangular.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTriangleRectangular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonTriangleRectangular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTriangleRectangular.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonTriangleRectangular.Image = ((System.Drawing.Image)(resources.GetObject("buttonTriangleRectangular.Image")));
             this.buttonTriangleRectangular.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -520,7 +520,7 @@
             this.buttonSquare.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonSquare.FlatAppearance.BorderSize = 0;
             this.buttonSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSquare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSquare.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSquare.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonSquare.Image = ((System.Drawing.Image)(resources.GetObject("buttonSquare.Image")));
             this.buttonSquare.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -541,7 +541,7 @@
             this.buttonCircle.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonCircle.FlatAppearance.BorderSize = 0;
             this.buttonCircle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCircle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonCircle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonCircle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonCircle.Image = ((System.Drawing.Image)(resources.GetObject("buttonCircle.Image")));
             this.buttonCircle.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -562,7 +562,7 @@
             this.buttonLine.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonLine.FlatAppearance.BorderSize = 0;
             this.buttonLine.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonLine.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonLine.Image = ((System.Drawing.Image)(resources.GetObject("buttonLine.Image")));
             this.buttonLine.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -583,7 +583,7 @@
             this.buttonBrush.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonBrush.FlatAppearance.BorderSize = 0;
             this.buttonBrush.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBrush.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonBrush.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonBrush.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(180)))), ((int)(((byte)(140)))));
             this.buttonBrush.Image = ((System.Drawing.Image)(resources.GetObject("buttonBrush.Image")));
             this.buttonBrush.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -603,7 +603,7 @@
             this.buttonTools.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonTools.FlatAppearance.BorderSize = 0;
             this.buttonTools.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTools.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTools.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonTools.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(185)))), ((int)(((byte)(144)))));
             this.buttonTools.Image = ((System.Drawing.Image)(resources.GetObject("buttonTools.Image")));
             this.buttonTools.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
