@@ -13,6 +13,7 @@ namespace GraphXDesign
         bool cursorActive;
         VectorCanvas canvas;
         Drawfigure activeFigure;
+        int index;
         public VectorDeleteFigureTool()
         {
             cursorActive = false;
@@ -26,6 +27,7 @@ namespace GraphXDesign
                 if (f.figure.IsInside(e.Location))
                 {
                     activeFigure = f;
+                    index = canvas.figures.IndexOf(activeFigure);
                     cursorActive = true;
                     canvas.RenderExceptFigure(activeFigure);
                     canvas.SaveToCache();
@@ -33,6 +35,7 @@ namespace GraphXDesign
                 }
             }
             canvas.figures.Remove(activeFigure);
+            canvas.figuresTmp.RemoveAt(index);
             canvas.Render();
         }
         public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }

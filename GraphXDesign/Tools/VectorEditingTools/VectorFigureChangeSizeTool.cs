@@ -53,7 +53,7 @@ namespace GraphXDesign
 
             }
             tmpPoint = e.Location;
-
+            
         }
         public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
@@ -99,13 +99,13 @@ namespace GraphXDesign
 
                 }
             }
-            activeFigure.figure.ChangeCorners();
-
+            
             if (activeFigure != null)
             {
+                activeFigure.figure.ChangeCorners();
                 canvas.PointChangeModeOfRectangle(sheet, activeFigure);
+                havecorners = true;
             }
-            havecorners = true;
         }
     }   
 }  
