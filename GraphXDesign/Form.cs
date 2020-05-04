@@ -115,7 +115,7 @@ namespace GraphXDesign
 
         // ================================================== Методы работы меню ==================================================
 
-        private void changeFill() // Изменение отображения параметров в меню заливки фигур
+        private void changeFill(object obj) // Изменение отображения параметров в меню заливки фигур
         {
             if (labelFillCont.ForeColor == Color.Gold)
             {
@@ -132,9 +132,27 @@ namespace GraphXDesign
                 pictureBoxContOnly.Visible = false;
                 labelCont.ForeColor = Color.White;
             }
+            if ((obj as Label).Text == "Контур + заливка")
+            {
+                labelFillCont.ForeColor = Color.Gold;
+                pictureBoxFillCont.Visible = true;
+                fill = new SolidFill(fill);
+            }
+            if ((obj as Label).Text == "Контур")
+            {
+                labelCont.ForeColor = Color.Gold;
+                pictureBoxContOnly.Visible = true;
+                fill = new NoFill(fill);
+            }
+            if ((obj as Label).Text == "Заливка")
+            {
+                labelFill.ForeColor = Color.Gold;
+                pictureBoxFillOnly.Visible = true;
+                fill = new OnlyFill(fill);
+            }
         }
 
-        private void hideOptMenu(object sender) // Скрытие неиспользуемых элементов
+        private void hideOptMenu(object obj) // Скрытие неиспользуемых элементов
         {
             if (fill is NoFill)
             {
@@ -147,7 +165,7 @@ namespace GraphXDesign
             }
             panelAngles.Visible = false;
             panelFill.Visible = false;
-            labelTool.Text = (sender as Button).Text;
+            labelTool.Text = (obj as Button).Text;
         }
 
         private void showModeMenu() // Подгрузка необходимых элементов при смене режимов
@@ -376,26 +394,17 @@ namespace GraphXDesign
 
         private void labelFillCont_Click(object sender, EventArgs e) // Рисование фигуры с заливкой и контуром
         {
-            changeFill();
-            labelFillCont.ForeColor = Color.Gold;
-            pictureBoxFillCont.Visible = true;
-            fill = new SolidFill(fill);
+            changeFill(sender);
         }
 
         private void labelCont_Click(object sender, EventArgs e) // Рисование фигуры только с контуром
         {
-            changeFill();
-            labelCont.ForeColor = Color.Gold;
-            pictureBoxContOnly.Visible = true;
-            fill = new NoFill(fill);
+            changeFill(sender);
         }
 
         private void labelFill_Click(object sender, EventArgs e) // Рисование фигуры только с заливкой
         {
-            changeFill();
-            labelFill.ForeColor = Color.Gold;
-            pictureBoxFillOnly.Visible = true;
-            fill = new OnlyFill(fill);
+            changeFill(sender);
         }
 
         private void trackBarSize_Scroll(object sender, EventArgs e) // Изменение размера кисти
