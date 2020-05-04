@@ -16,6 +16,10 @@ namespace GraphXDesign
 
         public override void Fill(BitmapWrap bmp, Point startingPoint)
         {
+            if (startingPoint.X < 0 || startingPoint.X >= bmp.Width ||
+                startingPoint.Y < 0 || startingPoint.Y >= bmp.Height)
+                return;
+
             Color startingColor = bmp.GetPixel(startingPoint.X, startingPoint.Y);
             if (startingColor.ToArgb() == FillColor.ToArgb())
                 return;
