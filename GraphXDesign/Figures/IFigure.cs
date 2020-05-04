@@ -292,12 +292,12 @@ namespace GraphXDesign
         }
 
         //квадрат расстояния между точками
-        double distanceSquared(Point a, Point b)
+        public double distanceSquared(Point a, Point b)
         {
             return (b.X - a.X) * (b.X - a.X) + (b.Y - a.Y) * (b.Y - a.Y);
         }
         //точка пересечения линии через a и b, и перпендикуляра из p
-        Point PerpendicularIntersection(Point a, Point b, Point p)
+        public Point PerpendicularIntersection(Point a, Point b, Point p)
         {
             Point intersection = new Point();
             double k;
@@ -308,10 +308,10 @@ namespace GraphXDesign
         }
 
         //проверяем находится ли точка на линии в отрезке между другими двумя точками
-        bool IsInsideLineSegment(Point a, Point b, Point p)
+        public bool IsInsideLineSegment(Point a, Point b, Point p)
         {
-            if (a.X <= p.X && p.X <= b.X || b.X <= p.X && p.X <= a.X &&
-                a.Y <= p.Y && p.Y <= b.Y || b.Y <= p.Y && p.Y <= a.Y)
+            if ((a.X <= p.X && p.X <= b.X || b.X <= p.X && p.X <= a.X) &&
+                (a.Y <= p.Y && p.Y <= b.Y || b.Y <= p.Y && p.Y <= a.Y))
             {
                 return true;
             }
