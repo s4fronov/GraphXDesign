@@ -41,8 +41,27 @@ namespace GraphXDesign
                     break;
                 }
             }
-            canvas.RenderExceptFigure(activeFigure);
-            canvas.SaveToCache();
+
+            //для дабл клика(добавления вершин)
+            if (activeFigure == null)
+            {
+                cursorActive = false;
+                foreach (Drawfigure f in canvas.figures)
+                {
+                    if (f.figure.IsInside(e.Location))
+                    {
+                        activeFigure = f;
+                    }
+                }
+            }
+            //---------
+            if (activeFigure != null)
+            {
+                canvas.RenderExceptFigure(activeFigure);
+                canvas.SaveToCache();
+                activeFigure.Draw(canvas);
+                canvas.WriteToPictureBox(sheet);
+            }
         }
         public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
@@ -53,19 +72,39 @@ namespace GraphXDesign
                     canvas.LoadFromCache();
                     activeFigure.figure.dotlist[tmpIndex] = e.Location;
                     activeFigure.Draw(canvas);
-                    canvas.PointChangeMode(sheet);
+                    canvas.PointChangeModeActiveFigure(sheet, activeFigure);
                     canvas.WriteToPictureBox(sheet);
-
                 }
             }
         }
         public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
-            cursorActive = false;
-            canvas.PointChangeMode(sheet);
-            canvas.WriteToPictureBox(sheet);
+            if (activeFigure != null)
+            {
+                cursorActive = false;
+                //canvas.PointChangeMode(sheet);
+                canvas.PointChangeModeActiveFigure(sheet, activeFigure);
+                canvas.WriteToPictureBox(sheet);
+            }
+            
         }
         public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
-        { }
+        {
+            if (activeFigure != null)
+            {
+                canvas.LoadFromCache();
+
+                //если попали по точке удаляем точку
+                //если нет, пытаемся добавить точку на грань
+                if (!activeFigure.figure.DeleteApproximatePoint(e.Location, 10))
+                    activeFigure.figure.AddPoint(e.Location, 10);
+
+                activeFigure.Draw(canvas);
+                //canvas.PointChangeMode(sheet);
+                canvas.PointChangeModeActiveFigure(sheet, activeFigure);
+                canvas.WriteToPictureBox(sheet);
+            }
+        }
+        public void MouseClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
     }
 }

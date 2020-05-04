@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace GraphXDesign
 {
-    public class Drawfigure:IDraw
+    public class Drawfigure
 
     {
         public IFigure figure;
@@ -23,6 +23,14 @@ namespace GraphXDesign
 
         public void Draw(AbstractCanvas canvas)
         {
+            //случай линии
+            if (figure.dotlist.Count == 2)
+            {
+                Drawline drawer = new Drawline(figure.dotlist[0].X, figure.dotlist[0].Y, figure.dotlist[1].X, figure.dotlist[1].Y, brush, true);
+                drawer.Draw(canvas);
+                return;
+            }
+
             BitmapWrap tmp = new BitmapWrap(canvas.Width, canvas.Height);
             tmp.Lock();
 
@@ -34,7 +42,8 @@ namespace GraphXDesign
             }
             tmpBrush.DrawLine(tmp, figure.dotlist[figure.dotlist.Count - 1].X, figure.dotlist[figure.dotlist.Count - 1].Y, figure.dotlist[0].X, figure.dotlist[0].Y);
 
-            fill.Fill(tmp, figure.center);
+            if(figure.IsInside(figure.center))
+                fill.Fill(tmp, figure.center);
 
             if (!(fill is OnlyFill))
             {

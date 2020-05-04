@@ -8,15 +8,12 @@ using System.Windows.Forms;
 
 namespace GraphXDesign
 {
-    class VectorFigureMoveTool:ITool
+    class VectorFigureTurnTool : ITool
     {
         bool cursorActive;
         VectorCanvas canvas;
         Drawfigure activeFigure;
-        Point tmpPoint;
-        int dx, dy;
-
-        public VectorFigureMoveTool()
+        public VectorFigureTurnTool()
         {
             cursorActive = false;
             canvas = VectorCanvas.GetCanvas;
@@ -24,7 +21,7 @@ namespace GraphXDesign
         }
         public void MouseDown(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
-            foreach(Drawfigure f in canvas.figures)
+            foreach (Drawfigure f in canvas.figures)
             {
                 if (f.figure.IsInside(e.Location))
                 {
@@ -32,7 +29,7 @@ namespace GraphXDesign
                     cursorActive = true;
                     canvas.RenderExceptFigure(activeFigure);
                     canvas.SaveToCache();
-                    tmpPoint = e.Location;
+                    
                 }
             }
         }
@@ -41,10 +38,7 @@ namespace GraphXDesign
             if (cursorActive)
             {
                 canvas.LoadFromCache();
-                dx = e.X - tmpPoint.X;
-                dy = e.Y - tmpPoint.Y;
-                activeFigure.figure.MoveFigure(dx, dy);
-                tmpPoint = e.Location;
+                canvas.Turn(activeFigure);
                 activeFigure.Draw(canvas);
                 canvas.WriteToPictureBox(sheet);
             }
@@ -55,7 +49,7 @@ namespace GraphXDesign
             canvas.Render();
             canvas.WriteToPictureBox(sheet);
         }
-        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
-        public void MouseClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
+        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
+        { }
     }
 }

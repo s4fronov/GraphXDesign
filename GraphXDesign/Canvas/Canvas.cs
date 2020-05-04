@@ -61,7 +61,7 @@ namespace GraphXDesign
         {
             if (m > 0)
             {
-                m--;
+                m=m-2;
                 Bmp = bitmapList[m];
                 WriteToPictureBox(a);
             }
@@ -70,7 +70,7 @@ namespace GraphXDesign
         {
             if (m < bitmapList.Count - 1)
             {
-                m++;
+                m=m+2;
                 Bmp = bitmapList[m];
                 WriteToPictureBox(a);
             }

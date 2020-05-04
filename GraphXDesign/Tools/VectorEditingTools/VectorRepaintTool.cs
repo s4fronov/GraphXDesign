@@ -1,30 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace GraphXDesign
 {
-    class VectorFigureMoveTool:ITool
+    public class VectorRepaintTool : ITool
     {
         bool cursorActive;
         VectorCanvas canvas;
         Drawfigure activeFigure;
-        Point tmpPoint;
-        int dx, dy;
-
-        public VectorFigureMoveTool()
+        public IFigure figure;
+        public IBrush brush;
+        public IFill fill;
+        public VectorRepaintTool()
         {
             cursorActive = false;
             canvas = VectorCanvas.GetCanvas;
             activeFigure = null;
+            //this.figure = (IFigure)figure.Clone();
+            //this.brush = (IBrush)brush.Clone();
+            //this.fill = (IFill)fill.Clone();
         }
         public void MouseDown(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
-            foreach(Drawfigure f in canvas.figures)
+            foreach (Drawfigure f in canvas.figures)
             {
                 if (f.figure.IsInside(e.Location))
                 {
@@ -32,25 +29,18 @@ namespace GraphXDesign
                     cursorActive = true;
                     canvas.RenderExceptFigure(activeFigure);
                     canvas.SaveToCache();
-                    tmpPoint = e.Location;
+
                 }
             }
         }
         public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
-            if (cursorActive)
-            {
-                canvas.LoadFromCache();
-                dx = e.X - tmpPoint.X;
-                dy = e.Y - tmpPoint.Y;
-                activeFigure.figure.MoveFigure(dx, dy);
-                tmpPoint = e.Location;
-                activeFigure.Draw(canvas);
-                canvas.WriteToPictureBox(sheet);
-            }
+
         }
-        public void MouseUp(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
+        public void MouseUp(PictureBox sheet, IBrush brushFig, IFill fillFig, MouseEventArgs e)
         {
+            activeFigure.brush = (IBrush)brushFig.Clone();
+            activeFigure.fill = (IFill)fillFig.Clone();
             cursorActive = false;
             canvas.Render();
             canvas.WriteToPictureBox(sheet);

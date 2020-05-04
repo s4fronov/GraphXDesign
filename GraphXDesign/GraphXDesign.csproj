@@ -34,9 +34,20 @@
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -83,6 +94,7 @@
     <Compile Include="Canvas\AbstractCanvas.cs" />
     <Compile Include="Canvas\Canvas.cs" />
     <Compile Include="Canvas\VectorCanvas.cs" />
+    <Compile Include="Draw\Drawline.cs" />
     <Compile Include="Figures\IFigure.cs" />
     <Compile Include="Draw\Drawfigure.cs" />
     <Compile Include="Figures\Circle.cs" />
@@ -114,8 +126,13 @@
     <Compile Include="Tools\PipetteTool.cs" />
     <Compile Include="Tools\ITool.cs" />
     <Compile Include="Tools\PenTool.cs" />
+    <Compile Include="Tools\VectorEditingTools\VectorFigureChangeSizeTool.cs" />
+    <Compile Include="Tools\VectorEditingTools\VectorDeleteFigureTool.cs" />
+    <Compile Include="Tools\VectorEditingTools\VectorFigureOriginalStateTool.cs" />
+    <Compile Include="Tools\VectorEditingTools\VectorRepaintTool.cs" />
     <Compile Include="Tools\VectorEditingTools\VectorFigureMoveTool.cs" />
     <Compile Include="Tools\VectorEditingTools\VectorFigureTransformTool.cs" />
+    <Compile Include="Tools\VectorEditingTools\VectorFigureTurnTool.cs" />
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
     </EmbeddedResource>

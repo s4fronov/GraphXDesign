@@ -11,6 +11,7 @@ namespace GraphXDesign
     public class FigureTool:ITool
     {
         IFigure figure;
+        IFigure figureTmp;
         AbstractCanvas canvas;
 
         bool cursorActive;
@@ -19,6 +20,7 @@ namespace GraphXDesign
         public FigureTool(IFigure figure, AbstractCanvas canvas)
         {
             this.figure = figure;
+            figureTmp = (IFigure)this.figure.Clone();
             this.canvas = canvas;
             cursorActive = false;
         }
@@ -35,6 +37,7 @@ namespace GraphXDesign
         public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
         {
             figure.Create(x1, y1, x2, y2);
+            figureTmp.Create(x1, y1, x2, y2);
             if (cursorActive == true)
             {
                 canvas.LoadFromCache();
@@ -47,6 +50,7 @@ namespace GraphXDesign
                 else
                     tmpBrush = brush;
                 Drawfigure drawer = new Drawfigure(figure, tmpBrush, tmpFill);
+                Drawfigure drawerTmp = new Drawfigure(figureTmp, tmpBrush, tmpFill);
                 drawer.Draw(canvas);
                 canvas.WriteToPictureBox(sheet);
             }
@@ -58,14 +62,16 @@ namespace GraphXDesign
             x2 = e.X;
             y2 = e.Y;
             Drawfigure drawer = new Drawfigure(figure, brush, fill);
+            Drawfigure drawerTmp = new Drawfigure(figureTmp, brush, fill);
             if (canvas is VectorCanvas)
             {
-                VectorCanvas.GetCanvas.figures.Add(drawer); 
+                VectorCanvas.GetCanvas.figures.Add(drawer);
+                VectorCanvas.GetCanvas.figuresTmp.Add(drawerTmp);
             }
             drawer.Draw(canvas);
             canvas.WriteToPictureBox(sheet);
         }
-        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
-        { }
+        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
+        public void MouseClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
     }
 }

@@ -36,8 +36,9 @@ namespace GraphXDesign
                 x1 = x2;
                 y1 = y2;
             }
-            //brush.DrawDot(canvas, x1, y1);
-            brush.DrawLine(Canvas.GetCanvas.Bmp, x1, y1, e.X, e.Y, true);
+
+            Drawline drawer = new Drawline(x1, y1, e.X, e.Y, brush, true);
+            drawer.Draw(Canvas.GetCanvas);
             Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
         public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
@@ -48,8 +49,8 @@ namespace GraphXDesign
                 x2 = e.X;
                 y2 = e.Y;
                 dotList.Add(new Tuple<int, int>(x2, y2));
-                brush.DrawLine(Canvas.GetCanvas.Bmp, x1, y1, x2, y2, true);
-                // brush.DrawDot(canvas, x2, y2);
+                Drawline drawer = new Drawline(x1, y1, x2, y2, brush, false);
+                drawer.Draw(Canvas.GetCanvas);
                 Canvas.GetCanvas.WriteToPictureBox(sheet);
             }
         }
@@ -65,9 +66,11 @@ namespace GraphXDesign
             cursorActive = false;
             x2 = e.X;
             y2 = e.Y;
-            brush.DrawLine(Canvas.GetCanvas.Bmp, x0, y0, x2, y2, true);
+            Drawline drawer = new Drawline(x2, y2, x0, y0, brush, false);
+            drawer.Draw(Canvas.GetCanvas);
             Canvas.GetCanvas.WriteToPictureBox(sheet);
             gon = false;
         }
+        public void MouseClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
     }
 }

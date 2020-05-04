@@ -21,7 +21,8 @@ namespace GraphXDesign
             cursorActive = true;
             x1 = e.X;
             y1 = e.Y;
-            brush.DrawDot(Canvas.GetCanvas.Bmp, e.X, e.Y);
+            Drawline drawer = new Drawline(x1, y1, x1, y1, brush, true);
+            drawer.Draw(Canvas.GetCanvas);
             Canvas.GetCanvas.WriteToPictureBox(sheet);
         }
         public void MouseMove(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
@@ -30,7 +31,8 @@ namespace GraphXDesign
             {
                 x2 = e.X;
                 y2 = e.Y;
-                brush.DrawLine(Canvas.GetCanvas.Bmp, x1, y1, x2, y2, false);
+                Drawline drawer = new Drawline(x1, y1, x2, y2, brush, false);
+                drawer.Draw(Canvas.GetCanvas);
                 x1 = x2;
                 y1 = y2;
                 Canvas.GetCanvas.WriteToPictureBox(sheet);
@@ -42,7 +44,7 @@ namespace GraphXDesign
             x2 = e.X;
             y2 = e.Y;
         }
-        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e)
-        { }
+        public void MouseDoubleClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
+        public void MouseClick(PictureBox sheet, IBrush brush, IFill fill, MouseEventArgs e) { }
     }
 }

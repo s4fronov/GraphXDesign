@@ -26,6 +26,7 @@ namespace GraphXDesign
         }
 
         public List<Drawfigure> figures;
+        public List<Drawfigure> figuresTmp;
 
         public void Init(int width, int height)
         {
@@ -34,7 +35,9 @@ namespace GraphXDesign
             Width = width;
             Height = height;
             figures = new List<Drawfigure>();
+            figuresTmp= new List<Drawfigure>();
         }
+
         public void RenderWrite(PictureBox pb)
         {
             Render();
@@ -57,6 +60,7 @@ namespace GraphXDesign
                     f.Draw(this);
             }
         }
+
         //===================================================== Попытка реализовать смещение вершин
 
         public int FindPointByPoint(Point p)
@@ -87,14 +91,41 @@ namespace GraphXDesign
             return null;
         }
 
-        public void PointChangeMode(PictureBox sheet)
+
+        public void PointChangeModeActiveFigure(PictureBox sheet, Drawfigure obj)
         {
             SquareBrush brush = new SquareBrush(1, Color.Red);
             Square square = new Square();
-            
-            foreach (Drawfigure f in figures)
+            if(obj.figure is Ellips || obj.figure is Circle)
             {
-                foreach (Point t in f.figure.dotlist)
+                brush.BrushColor = obj.brush.BrushColor;
+                brush.BrushSize = 0;
+            }
+                foreach (Point t in obj.figure.dotlist)
+                {
+                    for (int i = -3; i <= 3; i++)
+                    {
+                        Point p1 = new Point(t.X - 3, t.Y + i);
+                        Point p2 = new Point(t.X + 3, t.Y + i);
+                        square.Createdotlist(p1.X, p1.Y, p2.X, p2.Y);
+                        brush.DrawLine(Bmp, p1.X, p1.Y, p2.X, p2.Y, false);
+                        WriteToPictureBox(sheet);
+                    }
+                }
+        }
+
+        public void PointChangeModeOfRectangle(PictureBox sheet, Drawfigure obj)
+        {
+            SquareBrush brush = new SquareBrush(1, Color.Blue);
+            Square square = new Square();
+            List<Point> rectanglelist = new List<Point>();
+            rectanglelist.Add(obj.figure.cornerTopLeft);
+            rectanglelist.Add(obj.figure.cornerBottomRight);
+            rectanglelist.Add(obj.figure.cornerBottomLeft);
+            rectanglelist.Add(obj.figure.cornerTopRight);
+                                 
+
+             foreach (Point t in rectanglelist)
                 {
                     for (int i = -3; i <= 3; i++)
                     {
@@ -104,48 +135,9 @@ namespace GraphXDesign
                         //WriteToPictureBox(sheet);
                         brush.DrawLine(Bmp, p1.X, p1.Y, p2.X, p2.Y, false);
                         WriteToPictureBox(sheet);
-                        
+
                     }
                 }
-            }
         }
-
-
-
-        //public void DrawAllFigures(PictureBox sheet)
-        //{
-        //    Bmp = new BitmapWrap(Width, Height);
-
-        //    Square brush = new Square();
-        //    foreach (Drawfigure f in figures)
-        //    {
-        //        Point tmp = f.figure.dotlist[0];
-        //        foreach (Point p in f.figure.dotlist)
-        //        {
-        //            brush.Createdotlist(tmp.X, tmp.Y, p.X, p.Y);
-        //            WriteToPictureBox(sheet);
-        //            tmp = p;
-        //        }
-        //        brush.Createdotlist(tmp.X, tmp.Y, f.figure.dotlist[0].X, f.figure.dotlist[0].Y);
-        //        WriteToPictureBox(sheet);
-        //    }
-        //}
-
-        //public void ChangeSizeoffigures()
-        //{
-        //    FindFigureByPoint(Point p);
-
-
-            //=========================================================================================
-
-            /*
-            public Color GetPixel(int x, int y)
-            {
-                if (x >= 0 && x < Width)
-                    if (y >= 0 && y < Height)
-                        return Bmp.GetPixel(x, y);
-                return Color.Transparent;
-            }
-            */
-        }
+    }
 }
