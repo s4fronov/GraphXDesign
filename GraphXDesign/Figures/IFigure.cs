@@ -264,7 +264,10 @@ namespace GraphXDesign
                     if (distanceSquared(pointToAdd, point) <= tolerance * tolerance &&
                         IsInsideLineSegment(dotlist[i1], dotlist[i2], pointToAdd))
                     {
-                        dotlist.Insert(i1 + 1, pointToAdd);
+                        if (i1 + 1 < dotlist.Count)
+                            dotlist.Insert(i1 + 1, pointToAdd);
+                        else
+                            dotlist.Add(pointToAdd);
                         return;
                     }
                 }
@@ -307,8 +310,8 @@ namespace GraphXDesign
         //проверяем находится ли точка на линии в отрезке между другими двумя точками
         bool IsInsideLineSegment(Point a, Point b, Point p)
         {
-            if (a.X < p.X && p.X < b.X || b.X < p.X && p.X < a.X &&
-                a.Y < p.Y && p.Y < b.Y || b.Y < p.Y && p.Y < a.Y)
+            if (a.X <= p.X && p.X <= b.X || b.X <= p.X && p.X <= a.X &&
+                a.Y <= p.Y && p.Y <= b.Y || b.Y <= p.Y && p.Y <= a.Y)
             {
                 return true;
             }
