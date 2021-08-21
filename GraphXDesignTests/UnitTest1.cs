@@ -2,10 +2,6 @@ using NUnit.Framework;
 using GraphXDesign;
 using System.Collections.Generic;
 using System.Drawing;
-using System;
-using System.Linq.Expressions;
-using NUnit.Framework.Constraints;
-using System.Numerics;
 
 namespace GraphXDesignTestMath
 {
